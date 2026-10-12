@@ -1,12 +1,12 @@
-# SciLifeLab Course Webpage Template User Guide
+# SciLifeLab Training Webpage Template User Guide
 
-This repository contains the user guide for the **[SciLifeLab Course Page Template](https://scilifelab-training.github.io/scilifelab-training-template-staging/)**, a Quarto-based template for creating, publishing, and maintaining reusable training materials with GitHub Pages.
+This repository contains the user guide for the **[SciLifeLab Training Webpage Template](https://scilifelab-training.github.io/scilifelab-training-template/)**, a Quarto-based template for creating, publishing, and maintaining reusable training materials with GitHub Pages.
 
 ## Read the User Guide
 
 The published User Guide is available at:
 
-**[SciLifeLab Course Page Template User Guide](https://scilifelab-training.github.io/scilifelab-course-webpage-template-user-guide/)**
+**[SciLifeLab Training Webpage Template User Guide](https://scilifelab-training.github.io/scilifelab-training-template-user-guide/)**
 
 The guide provides step-by-step instructions for:
 
@@ -17,11 +17,11 @@ The guide provides step-by-step instructions for:
 - previewing and publishing changes;  
 - preparing training materials for publication, citation, and reuse.
 
-## Course Page Template
+## Training Template
 
-The template itself is maintained in a separate repository:
+The training template itself is maintained in a separate repository:
 
-**[SciLifeLab Course Page Template](https://github.com/SciLifeLab-Training/scilifelab-training-template-staging)**
+**[SciLifeLab Training Template](https://github.com/SciLifeLab-Training/scilifelab-training-template)**
 
 Users of the template should normally start with the published User Guide rather than the files in this repository.
 
@@ -65,8 +65,8 @@ Before committing documentation changes, preview the guide locally to check that
 
 If you re-use the SciLifeLab Course Webpage Template User Guide, please cite as 
 
-Ineke Luijten (2026). The SciLifeLab Course Webpage Template User Guide (v1.0.0-alpha). Zenodo. https://doi.org/XX.XXXX/zenodo.XXXXX
+Ineke Luijten (2026). The SciLifeLab Training Webpage Template User Guide (v1.0.0-alpha). Zenodo. https://doi.org/XX.XXXX/zenodo.XXXXX
 
 ## Licence
 
-Unless otherwise stated, the SciLifeLab Course Page Template User Guide is licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) licence.
+Unless otherwise stated, the SciLifeLab Training Webpage Template User Guide is licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) licence.
