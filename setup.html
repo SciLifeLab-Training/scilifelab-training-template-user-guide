@@ -328,9 +328,9 @@ Note
 </ul></li>
 <li>Click <strong>Create repository</strong>.</li>
 </ol>
-<p><img src="images/setup-02-createnewrepository.png" class="img-fluid" alt="GitHub form for creating a repository from a template, including the owner, repository name, visibility and Include all branches options."></p>
+<p><img src="images/setup-02-createnewrepository.png" class="img-fluid" style="width:70.0%" alt="GitHub form for creating a repository from a template, including the owner, repository name, visibility and Include all branches options."></p>
 <p>GitHub now opens your new repository. Check the name at the top of the page: it should be the name you just chose, not the template’s name.</p>
-<p><img src="images/setup-03-opennewrepository.png" class="img-fluid" alt="GitHub page showing a newly created repository based on the template."></p>
+<p><img src="images/setup-03-opennewrepository.png" class="img-fluid" style="width:70.0%" alt="GitHub page showing a newly created repository based on the template."></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -355,7 +355,7 @@ Note
 </div>
 </div>
 <div class="done">
-<p><strong>✓ Done when:</strong> you see your own repository on GitHub, with the name you chose.</p>
+<p><strong>Done when:</strong> you see your own repository on GitHub, with the name you chose.</p>
 </div>
 </section>
 <section id="publish-your-website" class="level2" data-number="2.3">
@@ -395,9 +395,8 @@ Note
 <p>Every time you upload a change, GitHub runs a small automatic process that rebuilds your website. This process needs permission to update the website.</p>
 <ol type="1">
 <li>Click <strong>Settings</strong>, then <strong>Actions → General</strong> in the menu on the left.</li>
-<li>Scroll down to <strong>Workflow permissions</strong>, and check that <strong>Read and write permissions</strong> is selected.</li>
+<li>Scroll down to <strong>Workflow permissions</strong>, and check that <strong>Read and write permissions</strong> is selected. <img src="images/setup-09-workflowpermissions.png" class="img-fluid" alt="GitHub settings page showing workflow permission settings"></li>
 </ol>
-<p><img src="images/setup-09-workflowpermissions.png" class="img-fluid" alt="GitHub settings page showing workflow permission settings"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -422,11 +421,10 @@ Note
 <ol type="1">
 <li>Click the <strong>Code</strong> tab to go back to the repository’s main page. <img src="images/setup-10-codetab.png" class="img-fluid" alt="GitHub page showing the link to the code tab."></li>
 <li>On the right-hand side, next to <strong>About</strong>, click the gear icon <span aria-hidden="true">⚙️</span>.</li>
-<li>Tick <strong>Use your GitHub Pages website</strong> and click <strong>Save changes</strong>.</li>
+<li>Tick <strong>Use your GitHub Pages website</strong> and click <strong>Save changes</strong>. <img src="images/setup-11-aboutsettings.png" class="img-fluid" alt="Edit repository details dialog with the GitHub Pages option selected."></li>
 </ol>
-<p><img src="images/setup-11-aboutsettings.png" class="img-fluid" alt="Edit repository details dialog with the GitHub Pages option selected."></p>
 <div class="done">
-<p><strong>✓ Done when:</strong> the website link appears under <strong>About</strong>, and clicking it opens the template website.</p>
+<p><strong>Done when:</strong> the website link appears under <strong>About</strong>, and clicking it opens the template website.</p>
 </div>
 </section>
 </section>
@@ -435,19 +433,17 @@ Note
 <p>So far, your repository only exists on GitHub. To edit it, you make a copy on your computer. This is called <strong>cloning</strong>.</p>
 <p>Working on a copy has a big advantage: nothing you change is visible to anyone else until you decide to upload it. You can try things out, look at the result, and undo mistakes, all safely on your own computer.</p>
 <ol type="1">
-<li>On your repository’s main page on GitHub, click the green <strong>Code</strong> button, make sure <strong>HTTPS</strong> is selected, and copy the address.</li>
+<li><p>On your repository’s main page on GitHub, click the green <strong>Code</strong> button, make sure <strong>HTTPS</strong> is selected, and copy the address.<br>
+<img src="images/setup-12-httpslink.png" class="img-fluid" style="width:40.0%" alt="Screenshot: Code menu with the HTTPS address."></p></li>
+<li><p>Open VS Code and click <strong>Clone Git Repository</strong> on the start screen. If you don’t see it, open <strong>View → Command Palette</strong>, type <code>Git: Clone</code> and press <strong>Enter</strong>.<br>
+<img src="images/setup-13-VScodeclone.png" class="img-fluid" style="width:50.0%" alt="Screenshot: VScode showing 'clone git repository'."></p></li>
+<li><p>Paste the HTTPS address you copied and press <strong>Enter</strong>.</p></li>
+<li><p>Choose where to save the repository on your computer, for example a folder called <code>GitHub</code> inside <code>Documents</code>, and click <strong>Select as Repository Destination</strong>. <img src="images/setup-14-repositorydestination.png" class="img-fluid" style="width:80.0%" alt="Screenshot: folders and repository destination button."></p></li>
+<li><p>When VS Code asks whether to open the repository, click <strong>Open</strong>.</p></li>
 </ol>
-<p><img src="images/setup-12-httpslink.png" class="img-fluid" alt="Screenshot: Code menu with the HTTPS address."></p>
-<ol start="2" type="1">
-<li>Open VS Code and click <strong>Clone Git Repository</strong> on the start screen. If you don’t see it, open <strong>View → Command Palette</strong>, type <code>Git: Clone</code> and press <strong>Enter</strong>.</li>
-<li>Paste the address and press <strong>Enter</strong>.</li>
-<li>Choose where to save the repository on your computer, for example a folder called <code>GitHub</code> inside <code>Documents</code>, and click <strong>Select as Repository Destination</strong>.</li>
-<li>When VS Code asks whether to open the repository, click <strong>Open</strong>.</li>
-</ol>
-<p><span style="color: red; font-weight: bold;">Screenshot: VS Code Clone Git Repository with the address pasted.</span></p>
 <p>The files and folders of your repository now appear in the <strong>Explorer</strong> panel on the left side of VS Code. Throughout this guide, you open files by clicking them there.</p>
 <p>If VS Code suggests installing <strong>recommended extensions</strong>, click <strong>Install</strong>. They help VS Code understand the files used in the template.</p>
-<p><span style="color: red; font-weight: bold;">Screenshot: VS Code Explorer with the repository open.</span></p>
+<p><img src="images/setup-15-VScodeexplorerpanel.png" class="img-fluid" alt="Screenshot: VS Code Explorer with the repository open."></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
