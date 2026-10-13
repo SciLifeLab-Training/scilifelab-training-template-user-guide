@@ -1,114 +1,257 @@
+/* ==========================================================================
+   SciLifeLab Training Webpage Template: User Guide
+   ========================================================================== */
 
-.sidebar-title {
-  font-weight: 700;
-}
-
-a {
-    color: #0B6B73;
-}
-
-.sidebar-item .active {
-    color: #0b6b73 !important;
-}
-
-.callout {
-  border-radius: 10px;
-}
-
-table {
-  border-radius: 8px;
-}
-
-/* Import the Lato font */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap');
 
-/* Apply it to the whole document */
+:root {
+    /* Colours: SciLifeLab teal and green. */
+    --guide-teal: #0b6b73;
+    --guide-teal-dark: #045c64;
+    --guide-green: #a7c947;
+    --guide-green-light: #f2f7e6;
+    --guide-text: #2f3336;
+    --guide-muted: #6b7276;
+    --guide-border: #e3e7e9;
+    --guide-surface: #f6f8f9;
+}
+
+
+/* ==========================================================================
+   Text
+   ========================================================================== */
+
 body {
     font-family: "Lato", sans-serif;
-    font-size: 1.00rem;
+    font-size: 1rem;
     font-weight: 350;
     line-height: 1.5;
-    color: #333;
+    color: var(--guide-text);
+}
+
+/* Keep lines at a comfortable reading length. */
+main.content p,
+main.content li {
+    max-width: 52rem;
+}
+
+/* More space between paragraphs and list items. */
+main.content p {
+    margin-bottom: 1.1rem;
+}
+
+main.content li + li {
+    margin-top: 0.10rem;
+}
+
+
+/* ==========================================================================
+   Headings
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", sans-serif;
+    color: var(--guide-text);
 }
 
 .quarto-title h1.title {
-    font-size: 3.5rem;
-    font-weight: 500;
-    color: #222;
+    font-size: 2.7rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Lato", sans-serif;
+/* Each section starts with clear space and a thin line above it, so the
+   page reads as a series of separate steps. */
+main.content h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--guide-border);
+    border-bottom: none;
 }
 
-h1 {
-    color: #2c2c2c;
+/* Section numbers as a small green badge, e.g. "2.3". */
+main.content h2 .header-section-number {
+    display: inline-block;
+    padding: 0.05rem 1.5rem;
+    font-size: 1em;
     font-weight: 700;
 }
 
-h2 {
-    color: #444;
+main.content h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+}
+
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+.sidebar-logo {
+    max-width: 90px;
+    margin-bottom: 0.7rem;
+}
+
+.sidebar-title {
     font-weight: 700;
 }
 
-h3 {
-    color: #555;
-    font-weight: 500;
+.sidebar-item {
+    color: var(--guide-text);
+    font-weight: 400;
 }
 
-.guide-logo{
-    position: fixed;
-    top: 20px;
-    right: 30px;
-    width: 100px;
-    z-index: 1000;
+.sidebar-item .active {
+    font-weight: 700;
 }
 
-.quick-reference {
-    background: #f5f5f2;
-    border-left: 5px solid #c9c3b8;
-    padding: 1.5rem 1.75rem;
+
+/* ==========================================================================
+   Table of contents (right-hand side)
+   ========================================================================== */
+
+/* Line the table of contents up with the page title, and keep it in view
+   while scrolling. */
+#quarto-margin-sidebar {
+    padding-top: 2rem;
+}
+
+#TOC {
+    position: sticky;
+    top: 2rem;
+}
+
+
+/* ==========================================================================
+   Numbered steps
+   ========================================================================== */
+
+/* Numbered steps get a teal number, so they stand out from the text. */
+main.content ol > li::marker {
+    color: var(--guide-teal);
+    font-weight: 700;
+}
+
+
+/* ==========================================================================
+   "Done when" boxes
+   ========================================================================== */
+
+/* The check at the end of each section:
+ *
+ *   ::: {.done}
+ *   **Done when:** ...
+ *   :::
+ */
+.done {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin: 1.75rem 0 0.5rem;
+    padding: 0.85rem 1.1rem;
     border-radius: 10px;
+    background: var(--guide-green-light);
+    max-width: 46rem;
 }
 
-.quick-reference-title {
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #5d574f;
+.done::before {
+    content: "✓";
+    flex: 0 0 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: var(--guide-green);
+    color: #fff;
+    font-size: 0.85rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
+    line-height: 1.5rem;
+    text-align: center;
 }
 
-.quick-reference-subtitle {
-    font-size: 1.1rem;
-    letter-spacing: 0.08em;
-    color: #5d574f;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
+/* "main.content" is needed to beat the normal paragraph spacing. */
+main.content .done p {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Callouts, code, tables and screenshots
+   ========================================================================== */
+
+.callout {
+    max-width: 52rem;
+}
+
+/* Code blocks: a calm background, so commands are easy to spot. */
+div.sourceCode,
+pre {
+    border-radius: 8px;
+    background: var(--guide-surface) !important;
+    border: 1px solid var(--guide-border);
+    max-width: 46rem;
 }
 
 table {
-    border-radius: 8px;
+    border-radius: 3px;
     overflow: hidden;
     margin-top: 1rem;
     margin-bottom: 2rem;
 }
 
-.quick-reference thead th {
-    background: #ebe8e2;
-    color: #3f3a35;
+/* Table rows in alternating colours, so long tables are easy to follow. */
+main.content table tbody tr:nth-child(even) {
+    background: var(--guide-surface);
+}
+
+main.content table thead th {
+    background: #eaf3f3;
     font-weight: 700;
 }
 
 
+
+/* ==========================================================================
+   Quick reference boxes (used in the other chapters)
+   ========================================================================== */
+
+.quick-reference {
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem;
+    border-left: 4px solid var(--guide-teal);
+    border-radius: 10px;
+    background: var(--guide-surface);
+}
+
+.quick-reference-title {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--guide-teal);
+}
+
+.quick-reference-subtitle {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--guide-text);
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
 .guide-footer {
-  margin-top: 2rem;
-  font-size: 0.85rem;
-  color: #666;
+    margin-top: 3rem;
+    font-size: 0.80rem;
+    color: var(--guide-muted);
+    font-weight: 400;
 }
 
 .guide-footer p {
-  margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
