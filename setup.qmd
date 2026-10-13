@@ -251,13 +251,16 @@ the commands: copy each one exactly as shown.
 ### Open a terminal {.unnumbered}
 
 A **terminal** is a window where you type commands. In VS Code, choose
-**Terminal → New Terminal**. The terminal opens at the bottom of the
-window, already inside your repository folder.
+**Terminal → New Terminal**. 
+
+![](images/setup-16-newterminal.png){width=70% fig-alt="Screenshot: Terminal, new terminal tab."}
+
+The terminal opens at the bottom of the window, already inside your repository folder.
 
 To run a command from this guide, copy it, paste it into the terminal,
 and press **Enter**.
 
-<span style="color: red; font-weight: bold;">Screenshot: VS Code showing Terminal → New Terminal.</span>
+![](images/setup-17-VScodeterminal.png){fig-alt="Screenshot: VS Code showing Terminal → New Terminal."}
 
 ### Check the software {.unnumbered}
 
@@ -285,7 +288,7 @@ quarto --version
 :::
 
 Each command should print a version number, for example
-`Python 3.12.4`. If one says **command not found**, install that program
+`Python 3.12.4` (see image above). If one says **command not found**, install that program
 again, restart VS Code, and try again.
 
 ### Create the environment {.unnumbered}
@@ -320,7 +323,7 @@ switched on, the terminal line starts with `(.venv)`:
 (.venv) username@computer introduction-to-r %
 ```
 
-<span style="color: red; font-weight: bold;">Screenshot: Terminal showing (.venv) at the beginning of the line.</span>
+![](images/setup-18-virtualenvironment.png){fig-alt="Screenshot: Terminal showing (.venv) at the beginning of the line."}
 
 ### Let VS Code switch on the environment {.unnumbered}
 
@@ -332,17 +335,17 @@ You can let VS Code do that for you:
 2. Type `Python: Select Interpreter` and press **Enter**.
 3. Choose the option that shows `.venv`.
 
-<span style="color: red; font-weight: bold;">Screenshot: Select Interpreter list with the .venv option.</span>
+![](images/setup-19-interpreterlist.png){width=70% fig-alt="Screenshot: Select Interpreter list with the .venv option."}
 
 From now on, every new terminal you open in this repository starts with
 the environment switched on.
 
 ::: {.done}
-**✓ Done when:** a new terminal (**Terminal → New Terminal**) starts with
+**Done when:** a new terminal (**Terminal → New Terminal**) starts with
 `(.venv)`.
 :::
 
-## You're all set {.unnumbered .unlisted}
+## You're all set! {.unnumbered .unlisted}
 
 Your training has its own repository and website, and your computer is
 ready to edit it. You won't need to repeat any of these steps for this
