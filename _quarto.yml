@@ -2,17 +2,21 @@ project:
   type: book
 
 book:
-  title: "Course Page Template: User Guide"
+  sidebar:
+    logo: images/SciLifeLab_symbol_green-2048x1950.png
+  title: "Training Webpage Template: User Guide"
   chapters:
     - index.qmd
-    - getting-started.qmd
+    - setup.qmd
+    - workflow.qmd
     - repository-structure.qmd
     - landing-page.qmd
-    - course-instances.qmd
+    - training-instances.qmd
     - fairification.qmd
 
 format:
   html:
     theme: default
     css: styles.css
-    toc: false
+    toc: true
+    toc-depth: 2

@@ -2,37 +2,45 @@
 title: "Introduction"
 ---
 
-<img src="/images/SciLifeLab_symbol_green-2048x1950.png"
-     class="guide-logo">
+Welcome to the **SciLifeLab Training Webpage Template User Guide**!
 
-<br>
+The **[SciLifeLab Training Webpage Template](https://scilifelab-training.github.io/scilifelab-training-template/)**
+helps training organisers across SciLifeLab create consistent, reusable
+and FAIR training websites. No programming is needed: you fill in a few
+text files with information about your training, write your materials in
+Markdown, and the website is built and published for you.
 
-Welcome to the **SciLifeLab Course Webpage Template User Guide**!
+### How a training website is organised {.unnumbered}
 
+Each training gets one website with two parts:
 
-The **[SciLifeLab Course Webpage Template](https://scilifelab-training.github.io/scilifelab-training-template-staging/)** is designed to help course organisers create consistent, reusable, and FAIR training materials with minimal technical knowledge.
+- **A landing page** with general information about the training and links
+  to every time it is given.
+- **A training instance** for each time the training is given, with its own
+  overview, schedule, materials and practical information.
 
-This guide explains how to set up, customise, publish, and maintain a course website using the template. Whether you are creating a new course or updating an existing one, the guide provides step-by-step instructions for each stage of the process.
+### What this guide covers {.unnumbered}
 
-By the end of this guide, you will know how to:
+This guide takes you step by step from an empty template to a published,
+citable training website. It covers how to:
 
-- Create a new course repository from the template.
-- Set up the repository on your computer and preview the website locally.
-- Customise the course landing page.
-- Create and manage course instances.
-- Customise course instance pages.
-- Prepare your training materials for publication, citation, and reuse following FAIR principles.
+- create your own copy of the template and preview it on your computer;
+- set up the landing page;
+- create a training instance and add your materials;
+- prepare your training materials for publication, citation, and reuse following FAIR principles.
 
-The guide assumes no prior experience with Git, Python or Quarto. Each chapter explains where to find the relevant files, what to edit, and how to preview your changes before publishing them.
+No prior experience with Git, Python or Quarto is needed. Start with
+[Set up your training](setup.qmd) and follow it once from beginning
+to end. After that, you can go straight to the chapter you need.
 
 <br>
 
 ::: {.guide-footer}
 ---
 
-This User Guide is maintained by SciLifeLab Training Hub.
+This User Guide is maintained by the SciLifeLab Training Hub.
 
-
-If you have questions, encounter problems, or have suggestions for improving the guide or the SciLifeLab Course Webpage Template, please open an issue in the SciLifeLab Course Webpage Template GitHub repository or contact SciLifeLab Training Hub at **training@scilifelab.se**.
-
+Questions, problems or ideas for improving the guide or the template?
+[Open an issue](https://github.com/SciLifeLab-Training/scilifelab-training-template/issues)
+or email us at [training@scilifelab.se](mailto:training@scilifelab.se).
 :::
