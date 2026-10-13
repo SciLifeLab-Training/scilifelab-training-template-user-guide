@@ -82,12 +82,12 @@ stays unchanged, so you can't break anything for others.
      website and materials.
 4. Click **Create repository**.
 
-![](images/setup-02-createnewrepository.png){fig-alt="GitHub form for creating a repository from a template, including the owner, repository name, visibility and Include all branches options."}
+![](images/setup-02-createnewrepository.png){width=70% fig-alt="GitHub form for creating a repository from a template, including the owner, repository name, visibility and Include all branches options."}
 
 GitHub now opens your new repository. Check the name at the top of the
 page: it should be the name you just chose, not the template's name.
 
-![](images/setup-03-opennewrepository.png){fig-alt="GitHub page showing a newly created repository based on the template."}
+![](images/setup-03-opennewrepository.png){width=70% fig-alt="GitHub page showing a newly created repository based on the template."}
 
 
 ::: {.callout-tip collapse="true"}
@@ -110,7 +110,7 @@ to an organisation, and on your permissions in that organisation.
 :::
 
 ::: {.done}
-**✓ Done when:** you see your own repository on GitHub, with the name
+**Done when:** you see your own repository on GitHub, with the name
 you chose.
 ::: 
 
@@ -159,7 +159,6 @@ website.
 1. Click **Settings**, then **Actions → General** in the menu on the left.
 2. Scroll down to **Workflow permissions**, and check that
    **Read and write permissions** is selected.
-
 ![](images/setup-09-workflowpermissions.png){fig-alt="GitHub settings page showing workflow permission settings"}
 
 ::: {.callout-note collapse="true"}
@@ -182,11 +181,10 @@ always find your website quickly:
 2. On the right-hand side, next to **About**, click the gear icon
    <span aria-hidden="true">⚙️</span>.
 3. Tick **Use your GitHub Pages website** and click **Save changes**.
-
 ![](images/setup-11-aboutsettings.png){fig-alt="Edit repository details dialog with the GitHub Pages option selected."}
 
 ::: {.done}
-**✓ Done when:** the website link appears under **About**, and clicking
+**Done when:** the website link appears under **About**, and clicking
 it opens the template website.
 :::
 
@@ -200,20 +198,19 @@ anyone else until you decide to upload it. You can try things out, look
 at the result, and undo mistakes, all safely on your own computer.
 
 1. On your repository's main page on GitHub, click the green **Code**
-   button, make sure **HTTPS** is selected, and copy the address.
-
-![](images/setup-12-httpslink.png){fig-alt="Screenshot: Code menu with the HTTPS address."}
+   button, make sure **HTTPS** is selected, and copy the address.  
+![](images/setup-12-httpslink.png){width=40% fig-alt="Screenshot: Code menu with the HTTPS address."}
 
 2. Open VS Code and click **Clone Git Repository** on the start screen.
    If you don't see it, open **View → Command Palette**, type
-   `Git: Clone` and press **Enter**.
-3. Paste the address and press **Enter**.
+   `Git: Clone` and press **Enter**.  
+![](images/setup-13-VScodeclone.png){width=50% fig-alt="Screenshot: VScode showing 'clone git repository'."}
+3. Paste the HTTPS address you copied and press **Enter**.
 4. Choose where to save the repository on your computer, for example a
    folder called `GitHub` inside `Documents`, and click
    **Select as Repository Destination**.
+![](images/setup-14-repositorydestination.png){width=80% fig-alt="Screenshot: folders and repository destination button."}
 5. When VS Code asks whether to open the repository, click **Open**.
-
-<span style="color: red; font-weight: bold;">Screenshot: VS Code Clone Git Repository with the address pasted.</span>
 
 The files and folders of your repository now appear in the **Explorer**
 panel on the left side of VS Code. Throughout this guide, you open files
@@ -222,7 +219,7 @@ by clicking them there.
 If VS Code suggests installing **recommended extensions**, click
 **Install**. They help VS Code understand the files used in the template.
 
-<span style="color: red; font-weight: bold;">Screenshot: VS Code Explorer with the repository open.</span>
+![](images/setup-15-VScodeexplorerpanel.png){fig-alt="Screenshot: VS Code Explorer with the repository open."}
 
 ::: {.callout-tip collapse="true"}
 ## Prefer the terminal?
