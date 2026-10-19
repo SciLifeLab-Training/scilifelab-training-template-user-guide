@@ -1,10 +1,6 @@
 ---
 title: "Landing page"
 ---
-<img src="/images/SciLifeLab_symbol_green-2048x1950.png"
-     class="guide-logo">
-
-<br>
 
 The [landing page](https://scilifelab-training.github.io/scilifelab-training-template-staging/) introduces your course and provides visitors with the information they need to decide whether they want to register for your course or   access a course instance.
 

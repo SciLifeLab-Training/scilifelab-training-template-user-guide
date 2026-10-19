@@ -171,7 +171,7 @@ organisation controls this setting. Ask an administrator of the
 organisation to allow it for your repository.
 :::
 
-### Add the website link to your repository {.unnumbered}
+### Add the website link to your repository {#about-link .unnumbered}
 
 Show the website address on your repository's main page, so you can
 always find your website quickly:

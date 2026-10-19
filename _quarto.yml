@@ -3,7 +3,7 @@ project:
 
 book:
   sidebar:
-    logo: images/SciLifeLab_symbol_green-2048x1950.png
+    logo: images/logo-scilifelab-green.png
   title: "Training Webpage Template: User Guide"
   chapters:
     - index.qmd

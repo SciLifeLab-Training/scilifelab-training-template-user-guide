@@ -8,12 +8,12 @@ training website: open your training, preview it, make your changes, and
 publish them.
 
 The steps are always the same, whether you change a date, add a team
-member or write a new page of materials. After doing them once or twice
-they quickly become routine. The [cheat sheet](#cheat-sheet) at the end
+member or write a new page of materials.
+The [cheat sheet](#cheat-sheet) at the end
 of this chapter lists all of them on one screen, for when you just need a
 reminder.
 
-![](images/getting-started-regular-workflow.png){fig-alt="Workflow showing the regular editing and publishing steps."}
+![](images/workflow-overview-image.png){fig-alt="Workflow showing the regular editing and publishing steps."}
 
 
 ::: {.callout-note}
@@ -46,10 +46,10 @@ sure you have the latest version.
 ### Which part of your website are you working on? {.unnumbered}
 
 The bottom-left corner of VS Code also shows the **branch** you are
-working on. Your repository keeps each part of your website in its own
+working on. Your repository keeps each part of your training website in its own
 branch:
 
-- **main**: the landing page.
+- **main**: the training landing page.
 - **release-** followed by four digits, for example **release-2605**: one
   training instance, here the one in May 2026.
 
@@ -91,8 +91,7 @@ terminal, for example `http://localhost:4268/`, and paste it into your
 browser.
 
 
-Keep the preview running while you work. Each time you save a file, the
-preview updates by itself.
+Keep the preview running while you work. Each time you save a file (Cmd+S (macOS) or Ctrl+S (Windows and Linux)), the preview updates by itself.
 
 - To **run other commands** while the preview is running, open a second
   terminal with **Terminal → New Terminal**. The terminal running the
@@ -114,18 +113,6 @@ The website then opens inside VS Code. To see it in your browser instead, click 
 
 :::
 
-::: {.callout-note collapse="true"}
-## The preview stops with "Include directive failed"
-
-This can happen the first time you preview a training instance with a
-newer version of Quarto. Run this command once, then start the preview
-again:
-
-```bash
-python scripts/render_course.py
-```
-:::
-
 ::: {.done}
 **Done when:** your website is open in your browser.
 :::
@@ -135,7 +122,12 @@ python scripts/render_course.py
 
 Almost everything on your website comes from the files in the `data`
 folder: the title, dates, team, schedule, and so on. You change your
-website by changing these files. You don't need to touch any code. In [Chapter 4: Repository structure](repository-structure.qmd), wou will learn more about how these files are organized. For now, we focus on how to make a change and have it published on your website for users to see it. 
+website by changing these files, without touching any code.
+
+How these files are organised is explained in
+[Repository structure](repository-structure.qmd). For now, we focus on
+making one change and publishing it, so you can see the whole process
+from start to finish.
 
 As a first change, try changing the title of your training:
 
@@ -189,56 +181,78 @@ panel:
   website automatically.
 
 1. Click the **Source Control** icon on the left side of VS Code. Your
-   changed file, `data/course.yml`, is listed under **Changes**.
+   changed files are listed under **Changes**.
 
-<span style="color: red; font-weight: bold;">Screenshot: Source Control panel showing the changed file.</span>
+   You changed only `course.yml`, but you probably see more files, for
+   example files in the `_generated` folder. That's expected: the
+   template updates these files automatically from your data files,
+   while the preview runs. Depending on what you change, you may also
+   see `README.md`, `CITATION.cff` or `.zenodo.json`. Always commit
+   **all** changed files together.   
+  ![](images/workflow-12-sourcecontrol.png){width=35% fig-alt="Screenshot: Source Control panel showing the changed file."}
 
-2. Hover over the file and click the **+** (**Stage Changes**). This
-   tells VS Code to include the file in your commit. Files you don't
-   stage stay on your computer only.
+2. Hover over the word **Changes** and click the **+** next to it
+   (**Stage All Changes**). This tells VS Code to include all changed
+   files in your commit. They move to **Staged Changes**.  
+  ![](images/workflow-13-stagedchanges.png){width=35% fig-alt="Screenshot: Source Control panel showing staged changes."}
+
 3. In the **Message** box at the top, describe your change, for example
-   `Change the training title`.
+   `Change the training title`.  
+  ![](images/workflow-14-commitmessage.png){width=35% fig-alt="Screenshot: Source Control panel showing staged changes with commit message."}
+
 4. Click **Commit**.
 
-<span style="color: red; font-weight: bold;">Screenshot: message box and Commit button.</span>
-
-5. Click **Sync Changes** to push your commit to GitHub.
-
-<span style="color: red; font-weight: bold;">Screenshot: Sync Changes button.</span>
+5. Click **Sync Changes** to push your commit to GitHub.   
+  ![](images/workflow-15-syncchanges.png){width=35% fig-alt="Screenshot: Sync Changes button."}
 
 ::: {.callout-note}
-The first time you push, VS Code asks you to sign in to GitHub. Follow
+The first time you push, VS Code may ask you to sign in to GitHub. Follow
 the instructions in your browser, then return to VS Code.
 :::
 
 ::: {.callout-tip collapse="true"}
 ## Changed something by mistake?
 
-Before you commit, you can undo all changes to a file: in the Source
+**Before** you commit, you can undo all changes to a file: in the Source
 Control panel, hover over the file and click the curved arrow
 (**Discard Changes**). The file goes back to how it was at your last
-commit.
+commit.  
+ ![](images/workflow-16-discardchanges.png){width=35% fig-alt="Screenshot: Discard Changes button."}
+
+You only need to do this for the files you changed yourself, such as
+`data/course.yml`. The files the template updates automatically, for
+example in the `_generated` folder, go back by themselves: as soon as
+you discard your own change, the preview rebuilds them, and they
+disappear from the list after a few seconds.
+
+This only works while the preview is running. If they are still listed,
+start the preview (`python scripts/preview.py`) and wait a few seconds.
 :::
 
-**✓ Done when:** the Source Control panel shows no more changes.
+::: {.done}
+**Done when:** the Source Control panel shows no more changes.
+::: 
+
 
 ## Check the published website
 
 After you push, GitHub rebuilds and publishes your website by itself.
 This usually takes one or two minutes. You can follow it on GitHub:
 
-1. Open your repository on GitHub and click the **Actions** tab.
+1. Open your repository on GitHub and click the **Actions** tab.  
+ ![](images/workflow-17-githubactionstab.png){width=75% fig-alt="Screenshot: Github actions tab."}
+
 2. Wait until both of these show a green checkmark:
    - **deploy-landing** (or **deploy-instance**, when you changed a
      training instance): builds your website;
-   - **pages build and deployment**: publishes it.
+   - **pages build and deployment**: publishes it.  
 
+   ![](images/workflow-18-pagesbuilddeployment.png){width=75% fig-alt="Screenshot: Actions tab with deploy-landing and pages build and deployment both green."}
+   
    A yellow dot means it is still running.
 
-<span style="color: red; font-weight: bold;">Screenshot: Actions tab with deploy-landing and pages build and deployment both green.</span>
-
 3. Open your website with the link under **About** on your repository's
-   main page.
+   main page, see [About link](setup.qmd#about-link). 
 
 ::: {.callout-tip}
 Still seeing the old version? Wait a minute and refresh the page.
@@ -248,46 +262,47 @@ A red cross in the Actions tab means something went wrong. Click it to
 see the error message, or see the [cheat sheet](#cheat-sheet) below.
 :::
 
-**✓ Done when:** your published website shows your change.
+::: {.done}
+**Done when:** your published website shows your change.
+:::
 
 ## Cheat sheet
+
 
 Every time you work on your training, follow these steps in this order.
 
 | Step | Where | What to do | What you should see |
 |---|---|---|---|
-| **1. Open your training** | VS Code | Open VS Code. If your repository isn't open, choose **File → Open Recent** | Your files in the Explorer panel on the left |
-| **2. Get the latest version** | VS Code, bottom-left corner | Click the circular arrows next to the branch name | Your collaborators' changes appear in your files |
+| **1. Open your training repository** | VS Code | Open VS Code. If your repository isn't open, choose **File → Open Recent** | Your files in the Explorer panel on the left |
+| **2. Get the latest version** | VS Code, bottom-left corner | Click the circular 'sync changes' arrows next to the branch name | Your collaborators' changes appear in your files |
 | **3. Check the branch** | VS Code, bottom-left corner | Read the branch name: **main** for the landing page, **release-YYMM** for a training instance | The branch you want to change |
-| **4. Start the preview** | Terminal (**Terminal → New Terminal**) | Type `quarto preview` and press **Enter** | Your website opens in your browser |
-| **5. Make your changes** | Explorer panel | Open a file, usually in the `data` folder, edit it, and save with **Cmd+S** or **Ctrl+S** | The preview updates by itself |
-| **6. Stage your changes** | Source Control panel (left side) | Hover over each changed file and click **+** | The files move to **Staged Changes** |
+| **4. Start the preview** | Terminal (**Terminal → New Terminal**) | Type `python scripts/preview.py` and press **Enter** | Your website opens in your browser |
+| **5. Make your changes** | Explorer panel | Open a file, usually in the `data` folder. Change only the text after the colon, and save with **Cmd+S** or **Ctrl+S** | The preview updates by itself after a few seconds |
+| **6. Stage your changes** | Source Control panel (left side) | Hover over **Changes** and click **+** to stage all changed files, including files you didn't change yourself | The files move to **Staged Changes** |
 | **7. Commit** | Source Control panel | Type a short description in **Message** and click **Commit** | The **Sync Changes** button appears |
 | **8. Push** | Source Control panel | Click **Sync Changes** | No more changes listed |
 | **9. Check** | GitHub, **Actions** tab | Wait for two green checkmarks | Your change on the published website |
 | **10. Stop the preview** | Terminal running the preview | Press **Ctrl+C** | The terminal accepts commands again |
 
-### If something goes wrong {.unnumbered}
+## If something goes wrong
 
 | What you see | What it means | What to do |
 |---|---|---|
 | The terminal line doesn't start with `(.venv)` | The environment is switched off | Open a new terminal. If that doesn't help, run `source .venv/bin/activate` (Windows: `.venv\Scripts\activate`) |
-| **command not found: python** | The environment is switched off | Same as above |
+| command not found: python | The environment is switched off | Same as above |
 | The preview shows an error after you saved a data file | The file's layout is broken | Check the quotation marks and the spaces at the start of the lines you changed |
-| **Include directive failed** | The website hasn't been built on this computer yet | Run `python scripts/render_course.py` once, then `quarto preview` again |
-| **Sync Changes** asks you to sign in | VS Code isn't connected to GitHub yet | Follow the sign-in steps in your browser |
+| Sync Changes asks you to sign in | VS Code isn't connected to GitHub yet | Follow the sign-in steps in your browser |
 | A red cross in the **Actions** tab | Building the website failed | Click it to read the error message; it usually names the data file and the field to fix |
 | The website still shows the old version | Publishing isn't finished, or your browser shows an old copy | Wait a minute, then refresh the page |
 | You changed something by mistake (not committed yet) | — | Source Control panel: hover over the file and click the curved arrow (**Discard Changes**) |
-
-Still stuck? Email the SciLifeLab Training Hub at
-[training@scilifelab.se](mailto:training@scilifelab.se), with a
-screenshot of what you see.
 
 ## Next steps
 
 You now know the routine for every change. Continue with:
 
+- [Repository structure](repository-structure.qmd): find your way
+  around your repository, and learn which files to change and which to
+  leave alone.
 - [Landing page](landing-page.qmd): describe your training on the
   landing page.
 - [Training instances](training-instances.qmd): create the website for
@@ -300,8 +315,7 @@ You now know the routine for every change. Continue with:
 ::: {.guide-footer}
 ---
 
-This User Guide is maintained by the SciLifeLab Training Hub.
-
+This User Guide is maintained by the SciLifeLab Training Hub.   
 Questions, problems or ideas for improving the guide or the template?
 [Open an issue](https://github.com/SciLifeLab-Training/scilifelab-training-template/issues)
 or email us at [training@scilifelab.se](mailto:training@scilifelab.se).
