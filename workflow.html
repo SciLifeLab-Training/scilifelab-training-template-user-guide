@@ -138,8 +138,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/SciLifeLab_symbol_green-2048x1950.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="./images/SciLifeLab_symbol_green-2048x1950.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <img src="./images/logo-scilifelab-green.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./images/logo-scilifelab-green.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Training Webpage Template: User Guide</a> 
@@ -210,7 +210,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#commit-and-push-your-changes" id="toc-commit-and-push-your-changes" class="nav-link" data-scroll-target="#commit-and-push-your-changes"><span class="header-section-number">3.4</span> Commit and push your changes</a></li>
   <li><a href="#check-the-published-website" id="toc-check-the-published-website" class="nav-link" data-scroll-target="#check-the-published-website"><span class="header-section-number">3.5</span> Check the published website</a></li>
   <li><a href="#cheat-sheet" id="toc-cheat-sheet" class="nav-link" data-scroll-target="#cheat-sheet"><span class="header-section-number">3.6</span> Cheat sheet</a></li>
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps"><span class="header-section-number">3.7</span> Next steps</a></li>
+  <li><a href="#if-something-goes-wrong" id="toc-if-something-goes-wrong" class="nav-link" data-scroll-target="#if-something-goes-wrong"><span class="header-section-number">3.7</span> If something goes wrong</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps"><span class="header-section-number">3.8</span> Next steps</a></li>
   </ul>
 </nav>
     </div>
@@ -237,8 +238,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>This chapter shows the steps you repeat <strong>every time</strong> you work on your training website: open your training, preview it, make your changes, and publish them.</p>
-<p>The steps are always the same, whether you change a date, add a team member or write a new page of materials. After doing them once or twice they quickly become routine. The <a href="#cheat-sheet">cheat sheet</a> at the end of this chapter lists all of them on one screen, for when you just need a reminder.</p>
-<p><img src="images/getting-started-regular-workflow.png" class="img-fluid" style="width:87.0%" alt="Workflow showing the regular editing and publishing steps."></p>
+<p>The steps are always the same, whether you change a date, add a team member or write a new page of materials. The <a href="#cheat-sheet">cheat sheet</a> at the end of this chapter lists all of them on one screen, for when you just need a reminder.</p>
+<p><img src="images/workflow-overview-image.png" class="img-fluid" alt="Workflow showing the regular editing and publishing steps."></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -257,30 +258,36 @@ Note
 <h2 data-number="3.1" data-anchor-id="open-your-training"><span class="header-section-number">3.1</span> Open your training</h2>
 <p>Each time you start working, open your repository in VS Code and make sure you have the latest version.</p>
 <ol type="1">
-<li>Open VS Code. It usually reopens the repository you worked on last. If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open Folder…</strong> and select your repository folder.</li>
-<li><strong>Get the latest version.</strong> If you work together with others, they may have uploaded changes since you last worked. In the bottom-left corner of VS Code, click the circular arrows next to the branch name (<strong>Synchronize Changes</strong>). This downloads their changes to your computer.</li>
+<li><p>Open VS Code. It usually reopens the repository you worked on last. <img src="images/workflow-01-openrecent.png" class="img-fluid" style="width:80.0%" alt="Screenshot: Opening the repository from recent."><br>
+If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open Folder…</strong> and select your repository folder.<br>
+<img src="images/workflow-02-openrepository.png" class="img-fluid" style="width:80.0%" alt="Screenshot: Opening the repository from file."></p></li>
+<li><p><strong>Get the latest version.</strong> If you work together with others, they may have uploaded changes since you last worked. In the bottom-left corner of VS Code, click the circular arrows next to the branch name (<strong>Synchronize Changes</strong>). This downloads their changes to your computer.<br>
+<img src="images/workflow-03-synchronizechanges.png" class="img-fluid" style="width:40.0%" alt="Screenshot: VS Code status bar with the branch name and the Synchronize Changes arrows."></p></li>
 </ol>
-<p><span style="color: red; font-weight: bold;">Screenshot: VS Code status bar with the branch name and the Synchronize Changes arrows.</span></p>
 <section id="which-part-of-your-website-are-you-working-on" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="which-part-of-your-website-are-you-working-on">Which part of your website are you working on?</h3>
-<p>The bottom-left corner of VS Code also shows the <strong>branch</strong> you are working on. Your repository keeps each part of your website in its own branch:</p>
+<p>The bottom-left corner of VS Code also shows the <strong>branch</strong> you are working on. Your repository keeps each part of your training website in its own branch:</p>
 <ul>
-<li><strong>main</strong>: the landing page.</li>
-<li><strong>release-</strong> followed by four digits, for example <strong>release-2605</strong>: one training instance, here the one in May 2026.</li>
+<li><p><strong>main</strong>: the training landing page.</p></li>
+<li><p><strong>release-</strong> followed by four digits, for example <strong>release-2605</strong>: one training instance, here the one in May 2026.</p>
+<p><img src="images/workflow-04-branches.png" class="img-fluid" style="width:60.0%" alt="Screenshot: VS Code status bar showing the branch name main."></p></li>
 </ul>
 <p>Before you start editing, check that you are on the branch you want to change. You will learn how to switch branches in the chapter <a href="./training-instances.html">Training instances</a>. For your first change below, stay on <strong>main</strong>.</p>
-<p><span style="color: red; font-weight: bold;">Screenshot: VS Code status bar showing the branch name main.</span></p>
-<p><strong>✓ Done when:</strong> your repository is open in VS Code, and the bottom-left corner shows the branch you want to work on.</p>
+<div class="done">
+<p><strong>Done when:</strong> your repository is open in VS Code, and the bottom-left corner shows the branch you want to work on.</p>
+</div>
 </section>
 </section>
 <section id="preview-your-website" class="level2" data-number="3.2">
 <h2 data-number="3.2" data-anchor-id="preview-your-website"><span class="header-section-number">3.2</span> Preview your website</h2>
 <p>A <strong>preview</strong> shows your website in your web browser while you work on it, before anything is published. The preview runs on your own computer, so only you can see it. This lets you check every change before your collaborators or participants see it.</p>
-<p>To start the preview, open a terminal (<strong>Terminal → New Terminal</strong>) and run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Quarto now builds your website. After a few seconds, it opens in your web browser. If it doesn’t open by itself, copy the address shown in the terminal, for example <code>http://localhost:4268/</code>, and paste it into your browser.</p>
-<p><span style="color: red; font-weight: bold;">fig-alt=“Landing page displayed locally in a web browser using Quarto preview.”</span></p>
-<p>Keep the preview running while you work. Each time you save a file, the preview updates by itself.</p>
+<p>To start the preview, open a terminal (<strong>Terminal → New Terminal</strong>, see <a href="./setup.html#open-a-terminal">Open a terminal</a>) and run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/preview.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="images/workflow-05-quartopreview.png" class="img-fluid" alt="Terminal displaying command 'quarto preview'"></p>
+<p>Quarto now builds your website. After a few seconds, it opens in your web browser.</p>
+<p><img src="images/workflow-06-previewinbrowser.png" class="img-fluid" style="width:75.0%" alt="Landing page displayed locally in a web browser using Quarto preview."></p>
+<p>If it doesn’t open by itself, copy the address shown in the terminal, for example <code>http://localhost:4268/</code>, and paste it into your browser.</p>
+<p>Keep the preview running while you work. Each time you save a file (Cmd+S (macOS) or Ctrl+S (Windows and Linux)), the preview updates by itself.</p>
 <ul>
 <li>To <strong>run other commands</strong> while the preview is running, open a second terminal with <strong>Terminal → New Terminal</strong>. The terminal running the preview is busy.</li>
 <li>To <strong>stop the preview</strong> when you are done, click in the terminal where it runs and press <strong>Ctrl+C</strong>.</li>
@@ -297,44 +304,38 @@ Note
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>When a page file (ending in <code>.qmd</code>) is open in VS Code, you can also click the <strong>Preview</strong> button in the top-right corner of the editor. The website then opens inside VS Code. To see it in your browser instead, click <strong>Open in Browser</strong>.</p>
-<p><span style="color: red; font-weight: bold;">Screenshot: VS Code showing the Preview button.</span></p>
+<p>When a page file (ending in <code>.qmd</code>) is open in VS Code, you can also click the <strong>Preview</strong> button in the top-right corner of the editor.</p>
+<p><img src="images/workflow-07-previewbutton.png" class="img-fluid" style="width:85.0%" alt="Screenshot: VS Code showing the Preview button."></p>
+<p>The website then opens inside VS Code. To see it in your browser instead, click <strong>Open in Browser</strong>.</p>
+<p><img src="images/workflow-08-openinbrowser.png" class="img-fluid" style="width:75.0%" alt="Screenshot: VS Code showing the open in browser button."></p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="done">
+<p><strong>Done when:</strong> your website is open in your browser.</p>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>The preview stops with “Include directive failed”
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>This can happen the first time you preview a training instance with a newer version of Quarto. Run this command once, then start the preview again:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/render_course.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<p><strong>✓ Done when:</strong> your website is open in your browser.</p>
 </section>
 <section id="make-a-change" class="level2" data-number="3.3">
 <h2 data-number="3.3" data-anchor-id="make-a-change"><span class="header-section-number">3.3</span> Make a change</h2>
-<p>Almost everything on your website comes from the files in the <code>data</code> folder: the title, dates, team, schedule, and so on. You change your website by changing these files. You don’t need to touch any code.</p>
+<p>Almost everything on your website comes from the files in the <code>data</code> folder: the title, dates, team, schedule, and so on. You change your website by changing these files, without touching any code.</p>
+<p>How these files are organised is explained in <a href="./repository-structure.html">Repository structure</a>. For now, we focus on making one change and publishing it, so you can see the whole process from start to finish.</p>
 <p>As a first change, try changing the title of your training:</p>
 <ol type="1">
-<li><p>In the Explorer panel, open the <code>data</code> folder and click <code>course.yml</code>.</p></li>
-<li><p>Find the line:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Training title"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li>In the Explorer panel, open the <code>data</code> folder and click <code>course.yml</code>.</li>
+</ol>
+<p><img src="images/workflow-09-datafolder.png" class="img-fluid" style="width:30.0%" alt="Screenshot: VS Code showing the explorer panel with data folder"></p>
+<ol start="2" type="1">
+<li><p>Scroll down a bit and find the line:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Training title"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Change the text between the quotation marks, for example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My first training website"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Save the file with <strong>Cmd+S</strong> (macOS) or <strong>Ctrl+S</strong> (Windows and Linux).</p></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Introduction to R"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
+<p><img src="images/workflow-10-changetrainingname.png" class="img-fluid" style="width:80.0%" alt="Screenshot: VS Code showing course.yml and training title change."></p>
+<ol start="4" type="1">
+<li>Save the file with <strong>Cmd+S</strong> (macOS) or <strong>Ctrl+S</strong> (Windows and Linux).</li>
 </ol>
 <p>The new title appears at the top of the preview in your browser.</p>
-<p><span style="color: red; font-weight: bold;">Screenshot: Updated title in the preview.</span></p>
+<p><img src="images/workflow-11-changedtrainingtitle.png" class="img-fluid" style="width:80.0%" alt="Screenshot: Updated title in the preview."></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -348,7 +349,9 @@ Tip
 <p>The data files are sensitive to layout. Keep the quotation marks, and keep the spaces at the start of each line exactly as they are. If the preview shows an error after you save, check those first. The lines starting with <code>#</code> are explanations: they don’t appear on the website.</p>
 </div>
 </div>
-<p><strong>✓ Done when:</strong> the preview shows your new title.</p>
+<div class="done">
+<p><strong>Done when:</strong> the preview shows your new title.</p>
+</div>
 </section>
 <section id="commit-and-push-your-changes" class="level2" data-number="3.4">
 <h2 data-number="3.4" data-anchor-id="commit-and-push-your-changes"><span class="header-section-number">3.4</span> Commit and push your changes</h2>
@@ -358,19 +361,17 @@ Tip
 <li><strong>Push</strong>: upload your commits to GitHub. GitHub then updates your website automatically.</li>
 </ul>
 <ol type="1">
-<li>Click the <strong>Source Control</strong> icon on the left side of VS Code. Your changed file, <code>data/course.yml</code>, is listed under <strong>Changes</strong>.</li>
+<li><p>Click the <strong>Source Control</strong> icon on the left side of VS Code. Your changed files are listed under <strong>Changes</strong>.</p>
+<p>You changed only <code>course.yml</code>, but you probably see more files, for example files in the <code>_generated</code> folder. That’s expected: the template updates these files automatically from your data files, while the preview runs. Depending on what you change, you may also see <code>README.md</code>, <code>CITATION.cff</code> or <code>.zenodo.json</code>. Always commit <strong>all</strong> changed files together.<br>
+<img src="images/workflow-12-sourcecontrol.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Source Control panel showing the changed file."></p></li>
+<li><p>Hover over the word <strong>Changes</strong> and click the <strong>+</strong> next to it (<strong>Stage All Changes</strong>). This tells VS Code to include all changed files in your commit. They move to <strong>Staged Changes</strong>.<br>
+<img src="images/workflow-13-stagedchanges.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Source Control panel showing staged changes."></p></li>
+<li><p>In the <strong>Message</strong> box at the top, describe your change, for example <code>Change the training title</code>.<br>
+<img src="images/workflow-14-commitmessage.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Source Control panel showing staged changes with commit message."></p></li>
+<li><p>Click <strong>Commit</strong>.</p></li>
+<li><p>Click <strong>Sync Changes</strong> to push your commit to GitHub.<br>
+<img src="images/workflow-15-syncchanges.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Sync Changes button."></p></li>
 </ol>
-<p><span style="color: red; font-weight: bold;">Screenshot: Source Control panel showing the changed file.</span></p>
-<ol start="2" type="1">
-<li>Hover over the file and click the <strong>+</strong> (<strong>Stage Changes</strong>). This tells VS Code to include the file in your commit. Files you don’t stage stay on your computer only.</li>
-<li>In the <strong>Message</strong> box at the top, describe your change, for example <code>Change the training title</code>.</li>
-<li>Click <strong>Commit</strong>.</li>
-</ol>
-<p><span style="color: red; font-weight: bold;">Screenshot: message box and Commit button.</span></p>
-<ol start="5" type="1">
-<li>Click <strong>Sync Changes</strong> to push your commit to GitHub.</li>
-</ol>
-<p><span style="color: red; font-weight: bold;">Screenshot: Sync Changes button.</span></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -381,11 +382,11 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The first time you push, VS Code asks you to sign in to GitHub. Follow the instructions in your browser, then return to VS Code.</p>
+<p>The first time you push, VS Code may ask you to sign in to GitHub. Follow the instructions in your browser, then return to VS Code.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -394,29 +395,33 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Before you commit, you can undo all changes to a file: in the Source Control panel, hover over the file and click the curved arrow (<strong>Discard Changes</strong>). The file goes back to how it was at your last commit.</p>
+<p><strong>Before</strong> you commit, you can undo all changes to a file: in the Source Control panel, hover over the file and click the curved arrow (<strong>Discard Changes</strong>). The file goes back to how it was at your last commit.<br>
+<img src="images/workflow-16-discardchanges.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Discard Changes button."></p>
+<p>You only need to do this for the files you changed yourself, such as <code>data/course.yml</code>. The files the template updates automatically, for example in the <code>_generated</code> folder, go back by themselves: as soon as you discard your own change, the preview rebuilds them, and they disappear from the list after a few seconds.</p>
+<p>This only works while the preview is running. If they are still listed, start the preview (<code>python scripts/preview.py</code>) and wait a few seconds.</p>
 </div>
 </div>
 </div>
-<p><strong>✓ Done when:</strong> the Source Control panel shows no more changes.</p>
+<div class="done">
+<p><strong>Done when:</strong> the Source Control panel shows no more changes.</p>
+</div>
 </section>
 <section id="check-the-published-website" class="level2" data-number="3.5">
 <h2 data-number="3.5" data-anchor-id="check-the-published-website"><span class="header-section-number">3.5</span> Check the published website</h2>
 <p>After you push, GitHub rebuilds and publishes your website by itself. This usually takes one or two minutes. You can follow it on GitHub:</p>
 <ol type="1">
-<li>Open your repository on GitHub and click the <strong>Actions</strong> tab.</li>
-<li>Wait until both of these show a green checkmark:
+<li><p>Open your repository on GitHub and click the <strong>Actions</strong> tab.<br>
+<img src="images/workflow-17-githubactionstab.png" class="img-fluid" style="width:75.0%" alt="Screenshot: Github actions tab."></p></li>
+<li><p>Wait until both of these show a green checkmark:</p>
 <ul>
 <li><strong>deploy-landing</strong> (or <strong>deploy-instance</strong>, when you changed a training instance): builds your website;</li>
 <li><strong>pages build and deployment</strong>: publishes it.</li>
 </ul>
-A yellow dot means it is still running.</li>
-</ol>
-<p><span style="color: red; font-weight: bold;">Screenshot: Actions tab with deploy-landing and pages build and deployment both green.</span></p>
-<ol start="3" type="1">
-<li>Open your website with the link under <strong>About</strong> on your repository’s main page.</li>
+<p><img src="images/workflow-18-pagesbuilddeployment.png" class="img-fluid" style="width:75.0%" alt="Screenshot: Actions tab with deploy-landing and pages build and deployment both green."></p>
+<p>A yellow dot means it is still running.</p></li>
+<li><p>Open your website with the link under <strong>About</strong> on your repository’s main page, see <a href="./setup.html#about-link">About link</a>.</p></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -432,7 +437,9 @@ Tip
 <p>A red cross in the Actions tab means something went wrong. Click it to see the error message, or see the <a href="#cheat-sheet">cheat sheet</a> below.</p>
 </div>
 </div>
-<p><strong>✓ Done when:</strong> your published website shows your change.</p>
+<div class="done">
+<p><strong>Done when:</strong> your published website shows your change.</p>
+</div>
 </section>
 <section id="cheat-sheet" class="level2" data-number="3.6">
 <h2 data-number="3.6" data-anchor-id="cheat-sheet"><span class="header-section-number">3.6</span> Cheat sheet</h2>
@@ -454,7 +461,7 @@ Tip
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>1. Open your training</strong></td>
+<td><strong>1. Open your training repository</strong></td>
 <td>VS Code</td>
 <td>Open VS Code. If your repository isn’t open, choose <strong>File → Open Recent</strong></td>
 <td>Your files in the Explorer panel on the left</td>
@@ -462,7 +469,7 @@ Tip
 <tr class="even">
 <td><strong>2. Get the latest version</strong></td>
 <td>VS Code, bottom-left corner</td>
-<td>Click the circular arrows next to the branch name</td>
+<td>Click the circular ‘sync changes’ arrows next to the branch name</td>
 <td>Your collaborators’ changes appear in your files</td>
 </tr>
 <tr class="odd">
@@ -474,19 +481,19 @@ Tip
 <tr class="even">
 <td><strong>4. Start the preview</strong></td>
 <td>Terminal (<strong>Terminal → New Terminal</strong>)</td>
-<td>Type <code>quarto preview</code> and press <strong>Enter</strong></td>
+<td>Type <code>python scripts/preview.py</code> and press <strong>Enter</strong></td>
 <td>Your website opens in your browser</td>
 </tr>
 <tr class="odd">
 <td><strong>5. Make your changes</strong></td>
 <td>Explorer panel</td>
-<td>Open a file, usually in the <code>data</code> folder, edit it, and save with <strong>Cmd+S</strong> or <strong>Ctrl+S</strong></td>
-<td>The preview updates by itself</td>
+<td>Open a file, usually in the <code>data</code> folder. Change only the text after the colon, and save with <strong>Cmd+S</strong> or <strong>Ctrl+S</strong></td>
+<td>The preview updates by itself after a few seconds</td>
 </tr>
 <tr class="even">
 <td><strong>6. Stage your changes</strong></td>
 <td>Source Control panel (left side)</td>
-<td>Hover over each changed file and click <strong>+</strong></td>
+<td>Hover over <strong>Changes</strong> and click <strong>+</strong> to stage all changed files, including files you didn’t change yourself</td>
 <td>The files move to <strong>Staged Changes</strong></td>
 </tr>
 <tr class="odd">
@@ -515,8 +522,9 @@ Tip
 </tr>
 </tbody>
 </table>
-<section id="if-something-goes-wrong" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="if-something-goes-wrong">If something goes wrong</h3>
+</section>
+<section id="if-something-goes-wrong" class="level2" data-number="3.7">
+<h2 data-number="3.7" data-anchor-id="if-something-goes-wrong"><span class="header-section-number">3.7</span> If something goes wrong</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -537,7 +545,7 @@ Tip
 <td>Open a new terminal. If that doesn’t help, run <code>source .venv/bin/activate</code> (Windows: <code>.venv\Scripts\activate</code>)</td>
 </tr>
 <tr class="even">
-<td><strong>command not found: python</strong></td>
+<td>command not found: python</td>
 <td>The environment is switched off</td>
 <td>Same as above</td>
 </tr>
@@ -547,39 +555,33 @@ Tip
 <td>Check the quotation marks and the spaces at the start of the lines you changed</td>
 </tr>
 <tr class="even">
-<td><strong>Include directive failed</strong></td>
-<td>The website hasn’t been built on this computer yet</td>
-<td>Run <code>python scripts/render_course.py</code> once, then <code>quarto preview</code> again</td>
-</tr>
-<tr class="odd">
-<td><strong>Sync Changes</strong> asks you to sign in</td>
+<td>Sync Changes asks you to sign in</td>
 <td>VS Code isn’t connected to GitHub yet</td>
 <td>Follow the sign-in steps in your browser</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>A red cross in the <strong>Actions</strong> tab</td>
 <td>Building the website failed</td>
 <td>Click it to read the error message; it usually names the data file and the field to fix</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>The website still shows the old version</td>
 <td>Publishing isn’t finished, or your browser shows an old copy</td>
 <td>Wait a minute, then refresh the page</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>You changed something by mistake (not committed yet)</td>
 <td>—</td>
 <td>Source Control panel: hover over the file and click the curved arrow (<strong>Discard Changes</strong>)</td>
 </tr>
 </tbody>
 </table>
-<p>Still stuck? Email the SciLifeLab Training Hub at <a href="mailto:training@scilifelab.se">training@scilifelab.se</a>, with a screenshot of what you see.</p>
 </section>
-</section>
-<section id="next-steps" class="level2" data-number="3.7">
-<h2 data-number="3.7" data-anchor-id="next-steps"><span class="header-section-number">3.7</span> Next steps</h2>
+<section id="next-steps" class="level2" data-number="3.8">
+<h2 data-number="3.8" data-anchor-id="next-steps"><span class="header-section-number">3.8</span> Next steps</h2>
 <p>You now know the routine for every change. Continue with:</p>
 <ul>
+<li><a href="./repository-structure.html">Repository structure</a>: find your way around your repository, and learn which files to change and which to leave alone.</li>
 <li><a href="./landing-page.html">Landing page</a>: describe your training on the landing page.</li>
 <li><a href="./training-instances.html">Training instances</a>: create the website for each time your training is given.</li>
 <li><a href="./fairification.html">FAIRification</a>: make your training citable and findable.</li>
@@ -587,8 +589,8 @@ Tip
 <p><br></p>
 <div class="guide-footer">
 <hr>
-<p>This User Guide is maintained by the SciLifeLab Training Hub.</p>
-<p>Questions, problems or ideas for improving the guide or the template? <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template/issues">Open an issue</a> or email us at <a href="mailto:training@scilifelab.se">training@scilifelab.se</a>.</p>
+<p>This User Guide is maintained by the SciLifeLab Training Hub.<br>
+Questions, problems or ideas for improving the guide or the template? <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template/issues">Open an issue</a> or email us at <a href="mailto:training@scilifelab.se">training@scilifelab.se</a>.</p>
 </div>
 
 
