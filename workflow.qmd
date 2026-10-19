@@ -13,7 +13,7 @@ they quickly become routine. The [cheat sheet](#cheat-sheet) at the end
 of this chapter lists all of them on one screen, for when you just need a
 reminder.
 
-![](images/getting-started-regular-workflow.png){width=87% fig-alt="Workflow showing the regular editing and publishing steps."}
+![](images/getting-started-regular-workflow.png){fig-alt="Workflow showing the regular editing and publishing steps."}
 
 
 ::: {.callout-note}
@@ -29,15 +29,19 @@ Each time you start working, open your repository in VS Code and make
 sure you have the latest version.
 
 1. Open VS Code. It usually reopens the repository you worked on last.
+![](images/workflow-01-openrecent.png){width=80% fig-alt="Screenshot: Opening the repository from recent."}  
    If not, choose **File → Open Recent**, or **File → Open Folder...**
-   and select your repository folder.
+   and select your repository folder.   
+![](images/workflow-02-openrepository.png){width=80% fig-alt="Screenshot: Opening the repository from file."}
+
+
+
 2. **Get the latest version.** If you work together with others, they
    may have uploaded changes since you last worked. In the bottom-left
    corner of VS Code, click the circular arrows next to the branch name
    (**Synchronize Changes**). This downloads their changes to your
-   computer.
-
-<span style="color: red; font-weight: bold;">Screenshot: VS Code status bar with the branch name and the Synchronize Changes arrows.</span>
+   computer.   
+   ![](images/workflow-03-synchronizechanges.png){width=40% fig-alt="Screenshot: VS Code status bar with the branch name and the Synchronize Changes arrows."}
 
 ### Which part of your website are you working on? {.unnumbered}
 
@@ -49,15 +53,17 @@ branch:
 - **release-** followed by four digits, for example **release-2605**: one
   training instance, here the one in May 2026.
 
+   ![](images/workflow-04-branches.png){width=60% fig-alt="Screenshot: VS Code status bar showing the branch name main."}
+
 Before you start editing, check that you are on the branch you want to
 change. You will learn how to switch branches in the chapter
 [Training instances](training-instances.qmd). For your first change
 below, stay on **main**.
 
-<span style="color: red; font-weight: bold;">Screenshot: VS Code status bar showing the branch name main.</span>
-
-**✓ Done when:** your repository is open in VS Code, and the bottom-left
+::: {.done}
+**Done when:** your repository is open in VS Code, and the bottom-left
 corner shows the branch you want to work on.
+:::
 
 ## Preview your website
 
@@ -66,19 +72,24 @@ it, before anything is published. The preview runs on your own computer,
 so only you can see it. This lets you check every change before your
 collaborators or participants see it.
 
-To start the preview, open a terminal (**Terminal → New Terminal**) and
+To start the preview, open a terminal (**Terminal → New Terminal**, see [Open a terminal](setup.qmd#open-a-terminal)) and
 run:
 
 ```bash
-quarto preview
+python scripts/preview.py
 ```
 
+![](images/workflow-05-quartopreview.png){fig-alt="Terminal displaying command 'quarto preview'"}
+
 Quarto now builds your website. After a few seconds, it opens in your
-web browser. If it doesn't open by itself, copy the address shown in the
+web browser. 
+
+![](images/workflow-06-previewinbrowser.png){width=75% fig-alt="Landing page displayed locally in a web browser using Quarto preview."}
+
+If it doesn't open by itself, copy the address shown in the
 terminal, for example `http://localhost:4268/`, and paste it into your
 browser.
 
-<span style="color: red; font-weight: bold;">fig-alt="Landing page displayed locally in a web browser using Quarto preview."</span>
 
 Keep the preview running while you work. Each time you save a file, the
 preview updates by itself.
@@ -93,11 +104,14 @@ preview updates by itself.
 ## Another way to start the preview: the Preview button
 
 When a page file (ending in `.qmd`) is open in VS Code, you can also
-click the **Preview** button in the top-right corner of the editor. The
-website then opens inside VS Code. To see it in your browser instead,
-click **Open in Browser**.
+click the **Preview** button in the top-right corner of the editor. 
 
-<span style="color: red; font-weight: bold;">Screenshot: VS Code showing the Preview button.</span>
+![](images/workflow-07-previewbutton.png){width=85% fig-alt="Screenshot: VS Code showing the Preview button."}
+
+The website then opens inside VS Code. To see it in your browser instead, click **Open in Browser**.
+
+![](images/workflow-08-openinbrowser.png){width=75% fig-alt="Screenshot: VS Code showing the open in browser button."}
+
 :::
 
 ::: {.callout-note collapse="true"}
@@ -112,18 +126,24 @@ python scripts/render_course.py
 ```
 :::
 
-**✓ Done when:** your website is open in your browser.
+::: {.done}
+**Done when:** your website is open in your browser.
+:::
+
 
 ## Make a change
 
 Almost everything on your website comes from the files in the `data`
 folder: the title, dates, team, schedule, and so on. You change your
-website by changing these files. You don't need to touch any code.
+website by changing these files. You don't need to touch any code. In [Chapter 4: Repository structure](repository-structure.qmd), wou will learn more about how these files are organized. For now, we focus on how to make a change and have it published on your website for users to see it. 
 
 As a first change, try changing the title of your training:
 
 1. In the Explorer panel, open the `data` folder and click `course.yml`.
-2. Find the line:
+
+![](images/workflow-09-datafolder.png){width=30% fig-alt="Screenshot: VS Code showing the explorer panel with data folder"}
+
+2. Scroll down a bit and find the line:
 
    ```yaml
    title: "Training title"
@@ -132,15 +152,17 @@ As a first change, try changing the title of your training:
 3. Change the text between the quotation marks, for example:
 
    ```yaml
-   title: "My first training website"
+   title: "Introduction to R"
    ```
+
+![](images/workflow-10-changetrainingname.png){width=80% fig-alt="Screenshot: VS Code showing course.yml and training title change."}
 
 4. Save the file with **Cmd+S** (macOS) or **Ctrl+S** (Windows and
    Linux).
 
 The new title appears at the top of the preview in your browser.
 
-<span style="color: red; font-weight: bold;">Screenshot: Updated title in the preview.</span>
+![](images/workflow-11-changedtrainingtitle.png){width=80% fig-alt="Screenshot: Updated title in the preview."}
 
 ::: {.callout-tip}
 The data files are sensitive to layout. Keep the quotation marks, and
@@ -149,7 +171,10 @@ preview shows an error after you save, check those first. The lines
 starting with `#` are explanations: they don't appear on the website.
 :::
 
-**✓ Done when:** the preview shows your new title.
+::: {.done}
+**Done when:** the preview shows your new title.
+::: 
+
 
 ## Commit and push your changes
 

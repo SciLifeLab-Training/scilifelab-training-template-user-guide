@@ -248,7 +248,7 @@ computer.
 You only do this once for each repository. You don't need to understand
 the commands: copy each one exactly as shown.
 
-### Open a terminal {.unnumbered}
+### Open a terminal {#open-a-terminal .unnumbered}
 
 A **terminal** is a window where you type commands. In VS Code, choose
 **Terminal → New Terminal**. 
@@ -359,8 +359,7 @@ and see it appear on your website.
 ::: {.guide-footer}
 ---
 
-This User Guide is maintained by the SciLifeLab Training Hub.
-
+This User Guide is maintained by the SciLifeLab Training Hub.   
 Questions, problems or ideas for improving the guide or the template?
 [Open an issue](https://github.com/SciLifeLab-Training/scilifelab-training-template/issues)
 or email us at [training@scilifelab.se](mailto:training@scilifelab.se).

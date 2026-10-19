@@ -38,8 +38,7 @@ to end. After that, you can go straight to the chapter you need.
 ::: {.guide-footer}
 ---
 
-This User Guide is maintained by the SciLifeLab Training Hub.
-
+This User Guide is maintained by the SciLifeLab Training Hub.   
 Questions, problems or ideas for improving the guide or the template?
 [Open an issue](https://github.com/SciLifeLab-Training/scilifelab-training-template/issues)
 or email us at [training@scilifelab.se](mailto:training@scilifelab.se).
