@@ -43,7 +43,7 @@ sure you have the latest version.
    computer.   
    ![](images/workflow-03-synchronizechanges.png){width=40% fig-alt="Screenshot: VS Code status bar with the branch name and the Synchronize Changes arrows."}
 
-### Which part of your website are you working on? {.unnumbered}
+### Which part of your website are you working on? {#switch-branch .unnumbered}
 
 The bottom-left corner of VS Code also shows the **branch** you are
 working on. Your repository keeps each part of your training website in its own
@@ -56,9 +56,7 @@ branch:
    ![](images/workflow-04-branches.png){width=60% fig-alt="Screenshot: VS Code status bar showing the branch name main."}
 
 Before you start editing, check that you are on the branch you want to
-change. You will learn how to switch branches in the chapter
-[Training instances](training-instances.qmd). For your first change
-below, stay on **main**.
+change. For your first change below, stay on **main**.
 
 ::: {.done}
 **Done when:** your repository is open in VS Code, and the bottom-left
