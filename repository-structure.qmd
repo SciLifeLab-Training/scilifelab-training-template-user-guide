@@ -189,7 +189,7 @@ computer: `_site/` (the website itself), `.quarto/` and `.venv/` (your
 environment). They are listed in `.gitignore`, so they are never
 uploaded to GitHub, and you can ignore them.
 
-## Data files
+## Data files {#data-files .unnumbered}
 
 
 As the tables above show, most of the files you edit are **data files**:
@@ -247,7 +247,7 @@ first. The error message usually names the file and the line.
 
 :::
 
-## Next steps
+## Next steps {.unnumbered .unlisted}
 
 Now that you know your way around, continue with:
 

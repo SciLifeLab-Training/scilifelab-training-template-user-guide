@@ -2,598 +2,395 @@
 title: "Landing page"
 ---
 
-The [landing page](https://scilifelab-training.github.io/scilifelab-training-template-staging/) introduces your course and provides visitors with the information they need to decide whether they want to register for your course or   access a course instance.
+The [landing page](https://scilifelab-training.github.io/scilifelab-training-template/)
+is the front door of your training. It introduces the training as a
+whole, and helps visitors decide whether to register, or which training
+instance to open.
 
-The figure below shows the main sections of the landing page and the terminology used throughout this guide.
+The figure below shows the parts of the landing page, and the names this
+guide uses for them.
 
-![](images/template-landing-page.png){width=75% fig-alt="Annotated example of the course landing page showing the template banner, course title and subtitle, organisation logo, hero action buttons, course information cards, course instance banner image, course instances, and page footer."}
+![](images/landing-01-overview.png){width=75% fig-alt="Annotated example of the landing page showing the template banner, training title and subtitle, logos, hero buttons, information cards, the All training instances banner with its image, and the footer."}
 
+In this chapter, you will learn how to:
+
+- [Switch off template mode](#switch-off-template-mode)
+- [Change the title and subtitle](#change-the-title-and-subtitle)
+- [Add or remove logos](#add-or-remove-logos)
+- [Edit the information cards](#edit-the-information-cards)
+- [List your training instances](#list-your-training-instances)
+- [Set up the hero buttons](#set-up-the-hero-buttons)
+- [Change the banner image](#change-the-banner-image)
+- [Edit the footer](#edit-the-footer)
+
+### Before you start {.unnumbered}
+
+Everything in this chapter happens on the **main** branch, and almost
+all of it in the four data files in the `data` folder:
+
+| Data file | What it holds |
+|---|---|
+| `data/course.yml` | The title, description, learning outcomes, keywords and topics of your training |
+| `data/team.yml` | The people behind the training |
+| `data/instances.yml` | The list of training instances |
+| `data/website.yml` | Logos, button texts, the banner image and the footer |
+
+: {tbl-colwidths="[30,70]"}  
   
-In the following sections, you will find how to:
+Work as described in [Regular workflow](workflow.qmd): start the
+preview with `python scripts/preview.py`, make your changes, save them, and check
+them in your browser. You don't have to commit after every change:
+you can make several changes, and commit and push them together.
 
-- [Remove the template banner](#remove-the-template-banner)
-- [Change the course title and subtitle](#hero-change-the-course-title-and-subtitle)
-- [Add or remove organisation logos](#hero-add-or-remove-a-logo)
-- [Configure the hero action buttons](#hero-configure-the-current-course-instance-and-registration-action-buttons)
-- [Edit the course information cards](#course-information-cards-edit-text)
-- [Change the course instance banner image](#change-the-course-instance-banner-image)
-- [Manage course instances](#manage-course-instances)
-- [Edit the page footer](#edit-the-footer)
+If you're not sure how a data file works, see
+[Data files](repository-structure.qmd#data-files).
 
-Each section in this chapter explains which file to edit and provides step-by-step instructions.  
-    
-At the end of each section, you will also find a **Quick reference** box summarising the most important changes. These boxes show you at a glance which file to edit and what to change, and can be useful when you return to the guide after you are already familiar with the individual steps.
+At the end of the chapter, a **cheat sheet** box sums up which
+file to open and what to change. It is handy when you come back to the
+guide later.
 
 
-<br>
+## Switch off template mode {#switch-off-template-mode}
 
-## Remove the template banner 
-The yellow banner at the top of the landing page provides a link to this User Guide. It is included to help you set up and customise the template and is **not intended to remain on your course website**.
+Your repository starts as a copy of the template, so it still presents
+itself as the template. You can see this in the yellow
+ **Want to use this template?**  banner at the top of the landing page (see overview image above).
+Switching off **template mode** turns your repository into your own
+training. Do this first:
 
-Once you are ready to use the template for your own course, you can remove the banner.
+1. On the **main** branch, open `data/website.yml`.
+2. Find the line:
 
-1. In the main branch, open `index.qmd`.
-2. Locate the following line:
+   ```yaml
+   template: true
+   ```
 
-```markdown
-{{</* include _sections/template-banner.qmd */>}}
-```
+3. Change it to:
 
-3. Delete this line.
-The banner will no longer appear when the landing page is rendered.
+   ```yaml
+   template: false
+   ```
+
+4. Save the file (Cmd+S (macOS) or Ctrl+S (Windows and Linux))
+
+This changes two things:
+
+- The yellow banner disappears from the landing page.
+- The README, `CITATION.cff` and `.zenodo.json` now describe **your**
+  training, using your data files. While template mode was on, they
+  described the template itself.
+
+::: {.done}
+**Done when:** the yellow banner is gone from the preview.
+:::
+
+
+## Change the title and subtitle {#change-the-title-and-subtitle}
+
+The **hero** is the large dark banner at the top of the landing page. It
+is the first thing visitors see, and shows the title and subtitle of
+your training, the logos and the buttons.
+
+1. Open `data/course.yml`.
+2. Find the lines:
+
+   ```yaml
+   title: "Training title"
+   subtitle: "Training subtitle"
+   ```
+
+3. Replace the text between the quotation marks with the title and
+   subtitle of your training.
+4. Save the file.
+
+The title is also used as the title of your website in the browser tab,
+in the README and in the citation of your training.
+
+::: {.callout-tip}
+Keep the subtitle to one sentence, and start it with an action verb such
+as **Learn**, **Understand**, **Explore**, **Build** or **Apply**. For
+example:
+
+> *Learn how to apply open science practices throughout the research
+> lifecycle.*
+
+The subtitle is optional: to leave it out, change it to `subtitle: ""`.
+:::
+
+## Add or remove logos {#add-or-remove-logos}
+
+The logos in the hero show the organisations behind your training. You
+can add logos, remove them, or replace them with your own.
+
+### Add a logo {.unnumbered}
+
+1. Save your logo as an **SVG** or **PNG** file.
+
+   ::: {.callout-tip}
+   Use a **white** version of your logo, or one made for a dark
+   background, so it stands out against the dark hero.
+   :::
+
+2. Copy the file into the `img/logos` folder: drag it from your
+   computer onto the folder in the Explorer panel in VS Code.
+3. Open `data/website.yml` and find the `hero` part:
+
+   ```yaml
+   hero:
+     logos:
+       - src: "img/logos/SciLifeLab_Logotype_NEG.png"
+         alt: "SciLifeLab"
+   ```
+
+4. Add your logo at the bottom of the list. Copy the two lines of an
+   existing logo, from `- src:` to `alt:`, and paste them below. Then
+   change the values:
+   - `src`: where the file is, starting with `img/logos/`, followed by
+     the file name;
+   - `alt`: the name of the organisation. Screen readers read this out
+     for visitors who can't see the logo.
+
+   For example:
+
+   ```yaml
+   hero:
+     logos:
+       - src: "img/logos/SciLifeLab_Logotype_NEG.png"
+         alt: "SciLifeLab"
+       - src: "img/logos/my-organisation.svg"
+         alt: "My organisation"
+   ```
+
+5. Save the file.
+
+The logos appear in the same order as in the list.
 
 ::: {.callout-note}
-You do not need to delete the file `_sections/template-banner.qmd`. Leaving the file in the repository will not affect your course website as long as it is no longer included in index.qmd.     
-  
-If you do want to delete the file:  
+Keep the spaces at the start of each line exactly as in the example: the
+`- src:` line of every logo starts at the same position, and `alt:`
+lines up with `src:`.
 
-- **VS Code:** Right-click the file and select **Delete**.
-- **GitHub Desktop:** Open the repository, locate the file, click the three dots (**⋮**), and choose **Delete file**.
- 
+The file name in `src` must match the name of your file exactly,
+including capital letters and the extension (`.svg` or `.png`).
 :::
 
-::: {.quick-reference}
-<span class="quick-reference-title"> Quick reference </span>        
-<span class="quick-reference-subtitle"> Remove the template banner </span>
+### Remove a logo {.unnumbered}
 
-| To... | File | Edit |
-|-------|------|------|
-| Remove the template banner | `index.qmd` | Delete the line that includes `_sections/template-banner.qmd`. |
+1. Open `data/website.yml` and find the `hero` part.
+2. Delete both lines of the logo you want to remove: the `- src:` line
+   and the `alt:` line below it.
+3. Save the file.
+4. Optional: if you no longer need the logo file, delete it from the
+   `img/logos` folder. In VS Code, right-click the file and choose
+   **Delete**.
 
-:::
 
+## Edit the information cards {#edit-the-information-cards}
 
-## Hero: Change the course title and subtitle
-The **hero** is the large banner at the top of the landing page. It is the first thing visitors see when they open your course website and contains the course title, subtitle, logos, and 'current course instance' and 'registration' action buttons.
+The **information cards** below the hero describe your training. They
+are created from your data files:
 
-### Change the course title
+| Card | Comes from |
+|---|---|
+| **Training content** | `description` in `data/course.yml` |
+| **Learning outcomes** | `learning_outcomes` in `data/course.yml` |
+| **Keywords** | `keywords` in `data/course.yml` |
+| **Topics covered** | `topics` in `data/course.yml` (optional) |
+| **Founders** | People with the role `Founder` in `data/team.yml` |
+| **Contributors** | People with the role `Contributor` in `data/team.yml` |
 
-1. In the main branch, open the `_sections` folder and then the file `hero.qmd`.
-2. Locate the following lines:
+: {tbl-colwidths="[30,70]"}
 
-```text
-:::{.hero__title}
-Course title
-:::
-```
+The same information is also used in the README and the citation of
+your training, and helps people find it in Zenodo and training
+registries such as TeSS.
 
-3. Replace **Course title** with the title of your course.
+### Training content {.unnumbered}
 
-### Change the course subtitle
+1. Open `data/course.yml` and find `description`:
 
-1. In the main branch, open the `_sections` folder and then the file `hero.qmd`.
-2. Locate the following lines:
+   ```yaml
+   description: |
+     Description of the content of the training.
 
-```text
-:::{.hero__subtitle}
-Course subtitle
-:::
-```
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+   ```
 
-3. Replace **Course subtitle** with a one-line description of your course.
+2. Replace the example text below `description: |` with a description
+   of your training. Keep the two spaces at the start of every line.
+   Separate paragraphs with an empty line.
+
+The `|` after `description:` lets you write several lines and
+paragraphs. You can also use simple formatting, such as `**bold**` or
+links: `[link text](https://example.org)`.
 
 ::: {.callout-tip}
-Keep the subtitle to one sentence and start with an action verb such as **Learn**, **Understand**, **Explore**, **Build**, or **Apply**.
-
-For example:
-
-> *Learn how to apply open science practices throughout the research lifecycle.*
+Focus on what the training covers. Around ten sentences is usually
+enough.
 :::
 
+### Learning outcomes, keywords and topics {.unnumbered}
 
-::: {.quick-reference}
+These three are **lists**: each line starting with `-` is one item.
 
-<span class="quick-reference-title"> Quick reference   </span>   
-<span class="quick-reference-subtitle"> Change course title and subtitle  </span>
+1. Open `data/course.yml` and find `learning_outcomes`, `keywords` or
+   `topics`:
 
+   ```yaml
+   learning_outcomes:
+     - "Learning outcome 1"
+     - "Learning outcome 2"
+     - "Learning outcome 3"
+   ```
 
-| To... | File | Edit |
-|-------|------|------|
-| Change the course title | `_sections/hero.qmd` | Replace the text between `:::{.hero__title}` and `:::`. |
-| Change the course subtitle | `_sections/hero.qmd` | Replace the text between `:::{.hero__subtitle}` and `:::`. |
+2. Replace the example text between the quotation marks with your own.
+3. To **add** an item, copy a whole line, paste it below, and change
+   the text. To **remove** an item, delete its whole line.
 
-:::
-
-
-## Hero: Add or remove a logo
-
-The logos displayed in the hero banner represent the organisations associated with your course. You can add additional logos, remove existing ones, or replace them with your own.
-
-
-### Add a logo
-
-1. Save your logo as a **PNG** or **SVG** file.
+The learning outcomes are numbered automatically on the website.
 
 ::: {.callout-tip}
-If possible, use a **white** version of your logo so that it contrasts well with the dark background of the hero banner.
+- **Learning outcomes** describe what participants will be able to do
+  after the training. For guidance, see the
+  [SciLifeLab Training Hub resources on writing learning outcomes](https://figshare.scilifelab.se/articles/educational_resource/Training_Hub_Resources_for_Learning_Outcomes/28473218).
+- **Keywords**: around four or five short terms that describe the main
+  subject areas. They help people find your training.
+- **Topics**: short phrases, not full sentences, that give visitors a
+  quick overview of what the training covers.
 :::
 
-2. In the main branch, open the `img` folder, then the `logos` folder.
-3. Copy your logo file into the folder.
-    - **VS Code:** Drag and drop the file into the folder.
-    - **GitHub Desktop:** Click **Add file**, then **Upload files**.
-4. In the main branch, open the `_sections` folder and then the file `hero.qmd`.
-5. Locate the following block:
-
-```html
-<div class="hero__brand-item">
-  <img src="img/logos/SciLifeLab_Logotype_NEG.png"
-       alt="SciLifeLab"
-       class="hero__partner-logo">
-</div>
-```
-
-6. Copy the entire block and paste it directly below the existing one.
-7. Replace only the `src` and `alt` values with those for your own logo.
-
-For example:
-
-```html
-<div class="hero__brand-item">
-  <img src="img/logos/your-logo-file.png"
-       alt="Your organisation"
-       class="hero__partner-logo">
-</div>
-```
-
-### Remove a logo
-
-1. In the main branch, open the `_sections` folder and then the file `hero.qmd`.
-2. Locate the logo block you want to remove.
-
-For example:
-
-```html
-<div class="hero__brand-item">
-  <img src="img/logos/SciLifeLab_Logotype_NEG.png"
-       alt="SciLifeLab"
-       class="hero__partner-logo">
-</div>
-```
-
-3. Delete the entire `<div class="hero__brand-item">...</div>` block.
-
-
-4. OPTIONAL: If you no longer need the logo image, you can also delete it from the `img/logos` folder.
-    - **VS Code:** Right-click the file and select **Delete**.
-    - **GitHub Desktop:** Open the repository, locate the file, click the three dots (**⋮**), and choose **Delete file**. 
-
-
-::: {.quick-reference}
-
-<span class="quick-reference-title"> Quick reference </span>  
-<span class="quick-reference-subtitle"> Add or remove a logo </span>
-
-
-| To... | File | Edit |
-|-------|------|------|
-| Add a logo | `img/logos` | Copy your logo image (`.png` or `.svg`) into the folder. |
-| Display a logo on the landing page | `_sections/hero.qmd` | Copy an existing `<div class="hero__brand-item">...</div>` block and update the `src` and `alt` attributes. |
-| Remove a logo from the landing page | `_sections/hero.qmd` | Delete the corresponding `<div class="hero__brand-item">...</div>` block. |
-| Delete an unused logo file (optional) | `img/logos` | Delete the logo image if it is no longer needed. |
-
-:::
-
-
-## Hero: Configure the *current course instance* and *registration* action buttons
-
-The hero can display two action buttons:
-
-- **Take me to the current course instance** links visitors to the current published course instance.
-- **Register now** links visitors to the course registration page.
-
-You can change these buttons' links and text, or hide them when they are not needed.
-
-### Add a link to the *current course instance* button
-
-1. In the main branch, open the `data` folder and then the file `instances.yml`.
-2. Locate the course instance with:
+The **Topics covered** card is optional. To leave it out, replace the
+list with an empty one:
 
 ```yaml
-status: current
+topics: []
 ```
 
-3. Update `slug`, `label`, `instance_url`, and `sort_key` to match the current course instance.
+### Founders and contributors {.unnumbered}
+
+The **Founders** and **Contributors** cards list the people in
+`data/team.yml`:
+
+- **Founders** started the training, or are responsible for it.
+- **Contributors** contributed materials or expertise.
+
+Each person looks like this:
+
+```yaml
+- given_names: "Firstname1"
+  family_names: "Lastname1"
+  roles:
+    - Founder
+  affiliation: "Institution or organisation"
+  orcid: ""
+  citation_author: true
+```
+
+1. Open `data/team.yml`.
+2. Fill in the details of each person:
+   - `given_names` and `family_names`: first name(s) and surname. Put
+     words like "van der" in the surname.
+   - `roles`: `Founder` or `Contributor`.
+   - `affiliation`: the organisation the person works for.
+3. To **add** a person, copy a whole entry, from `- given_names:` to the
+   last line before the next `- given_names:`, paste it below, and
+   change the values. To **remove** a person, delete their whole entry.
+
+Each card is left out when nobody has that role. The other fields, such
+as `orcid`, `email`, `course_contact` and `citation_author`, are used
+for the citation of your training. They are explained in
+[FAIRification](fairification.qmd) and in the comments at the top of
+`data/team.yml`.
 
 ::: {.callout-important}
-
-The values of `slug` and `instance_url` must match!
-
+Every person needs `given_names`, `family_names`, `roles` and
+`affiliation`. If one is missing, the preview shows an error that names
+the person and the missing field.
 :::
 
-For example:
+## List your training instances {#list-your-training-instances}
+
+The **All training instances** banner near the bottom of the landing
+page has a button for each training instance. Visitors use it to open
+the website of the current training, or of an earlier one.
+
+The list comes from `data/instances.yml`. Each training instance looks
+like this:
 
 ```yaml
-instances:
-  - slug: "0000"
-    label: "May 2026"
-    status: current
-    visible: true
-    show_in_hero: true
-    instance_url: "./0000/"
-    registration_url: "https://example.org/registration"
-    sort_key: 200000
+- slug: "2605"
+  label: "May 2026"
+  status: current
+  visible: true
+  show_in_hero: true
+  instance_url: "./2605/"
+  registration_url: "https://example.org/registration"
+  sort_key: 202605
 ```
 
-For a course instance taught in May 2026, this could become:
-
-```yaml
-instances:
-  - slug: "2605"
-    label: "May 2026"
-    status: current
-    visible: true
-    show_in_hero: true
-    instance_url: "./2605/"
-    registration_url: "https://example.org/registration"
-    sort_key: 202605
-```
-
-::: {.callout-tip}
-In this template, each course instance is generated from a repository branch and is named using the **year and month** in which the instance is taught.
-
-For example, a course taught in May 2026 uses `2605`. Its relative course instance URL is therefore `./2605/`.
-
-:::
-
-### Add a link to the *registration* button
-
-If registration for your training is open, you can display the **Register now** button and link it directly to your registration page.
-
-1. In the main branch, open the `data` folder and then the file `instances.yml`.
-2. Locate the course instance with:
-
-```yaml
-status: current
-```
-
-3. Find `registration_url`:
-
-```yaml
-registration_url: "https://example.org/registration"
-```
-
-4. Replace the example URL with the URL of your course registration page.
-
-For example:
-
-```yaml
-registration_url: "https://your-registration-page.example"
-```
-
-### Hide the *current course instance* button
-
-If you don't have a current course instance (e.g. if the course is self-paced or dormant), you can hide the **current course instance** button. 
-
-1. In `data/instances.yml`, locate the current course instance and change:
-
-```yaml
-show_in_hero: true
-```
-
-to:
-
-```yaml
-show_in_hero: false
-```
-
-The current course instance can remain in `instances.yml`; it will simply no longer be displayed as a button in the hero.
-
-
-### Hide the *registration* button
-
-If the registration for your training is closed, or if the training doesn't require registration, you can hide the registration button.
-
-1. In `data/instances.yml`, change:
-
-```yaml
-registration_url: "https://example.org/registration"
-```
-
-to:
-
-```yaml
-registration_url: ""
-```
-
-An empty `registration_url` tells the template not to display the registration button.
-
-
-### Change action button text
-
-You can also change the text displayed inside either action button without changing where the button links.
-
-1. In the main branch, open the `data` folder and then the file `ui.yml`.
-2. Locate:
-
-```yaml
-hero_view_current_label: Take me to the current course instance
-hero_registration_open_label: Register now
-```
-
-3. Replace the text after the colon with the text you want to display.
-
-For example:
-
-```yaml
-hero_view_current_label: View the latest course
-hero_registration_open_label: Register for the course
-```
-
-Do not change the names `hero_view_current_label` or `hero_registration_open_label`. Only change the text after the colon.
-
-
-::: {.quick-reference}
-
-<span class="quick-reference-title">Quick reference</span>    
-<span class="quick-reference-subtitle"> Configure the hero action buttons </span>  
-
-| To... | File | Edit |
-|---|---|---|
-| Change the current course link | `data/instances.yml` | Update `slug`, `label`, `instance_url`, and `sort_key` to match the current course instance. |
-| Change the registration link | `data/instances.yml` | Replace the value of `registration_url` with the URL of your registration page. |
-| Hide the current course button | `data/instances.yml` | Change `show_in_hero: true` to `show_in_hero: false`. |
-| Hide the registration button | `data/instances.yml` | Set `registration_url: ""`. |
-| Change the current course button text | `data/ui.yml` | Change the value of `hero_view_current_label`. |
-| Change the registration button text | `data/ui.yml` | Change the value of `hero_registration_open_label`. |
-
-:::
-
-
-## Course information cards: edit text 
-
-The information cards below the hero banner provide key information about your course, including the course content, learning outcomes, topics covered, keywords, course founders, and contributors.
-Each card can be edited independently. 
-
-
-### Change the course content card
-
-1. In the main branch, open the `_sections` folder and then the file `top-cards.qmd`.
-2. Find the **Course content** card.
-3. Under:
-
-```text
-:::{.card-copy}
-Description of the content of the course
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-```
-
-replace the example text with a description of your course.
-
-::: {.callout-tip}
-Keep the course description concise and focus on what the course covers. Around 10 sentences is usually enough.
-:::
-
-### Change the learning outcomes card
-
-1. In the main branch, open the `_sections` folder and then the file `top-cards.qmd`.
-2. Find the **Learning outcomes** card.
-3. Under:
-
-```text
-:::{.card-copy}
-1. Learning outcome 1
-2. Learning outcome 2
-3. Learning outcome 3
-```
-
-replace the example learning outcomes with the learning outcomes for your course.
-
-::: {.callout-tip}
-Learning outcomes should describe what participants will be able to do after completing the course.  
-For guidance on writing learning outcomes, see the [SciLifeLab Training Hub resource on writing learning outcomes](https://figshare.scilifelab.se/articles/educational_resource/Training_Hub_Resources_for_Learning_Outcomes/28473218).
-:::
-
-### Change the keywords card
-
-1. In the main branch, open the `_sections` folder and then the file `top-cards.qmd`.
-2. Find the **Keywords** card.
-3. Under:
-
-```text
-:::{.card-copy}
-- Keyword 1
-- Keyword 2
-```
-
-replace the example keywords with keywords that describe your course.
-
-::: {.callout-tip}
-Around four or five keywords is usually enough. Choose short terms that describe the main subject areas of the course.
-:::
-
-### Change the topics covered cards
-
-1. In the main branch, open the `_sections` folder and then the file `top-cards.qmd`.
-2. Find the **Topics covered** card.
-3. Under:
-
-```text
-:::{.card-copy}
-- Topic 1
-- Topic 2
-```
-
-replace the example topics with the main topics covered by your course.
-
-::: {.callout-tip}
-Use short phrases rather than complete sentences. Aim to give visitors a quick overview of the main subjects covered by the course.
-:::
-
-### Change the course founders card
-
-The **Course founders** card can be used to acknowledge the people who originally developed or established the course.
-
-1. In the main branch, open the `_sections` folder and then the file `bottom-cards.qmd`.
-2. Find the **Course founders** card.
-3. Under:
-
-```text
-:::{.card-copy}
-- Course founder 1
-- Course founder 2
-```
-
-replace the example names with the names of the course founders.
-
-
-### Change the course contributors
-
-The **Contributors** card can be used to acknowledge people who have contributed to the development or maintenance of the course.
-
-1. In the main branch, open the `_sections` folder and then the file `bottom-cards.qmd`.
-2. Find the **Contributors** card.
-3. Under:
-
-```text
-:::{.card-copy}
-- Contributor 1
-- Contributor 2
-```
-
-replace the example names with the names of the course contributors.
-
-
-::: {.quick-reference}
-
-<span class="quick-reference-title">Quick reference</span>   
-<span class="quick-reference-subtitle"> Edit the course information cards </span>  
-
-
-| To... | File | Edit |
-|---|---|---|
-| Change the course content | `_sections/top-cards.qmd` | Replace the text in the **Course content** card. |
-| Change the learning outcomes | `_sections/top-cards.qmd` | Replace the numbered list in the **Learning outcomes** card. |
-| Change the topics covered | `_sections/top-cards.qmd` | Replace the bullet list in the **Topics covered** card. |
-| Change the keywords | `_sections/top-cards.qmd` | Replace the bullet list in the **Keywords** card. |
-| Change the course founders | `_sections/bottom-cards.qmd` | Replace the names in the **Course founders** card. |
-| Change the course contributors | `_sections/bottom-cards.qmd` | Replace the names in the **Contributors** card. |
-
-:::
-
-## Change the course instance banner image
-The *All course instances* banner contains a decorative image alongside the links to the available course instances. You can replace this image with an image that represents your course.
-
-### 1. Add your image
-1. In the main branch, open the `img` folder and then the `images` folder.
-2. Add the image you want to use, for example:
-
-```text
-my-course-banner.jpg
-```
-
-::: {.callout-tip}
-A landscape-oriented image works best because the image is cropped automatically to fill the available area.
-:::
-
-
-### 2. Update the image path
-
-1. In the main branch, open the `_sections` folder and then the file `instances-band.qmd`.
-2. Locate: 
-
-```html
-  <img src="img/images/navet-band.png" alt="" class="instances-band__image">
-```
-
-3. Replace `img/images/navet-band.png` with the path to your image, for example:
-
-```html
-<img src="img/images/my-course-banner.jpg" alt="" class="instances-band__image">
-```
-
-The image is decorative, so the `alt` attribute can remain empty.
-
-::: {.callout-tip}
-Check how the image appears at different browser widths. The banner automatically crops the image to fill the available space.
-
-If the most important part of your image is being cropped, you can adjust its position in `styles.css`. Find:
-
-```css
-.instances-band__image {
-  object-fit: cover;
-  object-position: center;
-}
-```
-
-Change `object-position` to move the visible part of the image. For example:
-
-```css
-object-position: center top;
-```
-
-or:
-
-```css
-object-position: 30% center;
-```
-::: 
-
-
-::: {.quick-reference}
-
-<span class="quick-reference-title">Quick reference</span>   
-<span class="quick-reference-subtitle"> Change the course instance banner image </span>  
-
-
-| To... | File | Edit |
-|---|---|---|
-| Add a new banner image | `img/images/` | Add your course image to this folder. |
-| Change the banner image | `_sections/instances-band.qmd` | Replace `img/images/navet-band.png` with the path to your image. |
-| (Optional) Adjust how the image is cropped | `styles.css` | Change `object-position` under `.instances-band__image`. |
-
-:::
-
-
-## Manage course instances
-
-The **All course instances** banner provides links to the different published instances of your course. This allows visitors to access the current course instance, as well as previous course instances that you choose to make available.
-
-Course instances are managed in `data/instances.yml`. The instance marked as `current` is also used for the *Take me to the current course instance* action button in the hero. Some of the settings described in this section therefore overlap with the instructions for [configuring the hero buttons](#add-a-link-to-the-current-course-instance-button).
+| Field | What it means |
+|---|---|
+| `slug` | The year and month of the training instance as YYMM, the same as in its branch name. For example, `"2605"` for the branch **release-2605** |
+| `label` | The text on the button, for example `"May 2026"` |
+| `status` | `current` for the training instance that is running now or coming up next; `previous` for earlier ones |
+| `visible` | `true` to show the button in the banner; `false` to hide it |
+| `show_in_hero` | Only for the current training instance: whether the hero shows a button to it. See [Set up the hero buttons](#set-up-the-hero-buttons) |
+| `instance_url` | The link to the website of the training instance: `"./YYMM/"`, with the same digits as `slug` |
+| `registration_url` | Only for the current training instance: the link to its registration page |
+| `sort_key` | The year and month as YYYYMM, for example `202605`. Used to put the training instances in order |
+
+: {tbl-colwidths="[25,75]"}
 
 ::: {.callout-important}
-- Each course instance **must** have a unique `slug`. Do not use the same `slug` for more than one instance!
+- Exactly **one** training instance has `status: current`. All others
+  have `status: previous`.
+- The current training instance always has `visible: true`.
+- Each training instance has its own `slug`: never use the same one
+  twice.
+- `slug` and `instance_url` use the same four digits.
 
-- Only **one course instance** should be marked as:
-
-```yaml
-status: current
-```
-- The instance marked as current determines which course instance is treated as the current course throughout the landing page, including the link used by the [hero action button](#add-a-link-to-the-current-course-instance-button). 
-See [Mark a course instance as current](#mark-an-instance-as-current) for instructions.
-
+If one of these rules is broken, the preview shows an error that
+explains what to fix.
 :::
 
+### Remove the example training instances {.unnumbered}
 
-### Add a new course instance
+The template's list contains example training instances, such as
+**2505** and **2411**, that don't exist in your repository. Their
+buttons would lead to pages that don't exist. Start by removing them:
 
-1. In the main branch, open the `data` folder and then the file `instances.yml`.
-2. Copy a full existing course instance entry.
-3. Paste the copied entry under `instances:`.
-4. Update the `slug`, `label`, `instance_url` and `sort key` values to describe the new course instance.
+1. Open `data/instances.yml`.
+2. Delete the whole entry of each example instance, from `- slug:` to
+   `sort_key:`, except the one with `slug: "0000"`.
+3. Save the file.
 
-For example, for a new course instance taught in November 2026:
+Keep the **0000** entry for now: it links to the example training
+instance on the **release-0000** branch. You replace it once your first
+own training instance is ready.
+
+### Add a training instance {.unnumbered}
+
+Each training instance has its own **release-** branch, with its own
+website. Adding it to `instances.yml` puts a button to that website on
+the landing page.
+
+::: {.callout-note}
+Creating a **release-** branch does **not** add it to this list
+automatically. First create the branch, as described in
+[Training instances](training-instances.qmd), and then add it here.
+:::
+
+1. Open `data/instances.yml`.
+2. Copy a complete entry, from `- slug:` to `sort_key:`, and paste it at
+   the top of the list, directly under `instances:`.
+3. Change `slug`, `label`, `instance_url` and `sort_key` to the new
+   training instance.
+4. If the new training instance is now the current one, see
+   [Change the current training instance](#change-the-current-training-instance)
+   below.
+5. Save the file.
+
+For example, for a training instance in November 2026:
 
 ```yaml
 - slug: "2611"
@@ -606,31 +403,39 @@ For example, for a new course instance taught in November 2026:
   sort_key: 202611
 ```
 
-### Mark a course instance as current
-1. In the main branch, open the `data` folder and then the file `instances.yml`.
-2. Find the previous current instance.
-3. Change:
+::: {.callout-note}
+Keep the spaces at the start of each line exactly as in the existing
+entries: `- slug:` is indented by two spaces, and the other lines of
+the entry by four.
+:::
 
-```yaml
-status: current
-```
+### Change the current training instance {#change-the-current-training-instance .unnumbered}
 
-to:
+When a new training instance becomes the current one:
 
-```yaml
-status: previous
-```
+1. In `data/instances.yml`, find the training instance that is current
+   now, and change its `status` and `show_in_hero`:
 
-3. Set the new current instance to:
+   ```yaml
+   status: previous
+   show_in_hero: false
+   ```
 
-```yaml
-status: current
-```
+2. Find the new current training instance, and set:
+
+   ```yaml
+   status: current
+   visible: true
+   show_in_hero: true
+   ```
+
+3. Save the file.
 
 For example:
 
 ```yaml
 instances:
+
   - slug: "2611"
     label: "November 2026"
     status: current
@@ -650,151 +455,314 @@ instances:
     sort_key: 202605
 ```
 
-### Show or hide a previous instance in the *All course instances* banner
-1. In the main branch, open the `data` folder and then the file `instances.yml`.
-2. To display an instance in the banner:
+### Show or hide an earlier training instance {.unnumbered}
 
-```yaml
-visible: true
-```
-
-3. To hide an instance in the banner:
+You may not want to show every earlier training instance on the landing
+page. To hide one, set its `visible` to `false`:
 
 ```yaml
 visible: false
 ```
 
-Hiding an instance does not delete it from `instances.yml`. It simply prevents it from being displayed in the banner.
+To show it again, set it back to `true`. A hidden training instance
+stays in the list, and its website stays online: only its button
+disappears from the banner.
 
-::: {.callout-important}
-The instance marked as:
+::: {.callout-warning}
+Never hide the **current** training instance with `visible: false`. To
+remove its button from the hero, use `show_in_hero: false` instead. See
+[Set up the hero buttons](#set-up-the-hero-buttons).
+:::
+
+### Change the text on a button {.unnumbered}
+
+Change the `label` of the training instance, for example from
+`"May 2026"` to `"Spring 2026"`. This only changes the text visitors
+see, not where the button leads.
+
+### Change the order {.unnumbered}
+
+The current training instance is always shown first. The earlier ones
+follow, newest first, sorted by `sort_key`. You don't need to put the
+entries in order yourself, as long as each `sort_key` is the year and
+month of its training instance, written as YYYYMM: for example,
+`202605` for May 2026.
+
+
+## Set up the hero buttons {#set-up-the-hero-buttons}
+
+The hero can show two buttons:
+
+- **Take me to the current instance** opens the website of the current
+  training instance.
+- **Register now** opens the registration page of the current training
+  instance.
+
+Both buttons use the training instance with `status: current` in
+`data/instances.yml`. See
+[List your training instances](#list-your-training-instances) to set
+which one that is.
+
+### Add the registration link {.unnumbered}
+
+1. Open `data/instances.yml` and find the training instance with
+   `status: current`.
+2. Replace the example link in `registration_url` with the link to your
+   registration page or form:
+
+   ```yaml
+   registration_url: "https://your-registration-page.example"
+   ```
+
+3. Save the file.
+
+### Hide the registration button {.unnumbered}
+
+When registration has closed, or your training doesn't need
+registration, empty the link of the current training instance:
 
 ```yaml
-status: current
+registration_url: ""
 ```
 
-must always remain:
+The **Register now** button disappears. To show it again, fill in the
+link again.
 
-```yaml
-visible: true
-```
+### Hide the current instance button {.unnumbered}
 
-Do not hide the current course instance by setting `visible: false`. If you do not want the current instance to appear as a button in the hero, use:
+When there is no current training instance to point to, for example
+when your training is self-paced or not given at the moment, set
+`show_in_hero` of the current training instance to `false`:
 
 ```yaml
 show_in_hero: false
 ```
 
-instead.
+The button disappears from the hero. The training instance stays in the
+**All training instances** banner.
 
+### Change the button texts {.unnumbered}
+
+You can change the text on the buttons, and the heading of the
+**All training instances** banner, without changing where they lead:
+
+1. Open `data/website.yml` and find the `labels` part:
+
+   ```yaml
+   labels:
+     hero_view_current_label: "Take me to the current instance"
+     hero_registration_open_label: "Register now"
+     instances_band_title: "All training instances"
+   ```
+
+2. Change the text between the quotation marks. For example:
+
+   ```yaml
+   hero_view_current_label: "Go to the latest training"
+   hero_registration_open_label: "Sign up"
+   ```
+
+3. Save the file.
+
+## Change the banner image {#change-the-banner-image}
+
+The **All training instances** banner shows a decorative image next to
+the buttons. You can replace it with an image that fits your training.
+
+1. Copy your image into the `img/images` folder: drag it from your
+   computer onto the folder in the Explorer panel in VS Code.
+
+   ::: {.callout-tip}
+   Use a landscape image. The image is cropped automatically to fill
+   the space, so keep the important part near the middle.
+   :::
+
+2. Open `data/website.yml` and find:
+
+   ```yaml
+   instances_band:
+     image: "img/images/navet-band.png"
+   ```
+
+3. Replace `navet-band.png` with the file name of your image, for
+   example:
+
+   ```yaml
+   instances_band:
+     image: "img/images/my-training-banner.jpg"
+   ```
+
+4. Save the file, and check the preview at different widths of your
+   browser window.
+
+To show no image at all, set `image: ""`.
+
+::: {.callout-tip collapse="true"}
+## Is the important part of your image cut off?
+
+You can choose which part of the image stays visible. This is the only
+change in this guide in `styles.css`, the file that controls the look of
+the website, so make it carefully:
+
+1. Open `styles.css` and search for `.instances-band__image`
+   (**Cmd+F** or **Ctrl+F**).
+2. In that block, find:
+
+   ```css
+   object-position: center;
+   ```
+
+3. Change `center` to the part you want to keep. For example,
+   `center top` keeps the top of the image, and `30% center` moves the
+   visible part to the left.
 :::
 
-### Change the course instance name displayed in the banner
-1. In the main branch, open the `data` folder and then the file `instances.yml`.
-2. Change the value for `label`
-For example:
+
+## Edit the footer {#edit-the-footer}
+
+The **footer** at the bottom of the landing page shows who runs the
+training, its licence, how the website was built, and a link to your
+repository on GitHub. All of it is in the `footer` part of
+`data/website.yml`.
+
+### Organisation {.unnumbered}
+
+Change `organisation` to the name of the organisation, programme or
+group responsible for your training:
 
 ```yaml
-label: "May 2026"
+organisation: "SciLifeLab Training Hub"
 ```
 
-can be changed to:
+### Licence {.unnumbered}
+
+The licence tells others how they may reuse your training. The footer
+shows its name, linked to the page that explains it:
 
 ```yaml
-label: "November 2026"
+licence:
+  name: "CC BY 4.0"
+  url: "https://creativecommons.org/licenses/by/4.0/"
 ```
 
-Changing the label only changes the text visitors see. It does not change the course instance URL.
+::: {.callout-important}
+The licence also appears in `reuse` in `data/course.yml`, where it's
+used for the README and the citation. If you choose another licence,
+change it in **both** files, so they say the same, and replace the text
+in `LICENSE.md`. See [FAIRification](fairification.qmd) for help
+choosing a licence.
+:::
 
-### Change the order of course instances
+### Repository link {.unnumbered}
 
-The `sort_key` determines the chronological order of the course instances.
-
-1. In the main branch, open the `data` folder and then the file `instances.yml`.
-2. Change the value for `sort_key`. Use the format
-
-```text
-YYYYMM
-```
-
-For example:
+The GitHub logo in the footer links to your repository. Replace `url`
+with the address of your repository on GitHub:
 
 ```yaml
-sort_key: 202605
+repository:
+  url: "https://github.com/your-organisation/your-repository"
+  image: "img/logos/Github_Neg.png"
+  alt: "GitHub repository"
 ```
 
-represents May 2026.
+You find the address in your browser's address bar when you open your
+repository on GitHub, for example
+`https://github.com/SciLifeLab-Training/introduction-to-r`.
 
-::: {.quick-reference}
+::: {.callout-important}
+The repository link is **required**. The template also uses it to work
+out the address of your website, for the citation of your training.
+:::
 
-<span class="quick-reference-title">Quick reference</span>  
-<span class="quick-reference-subtitle"> Manage course instances </span>  
+### Built with {.unnumbered}
 
+The `built_with` part credits the SciLifeLab Training Webpage Template.
+You can usually leave it as it is.
 
-| To... | File | Edit |
+## Cheat sheet {#cheat-sheet}
+
+All changes on the landing page, on one screen. Everything happens on
+the **main** branch.
+
+### Template mode {.unnumbered .unlisted}
+
+| To... | File | What to change |
 |---|---|---|
-| Add a course instance | `data/instances.yml` | Copy an existing instance and update its values. |
-| Set the current instance | `data/instances.yml` | Set `status: current` for the new instance and `status: previous` for the old one. |
-| Show or hide a previous instance in the banner | `data/instances.yml` | Set `visible: true` or `visible: false`. |
-| Change the displayed name | `data/instances.yml` | Change the value of `label`. |
-| Change the instance order | `data/instances.yml` | Set `sort_key` using the format `YYYYMM`. |
+| Switch off template mode and remove the banner | `data/website.yml` | Set `template: false` |
 
-:::
+### Title and subtitle {.unnumbered .unlisted}
 
-## Edit the footer
-The footer at the bottom of the landing page contains information about the course page development, its licence, and a link to the course repository on GitHub.
-
-### Change the footer text
-
-1. In the main branch, open the `_sections` folder and then the file `footer.qmd`.
-2. Locate:
-
-```markdown
-By SciLifeLab Training Hub. Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Built with Quarto and hosted on GitHub Pages.
-```
-
-3. Replace the text with the information you want to display in the footer.
-
-::: {.callout-tip}
-If you use a licence other than **CC BY 4.0**, update both the licence name and its link.
-
-In `[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)`:
-
-- replace the text between `[ ]` with the name of the licence;
-- replace the URL between `( )` with the corresponding licence URL.
-:::
-
-
-### Change the GitHub repository link
-
-The GitHub logo in the footer links visitors to the course repository.
-
-1. In the main branch, open the `_sections` folder and then the file `footer.qmd`.
-2. Locate:
-
-```html
-<a href="https://github.com/SciLifeLab-Training/scilifelab-training-template-staging/tree/main" class="landing-footer__image-link">
-```
-
-2. Replace only the URL inside `href="..."` with the URL of your course repository.
-
-For example:
-
-```html
-<a href="https://github.com/your-organisation/your-course/tree/main" class="landing-footer__image-link">
-```
-
-::: {.quick-reference}
-
-<span class="quick-reference-title">Quick reference</span>   
-<span class="quick-reference-subtitle"> Edit the footer </span>  
-
-
-| To... | File | Edit |
+| To... | File | What to change |
 |---|---|---|
-| Change the footer text | `_sections/footer.qmd` | Replace the text inside the `landing-footer__meta` section. |
-| Change the GitHub repository link | `_sections/footer.qmd` | Replace the URL inside `href="..."` with the URL of your course repository. |
+| Change the title | `data/course.yml` | The value of `title` |
+| Change the subtitle | `data/course.yml` | The value of `subtitle` |
+| Leave out the subtitle | `data/course.yml` | Set `subtitle: ""` |
 
-:::
+### Logos {.unnumbered .unlisted}
+
+| To... | File | What to change |
+|---|---|---|
+| Add a logo file | `img/logos/` | Copy your logo (`.svg` or `.png`) into the folder |
+| Show a logo | `data/website.yml` | Add `- src:` and `alt:` lines under `hero:` → `logos:` |
+| Remove a logo | `data/website.yml` | Delete the `- src:` and `alt:` lines of the logo |
+| Delete an unused logo file (optional) | `img/logos/` | Delete the file |
+
+### Information cards {.unnumbered .unlisted}
+
+| To... | File | What to change |
+|---|---|---|
+| Change the training content | `data/course.yml` | The text below `description: \|` |
+| Change the learning outcomes | `data/course.yml` | The list under `learning_outcomes` |
+| Change the keywords | `data/course.yml` | The list under `keywords` |
+| Change the topics | `data/course.yml` | The list under `topics` |
+| Leave out the topics card | `data/course.yml` | Set `topics: []` |
+| Add or change founders and contributors | `data/team.yml` | Add or edit a person, with `roles` set to `Founder` or `Contributor` |
+
+### Training instances {.unnumbered .unlisted}
+
+| To... | File | What to change |
+|---|---|---|
+| Remove the example training instances | `data/instances.yml` | Delete their entries, except `"0000"` |
+| Add a training instance | `data/instances.yml` | Copy an entry to the top of the list and change `slug`, `label`, `instance_url` and `sort_key` |
+| Change the current training instance | `data/instances.yml` | Old one: `status: previous` and `show_in_hero: false`. New one: `status: current`, `visible: true` and `show_in_hero: true` |
+| Hide an earlier training instance | `data/instances.yml` | Set `visible: false` |
+| Change the text on a button | `data/instances.yml` | Change `label` |
+| Change the order | `data/instances.yml` | Set `sort_key` to the year and month, as YYYYMM |
+
+### Hero buttons {.unnumbered .unlisted}
+
+| To... | File | What to change |
+|---|---|---|
+| Add the registration link | `data/instances.yml` | `registration_url` of the current training instance |
+| Hide the registration button | `data/instances.yml` | Set `registration_url: ""` for the current training instance |
+| Hide the current instance button | `data/instances.yml` | Set `show_in_hero: false` for the current training instance |
+| Change the button texts | `data/website.yml` | `hero_view_current_label` and `hero_registration_open_label` under `labels` |
+| Change the heading of the banner | `data/website.yml` | `instances_band_title` under `labels` |
+
+### Banner image {.unnumbered .unlisted}
+
+| To... | File | What to change |
+|---|---|---|
+| Add your image | `img/images/` | Copy your image into the folder |
+| Use your image | `data/website.yml` | `image` under `instances_band` |
+| Show no image | `data/website.yml` | Set `image: ""` |
+| Adjust the cropping (optional) | `styles.css` | `object-position` in `.instances-band__image` |
+
+### Footer {.unnumbered .unlisted}
+
+| To... | File | What to change |
+|---|---|---|
+| Change the organisation | `data/website.yml` | `organisation` under `footer` |
+| Change the licence | `data/website.yml` and `data/course.yml` | `licence` under `footer`, and `licence` under `reuse`. Also replace `LICENSE.md` |
+| Link to your repository | `data/website.yml` | `url` under `footer` → `repository` |
+
+
+
+## Next steps {.unnumbered .unlisted}
+
+Your landing page now describes your training. Continue with:
+
+- [Training instances](training-instances.qmd): create the website for
+  each time your training is given.
+- [FAIRification](fairification.qmd): make your training citable and
+  findable.

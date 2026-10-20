@@ -294,7 +294,7 @@ Every time you work on your training, follow these steps in this order.
 | The website still shows the old version | Publishing isn't finished, or your browser shows an old copy | Wait a minute, then refresh the page |
 | You changed something by mistake (not committed yet) | — | Source Control panel: hover over the file and click the curved arrow (**Discard Changes**) |
 
-## Next steps
+## Next steps {.unnumbered .unlisted}
 
 You now know the routine for every change. Continue with:
 
