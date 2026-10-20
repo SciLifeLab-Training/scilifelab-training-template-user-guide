@@ -94,7 +94,7 @@
     "href": "workflow.html#open-your-training",
     "title": "3  Regular workflow",
     "section": "",
-    "text": "Open VS Code. It usually reopens the repository you worked on last. \nIf not, choose File → Open Recent, or File → Open Folder… and select your repository folder.\n\nGet the latest version. If you work together with others, they may have uploaded changes since you last worked. In the bottom-left corner of VS Code, click the circular arrows next to the branch name (Synchronize Changes). This downloads their changes to your computer.\n\n\n\nWhich part of your website are you working on?\nThe bottom-left corner of VS Code also shows the branch you are working on. Your repository keeps each part of your training website in its own branch:\n\nmain: the training landing page.\nrelease- followed by four digits, for example release-2605: one training instance, here the one in May 2026.\n\n\nBefore you start editing, check that you are on the branch you want to change. You will learn how to switch branches in the chapter Training instances. For your first change below, stay on main.\n\nDone when: your repository is open in VS Code, and the bottom-left corner shows the branch you want to work on.",
+    "text": "Open VS Code. It usually reopens the repository you worked on last. \nIf not, choose File → Open Recent, or File → Open Folder… and select your repository folder.\n\nGet the latest version. If you work together with others, they may have uploaded changes since you last worked. In the bottom-left corner of VS Code, click the circular arrows next to the branch name (Synchronize Changes). This downloads their changes to your computer.\n\n\n\nWhich part of your website are you working on?\nThe bottom-left corner of VS Code also shows the branch you are working on. Your repository keeps each part of your training website in its own branch:\n\nmain: the training landing page.\nrelease- followed by four digits, for example release-2605: one training instance, here the one in May 2026.\n\n\nBefore you start editing, check that you are on the branch you want to change. For your first change below, stay on main.\n\nDone when: your repository is open in VS Code, and the bottom-left corner shows the branch you want to work on.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Regular workflow</span>"
     ]
@@ -174,27 +174,7 @@
     "href": "repository-structure.html",
     "title": "4  Repository structure",
     "section": "",
-    "text": "4.1 Repository\nBy default, GitHub displays the main branch. This branch contains the course landing page and general information about your course.\nThe template also contains additional branches used for course instances and publication. You will work with these later in the guide.\nmain │ ├── Landing page │ ├── Course information │ └── Links to course instances\n2505 │ └── May 2025 course website\n2601 │ └── January 2026 course website\n2605 │ └── May 2026 course website",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Repository structure</span>"
-    ]
-  },
-  {
-    "objectID": "repository-structure.html#repository",
-    "href": "repository-structure.html#repository",
-    "title": "4  Repository structure",
-    "section": "",
-    "text": "I want to…\nBranch\n\n\n\n\nChange the landing page\nmain\n\n\nAdd a new course instance\ncreate a new instance branch\n\n\nEdit the May 2026 materials\n2605\n\n\nFix a typo in January 2026\n2601",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Repository structure</span>"
-    ]
-  },
-  {
-    "objectID": "repository-structure.html#landing-page",
-    "href": "repository-structure.html#landing-page",
-    "title": "4  Repository structure",
-    "section": "4.2 Landing page",
-    "text": "4.2 Landing page\n\n\n\n\n\n\n\n\nFolder\nPurpose\nEdit?\n\n\n\n\n_sections/\nLanding page content\n✅ Frequently\n\n\ndata/\nLanding page configuration\n✅ Frequently\n\n\nimg/\nImages and logos\n✅ Frequently\n\n\nstyles.css\nLanding page styling\n🟡 Occasionally\n\n\nscripts/\nGenerates dynamic landing page content\n❌ Usually no\n\n\ntests/\nAutomated tests\n❌ Usually no\n\n\n.github/workflows/\nGitHub Actions\n❌ Usually no\n\n\ndocs/developer/\nDeveloper documentation\n❌ Only template developers\n\n\n.quarto/\nQuarto cache\n❌ Automatically generated\n\n\n_site/\nGenerated website\n❌ Automatically generated\n\n\n.venv/\nVirtual environment\n❌ Automatically created\n\n\n\n/ ├── _sections/ ├── data/ ├── img/ ├── scripts/ ├── tests/ ├── docs/ ├── styles.css ├── index.qmd └── …",
+    "text": "4.1 Branches\nYou now know the routine for making a change and publishing it, from Regular workflow. You’re ready to make the template your own, with the information and materials of your training.\nBefore you start, it helps to know how your repository is organised. This chapter shows you where everything lives, so you always know where to make a change, and which files you don’t need to edit.\nYour training repository is divided into branches. Each branch holds the files for one part of your website. A new repository made from the template has three branches: main, release-0000 and gh-pages.\nEach of these branches holds the files for one part of your website:\nBecause each training instance has its own branch, you can prepare the next training without changing the website of an earlier one. Participants of earlier trainings can always go back to the materials as they were.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Repository structure</span>"
     ]
@@ -203,8 +183,58 @@
     "objectID": "repository-structure.html#branches",
     "href": "repository-structure.html#branches",
     "title": "4  Repository structure",
-    "section": "4.3 Branches",
-    "text": "4.3 Branches\n\n\n\n\n\n\nNote\n\n\n\nThe course website uses different branches for different purposes:\n\nmain contains the course landing page and general course information.\nCourse instance branches contain the training materials for individual course runs.\ngh-pages contains the published website and is managed automatically.\n\nYou should not edit the gh-pages branch directly.",
+    "section": "",
+    "text": "The main branch holds the landing page: the general page about your training, with its description, learning outcomes and team, and links to every time the training is given.\n\nThe gh-pages branch holds the published website: the finished pages that visitors see. GitHub builds them from your other branches and updates this branch automatically every time you push a change.\n\n\n\n\n\n\n\nWarning\n\n\n\nNever edit the gh-pages branch yourself. GitHub updates it automatically every time you push a change to one of the other branches.\n\n\n\nThe release-0000 branch is an example training instance: the website for one time the training is given, with its dates, schedule, practical information, team and training materials. You use it as the starting point for each new training instance, which gets a branch of its own.\n\n\n\n\nBranch names\nA training instance branch is named release- followed by the year and month of the training, written as YYMM. For example, release-2705 is the training in May 2027.\n\n\nAn example\nThis is what the branches look like in a repository for a training that has been given twice, in May 2026 and May 2027:\nYour repository\n│\n├── main              The landing page: the general page about your\n│                     training, with links to every training instance.\n│\n├── release-2605      The website of your training in May 2026.\n├── release-2705      The website of your training in May 2027.\n│\n├── release-0000      The example training instance that comes with\n│                     the template.\n│\n└── gh-pages          The published website. Updated automatically.\nIn this repository, you would work on these branches:\n\n\n\nI want to…\nI work on branch…\n\n\n\n\nChange the landing page\nmain\n\n\nEdit the materials of the May 2026 training\nrelease-2605\n\n\nFix a typo on the May 2027 website\nrelease-2705\n\n\nSet up the next training instance\nA new release- branch: see Training instances\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nYou work on one branch at a time. To learn how to switch to another branch in VS Code, see Switch branch.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Repository structure</span>"
+    ]
+  },
+  {
+    "objectID": "repository-structure.html#three-kinds-of-files",
+    "href": "repository-structure.html#three-kinds-of-files",
+    "title": "4  Repository structure",
+    "section": "4.2 Three kinds of files",
+    "text": "4.2 Three kinds of files\nWhen you open a branch of your repository in VS Code, you see many files and folders. Don’t worry: you only have to work with a few of them. On all branches, the files fall into three groups:\n\n\n\n\n\n\n\n\nIcon\nKind\nWhat it means for you\n\n\n\n\n✏️\nFiles you edit\nYour information and materials. This is where you make your changes.\n\n\n🔄\nFiles that are updated automatically\nThe template creates and updates these files automatically. You should not edit them, but if you accidentally do, your edits will automatically be overwritten.\n\n\n🔒\nFiles you can leave alone\nThe parts that make the template work, you never need to change these.\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nThe automatically updated files 🔄 often appear in the Source Control panel when you only changed a data file. That’s expected: commit them together with your own changes, as described in Commit and push your changes.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Repository structure</span>"
+    ]
+  },
+  {
+    "objectID": "repository-structure.html#files-on-the-main-branch",
+    "href": "repository-structure.html#files-on-the-main-branch",
+    "title": "4  Repository structure",
+    "section": "4.3 Files on the main branch",
+    "text": "4.3 Files on the main branch\nOn the main branch, everything for your training’s landing page lives in these files and folders:\n\nThe table below explains what each one is for, and whether you edit it ✏️, it’s updated automatically 🔄, or you can leave it alone 🔒.\n\n\n\n\n\n\n\n\nFile or folder\nWhat it contains\nKind of file\n\n\n\n\ndata/course.yml\nThe title, description, learning outcomes and keywords of your training, and how others may reuse and cite it\n✏️\n\n\ndata/team.yml\nThe people behind the training\n✏️\n\n\ndata/website.yml\nThe logos, button texts and footer of the landing page\n✏️\n\n\ndata/instances.yml\nThe list of training instances, with links to their websites\n✏️\n\n\nimg/\nThe images and logos used on the landing page\n✏️\n\n\nREADME.md\nThe description shown on your repository’s main page on GitHub. The parts between &lt;!-- generated:... --&gt; lines are updated automatically; you can edit the rest\n✏️ 🔄\n\n\n_generated/\nThe sections of the landing page, built from your data files\n🔄\n\n\nCITATION.cff\nHow to cite your training, built from your data files\n🔄\n\n\n.zenodo.json\nThe information Zenodo uses when you publish your training, built from your data files\n🔄\n\n\nLICENSE.md\nThe full text of the licence of your training: CC BY 4.0, unless you choose another licence in data/course.yml. Only replace it if you do\n✏️🔒\n\n\nindex.qmd, _sections/\nThe building blocks that put the landing page together\n🔒\n\n\nstyles.css\nThe look of the website: colours, fonts and layout\n🔒\n\n\n_template/\nInformation about the template itself, used only by the template’s own website\n🔒\n\n\nscripts/, tests/\nThe scripts that build the website, and the checks that test them\n🔒\n\n\n.github/\nThe automatic processes that publish your website on GitHub\n🔒\n\n\ndocs/\nDocumentation for developers of the template\n🔒\n\n\n.vscode/\nSettings for VS Code, such as the extensions it recommends when you open the repository\n🔒\n\n\n.gitignore\nThe list of files that stay on your computer and are never uploaded to GitHub, such as your preview and environment\n🔒\n\n\n_quarto.yml, requirements.txt, requirements-dev.txt\nSettings for Quarto, and the Python packages the scripts need\n🔒\n\n\n\nWhen you preview your website, a few more folders appear on your computer: _site/ (the website itself), .quarto/ and .venv/ (your environment). They are listed in .gitignore, so they are never uploaded to GitHub, and you can ignore them.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Repository structure</span>"
+    ]
+  },
+  {
+    "objectID": "repository-structure.html#files-on-a-training-instance-branch",
+    "href": "repository-structure.html#files-on-a-training-instance-branch",
+    "title": "4  Repository structure",
+    "section": "4.4 Files on a training instance branch",
+    "text": "4.4 Files on a training instance branch\nA training instance branch has the same structure as main, plus the information pages of the training instance website and your training materials.\n\nThe table below explains what each one is for, and whether you edit it ✏️, it’s updated automatically 🔄, or you can leave it alone 🔒.\n\n\n\n\n\n\n\n\nFile or folder\nWhat it contains\nKind of file\n\n\n\n\ndata/course.yml\nThe title, dates, location and description of this training instance, and how others may reuse and cite it (required)\n✏️\n\n\ndata/team.yml\nThe organisers, instructors and helpers (required)\n✏️\n\n\ndata/website.yml\nThe logos, texts and sections of the overview page, and the footer (required)\n✏️\n\n\ndata/schedule.yml\nThe schedule of the training (optional)\n✏️\n\n\ndata/announcements.yml, practicalities.yml, preparation.yml, faq.yml, resources.yml\nThe information pages (optional)\n✏️\n\n\ncontent/\nYour training materials, with one folder per module\n✏️\n\n\nimg/\nThe images, logos and photos used on the website\n✏️\n\n\nREADME.md\nThe description shown on your repository’s main page on GitHub. The parts between &lt;!-- generated:... --&gt; lines are updated automatically; you can edit the rest\n✏️ 🔄\n\n\nCONTRIBUTING.md\nHow participants can suggest improvements to your training. Ready to use, but you can adapt it if you like\n✏️ 🔒\n\n\nLICENSE.md\nThe full text of the licence of your training: CC BY 4.0, unless you choose another licence in data/course.yml. Only replace it if you do\n✏️🔒\n\n\n_generated/\nThe sections of the website, built from your data files\n🔄\n\n\nCITATION.cff, .zenodo.json\nHow to cite this training instance, and the information Zenodo uses, built from your data files\n🔄\n\n\nindex.qmd, schedule.qmd, team.qmd and the other .qmd files\nThe pages of the website. They collect their content from your data files\n🔒\n\n\n_sections/, js/, styles.css\nThe building blocks, interactive parts and look of the website\n🔒\n\n\nscripts/, .github/, docs/\nThe scripts that build the website, the automatic processes that publish it, and documentation for developers of the template\n🔒\n\n\n_quarto.yml, requirements.txt, .gitignore\nSettings for Quarto, the Python packages the scripts need, and the list of files that are never uploaded to GitHub\n🔒\n\n\n\nWhen you preview your website, a few more folders appear on your computer: _site/ (the website itself), .quarto/ and .venv/ (your environment). They are listed in .gitignore, so they are never uploaded to GitHub, and you can ignore them.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Repository structure</span>"
+    ]
+  },
+  {
+    "objectID": "repository-structure.html#data-files",
+    "href": "repository-structure.html#data-files",
+    "title": "4  Repository structure",
+    "section": "4.5 Data files",
+    "text": "4.5 Data files\nAs the tables above show, most of the files you edit are data files: the files ending in .yml in the data folder.\nWhen you open a data file, for example data/course.yml on the main branch, you see three kinds of text. VS Code shows each in its own colour:\n\n\nExplanations (grey in the screenshot): lines that start with #. They explain how the file works and what each field does, and don’t appear on your website. You can delete them if you prefer a shorter file, but they are useful to keep while you are getting to know the template.\nField names (green): the word before the colon, for example title:. They tell the template where each piece of information goes on your website. Never change field names. If you do, the template can’t find that information any more.\nValues (blue): the text after the colon, usually between quotation marks. This is what you change. It is the information that appears on your website.\n\nFor example, in this line:\ntitle: \"Training title\"\ntitle is the field name: leave it as it is. \"Training title\" is the value: replace it with the title of your training.\n\n\n\n\n\n\nNote\n\n\n\nThe colours depend on the colour theme you use in VS Code, so yours may look different from the screenshot. The rule is always the same: lines starting with # are explanations, the word before the colon is the field name, and the text after the colon is the value you change.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nKeep the layout\nData files are very sensitive to layout:\n\nKeep the spaces at the start of each line exactly as they are. They show which information belongs together.\nKeep the quotation marks around values.\nLines starting with - are list items. To add an item, copy a whole line and change its value.\n\nIf the preview shows an error after you save a data file, check these first. The error message usually names the file and the line.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Repository structure</span>"
+    ]
+  },
+  {
+    "objectID": "repository-structure.html#next-steps",
+    "href": "repository-structure.html#next-steps",
+    "title": "4  Repository structure",
+    "section": "4.6 Next steps",
+    "text": "4.6 Next steps\nNow that you know your way around, continue with:\n\nLanding page: describe your training on the landing page.\nTraining instances: create the website for each time your training is given.\nFAIRification: make your training citable and findable.\n\n\n\n\nThis User Guide is maintained by the SciLifeLab Training Hub.\nQuestions, problems or ideas for improving the guide or the template? Open an issue or email us at training@scilifelab.se.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Repository structure</span>"
     ]
