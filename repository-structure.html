@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-95863af46656191e6a2cf1560d98dcd6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7e1b33d4ae04fceeae7f1a313bee935a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -208,8 +208,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#three-kinds-of-files" id="toc-three-kinds-of-files" class="nav-link" data-scroll-target="#three-kinds-of-files"><span class="header-section-number">4.2</span> Three kinds of files</a></li>
   <li><a href="#files-on-the-main-branch" id="toc-files-on-the-main-branch" class="nav-link" data-scroll-target="#files-on-the-main-branch"><span class="header-section-number">4.3</span> Files on the main branch</a></li>
   <li><a href="#files-on-a-training-instance-branch" id="toc-files-on-a-training-instance-branch" class="nav-link" data-scroll-target="#files-on-a-training-instance-branch"><span class="header-section-number">4.4</span> Files on a training instance branch</a></li>
-  <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files"><span class="header-section-number">4.5</span> Data files</a></li>
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps"><span class="header-section-number">4.6</span> Next steps</a></li>
+  <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files">Data files</a></li>
   </ul>
 </nav>
     </div>
@@ -378,7 +377,7 @@ Tip
 <section id="files-on-the-main-branch" class="level2" data-number="4.3">
 <h2 data-number="4.3" data-anchor-id="files-on-the-main-branch"><span class="header-section-number">4.3</span> Files on the main branch</h2>
 <p>On the <strong>main</strong> branch, everything for your training’s landing page lives in these files and folders:</p>
-<p><img src="images/structure-04-mainbranchfiles.png" class="img-fluid" style="width:40.0%" alt="Screenshot: files in the main branch."></p>
+<p><img src="images/structure-04-mainbranchfiles.png" class="img-fluid" style="width:35.0%" alt="Screenshot: files in the main branch."></p>
 <p>The table below explains what each one is for, and whether you edit it ✏️, it’s updated automatically 🔄, or you can leave it alone 🔒.</p>
 <table class="caption-top table">
 <colgroup>
@@ -420,28 +419,38 @@ Tip
 <td style="text-align: center;">✏️</td>
 </tr>
 <tr class="even">
+<td><code>docs/</code></td>
+<td>The README for your training (<code>_template-README.md</code>), which you copy over <code>README.md</code> when you start, and documentation for developers of the template</td>
+<td style="text-align: center;">✏️ 🔄</td>
+</tr>
+<tr class="odd">
 <td><code>README.md</code></td>
 <td>The description shown on your repository’s main page on GitHub. The parts between <code>&lt;!-- generated:... --&gt;</code> lines are updated automatically; you can edit the rest</td>
 <td style="text-align: center;">✏️ 🔄</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>_generated/</code></td>
 <td>The sections of the landing page, built from your data files</td>
 <td style="text-align: center;">🔄</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>CITATION.cff</code></td>
 <td>How to cite your training, built from your data files</td>
 <td style="text-align: center;">🔄</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>.zenodo.json</code></td>
 <td>The information Zenodo uses when you publish your training, built from your data files</td>
 <td style="text-align: center;">🔄</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>LICENSE.md</code></td>
 <td>The full text of the licence of your training: CC BY 4.0, unless you choose another licence in <code>data/course.yml</code>. Only replace it if you do</td>
+<td style="text-align: center;">✏️🔒</td>
+</tr>
+<tr class="even">
+<td><code>CONTRIBUTING.md</code></td>
+<td>How others can report problems and suggest improvements to your training.Ready to use, but you can adapt it if you like</td>
 <td style="text-align: center;">✏️🔒</td>
 </tr>
 <tr class="odd">
@@ -456,7 +465,7 @@ Tip
 </tr>
 <tr class="odd">
 <td><code>_template/</code></td>
-<td>Information about the template itself, used only by the template’s own website</td>
+<td>Information about the template itself, used only while template mode is on. You can delete it once you’ve switched template mode off</td>
 <td style="text-align: center;">🔒</td>
 </tr>
 <tr class="even">
@@ -470,21 +479,16 @@ Tip
 <td style="text-align: center;">🔒</td>
 </tr>
 <tr class="even">
-<td><code>docs/</code></td>
-<td>Documentation for developers of the template</td>
-<td style="text-align: center;">🔒</td>
-</tr>
-<tr class="odd">
 <td><code>.vscode/</code></td>
 <td>Settings for VS Code, such as the extensions it recommends when you open the repository</td>
 <td style="text-align: center;">🔒</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>.gitignore</code></td>
 <td>The list of files that stay on your computer and are never uploaded to GitHub, such as your preview and environment</td>
 <td style="text-align: center;">🔒</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>_quarto.yml</code>, <code>requirements.txt</code>, <code>requirements-dev.txt</code></td>
 <td>Settings for Quarto, and the Python packages the scripts need</td>
 <td style="text-align: center;">🔒</td>
@@ -495,7 +499,7 @@ Tip
 </section>
 <section id="files-on-a-training-instance-branch" class="level2" data-number="4.4">
 <h2 data-number="4.4" data-anchor-id="files-on-a-training-instance-branch"><span class="header-section-number">4.4</span> Files on a training instance branch</h2>
-<p>A <strong>training instance</strong> branch has the same structure as <strong>main</strong>, plus the information pages of the training instance website and your training materials.</p>
+<p>A <strong>training instance</strong> branch has the same structure as <strong>main</strong>, plus the information pages of the specific training instance, your training materials, and (reuse) guidance for training instructors.</p>
 <p><img src="images/structure-05-instancebranchfiles.png" class="img-fluid" style="width:40.0%" alt="VS Code Explorer panel showing the files and folders of a training instance branch."></p>
 <p>The table below explains what each one is for, and whether you edit it ✏️, it’s updated automatically 🔄, or you can leave it alone 🔒.</p>
 <table class="caption-top table">
@@ -543,51 +547,56 @@ Tip
 <td style="text-align: center;">✏️</td>
 </tr>
 <tr class="odd">
+<td><code>instructors/</code></td>
+<td>Notes for instructors: timing, preparation and teaching notes for each module. Not shown on the website, but anyone can read it on GitHub</td>
+<td style="text-align: center;">✏️</td>
+</tr>
+<tr class="even">
 <td><code>img/</code></td>
 <td>The images, logos and photos used on the website</td>
 <td style="text-align: center;">✏️</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>README.md</code></td>
 <td>The description shown on your repository’s main page on GitHub. The parts between <code>&lt;!-- generated:... --&gt;</code> lines are updated automatically; you can edit the rest</td>
 <td style="text-align: center;">✏️ 🔄</td>
 </tr>
-<tr class="odd">
-<td><code>CONTRIBUTING.md</code></td>
-<td>How participants can suggest improvements to your training. Ready to use, but you can adapt it if you like</td>
-<td style="text-align: center;">✏️ 🔒</td>
-</tr>
 <tr class="even">
+<td><code>CONTRIBUTING.md</code></td>
+<td>How others can report problems and suggest improvements to your training. Ready to use, but you can adapt it if you like</td>
+<td style="text-align: center;">✏️🔒</td>
+</tr>
+<tr class="odd">
 <td><code>LICENSE.md</code></td>
 <td>The full text of the licence of your training: CC BY 4.0, unless you choose another licence in <code>data/course.yml</code>. Only replace it if you do</td>
 <td style="text-align: center;">✏️🔒</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>_generated/</code></td>
 <td>The sections of the website, built from your data files</td>
 <td style="text-align: center;">🔄</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>CITATION.cff</code>, <code>.zenodo.json</code></td>
 <td>How to cite this training instance, and the information Zenodo uses, built from your data files</td>
 <td style="text-align: center;">🔄</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>index.qmd</code>, <code>schedule.qmd</code>, <code>team.qmd</code> and the other <code>.qmd</code> files</td>
 <td>The pages of the website. They collect their content from your data files</td>
 <td style="text-align: center;">🔒</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>_sections/</code>, <code>js/</code>, <code>styles.css</code></td>
 <td>The building blocks, interactive parts and look of the website</td>
 <td style="text-align: center;">🔒</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>scripts/</code>, <code>.github/</code>, <code>docs/</code></td>
 <td>The scripts that build the website, the automatic processes that publish it, and documentation for developers of the template</td>
 <td style="text-align: center;">🔒</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>_quarto.yml</code>, <code>requirements.txt</code>, <code>.gitignore</code></td>
 <td>Settings for Quarto, the Python packages the scripts need, and the list of files that are never uploaded to GitHub</td>
 <td style="text-align: center;">🔒</td>
@@ -596,8 +605,8 @@ Tip
 </table>
 <p>When you preview your website, a few more folders appear on your computer: <code>_site/</code> (the website itself), <code>.quarto/</code> and <code>.venv/</code> (your environment). They are listed in <code>.gitignore</code>, so they are never uploaded to GitHub, and you can ignore them.</p>
 </section>
-<section id="data-files" class="level2" data-number="4.5">
-<h2 data-number="4.5" data-anchor-id="data-files"><span class="header-section-number">4.5</span> Data files</h2>
+<section id="data-files" class="level2 unnumbered">
+<h2 class="unnumbered" data-anchor-id="data-files">Data files</h2>
 <p>As the tables above show, most of the files you edit are <strong>data files</strong>: the files ending in <code>.yml</code> in the <code>data</code> folder.</p>
 <p>When you open a data file, for example <code>data/course.yml</code> on the <strong>main</strong> branch, you see three kinds of text. VS Code shows each in its own colour:</p>
 <p><img src="images/structure-06-courseyml.png" class="img-fluid" style="width:90.0%" alt="The top of data/course.yml in VS Code, with explanations in grey, field names in green and values in blue."></p>
@@ -643,8 +652,8 @@ Warning
 </div>
 </div>
 </section>
-<section id="next-steps" class="level2" data-number="4.6">
-<h2 data-number="4.6" data-anchor-id="next-steps"><span class="header-section-number">4.6</span> Next steps</h2>
+<section id="next-steps" class="level2 unnumbered unlisted">
+<h2 class="unnumbered unlisted" data-anchor-id="next-steps">Next steps</h2>
 <p>Now that you know your way around, continue with:</p>
 <ul>
 <li><a href="./landing-page.html">Landing page</a>: describe your training on the landing page.</li>
