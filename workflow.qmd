@@ -10,7 +10,7 @@ publish them.
 The steps are always the same, whether you change a date, add a team
 member or write a new page of materials.
 The [cheat sheet](#cheat-sheet) at the end
-of this chapter lists all of them on one screen, for when you just need a
+of this chapter lists all of them in one table, for when you just need a
 reminder.
 
 ![](images/workflow-overview-image.png){fig-alt="Workflow showing the regular editing and publishing steps."}
@@ -51,7 +51,7 @@ branch:
 
 - **main**: the training landing page.
 - **release-** followed by four digits, for example **release-2605**: one
-  training instance, here the one in May 2026.
+  training instance in May 2026. In your template copy, it will say **release-0000**
 
    ![](images/workflow-04-branches.png){width=60% fig-alt="Screenshot: VS Code status bar showing the branch name main."}
 
@@ -124,7 +124,7 @@ website by changing these files, without touching any code.
 
 How these files are organised is explained in
 [Repository structure](repository-structure.qmd). For now, we focus on
-making one change and publishing it, so you can see the whole process
+making one change and publishing it, so you can practice the whole process
 from start to finish.
 
 As a first change, try changing the title of your training:
@@ -139,7 +139,7 @@ As a first change, try changing the title of your training:
    title: "Training title"
    ```
 
-3. Change the text between the quotation marks, for example:
+3. Change the text between the quotation marks to your training's title, for example:
 
    ```yaml
    title: "Introduction to R"
@@ -150,14 +150,14 @@ As a first change, try changing the title of your training:
 4. Save the file with **Cmd+S** (macOS) or **Ctrl+S** (Windows and
    Linux).
 
-The new title appears at the top of the preview in your browser.
+The new title now appears at the top of the website preview in your browser.
 
 ![](images/workflow-11-changedtrainingtitle.png){width=80% fig-alt="Screenshot: Updated title in the preview."}
 
 ::: {.callout-warning}
-The data files are sensitive to layout. Keep the quotation marks, and
-keep the spaces at the start of each line exactly as they are. If the
-preview shows an error after you save, check those first. The lines
+**The data files are very sensitive to layout!** Keep the quotation marks, and
+keep the indentation at the start of each line exactly as it is. If the
+preview shows an error after you save, check the file layout first. The lines
 starting with `#` are explanations: they don't appear on the website.
 :::
 
@@ -234,7 +234,7 @@ start the preview (`python scripts/preview.py`) and wait a few seconds.
 
 ## Check the published website
 
-After you push, GitHub rebuilds and publishes your website by itself.
+After you push your local changes to GitHub to be published, GitHub rebuilds your website by itself.
 This usually takes one or two minutes. You can follow it on GitHub:
 
 1. Open your repository on GitHub and click the **Actions** tab.  

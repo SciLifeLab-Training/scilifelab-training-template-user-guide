@@ -55,9 +55,9 @@ computer.
 ## Create your repository
 
 A **repository** is the folder on GitHub that holds everything for your
-training: the information about it, the materials, and the website. You
+training: the information about it, the materials, and the website. You will
 create your own repository as a copy of the template. The template itself
-stays unchanged, so you can't break anything for others.
+stays unchanged.
 
 1. Open the
    [SciLifeLab Training Webpage Template](https://github.com/SciLifeLab-Training/scilifelab-training-template)

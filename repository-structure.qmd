@@ -2,13 +2,10 @@
 title: "Repository structure"
 ---
 
-You now know the routine for making a change and publishing it, from
-[Regular workflow](workflow.qmd). You're ready to make the template your
-own, with the information and materials of your training.
-
-Before you start, it helps to know how your repository is organised.
-This chapter shows you where everything lives, so you always know where
-to make a change, and which files you don't need to edit.
+You now know the routine for making a change to your training website, and how to publish it (see [Regular workflow](workflow.qmd)).  
+Before fully making the template your own, with the information and materials of your training, it helps to know how the repository is organised.  
+This chapter shows you where different parts of the website live, so you always know where
+to make a change.
 
 <br>
 
@@ -54,7 +51,7 @@ as they were.
 
 A training instance branch is named **release-** followed by the year
 and month of the training, written as YYMM. For example,
-**release-2705** is the training in May 2027.
+**release-2705** is the training instance held in May 2027.
 
 ### An example {.unnumbered}
 
@@ -95,7 +92,7 @@ branch in VS Code, see
 ## Three kinds of files
 
 When you open a branch of your repository in VS Code, you see many files and
-folders. Don't worry: you only have to work with a few of them. On all branches, the files fall
+folders. Most of these you never have to edit, you only have to work with a few of them. On all branches, the files fall
 into three groups:
 
 | Icon | Kind | What it means for you |
@@ -108,7 +105,7 @@ into three groups:
 
 ::: {.callout-tip}
 The automatically updated files 🔄 often appear in the Source Control
-panel when you only changed a data file. That's expected: commit them
+panel when you only edited one ✏️  file. That's expected: commit them
 together with your own changes, as described in
 [Commit and push your changes](workflow.qmd#commit-and-push-your-changes).
 :::
@@ -125,12 +122,12 @@ The table below explains what each one is for, and whether you edit it
 
 | File or folder | What it contains | Kind of file |
 |---|---|:---:|
-| `data/course.yml` | The title, description, learning outcomes and keywords of your training, and how others may reuse and cite it | ✏️ |
+| `data/course.yml` | The title, description, learning outcomes, etc. of your training, and how others may reuse and cite it | ✏️ |
 | `data/team.yml` | The people behind the training | ✏️ |
 | `data/website.yml` | The logos, button texts and footer of the landing page | ✏️ |
 | `data/instances.yml` | The list of training instances, with links to their websites | ✏️ |
 | `img/` | The images and logos used on the landing page | ✏️ |
-| `docs/` | The README for your training (`_template-README.md`), which you copy over `README.md` when you start, and documentation for developers of the template | ✏️ 🔄 |
+| `docs/` | The README for your training (`_template-README.md`), which you copy over `README.md` when you start, and documentation for developers of the template | ✏️ |
 | `README.md` | The description shown on your repository's main page on GitHub. The parts between `<!-- generated:... -->` lines are updated automatically; you can edit the rest | ✏️ 🔄 |
 | `_generated/` | The sections of the landing page, built from your data files | 🔄 |
 | `CITATION.cff` | How to cite your training, built from your data files | 🔄 |
@@ -156,8 +153,8 @@ uploaded to GitHub, and you can ignore them.
 ## Files on a training instance branch
 
 A **training instance** branch has the same structure as **main**, plus
-the information pages of the specific training instance, your
-training materials, and (reuse) guidance for training instructors. 
+the information pages of that training instance, your training
+materials, and notes for instructors who teach or reuse the training.
 
 ![](images/structure-05-instancebranchfiles.png){width=40% fig-alt="VS Code Explorer panel showing the files and folders of a training instance branch."}
 
@@ -170,18 +167,19 @@ The table below explains what each one is for, and whether you edit it
 | `data/team.yml` | The organisers, instructors and helpers (required)| ✏️ |
 | `data/website.yml` | The logos, texts and sections of the overview page, and the footer (required)| ✏️ |
 | `data/schedule.yml` | The schedule of the training (optional) | ✏️ |
-| `data/announcements.yml`, `practicalities.yml`, `preparation.yml`, `faq.yml`, `resources.yml` | The information pages (optional) | ✏️ |
-| `content/` | Your training materials, with one folder per module | ✏️ |
+| `data/announcements.yml`, `practicalities.yml`, `preparation.yml`, `faq.yml`, `resources.yml` | The information pages (all optional) | ✏️ |
+| `content/` | Your training materials | ✏️ |
 | `instructors/` | Notes for instructors: timing, preparation and teaching notes for each module. Not shown on the website, but anyone can read it on GitHub | ✏️ |
 | `img/` | The images, logos and photos used on the website | ✏️ |
-| `README.md` | The description shown on your repository's main page on GitHub. The parts between `<!-- generated:... -->` lines are updated automatically; you can edit the rest | ✏️ 🔄 |
+| `docs/` | The README for your training (`_template-README.md`), which you copy over `README.md` when you start, example files used in the example module pages; and documentation for developers of the template | ✏️ |
+| `README.md` | The description GitHub shows when someone opens this branch. The parts between `<!-- generated:... -->` lines are updated automatically; you can edit the rest | ✏️ 🔄 |
 | `CONTRIBUTING.md` | How others can report problems and suggest improvements to your training. Ready to use, but you can adapt it if you like | ✏️🔒 |
 | `LICENSE.md` | The full text of the licence of your training: CC BY 4.0, unless you choose another licence in `data/course.yml`. Only replace it if you do | ✏️🔒 |
-| `_generated/` | The sections of the website, built from your data files | 🔄 |
+| `_generated/` | The sections of the website, built from your data files when you preview. Not uploaded to GitHub | 🔄 |
 | `CITATION.cff`, `.zenodo.json` | How to cite this training instance, and the information Zenodo uses, built from your data files | 🔄 |
 | `index.qmd`, `schedule.qmd`, `team.qmd` and the other `.qmd` files | The pages of the website. They collect their content from your data files | 🔒 |
 | `_sections/`, `js/`, `styles.css` | The building blocks, interactive parts and look of the website | 🔒 |
-| `scripts/`, `.github/`, `docs/` | The scripts that build the website, the automatic processes that publish it, and documentation for developers of the template | 🔒 |
+| `scripts/`, `.github/` | The scripts that build the website, and the automatic processes that publish it | 🔒 |
 | `_quarto.yml`, `requirements.txt`, `.gitignore` | Settings for Quarto, the Python packages the scripts need, and the list of files that are never uploaded to GitHub | 🔒 |
 
 : {tbl-colwidths="[30,55,15]"}
@@ -194,7 +192,7 @@ uploaded to GitHub, and you can ignore them.
 ## Data files {#data-files .unnumbered}
 
 
-As the tables above show, most of the files you edit are **data files**:
+As the tables above show, most of the files you edit in the main branch as well as the instance branches are **data files**:
 the files ending in `.yml` in the `data` folder.
 
 When you open a data file, for example `data/course.yml` on the
@@ -234,14 +232,12 @@ field name, and the text after the colon is the value you change.
 
 ::: {.callout-warning}
 
-**Keep the layout**
+**Data files are very sensitive to layout:**
 
-Data files are very sensitive to layout:
-
-- Keep the **spaces at the start of each line** exactly as they are.
+- Keep the spaces at the start of each line exactly as they are.
   They show which information belongs together.
-- Keep the **quotation marks** around values.
-- Lines starting with `-` are **list items**. To add an item, copy a
+- Keep the quotation marks around values.
+- Lines starting with `-` are list items. To add an item, copy a
   whole line and change its value.
 
 If the preview shows an error after you save a data file, check these

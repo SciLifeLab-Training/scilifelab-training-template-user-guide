@@ -10,7 +10,7 @@ instance to open.
 The figure below shows the parts of the landing page, and the names this
 guide uses for them.
 
-![](images/landing-01-overview.png){width=75% fig-alt="Annotated example of the landing page showing the template banner, training title and subtitle, logos, hero buttons, information cards, the All training instances banner with its image, and the footer."}
+![](images/landing-01-overview.png){width=85% fig-alt="Annotated example of the landing page showing the template banner, training title and subtitle, logos, hero buttons, information cards, the All training instances banner with its image, and the footer."}
 
 In this chapter, you will learn how to:
 
@@ -40,25 +40,56 @@ all of it in the four data files in the `data` folder:
 Work as described in [Regular workflow](workflow.qmd): start the
 preview with `python scripts/preview.py`, make your changes, save them, and check
 them in your browser. You don't have to commit after every change:
-you can make several changes, and commit and push them together.
+you can make several changes, and commit and push them together (see [Commit and push your changes](workflow.qmd#commit-and-push-your-changes)).
 
 If you're not sure how a data file works, see
 [Data files](repository-structure.qmd#data-files).
 
-At the end of the chapter, a **cheat sheet** box sums up which
-file to open and what to change. It is handy when you come back to the
-guide later.
+At the end of the chapter, a **cheat sheet** sums up which
+file to open and what to change.
 
 
 ## Switch off template mode {#switch-off-template-mode}
 
 Your repository starts as a copy of the template, so it still presents
-itself as the template. You can see this in the yellow
- **Want to use this template?**  banner at the top of the landing page (see overview image above).
-Switching off **template mode** turns your repository into your own
-training. Do this first:
+itself as the template, in two places:
 
-1. On the **main** branch, open `data/website.yml`.
+- the yellow [Want to use this template?]{.template-label} banner at the
+  top of the landing page (see the overview image above);
+- the `README.md` file, the description shown on your repository's main
+  page on GitHub, which still describes the template instead of your
+  training.
+
+In this section, you replace the README and then switch off
+**template mode**, so your repository presents your own training.
+
+### Replace the README {.unnumbered}
+
+To ensure your repository's README describes your own training, replace the current README.md (which describes the template), with you trainings README: 
+
+1. In the Explorer panel, open the `docs` folder and then
+   `_template-README.md`.
+
+   ![](images/landing-02-templatereadme.png){width=85% fig-alt="Screenshot: template-README.md file in docs/ folder"}
+
+2. Select all text (**Cmd+A** or **Ctrl+A**) and copy it.
+3. Open `README.md` in the main folder of your repository, select all
+   text, and paste, so the copied text replaces it.
+
+   ![](images/landing-03-readme.png){width=85% fig-alt="Screenshot: README.md file in repository root with template-README text copied and pasted into it"}
+
+4. Delete the note at the top of the file, between `<!--` and `-->`,
+   and the line starting with `> **Template:**`.
+5. Fill in the parts marked **Write this yourself**. The other parts,
+   between `<!-- generated:... -->` lines, are filled in automatically
+   from your data files.
+6. Save the file.
+
+   ![](images/landing-04-editreadme.png){width=70% fig-alt="Screenshot: show which sections of the README to edit"}
+   
+### Remove the template banner {.unnumbered}
+
+1. Open `data/website.yml`.
 2. Find the line:
 
    ```yaml
@@ -71,71 +102,65 @@ training. Do this first:
    template: false
    ```
 
+   ![](images/landing-05-templatefalse.png){width=80% fig-alt="Screenshot: changed template:true to template:false in data/website.yml."}
+
 4. Save the file (Cmd+S (macOS) or Ctrl+S (Windows and Linux))
 
-This changes two things:
+This changes three things:
 
 - The yellow banner disappears from the landing page.
-- The README, `CITATION.cff` and `.zenodo.json` now describe **your**
-  training, using your data files. While template mode was on, they
-  described the template itself.
+- The generated parts of your new README now show your training's
+  details, from your data files. While template mode was on, they
+  showed the template's details.
+- `CITATION.cff` and `.zenodo.json` now describe your training instead
+  of the template.
 
-::: {.done}
-**Done when:** the yellow banner is gone from the preview.
+   ![](images/landing-06-changesaftersaving.png){width=80% fig-alt="Screenshot: changed template:true to template:false in data/website.yml."}
+
+
+::: {.callout-tip}
+The README shows the details you have filled in so far. Did you not
+fill in the data files yet? No problem: the README updates by itself
+every time you change them.
 :::
 
-### Replace the README {.unnumbered}
+::: {.done}
+**Done when:** the yellow banner is gone from the preview, and
+`README.md` shows the details you have filled in in the data files.
+:::
 
-Your repository's README, the description shown on its main page on
-GitHub, still describes the template. Replace it with the README for a
-training:
-
-1. In the Explorer panel, open the `docs` folder and then
-   `_template-README.md`.
-2. Select all text (**Cmd+A** or **Ctrl+A**) and copy it.
-3. Open `README.md` in the main folder of your repository, select all
-   text, and paste, so the copied text replaces it.
-4. Delete the note at the top of the file, between `<!--` and `-->`,
-   and the line starting with `> **Template:**`.
-5. Fill in the parts marked **Write this yourself**. The other parts,
-   between `<!-- generated:... -->` lines, are filled in automatically
-   from your data files.
-6. Save the file.
-
-
-## Change the title and subtitle {#change-the-title-and-subtitle}
+## Change the title and subtitle 
 
 The **hero** is the large dark banner at the top of the landing page. It
-is the first thing visitors see, and shows the title and subtitle of
-your training, the logos and the buttons.
+shows the title and subtitle of your training, the logos of the
+organisations behind it, and the buttons.
 
 1. Open `data/course.yml`.
 2. Find the lines:
 
-   ```yaml
+```yaml
    title: "Training title"
    subtitle: "Training subtitle"
-   ```
+```
 
 3. Replace the text between the quotation marks with the title and
-   subtitle of your training.
-4. Save the file.
+   subtitle of your training. For example:
+
+   ![](images/landing-07-changetitle.png){fig-alt="Screenshot: changed title and subtitle in course.yml"}
+
+4. Save the file, and check the result in the preview.
 
 The title is also used as the title of your website in the browser tab,
 in the README and in the citation of your training.
 
 ::: {.callout-tip}
 Keep the subtitle to one sentence, and start it with an action verb such
-as **Learn**, **Understand**, **Explore**, **Build** or **Apply**. For
-example:
-
-> *Learn how to apply open science practices throughout the research
-> lifecycle.*
+as **Learn**, **Understand**, **Explore**, **Build** or **Apply**.
 
 The subtitle is optional: to leave it out, change it to `subtitle: ""`.
 :::
 
-## Add or remove logos {#add-or-remove-logos}
+## Add or remove logos
 
 The logos in the hero show the organisations behind your training. You
 can add logos, remove them, or replace them with your own.
@@ -151,6 +176,9 @@ can add logos, remove them, or replace them with your own.
 
 2. Copy the file into the `img/logos` folder: drag it from your
    computer onto the folder in the Explorer panel in VS Code.
+
+      ![](images/landing-08-addimage.png){width=80% fig-alt="Screenshot: how to add a new image in the img/logos folder "}
+
 3. Open `data/website.yml` and find the `hero` part:
 
    ```yaml
@@ -165,32 +193,15 @@ can add logos, remove them, or replace them with your own.
    change the values:
    - `src`: where the file is, starting with `img/logos/`, followed by
      the file name;
-   - `alt`: the name of the organisation. Screen readers read this out
-     for visitors who can't see the logo.
+   - `alt`: the name of the organisation.
 
    For example:
 
-   ```yaml
-   hero:
-     logos:
-       - src: "img/logos/SciLifeLab_Logotype_NEG.png"
-         alt: "SciLifeLab"
-       - src: "img/logos/my-organisation.svg"
-         alt: "My organisation"
-   ```
+      ![](images/landing-09-addnewlogo.png){width=80% fig-alt="Screenshot: adding a logo file path in data/website.yml "}
 
 5. Save the file.
 
-The logos appear in the same order as in the list.
-
-::: {.callout-note}
-Keep the spaces at the start of each line exactly as in the example: the
-`- src:` line of every logo starts at the same position, and `alt:`
-lines up with `src:`.
-
-The file name in `src` must match the name of your file exactly,
-including capital letters and the extension (`.svg` or `.png`).
-:::
+The logos appear in the landing page header in the same order as in the list.
 
 ### Remove a logo {.unnumbered}
 
@@ -202,26 +213,25 @@ including capital letters and the extension (`.svg` or `.png`).
    `img/logos` folder. In VS Code, right-click the file and choose
    **Delete**.
 
-
-## Edit the information cards {#edit-the-information-cards}
+## Edit the information cards
 
 The **information cards** below the hero describe your training. They
 are created from your data files:
 
-| Card | Comes from |
-|---|---|
-| **Training content** | `description` in `data/course.yml` |
-| **Learning outcomes** | `learning_outcomes` in `data/course.yml` |
-| **Keywords** | `keywords` in `data/course.yml` |
-| **Topics covered** | `topics` in `data/course.yml` (optional) |
-| **Founders** | People with the role `Founder` in `data/team.yml` |
-| **Contributors** | People with the role `Contributor` in `data/team.yml` |
+| Card | File | Field |
+|---|---|---|
+| **Training content** | `data/course.yml` | `description` | 
+| **Learning outcomes** | `data/course.yml` |`learning_outcomes` |
+| **Keywords** | `data/course.yml` | `keywords` |
+| **Topics covered** | `data/course.yml` | `topics` |
+| **Founders** | `data/team.yml` | People with the role `Founder` |
+| **Contributors** | `data/team.yml` | People with the role `Contributor` |
 
-: {tbl-colwidths="[30,70]"}
+: {tbl-colwidths="[30, 20, 50]"}
 
 The same information is also used in the README and the citation of
 your training, and helps people find it in Zenodo and training
-registries such as TeSS.
+registries.
 
 ### Training content {.unnumbered}
 
@@ -237,15 +247,6 @@ registries such as TeSS.
 2. Replace the example text below `description: |` with a description
    of your training. Keep the two spaces at the start of every line.
    Separate paragraphs with an empty line.
-
-The `|` after `description:` lets you write several lines and
-paragraphs. You can also use simple formatting, such as `**bold**` or
-links: `[link text](https://example.org)`.
-
-::: {.callout-tip}
-Focus on what the training covers. Around ten sentences is usually
-enough.
-:::
 
 ### Learning outcomes, keywords and topics {.unnumbered}
 
@@ -276,13 +277,6 @@ The learning outcomes are numbered automatically on the website.
 - **Topics**: short phrases, not full sentences, that give visitors a
   quick overview of what the training covers.
 :::
-
-The **Topics covered** card is optional. To leave it out, replace the
-list with an empty one:
-
-```yaml
-topics: []
-```
 
 ### Founders and contributors {.unnumbered}
 

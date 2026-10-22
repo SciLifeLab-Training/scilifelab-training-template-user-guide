@@ -240,6 +240,17 @@ main.content table thead th {
     color: var(--guide-text);
 }
 
+/* ==========================================================================
+   Text styled like the template banner, e.g. "Want to use this template?"
+   ========================================================================== */
+.template-label {
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    background: #f3dfb3;
+    color: #292929;
+    font-weight: 700;
+    white-space: nowrap;
+}
 
 /* ==========================================================================
    Footer
