@@ -6,13 +6,13 @@ Welcome to the **SciLifeLab Training Webpage Template User Guide**!
 
 The **[SciLifeLab Training Webpage Template](https://scilifelab-training.github.io/scilifelab-training-template/)**
 helps training organisers across SciLifeLab create consistent, reusable
-and FAIR training websites. No programming is needed: you fill in a few
+and FAIR training websites. No programming is needed: you fill in
 text files with information about your training, write your materials in
 Markdown, and the website is built and published for you.
 
 ### How a training website is organised {.unnumbered}
 
-Each training gets one website with two parts:
+Each training gets one website with two main parts:
 
 - **A landing page** with general information about the training and links
   to every time it is given.

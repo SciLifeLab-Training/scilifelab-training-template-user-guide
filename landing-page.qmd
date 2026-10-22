@@ -84,6 +84,24 @@ This changes two things:
 **Done when:** the yellow banner is gone from the preview.
 :::
 
+### Replace the README {.unnumbered}
+
+Your repository's README, the description shown on its main page on
+GitHub, still describes the template. Replace it with the README for a
+training:
+
+1. In the Explorer panel, open the `docs` folder and then
+   `_template-README.md`.
+2. Select all text (**Cmd+A** or **Ctrl+A**) and copy it.
+3. Open `README.md` in the main folder of your repository, select all
+   text, and paste, so the copied text replaces it.
+4. Delete the note at the top of the file, between `<!--` and `-->`,
+   and the line starting with `> **Template:**`.
+5. Fill in the parts marked **Write this yourself**. The other parts,
+   between `<!-- generated:... -->` lines, are filled in automatically
+   from your data files.
+6. Save the file.
+
 
 ## Change the title and subtitle {#change-the-title-and-subtitle}
 

@@ -154,7 +154,7 @@ The new title appears at the top of the preview in your browser.
 
 ![](images/workflow-11-changedtrainingtitle.png){width=80% fig-alt="Screenshot: Updated title in the preview."}
 
-::: {.callout-tip}
+::: {.callout-warning}
 The data files are sensitive to layout. Keep the quotation marks, and
 keep the spaces at the start of each line exactly as they are. If the
 preview shows an error after you save, check those first. The lines

@@ -118,7 +118,7 @@ together with your own changes, as described in
 On the **main** branch, everything for your training's landing page
 lives in these files and folders:
 
-![](images/structure-04-mainbranchfiles.png){width=40% fig-alt="Screenshot: files in the main branch."}
+![](images/structure-04-mainbranchfiles.png){width=35% fig-alt="Screenshot: files in the main branch."}
 
 The table below explains what each one is for, and whether you edit it
 ✏️, it's updated automatically 🔄, or you can leave it alone 🔒.
@@ -130,17 +130,18 @@ The table below explains what each one is for, and whether you edit it
 | `data/website.yml` | The logos, button texts and footer of the landing page | ✏️ |
 | `data/instances.yml` | The list of training instances, with links to their websites | ✏️ |
 | `img/` | The images and logos used on the landing page | ✏️ |
+| `docs/` | The README for your training (`_template-README.md`), which you copy over `README.md` when you start, and documentation for developers of the template | ✏️ 🔄 |
 | `README.md` | The description shown on your repository's main page on GitHub. The parts between `<!-- generated:... -->` lines are updated automatically; you can edit the rest | ✏️ 🔄 |
 | `_generated/` | The sections of the landing page, built from your data files | 🔄 |
 | `CITATION.cff` | How to cite your training, built from your data files | 🔄 |
 | `.zenodo.json` | The information Zenodo uses when you publish your training, built from your data files | 🔄 |
 | `LICENSE.md` | The full text of the licence of your training: CC BY 4.0, unless you choose another licence in `data/course.yml`. Only replace it if you do | ✏️🔒 |
+| `CONTRIBUTING.md` | How others can report problems and suggest improvements to your training.Ready to use, but you can adapt it if you like | ✏️🔒 |
 | `index.qmd`, `_sections/` | The building blocks that put the landing page together | 🔒 |
 | `styles.css` | The look of the website: colours, fonts and layout | 🔒 |
-| `_template/` | Information about the template itself, used only by the template's own website | 🔒 |
+| `_template/` | Information about the template itself, used only while template mode is on. You can delete it once you've switched template mode off | 🔒 |
 | `scripts/`, `tests/` | The scripts that build the website, and the checks that test them | 🔒 |
 | `.github/` | The automatic processes that publish your website on GitHub | 🔒 |
-| `docs/` | Documentation for developers of the template | 🔒 |
 | `.vscode/` | Settings for VS Code, such as the extensions it recommends when you open the repository | 🔒 |
 | `.gitignore` | The list of files that stay on your computer and are never uploaded to GitHub, such as your preview and environment | 🔒 |
 | `_quarto.yml`, `requirements.txt`, `requirements-dev.txt` | Settings for Quarto, and the Python packages the scripts need | 🔒 |
@@ -155,8 +156,8 @@ uploaded to GitHub, and you can ignore them.
 ## Files on a training instance branch
 
 A **training instance** branch has the same structure as **main**, plus
-the information pages of the training instance website and your
-training materials.
+the information pages of the specific training instance, your
+training materials, and (reuse) guidance for training instructors. 
 
 ![](images/structure-05-instancebranchfiles.png){width=40% fig-alt="VS Code Explorer panel showing the files and folders of a training instance branch."}
 
@@ -171,9 +172,10 @@ The table below explains what each one is for, and whether you edit it
 | `data/schedule.yml` | The schedule of the training (optional) | ✏️ |
 | `data/announcements.yml`, `practicalities.yml`, `preparation.yml`, `faq.yml`, `resources.yml` | The information pages (optional) | ✏️ |
 | `content/` | Your training materials, with one folder per module | ✏️ |
+| `instructors/` | Notes for instructors: timing, preparation and teaching notes for each module. Not shown on the website, but anyone can read it on GitHub | ✏️ |
 | `img/` | The images, logos and photos used on the website | ✏️ |
 | `README.md` | The description shown on your repository's main page on GitHub. The parts between `<!-- generated:... -->` lines are updated automatically; you can edit the rest | ✏️ 🔄 |
-| `CONTRIBUTING.md` | How participants can suggest improvements to your training. Ready to use, but you can adapt it if you like | ✏️ 🔒 |
+| `CONTRIBUTING.md` | How others can report problems and suggest improvements to your training. Ready to use, but you can adapt it if you like | ✏️🔒 |
 | `LICENSE.md` | The full text of the licence of your training: CC BY 4.0, unless you choose another licence in `data/course.yml`. Only replace it if you do | ✏️🔒 |
 | `_generated/` | The sections of the website, built from your data files | 🔄 |
 | `CITATION.cff`, `.zenodo.json` | How to cite this training instance, and the information Zenodo uses, built from your data files | 🔄 |
