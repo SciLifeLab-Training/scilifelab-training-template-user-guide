@@ -189,7 +189,7 @@ computer: `_site/` (the website itself), `.quarto/` and `.venv/` (your
 environment). They are listed in `.gitignore`, so they are never
 uploaded to GitHub, and you can ignore them.
 
-## Data files {#data-files .unnumbered}
+## Data files
 
 
 As the tables above show, most of the files you edit in the main branch as well as the instance branches are **data files**:

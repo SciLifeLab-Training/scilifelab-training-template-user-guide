@@ -208,6 +208,11 @@ The first time you push, VS Code may ask you to sign in to GitHub. Follow
 the instructions in your browser, then return to VS Code.
 :::
 
+::: {.callout-important}
+If you want to make changes on several branches, commit and push your changes on one branch **before** you switch to another branch. Changes you haven't committed yet move along with you to the other
+branch, where you might commit them by mistake.
+:::
+
 ::: {.callout-tip collapse="true"}
 ## Changed something by mistake?
 
@@ -230,7 +235,6 @@ start the preview (`python scripts/preview.py`) and wait a few seconds.
 ::: {.done}
 **Done when:** the Source Control panel shows no more changes.
 ::: 
-
 
 ## Check the published website
 
@@ -269,7 +273,7 @@ see the error message, or see the [cheat sheet](#cheat-sheet) below.
 
 Every time you work on your training, follow these steps in this order.
 
-| Step | Where | What to do | What you should see |
+| To... | Where | What to do | What you should see |
 |---|---|---|---|
 | **1. Open your training repository** | VS Code | Open VS Code. If your repository isn't open, choose **File → Open Recent** | Your files in the Explorer panel on the left |
 | **2. Get the latest version** | VS Code, bottom-left corner | Click the circular 'sync changes' arrows next to the branch name | Your collaborators' changes appear in your files |

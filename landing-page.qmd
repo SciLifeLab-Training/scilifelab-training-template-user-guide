@@ -14,42 +14,50 @@ guide uses for them.
 
 In this chapter, you will learn how to:
 
-- [Switch off template mode](#switch-off-template-mode)
-- [Change the title and subtitle](#change-the-title-and-subtitle)
-- [Add or remove logos](#add-or-remove-logos)
-- [Edit the information cards](#edit-the-information-cards)
-- [List your training instances](#list-your-training-instances)
-- [Set up the hero buttons](#set-up-the-hero-buttons)
-- [Change the banner image](#change-the-banner-image)
-- [Edit the footer](#edit-the-footer)
+- [Switch off template mode](#switch-off-template-mode): replace the
+  README and remove the template banner.
+- [Customise the look](#customise-the-look): the organisation logos,
+  the button texts, and banner image.
+- [Describe your training](#describe-your-training): the title,
+  description, learning outcomes, team and footer, and how others may
+  reuse your training.
+
+How to create a training instance and add it to the landing page is
+explained in the next chapter, [Training instances](training-instances.qmd).
 
 ### Before you start {.unnumbered}
 
 Everything in this chapter happens on the **main** branch, and almost
-all of it in the four data files in the `data` folder:
+all of it in three data files in the `data` folder:
 
 | Data file | What it holds |
 |---|---|
-| `data/course.yml` | The title, description, learning outcomes, keywords and topics of your training |
+| `data/course.yml` | The title, description, learning outcomes, keywords and topics of your training, and the organisation and licence shown in the footer |
 | `data/team.yml` | The people behind the training |
-| `data/instances.yml` | The list of training instances |
-| `data/website.yml` | Logos, button texts, the banner image and the footer |
+| `data/website.yml` | Template mode, logos, button texts and banner image |
 
 : {tbl-colwidths="[30,70]"}  
-  
-Work as described in [Regular workflow](workflow.qmd): start the
-preview with `python scripts/preview.py`, make your changes, save them, and check
-them in your browser. You don't have to commit after every change:
-you can make several changes, and commit and push them together (see [Commit and push your changes](workflow.qmd#commit-and-push-your-changes)).
 
-If you're not sure how a data file works, see
-[Data files](repository-structure.qmd#data-files).
+Not sure how a data file works? See [Data files](repository-structure.qmd#data-files).
 
-At the end of the chapter, a **cheat sheet** sums up which
-file to open and what to change.
+Work as described in [Regular workflow](workflow.qmd):
+
+1. In a new terminal, start the preview:
+
+```bash
+   python scripts/preview.py
+```
+
+2. Make your changes, save them, and check the result in your browser.
+3. [Commit and push](workflow.qmd#commit-and-push-your-changes) your
+   changes. You don't have to do this after every change: you can make
+   several changes, and then commit and push them together.
+
+The [cheat sheet](#cheat-sheet) at the end of this chapter sums up which
+file to open and what to change for each part of the landing page.
 
 
-## Switch off template mode {#switch-off-template-mode}
+## Switch off template mode
 
 Your repository starts as a copy of the template, so it still presents
 itself as the template, in two places:
@@ -65,7 +73,9 @@ In this section, you replace the README and then switch off
 
 ### Replace the README {.unnumbered}
 
-To ensure your repository's README describes your own training, replace the current README.md (which describes the template), with you trainings README: 
+The template comes with a ready-made README for your training, in
+`docs/_template-README.md`. Copy it over the current README, which
+describes the template: 
 
 1. In the Explorer panel, open the `docs` folder and then
    `_template-README.md`.
@@ -104,19 +114,17 @@ To ensure your repository's README describes your own training, replace the curr
 
    ![](images/landing-05-templatefalse.png){width=80% fig-alt="Screenshot: changed template:true to template:false in data/website.yml."}
 
-4. Save the file (Cmd+S (macOS) or Ctrl+S (Windows and Linux))
+4. Save the file with **Cmd+S** (macOS) or **Ctrl+S** (Windows and Linux).
 
 This changes three things:
 
 - The yellow banner disappears from the landing page.
 - The generated parts of your new README now show your training's
-  details, from your data files. While template mode was on, they
-  showed the template's details.
+  details, from your data files.
 - `CITATION.cff` and `.zenodo.json` now describe your training instead
   of the template.
 
    ![](images/landing-06-changesaftersaving.png){width=80% fig-alt="Screenshot: changed template:true to template:false in data/website.yml."}
-
 
 ::: {.callout-tip}
 The README shows the details you have filled in so far. Did you not
@@ -126,46 +134,20 @@ every time you change them.
 
 ::: {.done}
 **Done when:** the yellow banner is gone from the preview, and
-`README.md` shows the details you have filled in in the data files.
+`README.md` shows the title of your training at the top.
 :::
 
-## Change the title and subtitle 
+## Customise the look
 
-The **hero** is the large dark banner at the top of the landing page. It
-shows the title and subtitle of your training, the logos of the
-organisations behind it, and the buttons.
+You can make the landing page your own by changing the organisation logos, the button texts and the banner image. All of these are in `data/website.yml`. Open it, and work through the parts below.
 
-1. Open `data/course.yml`.
-2. Find the lines:
+### Logos {.unnumbered}
 
-```yaml
-   title: "Training title"
-   subtitle: "Training subtitle"
-```
+The logos in the hero show the organisations behind your training. The
+SciLifeLab logo is always shown on the right. Your other logos appear to
+its left.
 
-3. Replace the text between the quotation marks with the title and
-   subtitle of your training. For example:
-
-   ![](images/landing-07-changetitle.png){fig-alt="Screenshot: changed title and subtitle in course.yml"}
-
-4. Save the file, and check the result in the preview.
-
-The title is also used as the title of your website in the browser tab,
-in the README and in the citation of your training.
-
-::: {.callout-tip}
-Keep the subtitle to one sentence, and start it with an action verb such
-as **Learn**, **Understand**, **Explore**, **Build** or **Apply**.
-
-The subtitle is optional: to leave it out, change it to `subtitle: ""`.
-:::
-
-## Add or remove logos
-
-The logos in the hero show the organisations behind your training. You
-can add logos, remove them, or replace them with your own.
-
-### Add a logo {.unnumbered}
+**Add a logo**
 
 1. Save your logo as an **SVG** or **PNG** file.
 
@@ -174,391 +156,51 @@ can add logos, remove them, or replace them with your own.
    background, so it stands out against the dark hero.
    :::
 
-2. Copy the file into the `img/logos` folder: drag it from your
-   computer onto the folder in the Explorer panel in VS Code.
-
-      ![](images/landing-08-addimage.png){width=80% fig-alt="Screenshot: how to add a new image in the img/logos folder "}
-
-3. Open `data/website.yml` and find the `hero` part:
+2. Copy the file into the `img/logos` folder: drag it from your computer
+   onto the folder in the Explorer panel in VS Code.
+3. In `data/website.yml`, find the `hero` part:
 
    ```yaml
    hero:
      logos:
        - src: "img/logos/SciLifeLab_Logotype_NEG.png"
          alt: "SciLifeLab"
+         height: 56
+         primary: true
    ```
 
-4. Add your logo at the bottom of the list. Copy the two lines of an
-   existing logo, from `- src:` to `alt:`, and paste them below. Then
-   change the values:
-   - `src`: where the file is, starting with `img/logos/`, followed by
-     the file name;
-   - `alt`: the name of the organisation.
+4. Add your logo below the existing one, with these lines:
+   - `src`: where the file is: `img/logos/` followed by the file name;
+   - `alt`: the name of the organisation;
+   - `height` (optional): the height of the logo in pixels, 56 if you
+     leave it out.
 
    For example:
 
-      ![](images/landing-09-addnewlogo.png){width=80% fig-alt="Screenshot: adding a logo file path in data/website.yml "}
+IMAGE
 
-5. Save the file.
+5. Save the file, and check the preview. If the logos look like
+   different sizes, adjust their `height` until they look about the
+   same.
 
-The logos appear in the landing page header in the same order as in the list.
+The logo with `primary: true` (SciLifeLab) is always shown on the right.
+Your other logos appear to its left, in the same order as in the list.
 
-### Remove a logo {.unnumbered}
+**Remove a logo**
 
-1. Open `data/website.yml` and find the `hero` part.
-2. Delete both lines of the logo you want to remove: the `- src:` line
-   and the `alt:` line below it.
-3. Save the file.
-4. Optional: if you no longer need the logo file, delete it from the
+1. In `data/website.yml`, delete all lines of the logo you want to
+   remove, from `- src:` to its last line.
+2. Save the file.
+3. Optional: if you no longer need the logo file, delete it from the
    `img/logos` folder. In VS Code, right-click the file and choose
    **Delete**.
 
-## Edit the information cards
+### Button texts {.unnumbered}
 
-The **information cards** below the hero describe your training. They
-are created from your data files:
+You can change the text on the two hero buttons, and the heading of the
+**All training instances** banner:
 
-| Card | File | Field |
-|---|---|---|
-| **Training content** | `data/course.yml` | `description` | 
-| **Learning outcomes** | `data/course.yml` |`learning_outcomes` |
-| **Keywords** | `data/course.yml` | `keywords` |
-| **Topics covered** | `data/course.yml` | `topics` |
-| **Founders** | `data/team.yml` | People with the role `Founder` |
-| **Contributors** | `data/team.yml` | People with the role `Contributor` |
-
-: {tbl-colwidths="[30, 20, 50]"}
-
-The same information is also used in the README and the citation of
-your training, and helps people find it in Zenodo and training
-registries.
-
-### Training content {.unnumbered}
-
-1. Open `data/course.yml` and find `description`:
-
-   ```yaml
-   description: |
-     Description of the content of the training.
-
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-   ```
-
-2. Replace the example text below `description: |` with a description
-   of your training. Keep the two spaces at the start of every line.
-   Separate paragraphs with an empty line.
-
-### Learning outcomes, keywords and topics {.unnumbered}
-
-These three are **lists**: each line starting with `-` is one item.
-
-1. Open `data/course.yml` and find `learning_outcomes`, `keywords` or
-   `topics`:
-
-   ```yaml
-   learning_outcomes:
-     - "Learning outcome 1"
-     - "Learning outcome 2"
-     - "Learning outcome 3"
-   ```
-
-2. Replace the example text between the quotation marks with your own.
-3. To **add** an item, copy a whole line, paste it below, and change
-   the text. To **remove** an item, delete its whole line.
-
-The learning outcomes are numbered automatically on the website.
-
-::: {.callout-tip}
-- **Learning outcomes** describe what participants will be able to do
-  after the training. For guidance, see the
-  [SciLifeLab Training Hub resources on writing learning outcomes](https://figshare.scilifelab.se/articles/educational_resource/Training_Hub_Resources_for_Learning_Outcomes/28473218).
-- **Keywords**: around four or five short terms that describe the main
-  subject areas. They help people find your training.
-- **Topics**: short phrases, not full sentences, that give visitors a
-  quick overview of what the training covers.
-:::
-
-### Founders and contributors {.unnumbered}
-
-The **Founders** and **Contributors** cards list the people in
-`data/team.yml`:
-
-- **Founders** started the training, or are responsible for it.
-- **Contributors** contributed materials or expertise.
-
-Each person looks like this:
-
-```yaml
-- given_names: "Firstname1"
-  family_names: "Lastname1"
-  roles:
-    - Founder
-  affiliation: "Institution or organisation"
-  orcid: ""
-  citation_author: true
-```
-
-1. Open `data/team.yml`.
-2. Fill in the details of each person:
-   - `given_names` and `family_names`: first name(s) and surname. Put
-     words like "van der" in the surname.
-   - `roles`: `Founder` or `Contributor`.
-   - `affiliation`: the organisation the person works for.
-3. To **add** a person, copy a whole entry, from `- given_names:` to the
-   last line before the next `- given_names:`, paste it below, and
-   change the values. To **remove** a person, delete their whole entry.
-
-Each card is left out when nobody has that role. The other fields, such
-as `orcid`, `email`, `course_contact` and `citation_author`, are used
-for the citation of your training. They are explained in
-[FAIRification](fairification.qmd) and in the comments at the top of
-`data/team.yml`.
-
-::: {.callout-important}
-Every person needs `given_names`, `family_names`, `roles` and
-`affiliation`. If one is missing, the preview shows an error that names
-the person and the missing field.
-:::
-
-## List your training instances {#list-your-training-instances}
-
-The **All training instances** banner near the bottom of the landing
-page has a button for each training instance. Visitors use it to open
-the website of the current training, or of an earlier one.
-
-The list comes from `data/instances.yml`. Each training instance looks
-like this:
-
-```yaml
-- slug: "2605"
-  label: "May 2026"
-  status: current
-  visible: true
-  show_in_hero: true
-  instance_url: "./2605/"
-  registration_url: "https://example.org/registration"
-  sort_key: 202605
-```
-
-| Field | What it means |
-|---|---|
-| `slug` | The year and month of the training instance as YYMM, the same as in its branch name. For example, `"2605"` for the branch **release-2605** |
-| `label` | The text on the button, for example `"May 2026"` |
-| `status` | `current` for the training instance that is running now or coming up next; `previous` for earlier ones |
-| `visible` | `true` to show the button in the banner; `false` to hide it |
-| `show_in_hero` | Only for the current training instance: whether the hero shows a button to it. See [Set up the hero buttons](#set-up-the-hero-buttons) |
-| `instance_url` | The link to the website of the training instance: `"./YYMM/"`, with the same digits as `slug` |
-| `registration_url` | Only for the current training instance: the link to its registration page |
-| `sort_key` | The year and month as YYYYMM, for example `202605`. Used to put the training instances in order |
-
-: {tbl-colwidths="[25,75]"}
-
-::: {.callout-important}
-- Exactly **one** training instance has `status: current`. All others
-  have `status: previous`.
-- The current training instance always has `visible: true`.
-- Each training instance has its own `slug`: never use the same one
-  twice.
-- `slug` and `instance_url` use the same four digits.
-
-If one of these rules is broken, the preview shows an error that
-explains what to fix.
-:::
-
-### Remove the example training instances {.unnumbered}
-
-The template's list contains example training instances, such as
-**2505** and **2411**, that don't exist in your repository. Their
-buttons would lead to pages that don't exist. Start by removing them:
-
-1. Open `data/instances.yml`.
-2. Delete the whole entry of each example instance, from `- slug:` to
-   `sort_key:`, except the one with `slug: "0000"`.
-3. Save the file.
-
-Keep the **0000** entry for now: it links to the example training
-instance on the **release-0000** branch. You replace it once your first
-own training instance is ready.
-
-### Add a training instance {.unnumbered}
-
-Each training instance has its own **release-** branch, with its own
-website. Adding it to `instances.yml` puts a button to that website on
-the landing page.
-
-::: {.callout-note}
-Creating a **release-** branch does **not** add it to this list
-automatically. First create the branch, as described in
-[Training instances](training-instances.qmd), and then add it here.
-:::
-
-1. Open `data/instances.yml`.
-2. Copy a complete entry, from `- slug:` to `sort_key:`, and paste it at
-   the top of the list, directly under `instances:`.
-3. Change `slug`, `label`, `instance_url` and `sort_key` to the new
-   training instance.
-4. If the new training instance is now the current one, see
-   [Change the current training instance](#change-the-current-training-instance)
-   below.
-5. Save the file.
-
-For example, for a training instance in November 2026:
-
-```yaml
-- slug: "2611"
-  label: "November 2026"
-  status: current
-  visible: true
-  show_in_hero: true
-  instance_url: "./2611/"
-  registration_url: "https://example.org/registration"
-  sort_key: 202611
-```
-
-::: {.callout-note}
-Keep the spaces at the start of each line exactly as in the existing
-entries: `- slug:` is indented by two spaces, and the other lines of
-the entry by four.
-:::
-
-### Change the current training instance {#change-the-current-training-instance .unnumbered}
-
-When a new training instance becomes the current one:
-
-1. In `data/instances.yml`, find the training instance that is current
-   now, and change its `status` and `show_in_hero`:
-
-   ```yaml
-   status: previous
-   show_in_hero: false
-   ```
-
-2. Find the new current training instance, and set:
-
-   ```yaml
-   status: current
-   visible: true
-   show_in_hero: true
-   ```
-
-3. Save the file.
-
-For example:
-
-```yaml
-instances:
-
-  - slug: "2611"
-    label: "November 2026"
-    status: current
-    visible: true
-    show_in_hero: true
-    instance_url: "./2611/"
-    registration_url: "https://example.org/registration"
-    sort_key: 202611
-
-  - slug: "2605"
-    label: "May 2026"
-    status: previous
-    visible: true
-    show_in_hero: false
-    instance_url: "./2605/"
-    registration_url: ""
-    sort_key: 202605
-```
-
-### Show or hide an earlier training instance {.unnumbered}
-
-You may not want to show every earlier training instance on the landing
-page. To hide one, set its `visible` to `false`:
-
-```yaml
-visible: false
-```
-
-To show it again, set it back to `true`. A hidden training instance
-stays in the list, and its website stays online: only its button
-disappears from the banner.
-
-::: {.callout-warning}
-Never hide the **current** training instance with `visible: false`. To
-remove its button from the hero, use `show_in_hero: false` instead. See
-[Set up the hero buttons](#set-up-the-hero-buttons).
-:::
-
-### Change the text on a button {.unnumbered}
-
-Change the `label` of the training instance, for example from
-`"May 2026"` to `"Spring 2026"`. This only changes the text visitors
-see, not where the button leads.
-
-### Change the order {.unnumbered}
-
-The current training instance is always shown first. The earlier ones
-follow, newest first, sorted by `sort_key`. You don't need to put the
-entries in order yourself, as long as each `sort_key` is the year and
-month of its training instance, written as YYYYMM: for example,
-`202605` for May 2026.
-
-
-## Set up the hero buttons {#set-up-the-hero-buttons}
-
-The hero can show two buttons:
-
-- **Take me to the current instance** opens the website of the current
-  training instance.
-- **Register now** opens the registration page of the current training
-  instance.
-
-Both buttons use the training instance with `status: current` in
-`data/instances.yml`. See
-[List your training instances](#list-your-training-instances) to set
-which one that is.
-
-### Add the registration link {.unnumbered}
-
-1. Open `data/instances.yml` and find the training instance with
-   `status: current`.
-2. Replace the example link in `registration_url` with the link to your
-   registration page or form:
-
-   ```yaml
-   registration_url: "https://your-registration-page.example"
-   ```
-
-3. Save the file.
-
-### Hide the registration button {.unnumbered}
-
-When registration has closed, or your training doesn't need
-registration, empty the link of the current training instance:
-
-```yaml
-registration_url: ""
-```
-
-The **Register now** button disappears. To show it again, fill in the
-link again.
-
-### Hide the current instance button {.unnumbered}
-
-When there is no current training instance to point to, for example
-when your training is self-paced or not given at the moment, set
-`show_in_hero` of the current training instance to `false`:
-
-```yaml
-show_in_hero: false
-```
-
-The button disappears from the hero. The training instance stays in the
-**All training instances** banner.
-
-### Change the button texts {.unnumbered}
-
-You can change the text on the buttons, and the heading of the
-**All training instances** banner, without changing where they lead:
-
-1. Open `data/website.yml` and find the `labels` part:
+1. In `data/website.yml`, find the `labels` part:
 
    ```yaml
    labels:
@@ -576,7 +218,11 @@ You can change the text on the buttons, and the heading of the
 
 3. Save the file.
 
-## Change the banner image {#change-the-banner-image}
+This only changes the texts. Where the buttons lead, and when they are
+shown, is set in `data/instances.yml`: see
+[Training instances](training-instances.qmd).
+
+### Banner image {.unnumbered}
 
 The **All training instances** banner shows a decorative image next to
 the buttons. You can replace it with an image that fits your training.
@@ -589,7 +235,7 @@ the buttons. You can replace it with an image that fits your training.
    the space, so keep the important part near the middle.
    :::
 
-2. Open `data/website.yml` and find:
+2. In `data/website.yml`, find:
 
    ```yaml
    instances_band:
@@ -607,7 +253,7 @@ the buttons. You can replace it with an image that fits your training.
 4. Save the file, and check the preview at different widths of your
    browser window.
 
-To show no image at all, set `image: ""`.
+To show no image at all, change it to `image: ""`.
 
 ::: {.callout-tip collapse="true"}
 ## Is the important part of your image cut off?
@@ -629,145 +275,159 @@ the website, so make it carefully:
    visible part to the left.
 :::
 
-
-## Edit the footer {#edit-the-footer}
-
-The **footer** at the bottom of the landing page shows who runs the
-training, its licence, how the website was built, and a link to your
-repository on GitHub. All of it is in the `footer` part of
-`data/website.yml`.
-
-### Organisation {.unnumbered}
-
-Change `organisation` to the name of the organisation, programme or
-group responsible for your training:
-
-```yaml
-organisation: "SciLifeLab Training Hub"
-```
-
-### Licence {.unnumbered}
-
-The licence tells others how they may reuse your training. The footer
-shows its name, linked to the page that explains it:
-
-```yaml
-licence:
-  name: "CC BY 4.0"
-  url: "https://creativecommons.org/licenses/by/4.0/"
-```
-
-::: {.callout-important}
-The licence also appears in `reuse` in `data/course.yml`, where it's
-used for the README and the citation. If you choose another licence,
-change it in **both** files, so they say the same, and replace the text
-in `LICENSE.md`. See [FAIRification](fairification.qmd) for help
-choosing a licence.
+::: {.done}
+**Done when:** the preview shows your logos and banner image.
 :::
 
-### Repository link {.unnumbered}
 
-The GitHub logo in the footer links to your repository. Replace `url`
-with the address of your repository on GitHub:
+## Describe your training
+
+What the landing page says about your training comes from two data
+files: `data/course.yml` describes the training, and `data/team.yml` the
+people behind it. The information you enter in these files is also used in the README and
+the citation of your training, and helps people find it in Zenodo and
+training registries such as TeSS.
+
+Both files contain explanations at the top and between the fields,
+in the lines starting with `#`. This section covers the main points;
+the explanations in the files give the details.
+
+### How to fill in a data file {.unnumbered}
+
+You only change the **values**: the text after the colon. See
+[Data files](repository-structure.qmd#data-files) for how a data file is
+built. Values come in three forms:
+
+**A single line of text**, between quotation marks:
 
 ```yaml
-repository:
-  url: "https://github.com/your-organisation/your-repository"
-  image: "img/logos/Github_Neg.png"
-  alt: "GitHub repository"
+title: "Introduction to R"
 ```
 
-You find the address in your browser's address bar when you open your
-repository on GitHub, for example
-`https://github.com/SciLifeLab-Training/introduction-to-r`.
+**Several paragraphs**, after `|`. Start each line with the same number
+of spaces, and separate paragraphs with an empty line:
 
-::: {.callout-important}
-The repository link is **required**. The template also uses it to work
-out the address of your website, for the citation of your training.
+```yaml
+description: |
+  This training introduces R, a free and widely used programming
+  language for data analysis.
+
+  Through short demonstrations and hands-on exercises, you learn how to
+  read, clean, summarise and plot your data.
+```
+
+**A list**: each line starting with `-` is one item. To add an item,
+copy a whole line, paste it below, and change the text. To remove an
+item, delete its whole line:
+
+```yaml
+keywords:
+  - "R"
+  - "Data analysis"
+  - "Data visualisation"
+```
+
+### The training: course.yml {.unnumbered}
+
+Open `data/course.yml` and work through it from top to bottom:
+
+| Field | Where it appears | What to fill in |
+|---|---|---|
+| `title` | The hero, and the browser tab | The name of your training |
+| `subtitle` | The hero, below the title | One sentence about the training (optional) |
+| `description` | The **Training content** card | What the training covers, in a few paragraphs |
+| `learning_outcomes` | The **Learning outcomes** card | What participants can do after the training |
+| `keywords` | The **Keywords** card | Four or five short terms that describe the subject |
+| `topics` | The **Topics covered** card | The main topics, as short phrases |
+| `language`, `target_audience`, `expertise_level`, `organizers`, `funding` | Not on the landing page: in the README, the citation and the information for training registries | See the explanations in the file |
+| `licence`, `licence_url` (under `reuse`) | The footer ("Licensed under …"), the README and the citation | CC BY 4.0 by default. |
+
+: {tbl-colwidths="[25,30,45]"}
+
+The other fields under `reuse` can stay empty for now:
+
+- `doi`, `release_date` and `zenodo_communities` belong to publishing your training on Zenodo, and are explained in
+  [FAIRification](fairification.qmd).
+- `licence_id`, `website_url` and `preferred_citation` can stay empty for most trainings. The template works out the address 
+   of your website, and creates the citation from your team, title and DOI.
+
+Example of a filled-in `course.yml`:
+
+IMAGE
+
+::: {.callout-tip}
+- **Subtitle**: keep it to one sentence, and start it with an action
+  verb such as **Learn**, **Understand**, **Explore**, **Build** or
+  **Apply**.
+- **Learning outcomes** describe what participants will be able to do after the training. For guidance, see the
+  [SciLifeLab Training Hub resources on writing learning outcomes](https://figshare.scilifelab.se/articles/educational_resource/Training_Hub_Resources_for_Learning_Outcomes/28473218).
+- **Optional fields**: to leave out the subtitle, use `subtitle: ""`. To
+  leave out the funding, keep `funding: []`.
+- **Licence**: if you change it, also replace the text in `LICENSE.md`
+  in the main folder of your repository with the full text of your new licence.
 :::
 
-### Built with {.unnumbered}
+### The team: team.yml {.unnumbered}
 
-The `built_with` part credits the SciLifeLab Training Webpage Template.
-You can usually leave it as it is.
+The **Founders** and **Contributors** cards at the bottom of the landing
+page list the people in `data/team.yml`. They are also credited in the
+README and the citation of your training.
 
-## Cheat sheet {#cheat-sheet}
+Open `data/team.yml` and fill in each person. The comments at the top of
+the file explain every field. To **add** a person, copy a whole entry,
+from `- given_names:` to the line before the next person, paste it below,
+and change the values. To **remove** a person, delete their whole entry.
+
+Example of a filled-in `team.yml`:
+
+IMAGE
+
+::: {.callout-important}
+Every person needs `given_names`, `family_names`, `roles` (`Founder` or
+`Contributor`) and `affiliation`. If one is missing, the preview shows
+an error that names the person and the missing field.
+:::
+
+::: {.done}
+**Done when:** the hero, the information cards and the footer in the
+preview show your own training and team, instead of the example text.
+:::
+
+## Cheat sheet
 
 All changes on the landing page, on one screen. Everything happens on
 the **main** branch.
 
-### Template mode {.unnumbered .unlisted}
+### Switch off template mode {.unnumbered .unlisted}
 
-| To... | File | What to change |
+| To... | Where | What to do |
 |---|---|---|
-| Switch off template mode and remove the banner | `data/website.yml` | Set `template: false` |
+| Replace the README | `README.md` | Replace its contents with `docs/_template-README.md`, and fill in the parts marked **Write this yourself** |
+| Remove the template banner | `data/website.yml` | Set `template: false` |
 
-### Title and subtitle {.unnumbered .unlisted}
+### Customise the look {.unnumbered .unlisted}
 
-| To... | File | What to change |
+| To... | Where | What to do |
 |---|---|---|
-| Change the title | `data/course.yml` | The value of `title` |
-| Change the subtitle | `data/course.yml` | The value of `subtitle` |
-| Leave out the subtitle | `data/course.yml` | Set `subtitle: ""` |
-
-### Logos {.unnumbered .unlisted}
-
-| To... | File | What to change |
-|---|---|---|
-| Add a logo file | `img/logos/` | Copy your logo (`.svg` or `.png`) into the folder |
-| Show a logo | `data/website.yml` | Add `- src:` and `alt:` lines under `hero:` → `logos:` |
-| Remove a logo | `data/website.yml` | Delete the `- src:` and `alt:` lines of the logo |
-| Delete an unused logo file (optional) | `img/logos/` | Delete the file |
-
-### Information cards {.unnumbered .unlisted}
-
-| To... | File | What to change |
-|---|---|---|
-| Change the training content | `data/course.yml` | The text below `description: \|` |
-| Change the learning outcomes | `data/course.yml` | The list under `learning_outcomes` |
-| Change the keywords | `data/course.yml` | The list under `keywords` |
-| Change the topics | `data/course.yml` | The list under `topics` |
-| Leave out the topics card | `data/course.yml` | Set `topics: []` |
-| Add or change founders and contributors | `data/team.yml` | Add or edit a person, with `roles` set to `Founder` or `Contributor` |
-
-### Training instances {.unnumbered .unlisted}
-
-| To... | File | What to change |
-|---|---|---|
-| Remove the example training instances | `data/instances.yml` | Delete their entries, except `"0000"` |
-| Add a training instance | `data/instances.yml` | Copy an entry to the top of the list and change `slug`, `label`, `instance_url` and `sort_key` |
-| Change the current training instance | `data/instances.yml` | Old one: `status: previous` and `show_in_hero: false`. New one: `status: current`, `visible: true` and `show_in_hero: true` |
-| Hide an earlier training instance | `data/instances.yml` | Set `visible: false` |
-| Change the text on a button | `data/instances.yml` | Change `label` |
-| Change the order | `data/instances.yml` | Set `sort_key` to the year and month, as YYYYMM |
-
-### Hero buttons {.unnumbered .unlisted}
-
-| To... | File | What to change |
-|---|---|---|
-| Add the registration link | `data/instances.yml` | `registration_url` of the current training instance |
-| Hide the registration button | `data/instances.yml` | Set `registration_url: ""` for the current training instance |
-| Hide the current instance button | `data/instances.yml` | Set `show_in_hero: false` for the current training instance |
+| Add a logo | `img/logos/` and `data/website.yml` | Copy the file into the img folder, and add `src`, `alt` and `height` lines under `hero:` → `logos:` |
+| Change the size of a logo | `data/website.yml` | `height` of the logo, in pixels |
+| Remove a logo | `data/website.yml` | Delete all lines of the logo |
 | Change the button texts | `data/website.yml` | `hero_view_current_label` and `hero_registration_open_label` under `labels` |
 | Change the heading of the banner | `data/website.yml` | `instances_band_title` under `labels` |
+| Change the banner image | `img/images/` and `data/website.yml` | Copy the image into the img folder, and change `image` under `instances_band` |
+| Show no banner image | `data/website.yml` | Set `image: ""` under `instances_band` |
 
-### Banner image {.unnumbered .unlisted}
+### Describe your training {.unnumbered .unlisted}
 
-| To... | File | What to change |
+| To... | Where | What to do |
 |---|---|---|
-| Add your image | `img/images/` | Copy your image into the folder |
-| Use your image | `data/website.yml` | `image` under `instances_band` |
-| Show no image | `data/website.yml` | Set `image: ""` |
-| Adjust the cropping (optional) | `styles.css` | `object-position` in `.instances-band__image` |
-
-### Footer {.unnumbered .unlisted}
-
-| To... | File | What to change |
-|---|---|---|
-| Change the organisation | `data/website.yml` | `organisation` under `footer` |
-| Change the licence | `data/website.yml` and `data/course.yml` | `licence` under `footer`, and `licence` under `reuse`. Also replace `LICENSE.md` |
-| Link to your repository | `data/website.yml` | `url` under `footer` → `repository` |
-
+| Change the title and subtitle | `data/course.yml` | `title` and `subtitle` |
+| Change the training content | `data/course.yml` | The text under `description` |
+| Change the learning outcomes, keywords or topics | `data/course.yml` | The lists under `learning_outcomes`, `keywords` and `topics` |
+| Leave out the subtitle or funding | `data/course.yml` | Set `subtitle: ""` or `funding: []` |
+| Change the organisation in the footer | `data/course.yml` | `organizers` |
+| Change the licence | `data/course.yml` | `licence` and `licence_url` under `reuse`. Also replace `LICENSE.md` |
+| Add or change founders and contributors | `data/team.yml` | Add or edit a person, with `roles` set to `Founder` or `Contributor` |
 
 
 ## Next steps {.unnumbered .unlisted}

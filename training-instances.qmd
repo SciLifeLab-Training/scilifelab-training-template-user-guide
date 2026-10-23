@@ -1,8 +1,221 @@
 ---
-title: "Course instances"
+title: "Training instances"
 ---
 
-<img src="/images/SciLifeLab_symbol_green-2048x1950.png"
-     class="guide-logo">
+A **training instance** is one time your training is given, for example
+in May 2026. Each training instance has its own branch in your
+repository, and its own website with its own dates, schedule, team and
+materials.
 
-<br>
+The landing page links to all of them: the current training instance in
+the hero, and every training instance in the **All training instances**
+banner.
+
+In this chapter, you will learn how to:
+
+- [Create a new training instance](#create-a-new-training-instance): make a new
+  branch, and publish its website.
+- [Add an instance to the landing page](#add-an-instance-to-the-landing-page): list it in
+  the **All training instances** banner, and set up the hero buttons.
+- [Create your next training instance](#create-your-next-training-instance),
+  the next time your training is given.
+
+How to switch off template mode and fill in the website of a training instance (its dates, schedule,
+team and materials) is explained in the next chapter,
+[Instance pages](instance-pages.qmd).
+
+### Before you start {.unnumbered}
+
+In this chapter, you work on two branches: the new **release-** branch,
+and **main** for the landing page.
+
+::: {.callout-important}
+Commit and push your changes **before** you switch to another branch.
+Changes you haven't committed yet move along with you to the other
+branch, where you might commit them by mistake.
+:::
+
+
+## Create new a training instance
+
+### Choose a name {.unnumbered}
+
+Each training instance branch is named **release-** followed by the year
+and month in which the training instance starts, written as YYMM (see [Branches](repository-structure.qmd#branches)). For
+example:
+
+| Training instance | Branch name |
+|---|---|
+| May 2027 | `release-2705` |
+| November 2027 | `release-2711` |
+
+: {tbl-colwidths="[40,60]"}
+
+The four digits also become the address of its website:
+`https://ORGANISATION.github.io/REPOSITORY-NAME/2605/`.
+
+
+### Switch branch {#switch-branch .unnumbered}
+
+You create a new branch as a copy of an existing one, so first switch to
+the branch you want to copy:
+
+- For your **first** training instance: switch to **release-0000**, the example
+  training instance that comes with the template.
+- For **later** training instances: switch to your previous training instance, for
+  example **release-2705**. See
+  [Create your next training instance](#create-your-next-training-instance).
+
+To switch branch in VS Code:
+
+1. Click the branch name in the bottom-left corner of VS Code.
+2. In the list that opens at the top, choose the branch, for example
+   **release-0000**. Branches that are only on GitHub so far start with
+   **origin/**: choose those to get them on your computer.
+
+<span style="color: red; font-weight: bold;">Screenshot: the branch list in VS Code, with release-0000 selected.</span>
+
+The files in the Explorer panel change to the files of that branch, and
+the bottom-left corner shows its name.
+
+### Create the branch {.unnumbered}
+
+1. Check that the bottom-left corner shows the branch you want to copy.
+2. Click the branch name, and choose **Create new branch...** at the top
+   of the list.
+3. Type the name of the new branch, for example `release-2705`, and
+   press **Enter**.
+4. Open the **Source Control** panel and click **Publish Branch**. This
+   puts the new branch on GitHub.
+
+<span style="color: red; font-weight: bold;">Screenshot: Create new branch in the branch list, and the Publish Branch button.</span>
+
+As soon as the branch is on GitHub, GitHub builds its website, as with
+every push: see
+[Check the published website](workflow.qmd#check-the-published-website).
+
+::: {.done}
+**Done when:** the bottom-left corner of VS Code shows your new branch,
+and the website of your training instance opens at
+`https://ORGANISATION.github.io/REPOSITORY-NAME/YYMM/`. For now, it
+still shows the example content.
+:::
+
+## Add an instance to the landing page
+
+Creating a **release-** branch does **not** add it to the landing page
+automatically. You add it yourself, in `data/instances.yml` on the
+**main** branch.
+
+1. Switch to the **main** branch, as described in
+   [Switch branch](#switch-branch).
+2. Open `data/instances.yml`. It lists the training instances the
+   landing page links to: one entry per training instance, from
+   `- slug:` to `sort_key:`. The guiding comments at the top of the file explain
+   each field.
+3. The template list contains example training instances. Change the first
+   one, with `slug: "0000"`, into your own training instance: change its
+   `slug`, `label`, `instance_url` and `sort_key`. Add a url to a registration page or form
+   under `registration:url` if registration is open.  
+
+   For example, for a May 2027 instance:
+
+```yaml
+     - slug: "2705"
+       label: "May 2027"
+       status: current
+       visible: true
+       show_in_hero: true
+       instance_url: "./2705/"
+       registration_url: ""
+       sort_key: 202705
+```
+
+4. Delete the other examples, **2505** and **2411**: each whole entry,
+   from `- slug:` to `sort_key:`. They link to websites that don't exist
+   in your repository.
+5. Save the file, and check the preview. Then commit and push your
+   changes.
+
+If you break one of the rules described in the file, the preview shows
+an error that explains what to fix.
+
+::: {.done}
+**Done when:** the landing page shows one button in the
+**All training instances** banner, and it opens the website of your
+training instance.
+:::
+
+::: {.callout-note collapse="true"}
+## Optional: delete release-0000
+
+Once your own training instance exists, you no longer need the example
+on **release-0000**. You can keep it, to look up how something was set
+up in the template, or delete it:
+
+1. Delete the branch: on your repository's main page on GitHub, click
+   **Branches**, then the bin icon next to **release-0000**.
+2. Delete its website: on the **gh-pages** branch on GitHub, open the
+   `0000` folder, click **⋯** at the top right, and choose
+   **Delete directory**.
+
+**Only delete it when your own first training instance is ready.** Your
+later training instances start from your own previous one, so you don't
+need **release-0000** for those. But once deleted, it's gone!
+:::
+
+## Create your next training instance
+
+The next time your training is given, start from your previous training
+instance rather than from **release-0000**. That way, everything you
+prepared last time comes along: your materials, instructor notes, team
+and settings. The previous training instance keeps its own branch and
+website, so participants can always go back to the materials as they
+were.
+
+1. Switch to your previous training instance, for example
+   **release-2705**, and create a new branch from it, for example
+   `release-2711`, as described in
+   [Create a new training instance](#create-a-new-training-instance).
+2. Switch to **main**, and open `data/instances.yml`.
+3. Add the new training instance: copy the entry of the current one,
+   paste it at the top of the list, and change `slug`, `label`,
+   `instance_url` and `sort_key`.
+5. Make the new training instance the current one. In the entry of the
+   previous training instance, change `status: current` to
+   `status: previous`, and `show_in_hero: true` to `show_in_hero: false`.
+6. Save the file, check the preview, and commit and push.
+
+IMAGE
+
+::: {.callout-important}
+If your previous training instance was published on Zenodo, empty
+`version_doi` and `release_date` under `reuse` in `data/course.yml` of
+the new branch: they belong to the previous training instance. See
+[FAIRification](fairification.qmd).
+:::
+
+## Cheat sheet
+
+| To... | Where | What to do |
+|---|---|---|
+| Switch branch | VS Code, bottom-left corner | Click the branch name and choose a branch |
+| Create a training instance | VS Code, bottom-left corner | Switch to the branch to copy (**release-0000** the first time), click the branch name, choose **Create new branch...** and type `release-YYMM` |
+| Publish the new branch on GitHub | VS Code, Source Control panel | Click **Publish Branch** |
+| Add your first instance to the landing page | **main** branch, `data/instances.yml` | Change the `"0000"` entry to your training instance, and delete the example instances |
+| Delete release-0000 (optional) | GitHub | Delete the **release-0000** branch on the branches page, and the `0000` folder on the **gh-pages** branch |
+| Create another training instance | VS Code, bottom-left corner | Create a new branch from your previous training instance, not from **release-0000** |
+| Add another instance to the landing page | **main** branch, `data/instances.yml` | Copy the entry of the current training instance to the top, and change `slug`, `label`, `instance_url` and `sort_key` |
+| Make a new instance the current one | **main** branch, `data/instances.yml` | For the previous instance, set `status: previous` and `show_in_hero: false` |
+| Avoid citing the previous instance by mistake | The new **release-** branch, `data/course.yml` | Empty `version_doi` and `release_date` under `reuse` |
+
+: {tbl-colwidths="[28,24,48]"}
+
+
+## Next steps {.unnumbered .unlisted}
+
+Your training instance is online and linked from the landing page.
+Continue with [Training instance pages](instance-pages.qmd): fill in
+its dates, schedule, team and materials.
+
+

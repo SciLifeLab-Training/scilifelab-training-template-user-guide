@@ -12,6 +12,7 @@ book:
     - repository-structure.qmd
     - landing-page.qmd
     - training-instances.qmd
+    - instance-pages.qmd
     - fairification.qmd
 
 format:
@@ -19,5 +20,6 @@ format:
     theme: default
     css: styles.css
     toc: true
+    toc-title: "On this page"
     toc-depth: 2
     anchor-sections: false
