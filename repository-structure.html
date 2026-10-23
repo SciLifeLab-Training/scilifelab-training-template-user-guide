@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7e1b33d4ae04fceeae7f1a313bee935a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-95863af46656191e6a2cf1560d98dcd6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -185,13 +185,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./training-instances.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Course instances</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Training instances</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./instance-pages-data-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Instance pages - Data files</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./instance-pages-content.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instance pages - Content</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./fairification.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">FAIRification and publishing your course</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">FAIRification</span></span></a>
   </div>
 </li>
     </ul>
@@ -201,14 +213,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
   <li><a href="#branches" id="toc-branches" class="nav-link active" data-scroll-target="#branches"><span class="header-section-number">4.1</span> Branches</a></li>
   <li><a href="#three-kinds-of-files" id="toc-three-kinds-of-files" class="nav-link" data-scroll-target="#three-kinds-of-files"><span class="header-section-number">4.2</span> Three kinds of files</a></li>
   <li><a href="#files-on-the-main-branch" id="toc-files-on-the-main-branch" class="nav-link" data-scroll-target="#files-on-the-main-branch"><span class="header-section-number">4.3</span> Files on the main branch</a></li>
   <li><a href="#files-on-a-training-instance-branch" id="toc-files-on-a-training-instance-branch" class="nav-link" data-scroll-target="#files-on-a-training-instance-branch"><span class="header-section-number">4.4</span> Files on a training instance branch</a></li>
-  <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files">Data files</a></li>
+  <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files"><span class="header-section-number">4.5</span> Data files</a></li>
   </ul>
 </nav>
     </div>
@@ -234,8 +246,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>You now know the routine for making a change and publishing it, from <a href="./workflow.html">Regular workflow</a>. You’re ready to make the template your own, with the information and materials of your training.</p>
-<p>Before you start, it helps to know how your repository is organised. This chapter shows you where everything lives, so you always know where to make a change, and which files you don’t need to edit.</p>
+<p>You now know the routine for making a change to your training website, and how to publish it (see <a href="./workflow.html">Regular workflow</a>).<br>
+Before fully making the template your own, with the information and materials of your training, it helps to know how the repository is organised.<br>
+This chapter shows you where different parts of the website live, so you always know where to make a change.</p>
 <p><br></p>
 <section id="branches" class="level2" data-number="4.1">
 <h2 data-number="4.1" data-anchor-id="branches"><span class="header-section-number">4.1</span> Branches</h2>
@@ -247,13 +260,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <img src="images/structure-02-landingpage.png" class="img-fluid" style="width:60.0%" alt="Screenshot: landing page."></p></li>
 <li><p>The <strong>gh-pages</strong> branch holds the <strong>published website</strong>: the finished pages that visitors see. GitHub builds them from your other branches and updates this branch automatically every time you push a change.</p></li>
 </ul>
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -267,7 +280,7 @@ Warning
 <p>Because each training instance has its own branch, you can prepare the next training without changing the website of an earlier one. Participants of earlier trainings can always go back to the materials as they were.</p>
 <section id="branch-names" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="branch-names">Branch names</h3>
-<p>A training instance branch is named <strong>release-</strong> followed by the year and month of the training, written as YYMM. For example, <strong>release-2705</strong> is the training in May 2027.</p>
+<p>A training instance branch is named <strong>release-</strong> followed by the year and month of the training, written as YYMM. For example, <strong>release-2705</strong> is the training instance held in May 2027.</p>
 </section>
 <section id="an-example" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="an-example">An example</h3>
@@ -280,8 +293,6 @@ Warning
 ├── release-2605      The website of your training in May 2026.
 ├── release-2705      The website of your training in May 2027.
 │
-├── release-0000      The example training instance that comes with
-│                     the template.
 │
 └── gh-pages          The published website. Updated automatically.</code></pre>
 <p>In this repository, you would work on these branches:</p>
@@ -328,7 +339,7 @@ Note
 </section>
 <section id="three-kinds-of-files" class="level2" data-number="4.2">
 <h2 data-number="4.2" data-anchor-id="three-kinds-of-files"><span class="header-section-number">4.2</span> Three kinds of files</h2>
-<p>When you open a branch of your repository in VS Code, you see many files and folders. Don’t worry: you only have to work with a few of them. On all branches, the files fall into three groups:</p>
+<p>When you open a branch of your repository in VS Code, you see many files and folders. Most of these you never have to edit, you only have to work with a few of them. On all branches, the files fall into three groups:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 8%">
@@ -370,7 +381,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The automatically updated files 🔄 often appear in the Source Control panel when you only changed a data file. That’s expected: commit them together with your own changes, as described in <a href="./workflow.html#commit-and-push-your-changes">Commit and push your changes</a>.</p>
+<p>The automatically updated files 🔄 often appear in the Source Control panel when you only edited one ✏️ file. That’s expected: commit them together with your own changes, as described in <a href="./workflow.html#commit-and-push-your-changes">Commit and push your changes</a>.</p>
 </div>
 </div>
 </section>
@@ -395,7 +406,7 @@ Tip
 <tbody>
 <tr class="odd">
 <td><code>data/course.yml</code></td>
-<td>The title, description, learning outcomes and keywords of your training, and how others may reuse and cite it</td>
+<td>The title, description, learning outcomes, etc. of your training, and how others may reuse and cite it</td>
 <td style="text-align: center;">✏️</td>
 </tr>
 <tr class="even">
@@ -421,7 +432,7 @@ Tip
 <tr class="even">
 <td><code>docs/</code></td>
 <td>The README for your training (<code>_template-README.md</code>), which you copy over <code>README.md</code> when you start, and documentation for developers of the template</td>
-<td style="text-align: center;">✏️ 🔄</td>
+<td style="text-align: center;">✏️</td>
 </tr>
 <tr class="odd">
 <td><code>README.md</code></td>
@@ -499,7 +510,7 @@ Tip
 </section>
 <section id="files-on-a-training-instance-branch" class="level2" data-number="4.4">
 <h2 data-number="4.4" data-anchor-id="files-on-a-training-instance-branch"><span class="header-section-number">4.4</span> Files on a training instance branch</h2>
-<p>A <strong>training instance</strong> branch has the same structure as <strong>main</strong>, plus the information pages of the specific training instance, your training materials, and (reuse) guidance for training instructors.</p>
+<p>A <strong>training instance</strong> branch has the same structure as <strong>main</strong>, plus the information pages of that training instance, your training materials, and notes for instructors who teach or reuse the training.</p>
 <p><img src="images/structure-05-instancebranchfiles.png" class="img-fluid" style="width:40.0%" alt="VS Code Explorer panel showing the files and folders of a training instance branch."></p>
 <p>The table below explains what each one is for, and whether you edit it ✏️, it’s updated automatically 🔄, or you can leave it alone 🔒.</p>
 <table class="caption-top table">
@@ -538,12 +549,12 @@ Tip
 </tr>
 <tr class="odd">
 <td><code>data/announcements.yml</code>, <code>practicalities.yml</code>, <code>preparation.yml</code>, <code>faq.yml</code>, <code>resources.yml</code></td>
-<td>The information pages (optional)</td>
+<td>The information pages (all optional)</td>
 <td style="text-align: center;">✏️</td>
 </tr>
 <tr class="even">
 <td><code>content/</code></td>
-<td>Your training materials, with one folder per module</td>
+<td>Your training materials</td>
 <td style="text-align: center;">✏️</td>
 </tr>
 <tr class="odd">
@@ -557,46 +568,51 @@ Tip
 <td style="text-align: center;">✏️</td>
 </tr>
 <tr class="odd">
-<td><code>README.md</code></td>
-<td>The description shown on your repository’s main page on GitHub. The parts between <code>&lt;!-- generated:... --&gt;</code> lines are updated automatically; you can edit the rest</td>
-<td style="text-align: center;">✏️ 🔄</td>
+<td><code>docs/</code></td>
+<td>The README for your training (<code>_template-README.md</code>), which you copy over <code>README.md</code> when you start, example files used in the example module pages; and documentation for developers of the template</td>
+<td style="text-align: center;">✏️</td>
 </tr>
 <tr class="even">
+<td><code>README.md</code></td>
+<td>The description GitHub shows when someone opens this branch. The parts between <code>&lt;!-- generated:... --&gt;</code> lines are updated automatically; you can edit the rest</td>
+<td style="text-align: center;">✏️ 🔄</td>
+</tr>
+<tr class="odd">
 <td><code>CONTRIBUTING.md</code></td>
 <td>How others can report problems and suggest improvements to your training. Ready to use, but you can adapt it if you like</td>
 <td style="text-align: center;">✏️🔒</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>LICENSE.md</code></td>
 <td>The full text of the licence of your training: CC BY 4.0, unless you choose another licence in <code>data/course.yml</code>. Only replace it if you do</td>
 <td style="text-align: center;">✏️🔒</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>_generated/</code></td>
-<td>The sections of the website, built from your data files</td>
+<td>The sections of the website, built from your data files when you preview. Not uploaded to GitHub</td>
 <td style="text-align: center;">🔄</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>CITATION.cff</code>, <code>.zenodo.json</code></td>
 <td>How to cite this training instance, and the information Zenodo uses, built from your data files</td>
 <td style="text-align: center;">🔄</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>index.qmd</code>, <code>schedule.qmd</code>, <code>team.qmd</code> and the other <code>.qmd</code> files</td>
 <td>The pages of the website. They collect their content from your data files</td>
 <td style="text-align: center;">🔒</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>_sections/</code>, <code>js/</code>, <code>styles.css</code></td>
 <td>The building blocks, interactive parts and look of the website</td>
 <td style="text-align: center;">🔒</td>
 </tr>
-<tr class="even">
-<td><code>scripts/</code>, <code>.github/</code>, <code>docs/</code></td>
-<td>The scripts that build the website, the automatic processes that publish it, and documentation for developers of the template</td>
+<tr class="odd">
+<td><code>scripts/</code>, <code>.github/</code></td>
+<td>The scripts that build the website, and the automatic processes that publish it</td>
 <td style="text-align: center;">🔒</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>_quarto.yml</code>, <code>requirements.txt</code>, <code>.gitignore</code></td>
 <td>Settings for Quarto, the Python packages the scripts need, and the list of files that are never uploaded to GitHub</td>
 <td style="text-align: center;">🔒</td>
@@ -605,9 +621,9 @@ Tip
 </table>
 <p>When you preview your website, a few more folders appear on your computer: <code>_site/</code> (the website itself), <code>.quarto/</code> and <code>.venv/</code> (your environment). They are listed in <code>.gitignore</code>, so they are never uploaded to GitHub, and you can ignore them.</p>
 </section>
-<section id="data-files" class="level2 unnumbered">
-<h2 class="unnumbered" data-anchor-id="data-files">Data files</h2>
-<p>As the tables above show, most of the files you edit are <strong>data files</strong>: the files ending in <code>.yml</code> in the <code>data</code> folder.</p>
+<section id="data-files" class="level2" data-number="4.5">
+<h2 data-number="4.5" data-anchor-id="data-files"><span class="header-section-number">4.5</span> Data files</h2>
+<p>As the tables above show, most of the files you edit in the main branch as well as the instance branches are <strong>data files</strong>: the files ending in <code>.yml</code> in the <code>data</code> folder.</p>
 <p>When you open a data file, for example <code>data/course.yml</code> on the <strong>main</strong> branch, you see three kinds of text. VS Code shows each in its own colour:</p>
 <p><img src="images/structure-06-courseyml.png" class="img-fluid" style="width:90.0%" alt="The top of data/course.yml in VS Code, with explanations in grey, field names in green and values in blue."></p>
 <ul>
@@ -631,40 +647,24 @@ Note
 <p>The colours depend on the colour theme you use in VS Code, so yours may look different from the screenshot. The rule is always the same: lines starting with <code>#</code> are explanations, the word before the colon is the field name, and the text after the colon is the value you change.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Keep the layout</strong></p>
-<p>Data files are very sensitive to layout:</p>
+<p><strong>Data files are very sensitive to layout:</strong></p>
 <ul>
-<li>Keep the <strong>spaces at the start of each line</strong> exactly as they are. They show which information belongs together.</li>
-<li>Keep the <strong>quotation marks</strong> around values.</li>
-<li>Lines starting with <code>-</code> are <strong>list items</strong>. To add an item, copy a whole line and change its value.</li>
+<li>Keep the spaces at the start of each line exactly as they are. They show which information belongs together.</li>
+<li>Keep the quotation marks around values.</li>
+<li>Lines starting with <code>-</code> are list items. To add an item, copy a whole line and change its value.</li>
 </ul>
 <p>If the preview shows an error after you save a data file, check these first. The error message usually names the file and the line.</p>
 </div>
-</div>
-</section>
-<section id="next-steps" class="level2 unnumbered unlisted">
-<h2 class="unnumbered unlisted" data-anchor-id="next-steps">Next steps</h2>
-<p>Now that you know your way around, continue with:</p>
-<ul>
-<li><a href="./landing-page.html">Landing page</a>: describe your training on the landing page.</li>
-<li><a href="./training-instances.html">Training instances</a>: create the website for each time your training is given.</li>
-<li><a href="./fairification.html">FAIRification</a>: make your training citable and findable.</li>
-</ul>
-<p><br></p>
-<div class="guide-footer">
-<hr>
-<p>This User Guide is maintained by the SciLifeLab Training Hub.<br>
-Questions, problems or ideas for improving the guide or the template? <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template/issues">Open an issue</a> or email us at <a href="mailto:training@scilifelab.se">training@scilifelab.se</a>.</p>
 </div>
 
 
@@ -1077,6 +1077,19 @@ Questions, problems or ideas for improving the guide or the template? <a href="h
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>This User Guide is maintained by the SciLifeLab Training Hub.<br> Questions, problems or ideas for improving the guide or the template? <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template/issues">Open an issue</a> or email us at <a href="mailto:training@scilifelab.se">training@scilifelab.se</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

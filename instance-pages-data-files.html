@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Instance pages - Data files – Training Webpage Template: User Guide</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./instance-pages-content.html" rel="next">
+<link href="./training-instances.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-95863af46656191e6a2cf1560d98dcd6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./instance-pages-data-files.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Instance pages - Data files</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./images/logo-scilifelab-green.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./images/logo-scilifelab-green.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Training Webpage Template: User Guide</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Set up your training</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regular workflow</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./repository-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Repository structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./landing-page.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Landing page</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./training-instances.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Training instances</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./instance-pages-data-files.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Instance pages - Data files</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./instance-pages-content.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instance pages - Content</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fairification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">FAIRification</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#switch-off-template-mode" id="toc-switch-off-template-mode" class="nav-link active" data-scroll-target="#switch-off-template-mode"><span class="header-section-number">7.1</span> Switch off template mode</a></li>
+  <li><a href="#required-information" id="toc-required-information" class="nav-link" data-scroll-target="#required-information"><span class="header-section-number">7.2</span> Required information</a></li>
+  <li><a href="#optional-pages" id="toc-optional-pages" class="nav-link" data-scroll-target="#optional-pages"><span class="header-section-number">7.3</span> Optional pages</a></li>
+  <li><a href="#cheat-sheet" id="toc-cheat-sheet" class="nav-link" data-scroll-target="#cheat-sheet"><span class="header-section-number">7.4</span> Cheat sheet</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Instance pages - Data files</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Each training instance has its own website: an overview page, a schedule, the training materials, and information pages such as the syllabus, the team and practical information. In this chapter, you fill in the information for your own training instance.</p>
+<p>The figure below shows the parts of a training instance website, and the names this guide uses for them.</p>
+<p>fig-alt=“Annotated example of a training instance website: the navigation bar with logos, the welcome section, the registration banner, the Next up section, the quick links, announcements, the team preview and the footer.”</p>
+<p>In this chapter, you will learn how to:</p>
+<ul>
+<li><a href="#switch-off-template-mode">Switch off template mode</a>: replace the README and remove the template banner.</li>
+<li><a href="#required-information">Fill in the required information</a>: the training, the team and the overview page.</li>
+<li><a href="#optional-pages">Add the optional pages</a>: the schedule, announcements, practicalities, preparation, FAQ and resources.</li>
+</ul>
+<p>How to add your training materials and instructor notes is explained in the next chapter, <a href="training-materials.qmd">Training materials</a>.</p>
+<section id="before-you-start" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="before-you-start">Before you start</h3>
+<p>Everything in this chapter happens on the branch of your training instance, for example <strong>release-2705</strong>. Check the bottom-left corner of VS Code before you start: see <a href="./training-instances.html#switch-branch">Switch branch</a>.</p>
+<p>Work as described in <a href="./workflow.html">Regular workflow</a>: start the preview with <code>python scripts/preview.py</code>, make your changes, check them in your browser, and <a href="./workflow.html#commit-and-push-your-changes">commit and push</a>.</p>
+</section>
+<section id="the-website-builds-itself-from-the-data-files" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="the-website-builds-itself-from-the-data-files">The website builds itself from the data files</h3>
+<p>Apart from the training materials, you never edit the pages of the website directly. Every page is built automatically from the data files in the <code>data</code> folder:</p>
+<ul>
+<li>the <strong>overview page</strong>, with its welcome text, quick links, team preview and latest announcements;</li>
+<li>the <strong>Schedule</strong> page, and the <strong>Next up</strong> section on the overview page, which always shows the next event and counts down to it;</li>
+<li>the <strong>registration banner</strong>, which shows when registration opens, the link while it is open, and that it has closed afterwards;</li>
+<li>the <strong>Syllabus</strong>, <strong>Team</strong> and information pages, and the links to them in the navigation bar, which only appear when their data file contains information;</li>
+<li>the footer, the README and the citation of your training instance.</li>
+</ul>
+<p>So you only fill in the data files, and the template takes care of the rest.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Read the explanations in the data files
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Each data file explains how it works, in the lines starting with <code>#</code>: which fields are required, what each field does, the rules it must follow, and how to leave information out. Read these explanations carefully before you fill in a file. This chapter tells you which file to open for what, and points out what’s easy to miss, but the files themselves have the details.</p>
+<p>If a file breaks one of its rules, the preview stops with an error that names the file and explains what to fix.</p>
+</div>
+</div>
+<p>Not sure how a data file works? See <a href="./repository-structure.html#data-files">Data files</a>.</p>
+<p><br></p>
+</section>
+<section id="switch-off-template-mode" class="level2" data-number="7.1">
+<h2 data-number="7.1" data-anchor-id="switch-off-template-mode"><span class="header-section-number">7.1</span> Switch off template mode</h2>
+<p>For your <strong>first</strong> training instance only. Later training instances start from your previous one, so these changes come along.</p>
+<section id="replace-the-readme" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="replace-the-readme">Replace the README</h3>
+<p>The template comes with a ready-made README for a training instance, in <code>docs/_template-README.md</code>. It works the same way as on main: see <a href="./landing-page.html#switch-off-template-mode">Replace the README</a>.</p>
+<ol type="1">
+<li>Open <code>docs/_template-README.md</code>, select all text, and copy it.</li>
+<li>Open <code>README.md</code> in the main folder of your repository, select all text, and paste, so the copied text replaces it.</li>
+<li>Delete the explanation at the top of the file, between <code>&lt;!--</code> and <code>--&gt;</code>, and the note starting with <code>&gt; **Template:**</code>.</li>
+<li>Fill in the parts marked <strong>Write this yourself</strong>, and save the file.</li>
+</ol>
+</section>
+<section id="remove-the-template-banner" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="remove-the-template-banner">Remove the template banner</h3>
+<ol type="1">
+<li>Open <code>data/website.yml</code>.</li>
+<li>Change <code>template: true</code> to <code>template: false</code>.</li>
+<li>Save the file.</li>
+</ol>
+<p>The yellow <span class="template-label">Want to use this template?</span> banner disappears from the overview page.</p>
+<div class="done">
+<p><strong>Done when:</strong> the yellow banner is gone from the preview, and <code>README.md</code> shows the title of your training at the top.</p>
+</div>
+</section>
+</section>
+<section id="required-information" class="level2" data-number="7.2">
+<h2 data-number="7.2" data-anchor-id="required-information"><span class="header-section-number">7.2</span> Required information</h2>
+<p>Every training instance needs three data files: <code>course.yml</code>, <code>team.yml</code> and <code>website.yml</code>. Fill them in first.</p>
+<section id="the-training-course.yml" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="the-training-course.yml">The training: course.yml</h3>
+<p><code>data/course.yml</code> describes this training instance. Most of it appears on the overview page and the <strong>Syllabus</strong> page.</p>
+<p>Open <code>data/course.yml</code> and work through it from top to bottom. The comments at the top list which fields are <strong>required</strong> and which are optional. Leave out optional fields that don’t apply to your training, for example <code>start_date</code> and <code>end_date</code> for self-paced training.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Where it appears</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>title</code>, <code>subtitle</code></td>
+<td>The navigation bar, the welcome section and the browser tab</td>
+</tr>
+<tr class="even">
+<td><code>start_date</code>, <code>end_date</code>, <code>location</code>, <code>mode</code></td>
+<td>The welcome section, and the Syllabus page</td>
+</tr>
+<tr class="odd">
+<td><code>description</code>, <code>learning_outcomes</code>, <code>prerequisites</code>, <code>credits</code>, <code>examination</code></td>
+<td>The Syllabus page</td>
+</tr>
+<tr class="even">
+<td><code>organizers</code></td>
+<td>The footer (“By …”), the Syllabus page and the citation</td>
+</tr>
+<tr class="odd">
+<td><code>contact.email</code></td>
+<td>The Syllabus page: where participants can send questions</td>
+</tr>
+<tr class="even">
+<td><code>licence</code>, <code>licence_url</code> (under <code>reuse</code>)</td>
+<td>The footer (“Licensed under …”) and the citation. If you change the licence, also replace the text in <code>LICENSE.md</code></td>
+</tr>
+</tbody>
+</table>
+<p>The other fields under <code>reuse</code>, such as <code>doi</code>, <code>version_doi</code> and <code>release_date</code>, belong to publishing your training instance on Zenodo. Leave them empty for now: see <a href="./fairification.html">FAIRification</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use the same title, description, learning outcomes and keywords as on main, unless this training instance is different. The landing page and the training instances then describe the same training.</p>
+</div>
+</div>
+</section>
+<section id="the-team-team.yml" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="the-team-team.yml">The team: team.yml</h3>
+<p>The people in <code>data/team.yml</code> appear on the <strong>Team</strong> page, on the Syllabus page, and in a team preview on the overview page. They are also credited in the citation of the training instance.</p>
+<p>Open <code>data/team.yml</code> and fill in each person. To <strong>add</strong> a person, copy a whole entry, from <code>- given_names:</code> to the line before the next person, paste it below, and change the values. To <strong>remove</strong> a person, delete their whole entry.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Every person needs <code>given_names</code>, <code>family_names</code>, <code>roles</code> and <code>affiliation</code>. The roles are <code>Training lead</code>, <code>Instructor</code> and <code>Contributor</code>.</li>
+<li>At least one person needs <code>course_contact: true</code> and an <code>email</code>: participants contact them with questions.</li>
+</ul>
+</div>
+</div>
+<p>The overview page shows up to two people: training leads first, then instructors. Photos are optional: put them in the <code>img/photos</code> folder, and add their path under <code>image</code>.</p>
+</section>
+<section id="the-overview-page-website.yml" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="the-overview-page-website.yml">The overview page: website.yml</h3>
+<p><code>data/website.yml</code> sets the parts of the overview page that don’t come from other files. Open it, and work through it from top to bottom:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Part of the file</th>
+<th>What it sets</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>navbar</code> → <code>logos</code></td>
+<td>The logos in the navigation bar. As on main, the logo with <code>primary: true</code> (SciLifeLab) is always on the right, and you set the size of each logo with <code>height</code>. See <a href="./landing-page.html#customise-the-look">Logos</a></td>
+</tr>
+<tr class="even">
+<td><code>welcome</code></td>
+<td>The title, text and image of the welcome section. Put the image in the <code>img</code> folder</td>
+</tr>
+<tr class="odd">
+<td><code>registration</code></td>
+<td>The registration banner: when registration opens and closes, the link to the registration page or form, and the fee</td>
+</tr>
+<tr class="even">
+<td><code>pages</code></td>
+<td>The texts on the quick links to the other pages. You can usually leave them as they are</td>
+</tr>
+<tr class="odd">
+<td><code>footer</code></td>
+<td>Only the line about how the website was built. The organisation and licence come from <code>data/course.yml</code>, and the GitHub link is worked out automatically</td>
+</tr>
+<tr class="even">
+<td><code>content</code></td>
+<td>The order of your modules: see <a href="training-materials.qmd">Training materials</a></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>About registration
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The registration banner switches between “opens on”, “open” and “closed” by itself, based on the dates you set. It checks the date when the website is built, so the banner changes the next time you push a change. To update it without changing anything, for example on the day registration opens, start the build yourself on GitHub: in the <strong>Actions</strong> tab, choose <strong>deploy-instance</strong>, then <strong>Run workflow</strong>.</p>
+<p>There are also two registration links: the banner here, set in <code>registration</code> in <code>data/website.yml</code>, and the <strong>Register now</strong> button on the landing page, set in <code>registration_url</code> in <code>data/instances.yml</code> on <strong>main</strong>. Use the same link in both places.</p>
+</div>
+</div>
+<div class="done">
+<p><strong>Done when:</strong> the overview, Syllabus and Team pages in the preview show your own training instance, team, logos and welcome text.</p>
+</div>
+</section>
+</section>
+<section id="optional-pages" class="level2" data-number="7.3">
+<h2 data-number="7.3" data-anchor-id="optional-pages"><span class="header-section-number">7.3</span> Optional pages</h2>
+<p>All other data files are optional. Each one adds a page, or a part of the overview page, when it contains information. Fill in the ones you need, and leave out the others.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 30%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Page</th>
+<th>Data file</th>
+<th>What it’s for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Schedule</strong></td>
+<td><code>data/schedule.yml</code></td>
+<td>The sessions, breaks and other events of the training. Also adds the <strong>Next up</strong> section to the overview page</td>
+</tr>
+<tr class="even">
+<td><strong>Announcements</strong></td>
+<td><code>data/announcements.yml</code></td>
+<td>News for participants. The two most recent also appear on the overview page</td>
+</tr>
+<tr class="odd">
+<td><strong>Practicalities</strong></td>
+<td><code>data/practicalities.yml</code></td>
+<td>The venue, transport, accommodation and food</td>
+</tr>
+<tr class="even">
+<td><strong>Preparation</strong></td>
+<td><code>data/preparation.yml</code></td>
+<td>What participants should do before the training, such as installing software</td>
+</tr>
+<tr class="odd">
+<td><strong>FAQ</strong></td>
+<td><code>data/faq.yml</code></td>
+<td>Frequently asked questions and their answers</td>
+</tr>
+<tr class="even">
+<td><strong>Resources</strong></td>
+<td><code>data/resources.yml</code></td>
+<td>Further reading, tools and datasets for after the training</td>
+</tr>
+</tbody>
+</table>
+<p>Each file starts with a short explanation of the page, and a part called <strong>Leaving information out</strong>. It explains how to leave out one item, a whole section, or the whole page.</p>
+<p>To leave out a whole page, delete everything in its file, or delete the file. The page and its link in the navigation bar disappear by themselves.</p>
+<section id="the-schedule" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="the-schedule">The schedule</h3>
+<p>The schedule needs a bit more care than the other pages, because the website uses its dates and times:</p>
+<ul>
+<li>Each event, such as a lecture, an exercise or a break, is one entry, from <code>- title:</code> to <code>content:</code>. Every event needs a <code>title</code>, <code>type</code>, <code>group</code>, <code>start</code> and <code>end</code>.</li>
+<li>Write dates and times exactly as explained in the file, for example <code>2027-05-12T09:00</code>, and use one of the event types listed there.</li>
+<li>Events with the same <code>group</code>, for example <code>"Day 1"</code>, are shown together, in order of their start time.</li>
+<li>To link an event to a page of your materials, fill in <code>content</code> with the path to that page, for example <code>"content/module-1/introduction.qmd"</code>.</li>
+</ul>
+<p>The <strong>Next up</strong> section on the overview page then always shows the next event, with a countdown, without you having to change anything during the training.</p>
+<div class="done">
+<p><strong>Done when:</strong> the navigation bar in the preview shows the pages you filled in, and none of the pages you left out.</p>
+</div>
+</section>
+</section>
+<section id="cheat-sheet" class="level2" data-number="7.4">
+<h2 data-number="7.4" data-anchor-id="cheat-sheet"><span class="header-section-number">7.4</span> Cheat sheet</h2>
+<p>All on the branch of your training instance.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 30%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>To…</th>
+<th>Where</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Switch off template mode (first instance only)</td>
+<td><code>data/website.yml</code> and <code>README.md</code></td>
+<td>Set <code>template: false</code>, and replace the README with <code>docs/_template-README.md</code></td>
+</tr>
+<tr class="even">
+<td>Describe the training instance</td>
+<td><code>data/course.yml</code></td>
+<td>Fill in the required fields listed at the top of the file</td>
+</tr>
+<tr class="odd">
+<td>Add the team</td>
+<td><code>data/team.yml</code></td>
+<td>One entry per person. At least one person with <code>course_contact: true</code> and an <code>email</code></td>
+</tr>
+<tr class="even">
+<td>Change the logos</td>
+<td><code>data/website.yml</code></td>
+<td><code>logos</code> under <code>navbar</code></td>
+</tr>
+<tr class="odd">
+<td>Change the welcome section</td>
+<td><code>data/website.yml</code></td>
+<td><code>welcome</code></td>
+</tr>
+<tr class="even">
+<td>Set up registration</td>
+<td><code>data/website.yml</code></td>
+<td><code>registration</code>. Use the same link as <code>registration_url</code> in <code>data/instances.yml</code> on <strong>main</strong></td>
+</tr>
+<tr class="odd">
+<td>Update the registration banner on its opening or closing day</td>
+<td>GitHub, <strong>Actions</strong> tab</td>
+<td><strong>deploy-instance</strong> → <strong>Run workflow</strong></td>
+</tr>
+<tr class="even">
+<td>Add a schedule</td>
+<td><code>data/schedule.yml</code></td>
+<td>One entry per event. Empty the file to leave out the schedule</td>
+</tr>
+<tr class="odd">
+<td>Fill in an information page</td>
+<td><code>data/announcements.yml</code>, <code>practicalities.yml</code>, <code>preparation.yml</code>, <code>faq.yml</code> or <code>resources.yml</code></td>
+<td>Empty or delete the file to leave out the page</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./training-instances.html" class="pagination-link" aria-label="Training instances">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Training instances</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./instance-pages-content.html" class="pagination-link" aria-label="Instance pages - Content">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instance pages - Content</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>This User Guide is maintained by the SciLifeLab Training Hub.<br> Questions, problems or ideas for improving the guide or the template? <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template/issues">Open an issue</a> or email us at <a href="mailto:training@scilifelab.se">training@scilifelab.se</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

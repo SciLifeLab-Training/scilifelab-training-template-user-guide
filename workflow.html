@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7e1b33d4ae04fceeae7f1a313bee935a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-95863af46656191e6a2cf1560d98dcd6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -185,13 +185,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./training-instances.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Course instances</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Training instances</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./instance-pages-data-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Instance pages - Data files</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./instance-pages-content.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instance pages - Content</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./fairification.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">FAIRification and publishing your course</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">FAIRification</span></span></a>
   </div>
 </li>
     </ul>
@@ -201,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
   <li><a href="#open-your-training" id="toc-open-your-training" class="nav-link active" data-scroll-target="#open-your-training"><span class="header-section-number">3.1</span> Open your training</a></li>
@@ -237,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>This chapter shows the steps you repeat <strong>every time</strong> you work on your training website: open your training, preview it, make your changes, and publish them.</p>
-<p>The steps are always the same, whether you change a date, add a team member or write a new page of materials. The <a href="#cheat-sheet">cheat sheet</a> at the end of this chapter lists all of them on one screen, for when you just need a reminder.</p>
+<p>The steps are always the same, whether you change a date, add a team member or write a new page of materials. The <a href="#cheat-sheet">cheat sheet</a> at the end of this chapter lists all of them in one table.</p>
 <p><img src="images/workflow-overview-image.png" class="img-fluid" alt="Workflow showing the regular editing and publishing steps."></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -252,7 +264,6 @@ Note
 <p>This chapter assumes you have done the one-time setup in <a href="./setup.html">Set up your training</a>.</p>
 </div>
 </div>
-<p><br></p>
 <section id="open-your-training" class="level2" data-number="3.1">
 <h2 data-number="3.1" data-anchor-id="open-your-training"><span class="header-section-number">3.1</span> Open your training</h2>
 <p>Each time you start working, open your repository in VS Code and make sure you have the latest version.</p>
@@ -268,7 +279,7 @@ If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open F
 <p>The bottom-left corner of VS Code also shows the <strong>branch</strong> you are working on. Your repository keeps each part of your training website in its own branch:</p>
 <ul>
 <li><p><strong>main</strong>: the training landing page.</p></li>
-<li><p><strong>release-</strong> followed by four digits, for example <strong>release-2605</strong>: one training instance, here the one in May 2026.</p>
+<li><p><strong>release-</strong> followed by four digits, for example <strong>release-2605</strong>: one training instance in May 2026. In your template copy, it will say <strong>release-0000</strong></p>
 <p><img src="images/workflow-04-branches.png" class="img-fluid" style="width:60.0%" alt="Screenshot: VS Code status bar showing the branch name main."></p></li>
 </ul>
 <p>Before you start editing, check that you are on the branch you want to change. For your first change below, stay on <strong>main</strong>.</p>
@@ -317,7 +328,7 @@ If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open F
 <section id="make-a-change" class="level2" data-number="3.3">
 <h2 data-number="3.3" data-anchor-id="make-a-change"><span class="header-section-number">3.3</span> Make a change</h2>
 <p>Almost everything on your website comes from the files in the <code>data</code> folder: the title, dates, team, schedule, and so on. You change your website by changing these files, without touching any code.</p>
-<p>How these files are organised is explained in <a href="./repository-structure.html">Repository structure</a>. For now, we focus on making one change and publishing it, so you can see the whole process from start to finish.</p>
+<p>How these files are organised is explained in <a href="./repository-structure.html">Repository structure</a>. For now, we focus on making one change and publishing it, so you can practice the whole process from start to finish.</p>
 <p>As a first change, try changing the title of your training:</p>
 <ol type="1">
 <li>In the Explorer panel, open the <code>data</code> folder and click <code>course.yml</code>.</li>
@@ -326,26 +337,26 @@ If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open F
 <ol start="2" type="1">
 <li><p>Scroll down a bit and find the line:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Training title"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Change the text between the quotation marks, for example:</p>
+<li><p>Change the text between the quotation marks to your training’s title, for example:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Introduction to R"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ol>
 <p><img src="images/workflow-10-changetrainingname.png" class="img-fluid" style="width:80.0%" alt="Screenshot: VS Code showing course.yml and training title change."></p>
 <ol start="4" type="1">
 <li>Save the file with <strong>Cmd+S</strong> (macOS) or <strong>Ctrl+S</strong> (Windows and Linux).</li>
 </ol>
-<p>The new title appears at the top of the preview in your browser.</p>
+<p>The new title now appears at the top of the website preview in your browser.</p>
 <p><img src="images/workflow-11-changedtrainingtitle.png" class="img-fluid" style="width:80.0%" alt="Screenshot: Updated title in the preview."></p>
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The data files are sensitive to layout. Keep the quotation marks, and keep the spaces at the start of each line exactly as they are. If the preview shows an error after you save, check those first. The lines starting with <code>#</code> are explanations: they don’t appear on the website.</p>
+<p><strong>The data files are very sensitive to layout!</strong> Keep the quotation marks, and keep the indentation at the start of each line exactly as it is. If the preview shows an error after you save, check the file layout first. The lines starting with <code>#</code> are explanations: they don’t appear on the website.</p>
 </div>
 </div>
 <div class="done">
@@ -384,8 +395,21 @@ Note
 <p>The first time you push, VS Code may ask you to sign in to GitHub. Follow the instructions in your browser, then return to VS Code.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you want to make changes on several branches, commit and push your changes on one branch <strong>before</strong> you switch to another branch. Changes you haven’t committed yet move along with you to the other branch, where you might commit them by mistake.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -394,7 +418,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Before</strong> you commit, you can undo all changes to a file: in the Source Control panel, hover over the file and click the curved arrow (<strong>Discard Changes</strong>). The file goes back to how it was at your last commit.<br>
 <img src="images/workflow-16-discardchanges.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Discard Changes button."></p>
@@ -409,7 +433,7 @@ Note
 </section>
 <section id="check-the-published-website" class="level2" data-number="3.5">
 <h2 data-number="3.5" data-anchor-id="check-the-published-website"><span class="header-section-number">3.5</span> Check the published website</h2>
-<p>After you push, GitHub rebuilds and publishes your website by itself. This usually takes one or two minutes. You can follow it on GitHub:</p>
+<p>After you push your local changes to GitHub to be published, GitHub rebuilds your website by itself. This usually takes one or two minutes. You can follow it on GitHub:</p>
 <ol type="1">
 <li><p>Open your repository on GitHub and click the <strong>Actions</strong> tab.<br>
 <img src="images/workflow-17-githubactionstab.png" class="img-fluid" style="width:75.0%" alt="Screenshot: Github actions tab."></p></li>
@@ -452,7 +476,7 @@ Tip
 </colgroup>
 <thead>
 <tr class="header">
-<th>Step</th>
+<th>To…</th>
 <th>Where</th>
 <th>What to do</th>
 <th>What you should see</th>
@@ -575,22 +599,6 @@ Tip
 </tr>
 </tbody>
 </table>
-</section>
-<section id="next-steps" class="level2 unnumbered unlisted">
-<h2 class="unnumbered unlisted" data-anchor-id="next-steps">Next steps</h2>
-<p>You now know the routine for every change. Continue with:</p>
-<ul>
-<li><a href="./repository-structure.html">Repository structure</a>: find your way around your repository, and learn which files to change and which to leave alone.</li>
-<li><a href="./landing-page.html">Landing page</a>: describe your training on the landing page.</li>
-<li><a href="./training-instances.html">Training instances</a>: create the website for each time your training is given.</li>
-<li><a href="./fairification.html">FAIRification</a>: make your training citable and findable.</li>
-</ul>
-<p><br></p>
-<div class="guide-footer">
-<hr>
-<p>This User Guide is maintained by the SciLifeLab Training Hub.<br>
-Questions, problems or ideas for improving the guide or the template? <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template/issues">Open an issue</a> or email us at <a href="mailto:training@scilifelab.se">training@scilifelab.se</a>.</p>
-</div>
 
 
 </section>
@@ -1002,6 +1010,19 @@ Questions, problems or ideas for improving the guide or the template? <a href="h
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>This User Guide is maintained by the SciLifeLab Training Hub.<br> Questions, problems or ideas for improving the guide or the template? <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template/issues">Open an issue</a> or email us at <a href="mailto:training@scilifelab.se">training@scilifelab.se</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

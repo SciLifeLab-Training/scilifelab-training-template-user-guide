@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7e1b33d4ae04fceeae7f1a313bee935a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-95863af46656191e6a2cf1560d98dcd6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -185,13 +185,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./training-instances.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Course instances</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Training instances</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./instance-pages-data-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Instance pages - Data files</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./instance-pages-content.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instance pages - Content</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./fairification.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">FAIRification and publishing your course</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">FAIRification</span></span></a>
   </div>
 </li>
     </ul>
@@ -201,18 +213,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
   <li><a href="#switch-off-template-mode" id="toc-switch-off-template-mode" class="nav-link active" data-scroll-target="#switch-off-template-mode"><span class="header-section-number">5.1</span> Switch off template mode</a></li>
-  <li><a href="#change-the-title-and-subtitle" id="toc-change-the-title-and-subtitle" class="nav-link" data-scroll-target="#change-the-title-and-subtitle"><span class="header-section-number">5.2</span> Change the title and subtitle</a></li>
-  <li><a href="#add-or-remove-logos" id="toc-add-or-remove-logos" class="nav-link" data-scroll-target="#add-or-remove-logos"><span class="header-section-number">5.3</span> Add or remove logos</a></li>
-  <li><a href="#edit-the-information-cards" id="toc-edit-the-information-cards" class="nav-link" data-scroll-target="#edit-the-information-cards"><span class="header-section-number">5.4</span> Edit the information cards</a></li>
-  <li><a href="#list-your-training-instances" id="toc-list-your-training-instances" class="nav-link" data-scroll-target="#list-your-training-instances"><span class="header-section-number">5.5</span> List your training instances</a></li>
-  <li><a href="#set-up-the-hero-buttons" id="toc-set-up-the-hero-buttons" class="nav-link" data-scroll-target="#set-up-the-hero-buttons"><span class="header-section-number">5.6</span> Set up the hero buttons</a></li>
-  <li><a href="#change-the-banner-image" id="toc-change-the-banner-image" class="nav-link" data-scroll-target="#change-the-banner-image"><span class="header-section-number">5.7</span> Change the banner image</a></li>
-  <li><a href="#edit-the-footer" id="toc-edit-the-footer" class="nav-link" data-scroll-target="#edit-the-footer"><span class="header-section-number">5.8</span> Edit the footer</a></li>
-  <li><a href="#cheat-sheet" id="toc-cheat-sheet" class="nav-link" data-scroll-target="#cheat-sheet"><span class="header-section-number">5.9</span> Cheat sheet</a></li>
+  <li><a href="#customise-the-look" id="toc-customise-the-look" class="nav-link" data-scroll-target="#customise-the-look"><span class="header-section-number">5.2</span> Customise the look</a></li>
+  <li><a href="#describe-your-training" id="toc-describe-your-training" class="nav-link" data-scroll-target="#describe-your-training"><span class="header-section-number">5.3</span> Describe your training</a></li>
+  <li><a href="#cheat-sheet" id="toc-cheat-sheet" class="nav-link" data-scroll-target="#cheat-sheet"><span class="header-section-number">5.4</span> Cheat sheet</a></li>
   </ul>
 </nav>
     </div>
@@ -240,21 +247,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>The <a href="https://scilifelab-training.github.io/scilifelab-training-template/">landing page</a> is the front door of your training. It introduces the training as a whole, and helps visitors decide whether to register, or which training instance to open.</p>
 <p>The figure below shows the parts of the landing page, and the names this guide uses for them.</p>
-<p><img src="images/landing-01-overview.png" class="img-fluid" style="width:75.0%" alt="Annotated example of the landing page showing the template banner, training title and subtitle, logos, hero buttons, information cards, the All training instances banner with its image, and the footer."></p>
+<p><img src="images/landing-01-overview.png" class="img-fluid" style="width:85.0%" alt="Annotated example of the landing page showing the template banner, training title and subtitle, logos, hero buttons, information cards, the All training instances banner with its image, and the footer."></p>
 <p>In this chapter, you will learn how to:</p>
 <ul>
-<li><a href="#switch-off-template-mode">Switch off template mode</a></li>
-<li><a href="#change-the-title-and-subtitle">Change the title and subtitle</a></li>
-<li><a href="#add-or-remove-logos">Add or remove logos</a></li>
-<li><a href="#edit-the-information-cards">Edit the information cards</a></li>
-<li><a href="#list-your-training-instances">List your training instances</a></li>
-<li><a href="#set-up-the-hero-buttons">Set up the hero buttons</a></li>
-<li><a href="#change-the-banner-image">Change the banner image</a></li>
-<li><a href="#edit-the-footer">Edit the footer</a></li>
+<li><a href="#switch-off-template-mode">Switch off template mode</a>: replace the README and remove the template banner.</li>
+<li><a href="#customise-the-look">Customise the look</a>: the organisation logos, the button texts, and banner image.</li>
+<li><a href="#describe-your-training">Describe your training</a>: the title, description, learning outcomes, team and footer, and how others may reuse your training.</li>
 </ul>
+<p>How to create a training instance and add it to the landing page is explained in the next chapter, <a href="./training-instances.html">Training instances</a>.</p>
 <section id="before-you-start" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="before-you-start">Before you start</h3>
-<p>Everything in this chapter happens on the <strong>main</strong> branch, and almost all of it in the four data files in the <code>data</code> folder:</p>
+<p>Everything in this chapter happens on the <strong>main</strong> branch, and almost all of it in three data files in the <code>data</code> folder:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 30%">
@@ -269,70 +272,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td><code>data/course.yml</code></td>
-<td>The title, description, learning outcomes, keywords and topics of your training</td>
+<td>The title, description, learning outcomes, keywords and topics of your training, and the organisation and licence shown in the footer</td>
 </tr>
 <tr class="even">
 <td><code>data/team.yml</code></td>
 <td>The people behind the training</td>
 </tr>
 <tr class="odd">
-<td><code>data/instances.yml</code></td>
-<td>The list of training instances</td>
-</tr>
-<tr class="even">
 <td><code>data/website.yml</code></td>
-<td>Logos, button texts, the banner image and the footer</td>
+<td>Template mode, logos, button texts and banner image</td>
 </tr>
 </tbody>
 </table>
-<p>Work as described in <a href="./workflow.html">Regular workflow</a>: start the preview with <code>python scripts/preview.py</code>, make your changes, save them, and check them in your browser. You don’t have to commit after every change: you can make several changes, and commit and push them together.</p>
-<p>If you’re not sure how a data file works, see <a href="./repository-structure.html#data-files">Data files</a>.</p>
-<p>At the end of the chapter, a <strong>cheat sheet</strong> box sums up which file to open and what to change. It is handy when you come back to the guide later.</p>
+<p>Not sure how a data file works? See <a href="./repository-structure.html#data-files">Data files</a>.</p>
+<p>Work as described in <a href="./workflow.html">Regular workflow</a>:</p>
+<ol type="1">
+<li>In a new terminal, start the preview:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">python</span> scripts/preview.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="2" type="1">
+<li>Make your changes, save them, and check the result in your browser.</li>
+<li><a href="./workflow.html#commit-and-push-your-changes">Commit and push</a> your changes. You don’t have to do this after every change: you can make several changes, and then commit and push them together.</li>
+</ol>
+<p>The <a href="#cheat-sheet">cheat sheet</a> at the end of this chapter sums up which file to open and what to change for each part of the landing page.</p>
 </section>
 <section id="switch-off-template-mode" class="level2" data-number="5.1">
 <h2 data-number="5.1" data-anchor-id="switch-off-template-mode"><span class="header-section-number">5.1</span> Switch off template mode</h2>
-<p>Your repository starts as a copy of the template, so it still presents itself as the template. You can see this in the yellow <strong>Want to use this template?</strong> banner at the top of the landing page (see overview image above). Switching off <strong>template mode</strong> turns your repository into your own training. Do this first:</p>
-<ol type="1">
-<li><p>On the <strong>main</strong> branch, open <code>data/website.yml</code>.</p></li>
-<li><p>Find the line:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Change it to:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Save the file (Cmd+S (macOS) or Ctrl+S (Windows and Linux))</p></li>
-</ol>
-<p>This changes two things:</p>
+<p>Your repository starts as a copy of the template, so it still presents itself as the template, in two places:</p>
 <ul>
-<li>The yellow banner disappears from the landing page.</li>
-<li>The README, <code>CITATION.cff</code> and <code>.zenodo.json</code> now describe <strong>your</strong> training, using your data files. While template mode was on, they described the template itself.</li>
+<li>the yellow <span class="template-label">Want to use this template?</span> banner at the top of the landing page (see the overview image above);</li>
+<li>the <code>README.md</code> file, the description shown on your repository’s main page on GitHub, which still describes the template instead of your training.</li>
 </ul>
-<div class="done">
-<p><strong>Done when:</strong> the yellow banner is gone from the preview.</p>
-</div>
+<p>In this section, you replace the README and then switch off <strong>template mode</strong>, so your repository presents your own training.</p>
 <section id="replace-the-readme" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="replace-the-readme">Replace the README</h3>
-<p>Your repository’s README, the description shown on its main page on GitHub, still describes the template. Replace it with the README for a training:</p>
+<p>The template comes with a ready-made README for your training, in <code>docs/_template-README.md</code>. Copy it over the current README, which describes the template:</p>
 <ol type="1">
-<li>In the Explorer panel, open the <code>docs</code> folder and then <code>_template-README.md</code>.</li>
-<li>Select all text (<strong>Cmd+A</strong> or <strong>Ctrl+A</strong>) and copy it.</li>
-<li>Open <code>README.md</code> in the main folder of your repository, select all text, and paste, so the copied text replaces it.</li>
-<li>Delete the note at the top of the file, between <code>&lt;!--</code> and <code>--&gt;</code>, and the line starting with <code>&gt; **Template:**</code>.</li>
-<li>Fill in the parts marked <strong>Write this yourself</strong>. The other parts, between <code>&lt;!-- generated:... --&gt;</code> lines, are filled in automatically from your data files.</li>
-<li>Save the file.</li>
+<li><p>In the Explorer panel, open the <code>docs</code> folder and then <code>_template-README.md</code>.</p>
+<p><img src="images/landing-02-templatereadme.png" class="img-fluid" style="width:85.0%" alt="Screenshot: template-README.md file in docs/ folder"></p></li>
+<li><p>Select all text (<strong>Cmd+A</strong> or <strong>Ctrl+A</strong>) and copy it.</p></li>
+<li><p>Open <code>README.md</code> in the main folder of your repository, select all text, and paste, so the copied text replaces it.</p>
+<p><img src="images/landing-03-readme.png" class="img-fluid" style="width:85.0%" alt="Screenshot: README.md file in repository root with template-README text copied and pasted into it"></p></li>
+<li><p>Delete the note at the top of the file, between <code>&lt;!--</code> and <code>--&gt;</code>, and the line starting with <code>&gt; **Template:**</code>.</p></li>
+<li><p>Fill in the parts marked <strong>Write this yourself</strong>. The other parts, between <code>&lt;!-- generated:... --&gt;</code> lines, are filled in automatically from your data files.</p></li>
+<li><p>Save the file.</p>
+<p><img src="images/landing-04-editreadme.png" class="img-fluid" style="width:70.0%" alt="Screenshot: show which sections of the README to edit"></p></li>
 </ol>
 </section>
-</section>
-<section id="change-the-title-and-subtitle" class="level2" data-number="5.2">
-<h2 data-number="5.2" data-anchor-id="change-the-title-and-subtitle"><span class="header-section-number">5.2</span> Change the title and subtitle</h2>
-<p>The <strong>hero</strong> is the large dark banner at the top of the landing page. It is the first thing visitors see, and shows the title and subtitle of your training, the logos and the buttons.</p>
+<section id="remove-the-template-banner" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="remove-the-template-banner">Remove the template banner</h3>
 <ol type="1">
-<li><p>Open <code>data/course.yml</code>.</p></li>
-<li><p>Find the lines:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Training title"</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Training subtitle"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Replace the text between the quotation marks with the title and subtitle of your training.</p></li>
-<li><p>Save the file.</p></li>
+<li><p>Open <code>data/website.yml</code>.</p></li>
+<li><p>Find the line:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Change it to:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="images/landing-05-templatefalse.png" class="img-fluid" style="width:80.0%" alt="Screenshot: changed template:true to template:false in data/website.yml."></p></li>
+<li><p>Save the file with <strong>Cmd+S</strong> (macOS) or <strong>Ctrl+S</strong> (Windows and Linux).</p></li>
 </ol>
-<p>The title is also used as the title of your website in the browser tab, in the README and in the citation of your training.</p>
+<p>This changes three things:</p>
+<ul>
+<li><p>The yellow banner disappears from the landing page.</p></li>
+<li><p>The generated parts of your new README now show your training’s details, from your data files.</p></li>
+<li><p><code>CITATION.cff</code> and <code>.zenodo.json</code> now describe your training instead of the template.</p>
+<p><img src="images/landing-06-changesaftersaving.png" class="img-fluid" style="width:80.0%" alt="Screenshot: changed template:true to template:false in data/website.yml."></p></li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -343,19 +347,21 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Keep the subtitle to one sentence, and start it with an action verb such as <strong>Learn</strong>, <strong>Understand</strong>, <strong>Explore</strong>, <strong>Build</strong> or <strong>Apply</strong>. For example:</p>
-<blockquote class="blockquote">
-<p><em>Learn how to apply open science practices throughout the research lifecycle.</em></p>
-</blockquote>
-<p>The subtitle is optional: to leave it out, change it to <code>subtitle: ""</code>.</p>
+<p>The README shows the details you have filled in so far. Did you not fill in the data files yet? No problem: the README updates by itself every time you change them.</p>
 </div>
+</div>
+<div class="done">
+<p><strong>Done when:</strong> the yellow banner is gone from the preview, and <code>README.md</code> shows the title of your training at the top.</p>
 </div>
 </section>
-<section id="add-or-remove-logos" class="level2" data-number="5.3">
-<h2 data-number="5.3" data-anchor-id="add-or-remove-logos"><span class="header-section-number">5.3</span> Add or remove logos</h2>
-<p>The logos in the hero show the organisations behind your training. You can add logos, remove them, or replace them with your own.</p>
-<section id="add-a-logo" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="add-a-logo">Add a logo</h3>
+</section>
+<section id="customise-the-look" class="level2" data-number="5.2">
+<h2 data-number="5.2" data-anchor-id="customise-the-look"><span class="header-section-number">5.2</span> Customise the look</h2>
+<p>You can make the landing page your own by changing the organisation logos, the button texts and the banner image. All of these are in <code>data/website.yml</code>. Open it, and work through the parts below.</p>
+<section id="logos" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="logos">Logos</h3>
+<p>The logos in the hero show the organisations behind your training. The SciLifeLab logo is always shown on the right. Your other logos appear to its left.</p>
+<p><strong>Add a logo</strong></p>
 <ol type="1">
 <li><p>Save your logo as an <strong>SVG</strong> or <strong>PNG</strong> file.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -372,434 +378,51 @@ Tip
 </div>
 </div></li>
 <li><p>Copy the file into the <code>img/logos</code> folder: drag it from your computer onto the folder in the Explorer panel in VS Code.</p></li>
-<li><p>Open <code>data/website.yml</code> and find the <code>hero</code> part:</p>
+<li><p>In <code>data/website.yml</code>, find the <code>hero</code> part:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hero</span><span class="kw">:</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">logos</span><span class="kw">:</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">src</span><span class="kw">:</span><span class="at"> </span><span class="st">"img/logos/SciLifeLab_Logotype_NEG.png"</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">alt</span><span class="kw">:</span><span class="at"> </span><span class="st">"SciLifeLab"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Add your logo at the bottom of the list. Copy the two lines of an existing logo, from <code>- src:</code> to <code>alt:</code>, and paste them below. Then change the values:</p>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">alt</span><span class="kw">:</span><span class="at"> </span><span class="st">"SciLifeLab"</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">height</span><span class="kw">:</span><span class="at"> </span><span class="dv">56</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Add your logo below the existing one, with these lines:</p>
 <ul>
-<li><code>src</code>: where the file is, starting with <code>img/logos/</code>, followed by the file name;</li>
-<li><code>alt</code>: the name of the organisation. Screen readers read this out for visitors who can’t see the logo.</li>
+<li><code>src</code>: where the file is: <code>img/logos/</code> followed by the file name;</li>
+<li><code>alt</code>: the name of the organisation;</li>
+<li><code>height</code> (optional): the height of the logo in pixels, 56 if you leave it out.</li>
 </ul>
-<p>For example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hero</span><span class="kw">:</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">logos</span><span class="kw">:</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">src</span><span class="kw">:</span><span class="at"> </span><span class="st">"img/logos/SciLifeLab_Logotype_NEG.png"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">alt</span><span class="kw">:</span><span class="at"> </span><span class="st">"SciLifeLab"</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">src</span><span class="kw">:</span><span class="at"> </span><span class="st">"img/logos/my-organisation.svg"</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">alt</span><span class="kw">:</span><span class="at"> </span><span class="st">"My organisation"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Save the file.</p></li>
+<p>For example:</p></li>
 </ol>
-<p>The logos appear in the same order as in the list.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Keep the spaces at the start of each line exactly as in the example: the <code>- src:</code> line of every logo starts at the same position, and <code>alt:</code> lines up with <code>src:</code>.</p>
-<p>The file name in <code>src</code> must match the name of your file exactly, including capital letters and the extension (<code>.svg</code> or <code>.png</code>).</p>
-</div>
-</div>
-</section>
-<section id="remove-a-logo" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="remove-a-logo">Remove a logo</h3>
+<p>IMAGE</p>
+<ol start="5" type="1">
+<li>Save the file, and check the preview. If the logos look like different sizes, adjust their <code>height</code> until they look about the same.</li>
+</ol>
+<p>The logo with <code>primary: true</code> (SciLifeLab) is always shown on the right. Your other logos appear to its left, in the same order as in the list.</p>
+<p><strong>Remove a logo</strong></p>
 <ol type="1">
-<li>Open <code>data/website.yml</code> and find the <code>hero</code> part.</li>
-<li>Delete both lines of the logo you want to remove: the <code>- src:</code> line and the <code>alt:</code> line below it.</li>
+<li>In <code>data/website.yml</code>, delete all lines of the logo you want to remove, from <code>- src:</code> to its last line.</li>
 <li>Save the file.</li>
 <li>Optional: if you no longer need the logo file, delete it from the <code>img/logos</code> folder. In VS Code, right-click the file and choose <strong>Delete</strong>.</li>
 </ol>
 </section>
-</section>
-<section id="edit-the-information-cards" class="level2" data-number="5.4">
-<h2 data-number="5.4" data-anchor-id="edit-the-information-cards"><span class="header-section-number">5.4</span> Edit the information cards</h2>
-<p>The <strong>information cards</strong> below the hero describe your training. They are created from your data files:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 30%">
-<col style="width: 70%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Card</th>
-<th>Comes from</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Training content</strong></td>
-<td><code>description</code> in <code>data/course.yml</code></td>
-</tr>
-<tr class="even">
-<td><strong>Learning outcomes</strong></td>
-<td><code>learning_outcomes</code> in <code>data/course.yml</code></td>
-</tr>
-<tr class="odd">
-<td><strong>Keywords</strong></td>
-<td><code>keywords</code> in <code>data/course.yml</code></td>
-</tr>
-<tr class="even">
-<td><strong>Topics covered</strong></td>
-<td><code>topics</code> in <code>data/course.yml</code> (optional)</td>
-</tr>
-<tr class="odd">
-<td><strong>Founders</strong></td>
-<td>People with the role <code>Founder</code> in <code>data/team.yml</code></td>
-</tr>
-<tr class="even">
-<td><strong>Contributors</strong></td>
-<td>People with the role <code>Contributor</code> in <code>data/team.yml</code></td>
-</tr>
-</tbody>
-</table>
-<p>The same information is also used in the README and the citation of your training, and helps people find it in Zenodo and training registries such as TeSS.</p>
-<section id="training-content" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="training-content">Training content</h3>
+<section id="button-texts" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="button-texts">Button texts</h3>
+<p>You can change the text on the two hero buttons, and the heading of the <strong>All training instances</strong> banner:</p>
 <ol type="1">
-<li><p>Open <code>data/course.yml</code> and find <code>description</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  Description of the content of the training.</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  Lorem ipsum dolor sit amet, consectetur adipiscing elit...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Replace the example text below <code>description: |</code> with a description of your training. Keep the two spaces at the start of every line. Separate paragraphs with an empty line.</p></li>
-</ol>
-<p>The <code>|</code> after <code>description:</code> lets you write several lines and paragraphs. You can also use simple formatting, such as <code>**bold**</code> or links: <code>[link text](https://example.org)</code>.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Focus on what the training covers. Around ten sentences is usually enough.</p>
-</div>
-</div>
-</section>
-<section id="learning-outcomes-keywords-and-topics" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="learning-outcomes-keywords-and-topics">Learning outcomes, keywords and topics</h3>
-<p>These three are <strong>lists</strong>: each line starting with <code>-</code> is one item.</p>
-<ol type="1">
-<li><p>Open <code>data/course.yml</code> and find <code>learning_outcomes</code>, <code>keywords</code> or <code>topics</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">learning_outcomes</span><span class="kw">:</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"Learning outcome 1"</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"Learning outcome 2"</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"Learning outcome 3"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Replace the example text between the quotation marks with your own.</p></li>
-<li><p>To <strong>add</strong> an item, copy a whole line, paste it below, and change the text. To <strong>remove</strong> an item, delete its whole line.</p></li>
-</ol>
-<p>The learning outcomes are numbered automatically on the website.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><strong>Learning outcomes</strong> describe what participants will be able to do after the training. For guidance, see the <a href="https://figshare.scilifelab.se/articles/educational_resource/Training_Hub_Resources_for_Learning_Outcomes/28473218">SciLifeLab Training Hub resources on writing learning outcomes</a>.</li>
-<li><strong>Keywords</strong>: around four or five short terms that describe the main subject areas. They help people find your training.</li>
-<li><strong>Topics</strong>: short phrases, not full sentences, that give visitors a quick overview of what the training covers.</li>
-</ul>
-</div>
-</div>
-<p>The <strong>Topics covered</strong> card is optional. To leave it out, replace the list with an empty one:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">topics</span><span class="kw">:</span><span class="at"> </span><span class="kw">[]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="founders-and-contributors" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="founders-and-contributors">Founders and contributors</h3>
-<p>The <strong>Founders</strong> and <strong>Contributors</strong> cards list the people in <code>data/team.yml</code>:</p>
-<ul>
-<li><strong>Founders</strong> started the training, or are responsible for it.</li>
-<li><strong>Contributors</strong> contributed materials or expertise.</li>
-</ul>
-<p>Each person looks like this:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">given_names</span><span class="kw">:</span><span class="at"> </span><span class="st">"Firstname1"</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">family_names</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lastname1"</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">roles</span><span class="kw">:</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> Founder</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">affiliation</span><span class="kw">:</span><span class="at"> </span><span class="st">"Institution or organisation"</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">orcid</span><span class="kw">:</span><span class="at"> </span><span class="st">""</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">citation_author</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol type="1">
-<li>Open <code>data/team.yml</code>.</li>
-<li>Fill in the details of each person:
-<ul>
-<li><code>given_names</code> and <code>family_names</code>: first name(s) and surname. Put words like “van der” in the surname.</li>
-<li><code>roles</code>: <code>Founder</code> or <code>Contributor</code>.</li>
-<li><code>affiliation</code>: the organisation the person works for.</li>
-</ul></li>
-<li>To <strong>add</strong> a person, copy a whole entry, from <code>- given_names:</code> to the last line before the next <code>- given_names:</code>, paste it below, and change the values. To <strong>remove</strong> a person, delete their whole entry.</li>
-</ol>
-<p>Each card is left out when nobody has that role. The other fields, such as <code>orcid</code>, <code>email</code>, <code>course_contact</code> and <code>citation_author</code>, are used for the citation of your training. They are explained in <a href="./fairification.html">FAIRification</a> and in the comments at the top of <code>data/team.yml</code>.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Every person needs <code>given_names</code>, <code>family_names</code>, <code>roles</code> and <code>affiliation</code>. If one is missing, the preview shows an error that names the person and the missing field.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="list-your-training-instances" class="level2" data-number="5.5">
-<h2 data-number="5.5" data-anchor-id="list-your-training-instances"><span class="header-section-number">5.5</span> List your training instances</h2>
-<p>The <strong>All training instances</strong> banner near the bottom of the landing page has a button for each training instance. Visitors use it to open the website of the current training, or of an earlier one.</p>
-<p>The list comes from <code>data/instances.yml</code>. Each training instance looks like this:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"2605"</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"May 2026"</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">instance_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"./2605/"</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">registration_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://example.org/registration"</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sort_key</span><span class="kw">:</span><span class="at"> </span><span class="dv">202605</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 75%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>What it means</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>slug</code></td>
-<td>The year and month of the training instance as YYMM, the same as in its branch name. For example, <code>"2605"</code> for the branch <strong>release-2605</strong></td>
-</tr>
-<tr class="even">
-<td><code>label</code></td>
-<td>The text on the button, for example <code>"May 2026"</code></td>
-</tr>
-<tr class="odd">
-<td><code>status</code></td>
-<td><code>current</code> for the training instance that is running now or coming up next; <code>previous</code> for earlier ones</td>
-</tr>
-<tr class="even">
-<td><code>visible</code></td>
-<td><code>true</code> to show the button in the banner; <code>false</code> to hide it</td>
-</tr>
-<tr class="odd">
-<td><code>show_in_hero</code></td>
-<td>Only for the current training instance: whether the hero shows a button to it. See <a href="#set-up-the-hero-buttons">Set up the hero buttons</a></td>
-</tr>
-<tr class="even">
-<td><code>instance_url</code></td>
-<td>The link to the website of the training instance: <code>"./YYMM/"</code>, with the same digits as <code>slug</code></td>
-</tr>
-<tr class="odd">
-<td><code>registration_url</code></td>
-<td>Only for the current training instance: the link to its registration page</td>
-</tr>
-<tr class="even">
-<td><code>sort_key</code></td>
-<td>The year and month as YYYYMM, for example <code>202605</code>. Used to put the training instances in order</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Exactly <strong>one</strong> training instance has <code>status: current</code>. All others have <code>status: previous</code>.</li>
-<li>The current training instance always has <code>visible: true</code>.</li>
-<li>Each training instance has its own <code>slug</code>: never use the same one twice.</li>
-<li><code>slug</code> and <code>instance_url</code> use the same four digits.</li>
-</ul>
-<p>If one of these rules is broken, the preview shows an error that explains what to fix.</p>
-</div>
-</div>
-<section id="remove-the-example-training-instances" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="remove-the-example-training-instances">Remove the example training instances</h3>
-<p>The template’s list contains example training instances, such as <strong>2505</strong> and <strong>2411</strong>, that don’t exist in your repository. Their buttons would lead to pages that don’t exist. Start by removing them:</p>
-<ol type="1">
-<li>Open <code>data/instances.yml</code>.</li>
-<li>Delete the whole entry of each example instance, from <code>- slug:</code> to <code>sort_key:</code>, except the one with <code>slug: "0000"</code>.</li>
-<li>Save the file.</li>
-</ol>
-<p>Keep the <strong>0000</strong> entry for now: it links to the example training instance on the <strong>release-0000</strong> branch. You replace it once your first own training instance is ready.</p>
-</section>
-<section id="add-a-training-instance" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="add-a-training-instance">Add a training instance</h3>
-<p>Each training instance has its own <strong>release-</strong> branch, with its own website. Adding it to <code>instances.yml</code> puts a button to that website on the landing page.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Creating a <strong>release-</strong> branch does <strong>not</strong> add it to this list automatically. First create the branch, as described in <a href="./training-instances.html">Training instances</a>, and then add it here.</p>
-</div>
-</div>
-<ol type="1">
-<li>Open <code>data/instances.yml</code>.</li>
-<li>Copy a complete entry, from <code>- slug:</code> to <code>sort_key:</code>, and paste it at the top of the list, directly under <code>instances:</code>.</li>
-<li>Change <code>slug</code>, <code>label</code>, <code>instance_url</code> and <code>sort_key</code> to the new training instance.</li>
-<li>If the new training instance is now the current one, see <a href="#change-the-current-training-instance">Change the current training instance</a> below.</li>
-<li>Save the file.</li>
-</ol>
-<p>For example, for a training instance in November 2026:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"2611"</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"November 2026"</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">instance_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"./2611/"</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">registration_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://example.org/registration"</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sort_key</span><span class="kw">:</span><span class="at"> </span><span class="dv">202611</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Keep the spaces at the start of each line exactly as in the existing entries: <code>- slug:</code> is indented by two spaces, and the other lines of the entry by four.</p>
-</div>
-</div>
-</section>
-<section id="change-the-current-training-instance" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="change-the-current-training-instance">Change the current training instance</h3>
-<p>When a new training instance becomes the current one:</p>
-<ol type="1">
-<li><p>In <code>data/instances.yml</code>, find the training instance that is current now, and change its <code>status</code> and <code>show_in_hero</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> previous</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Find the new current training instance, and set:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Save the file.</p></li>
-</ol>
-<p>For example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">instances</span><span class="kw">:</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"2611"</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"November 2026"</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">instance_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"./2611/"</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">registration_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://example.org/registration"</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">sort_key</span><span class="kw">:</span><span class="at"> </span><span class="dv">202611</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"2605"</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"May 2026"</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">status</span><span class="kw">:</span><span class="at"> previous</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">instance_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"./2605/"</span></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">registration_url</span><span class="kw">:</span><span class="at"> </span><span class="st">""</span></span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">sort_key</span><span class="kw">:</span><span class="at"> </span><span class="dv">202605</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="show-or-hide-an-earlier-training-instance" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="show-or-hide-an-earlier-training-instance">Show or hide an earlier training instance</h3>
-<p>You may not want to show every earlier training instance on the landing page. To hide one, set its <code>visible</code> to <code>false</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>To show it again, set it back to <code>true</code>. A hidden training instance stays in the list, and its website stays online: only its button disappears from the banner.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Never hide the <strong>current</strong> training instance with <code>visible: false</code>. To remove its button from the hero, use <code>show_in_hero: false</code> instead. See <a href="#set-up-the-hero-buttons">Set up the hero buttons</a>.</p>
-</div>
-</div>
-</section>
-<section id="change-the-text-on-a-button" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="change-the-text-on-a-button">Change the text on a button</h3>
-<p>Change the <code>label</code> of the training instance, for example from <code>"May 2026"</code> to <code>"Spring 2026"</code>. This only changes the text visitors see, not where the button leads.</p>
-</section>
-<section id="change-the-order" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="change-the-order">Change the order</h3>
-<p>The current training instance is always shown first. The earlier ones follow, newest first, sorted by <code>sort_key</code>. You don’t need to put the entries in order yourself, as long as each <code>sort_key</code> is the year and month of its training instance, written as YYYYMM: for example, <code>202605</code> for May 2026.</p>
-</section>
-</section>
-<section id="set-up-the-hero-buttons" class="level2" data-number="5.6">
-<h2 data-number="5.6" data-anchor-id="set-up-the-hero-buttons"><span class="header-section-number">5.6</span> Set up the hero buttons</h2>
-<p>The hero can show two buttons:</p>
-<ul>
-<li><strong>Take me to the current instance</strong> opens the website of the current training instance.</li>
-<li><strong>Register now</strong> opens the registration page of the current training instance.</li>
-</ul>
-<p>Both buttons use the training instance with <code>status: current</code> in <code>data/instances.yml</code>. See <a href="#list-your-training-instances">List your training instances</a> to set which one that is.</p>
-<section id="add-the-registration-link" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="add-the-registration-link">Add the registration link</h3>
-<ol type="1">
-<li><p>Open <code>data/instances.yml</code> and find the training instance with <code>status: current</code>.</p></li>
-<li><p>Replace the example link in <code>registration_url</code> with the link to your registration page or form:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">registration_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://your-registration-page.example"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Save the file.</p></li>
-</ol>
-</section>
-<section id="hide-the-registration-button" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="hide-the-registration-button">Hide the registration button</h3>
-<p>When registration has closed, or your training doesn’t need registration, empty the link of the current training instance:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">registration_url</span><span class="kw">:</span><span class="at"> </span><span class="st">""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The <strong>Register now</strong> button disappears. To show it again, fill in the link again.</p>
-</section>
-<section id="hide-the-current-instance-button" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="hide-the-current-instance-button">Hide the current instance button</h3>
-<p>When there is no current training instance to point to, for example when your training is self-paced or not given at the moment, set <code>show_in_hero</code> of the current training instance to <code>false</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The button disappears from the hero. The training instance stays in the <strong>All training instances</strong> banner.</p>
-</section>
-<section id="change-the-button-texts" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="change-the-button-texts">Change the button texts</h3>
-<p>You can change the text on the buttons, and the heading of the <strong>All training instances</strong> banner, without changing where they lead:</p>
-<ol type="1">
-<li><p>Open <code>data/website.yml</code> and find the <code>labels</code> part:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">labels</span><span class="kw">:</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">hero_view_current_label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Take me to the current instance"</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">hero_registration_open_label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Register now"</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">instances_band_title</span><span class="kw">:</span><span class="at"> </span><span class="st">"All training instances"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>In <code>data/website.yml</code>, find the <code>labels</code> part:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">labels</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">hero_view_current_label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Take me to the current instance"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">hero_registration_open_label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Register now"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">instances_band_title</span><span class="kw">:</span><span class="at"> </span><span class="st">"All training instances"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Change the text between the quotation marks. For example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hero_view_current_label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Go to the latest training"</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hero_registration_open_label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Sign up"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hero_view_current_label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Go to the latest training"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hero_registration_open_label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Sign up"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Save the file.</p></li>
 </ol>
+<p>This only changes the texts. Where the buttons lead, and when they are shown, is set in <code>data/instances.yml</code>: see <a href="./training-instances.html">Training instances</a>.</p>
 </section>
-</section>
-<section id="change-the-banner-image" class="level2" data-number="5.7">
-<h2 data-number="5.7" data-anchor-id="change-the-banner-image"><span class="header-section-number">5.7</span> Change the banner image</h2>
+<section id="banner-image" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="banner-image">Banner image</h3>
 <p>The <strong>All training instances</strong> banner shows a decorative image next to the buttons. You can replace it with an image that fits your training.</p>
 <ol type="1">
 <li><p>Copy your image into the <code>img/images</code> folder: drag it from your computer onto the folder in the Explorer panel in VS Code.</p>
@@ -816,17 +439,17 @@ Tip
 <p>Use a landscape image. The image is cropped automatically to fill the space, so keep the important part near the middle.</p>
 </div>
 </div></li>
-<li><p>Open <code>data/website.yml</code> and find:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">instances_band</span><span class="kw">:</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"img/images/navet-band.png"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>In <code>data/website.yml</code>, find:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">instances_band</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"img/images/navet-band.png"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Replace <code>navet-band.png</code> with the file name of your image, for example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">instances_band</span><span class="kw">:</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"img/images/my-training-banner.jpg"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">instances_band</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"img/images/my-training-banner.jpg"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Save the file, and check the preview at different widths of your browser window.</p></li>
 </ol>
-<p>To show no image at all, set <code>image: ""</code>.</p>
+<p>To show no image at all, change it to <code>image: ""</code>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -835,33 +458,136 @@ Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You can choose which part of the image stays visible. This is the only change in this guide in <code>styles.css</code>, the file that controls the look of the website, so make it carefully:</p>
 <ol type="1">
 <li><p>Open <code>styles.css</code> and search for <code>.instances-band__image</code> (<strong>Cmd+F</strong> or <strong>Ctrl+F</strong>).</p></li>
 <li><p>In that block, find:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>object-position<span class="in">:</span> center;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>object-position<span class="in">:</span> center;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Change <code>center</code> to the part you want to keep. For example, <code>center top</code> keeps the top of the image, and <code>30% center</code> moves the visible part to the left.</p></li>
 </ol>
 </div>
 </div>
 </div>
+<div class="done">
+<p><strong>Done when:</strong> the preview shows your logos and banner image.</p>
+</div>
 </section>
-<section id="edit-the-footer" class="level2" data-number="5.8">
-<h2 data-number="5.8" data-anchor-id="edit-the-footer"><span class="header-section-number">5.8</span> Edit the footer</h2>
-<p>The <strong>footer</strong> at the bottom of the landing page shows who runs the training, its licence, how the website was built, and a link to your repository on GitHub. All of it is in the <code>footer</code> part of <code>data/website.yml</code>.</p>
-<section id="organisation" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="organisation">Organisation</h3>
-<p>Change <code>organisation</code> to the name of the organisation, programme or group responsible for your training:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">organisation</span><span class="kw">:</span><span class="at"> </span><span class="st">"SciLifeLab Training Hub"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="licence" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="licence">Licence</h3>
-<p>The licence tells others how they may reuse your training. The footer shows its name, linked to the page that explains it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">licence</span><span class="kw">:</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"CC BY 4.0"</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://creativecommons.org/licenses/by/4.0/"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="describe-your-training" class="level2" data-number="5.3">
+<h2 data-number="5.3" data-anchor-id="describe-your-training"><span class="header-section-number">5.3</span> Describe your training</h2>
+<p>What the landing page says about your training comes from two data files: <code>data/course.yml</code> describes the training, and <code>data/team.yml</code> the people behind it. The information you enter in these files is also used in the README and the citation of your training, and helps people find it in Zenodo and training registries such as TeSS.</p>
+<p>Both files contain explanations at the top and between the fields, in the lines starting with <code>#</code>. This section covers the main points; the explanations in the files give the details.</p>
+<section id="how-to-fill-in-a-data-file" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="how-to-fill-in-a-data-file">How to fill in a data file</h3>
+<p>You only change the <strong>values</strong>: the text after the colon. See <a href="./repository-structure.html#data-files">Data files</a> for how a data file is built. Values come in three forms:</p>
+<p><strong>A single line of text</strong>, between quotation marks:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Introduction to R"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Several paragraphs</strong>, after <code>|</code>. Start each line with the same number of spaces, and separate paragraphs with an empty line:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  This training introduces R, a free and widely used programming</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  language for data analysis.</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  Through short demonstrations and hands-on exercises, you learn how to</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  read, clean, summarise and plot your data.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>A list</strong>: each line starting with <code>-</code> is one item. To add an item, copy a whole line, paste it below, and change the text. To remove an item, delete its whole line:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">keywords</span><span class="kw">:</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"R"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"Data analysis"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"Data visualisation"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="the-training-course.yml" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="the-training-course.yml">The training: course.yml</h3>
+<p>Open <code>data/course.yml</code> and work through it from top to bottom:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 30%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Where it appears</th>
+<th>What to fill in</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>title</code></td>
+<td>The hero, and the browser tab</td>
+<td>The name of your training</td>
+</tr>
+<tr class="even">
+<td><code>subtitle</code></td>
+<td>The hero, below the title</td>
+<td>One sentence about the training (optional)</td>
+</tr>
+<tr class="odd">
+<td><code>description</code></td>
+<td>The <strong>Training content</strong> card</td>
+<td>What the training covers, in a few paragraphs</td>
+</tr>
+<tr class="even">
+<td><code>learning_outcomes</code></td>
+<td>The <strong>Learning outcomes</strong> card</td>
+<td>What participants can do after the training</td>
+</tr>
+<tr class="odd">
+<td><code>keywords</code></td>
+<td>The <strong>Keywords</strong> card</td>
+<td>Four or five short terms that describe the subject</td>
+</tr>
+<tr class="even">
+<td><code>topics</code></td>
+<td>The <strong>Topics covered</strong> card</td>
+<td>The main topics, as short phrases</td>
+</tr>
+<tr class="odd">
+<td><code>language</code>, <code>target_audience</code>, <code>expertise_level</code>, <code>organizers</code>, <code>funding</code></td>
+<td>Not on the landing page: in the README, the citation and the information for training registries</td>
+<td>See the explanations in the file</td>
+</tr>
+<tr class="even">
+<td><code>licence</code>, <code>licence_url</code> (under <code>reuse</code>)</td>
+<td>The footer (“Licensed under …”), the README and the citation</td>
+<td>CC BY 4.0 by default.</td>
+</tr>
+</tbody>
+</table>
+<p>The other fields under <code>reuse</code> can stay empty for now:</p>
+<ul>
+<li><code>doi</code>, <code>release_date</code> and <code>zenodo_communities</code> belong to publishing your training on Zenodo, and are explained in <a href="./fairification.html">FAIRification</a>.</li>
+<li><code>licence_id</code>, <code>website_url</code> and <code>preferred_citation</code> can stay empty for most trainings. The template works out the address of your website, and creates the citation from your team, title and DOI.</li>
+</ul>
+<p>Example of a filled-in <code>course.yml</code>:</p>
+<p>IMAGE</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Subtitle</strong>: keep it to one sentence, and start it with an action verb such as <strong>Learn</strong>, <strong>Understand</strong>, <strong>Explore</strong>, <strong>Build</strong> or <strong>Apply</strong>.</li>
+<li><strong>Learning outcomes</strong> describe what participants will be able to do after the training. For guidance, see the <a href="https://figshare.scilifelab.se/articles/educational_resource/Training_Hub_Resources_for_Learning_Outcomes/28473218">SciLifeLab Training Hub resources on writing learning outcomes</a>.</li>
+<li><strong>Optional fields</strong>: to leave out the subtitle, use <code>subtitle: ""</code>. To leave out the funding, keep <code>funding: []</code>.</li>
+<li><strong>Licence</strong>: if you change it, also replace the text in <code>LICENSE.md</code> in the main folder of your repository with the full text of your new licence.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="the-team-team.yml" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="the-team-team.yml">The team: team.yml</h3>
+<p>The <strong>Founders</strong> and <strong>Contributors</strong> cards at the bottom of the landing page list the people in <code>data/team.yml</code>. They are also credited in the README and the citation of your training.</p>
+<p>Open <code>data/team.yml</code> and fill in each person. The comments at the top of the file explain every field. To <strong>add</strong> a person, copy a whole entry, from <code>- given_names:</code> to the line before the next person, paste it below, and change the values. To <strong>remove</strong> a person, delete their whole entry.</p>
+<p>Example of a filled-in <code>team.yml</code>:</p>
+<p>IMAGE</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -872,42 +598,19 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The licence also appears in <code>reuse</code> in <code>data/course.yml</code>, where it’s used for the README and the citation. If you choose another licence, change it in <strong>both</strong> files, so they say the same, and replace the text in <code>LICENSE.md</code>. See <a href="./fairification.html">FAIRification</a> for help choosing a licence.</p>
+<p>Every person needs <code>given_names</code>, <code>family_names</code>, <code>roles</code> (<code>Founder</code> or <code>Contributor</code>) and <code>affiliation</code>. If one is missing, the preview shows an error that names the person and the missing field.</p>
 </div>
 </div>
-</section>
-<section id="repository-link" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="repository-link">Repository link</h3>
-<p>The GitHub logo in the footer links to your repository. Replace <code>url</code> with the address of your repository on GitHub:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repository</span><span class="kw">:</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://github.com/your-organisation/your-repository"</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"img/logos/Github_Neg.png"</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">alt</span><span class="kw">:</span><span class="at"> </span><span class="st">"GitHub repository"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You find the address in your browser’s address bar when you open your repository on GitHub, for example <code>https://github.com/SciLifeLab-Training/introduction-to-r</code>.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The repository link is <strong>required</strong>. The template also uses it to work out the address of your website, for the citation of your training.</p>
-</div>
+<div class="done">
+<p><strong>Done when:</strong> the hero, the information cards and the footer in the preview show your own training and team, instead of the example text.</p>
 </div>
 </section>
-<section id="built-with" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="built-with">Built with</h3>
-<p>The <code>built_with</code> part credits the SciLifeLab Training Webpage Template. You can usually leave it as it is.</p>
 </section>
-</section>
-<section id="cheat-sheet" class="level2" data-number="5.9">
-<h2 data-number="5.9" data-anchor-id="cheat-sheet"><span class="header-section-number">5.9</span> Cheat sheet</h2>
+<section id="cheat-sheet" class="level2" data-number="5.4">
+<h2 data-number="5.4" data-anchor-id="cheat-sheet"><span class="header-section-number">5.4</span> Cheat sheet</h2>
 <p>All changes on the landing page, on one screen. Everything happens on the <strong>main</strong> branch.</p>
-<section id="template-mode" class="level3 unnumbered unlisted">
-<h3 class="unnumbered unlisted" data-anchor-id="template-mode">Template mode</h3>
+<section id="switch-off-template-mode-1" class="level3 unnumbered unlisted">
+<h3 class="unnumbered unlisted" data-anchor-id="switch-off-template-mode-1">Switch off template mode</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -917,50 +620,26 @@ Important
 <thead>
 <tr class="header">
 <th>To…</th>
-<th>File</th>
-<th>What to change</th>
+<th>Where</th>
+<th>What to do</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Switch off template mode and remove the banner</td>
+<td>Replace the README</td>
+<td><code>README.md</code></td>
+<td>Replace its contents with <code>docs/_template-README.md</code>, and fill in the parts marked <strong>Write this yourself</strong></td>
+</tr>
+<tr class="even">
+<td>Remove the template banner</td>
 <td><code>data/website.yml</code></td>
 <td>Set <code>template: false</code></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="title-and-subtitle" class="level3 unnumbered unlisted">
-<h3 class="unnumbered unlisted" data-anchor-id="title-and-subtitle">Title and subtitle</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>To…</th>
-<th>File</th>
-<th>What to change</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Change the title</td>
-<td><code>data/course.yml</code></td>
-<td>The value of <code>title</code></td>
-</tr>
-<tr class="even">
-<td>Change the subtitle</td>
-<td><code>data/course.yml</code></td>
-<td>The value of <code>subtitle</code></td>
-</tr>
-<tr class="odd">
-<td>Leave out the subtitle</td>
-<td><code>data/course.yml</code></td>
-<td>Set <code>subtitle: ""</code></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="logos" class="level3 unnumbered unlisted">
-<h3 class="unnumbered unlisted" data-anchor-id="logos">Logos</h3>
+<section id="customise-the-look-1" class="level3 unnumbered unlisted">
+<h3 class="unnumbered unlisted" data-anchor-id="customise-the-look-1">Customise the look</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -970,162 +649,25 @@ Important
 <thead>
 <tr class="header">
 <th>To…</th>
-<th>File</th>
-<th>What to change</th>
+<th>Where</th>
+<th>What to do</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Add a logo file</td>
-<td><code>img/logos/</code></td>
-<td>Copy your logo (<code>.svg</code> or <code>.png</code>) into the folder</td>
+<td>Add a logo</td>
+<td><code>img/logos/</code> and <code>data/website.yml</code></td>
+<td>Copy the file into the img folder, and add <code>src</code>, <code>alt</code> and <code>height</code> lines under <code>hero:</code> → <code>logos:</code></td>
 </tr>
 <tr class="even">
-<td>Show a logo</td>
+<td>Change the size of a logo</td>
 <td><code>data/website.yml</code></td>
-<td>Add <code>- src:</code> and <code>alt:</code> lines under <code>hero:</code> → <code>logos:</code></td>
+<td><code>height</code> of the logo, in pixels</td>
 </tr>
 <tr class="odd">
 <td>Remove a logo</td>
 <td><code>data/website.yml</code></td>
-<td>Delete the <code>- src:</code> and <code>alt:</code> lines of the logo</td>
-</tr>
-<tr class="even">
-<td>Delete an unused logo file (optional)</td>
-<td><code>img/logos/</code></td>
-<td>Delete the file</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="information-cards" class="level3 unnumbered unlisted">
-<h3 class="unnumbered unlisted" data-anchor-id="information-cards">Information cards</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>To…</th>
-<th>File</th>
-<th>What to change</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Change the training content</td>
-<td><code>data/course.yml</code></td>
-<td>The text below <code>description: \|</code></td>
-</tr>
-<tr class="even">
-<td>Change the learning outcomes</td>
-<td><code>data/course.yml</code></td>
-<td>The list under <code>learning_outcomes</code></td>
-</tr>
-<tr class="odd">
-<td>Change the keywords</td>
-<td><code>data/course.yml</code></td>
-<td>The list under <code>keywords</code></td>
-</tr>
-<tr class="even">
-<td>Change the topics</td>
-<td><code>data/course.yml</code></td>
-<td>The list under <code>topics</code></td>
-</tr>
-<tr class="odd">
-<td>Leave out the topics card</td>
-<td><code>data/course.yml</code></td>
-<td>Set <code>topics: []</code></td>
-</tr>
-<tr class="even">
-<td>Add or change founders and contributors</td>
-<td><code>data/team.yml</code></td>
-<td>Add or edit a person, with <code>roles</code> set to <code>Founder</code> or <code>Contributor</code></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="training-instances" class="level3 unnumbered unlisted">
-<h3 class="unnumbered unlisted" data-anchor-id="training-instances">Training instances</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>To…</th>
-<th>File</th>
-<th>What to change</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Remove the example training instances</td>
-<td><code>data/instances.yml</code></td>
-<td>Delete their entries, except <code>"0000"</code></td>
-</tr>
-<tr class="even">
-<td>Add a training instance</td>
-<td><code>data/instances.yml</code></td>
-<td>Copy an entry to the top of the list and change <code>slug</code>, <code>label</code>, <code>instance_url</code> and <code>sort_key</code></td>
-</tr>
-<tr class="odd">
-<td>Change the current training instance</td>
-<td><code>data/instances.yml</code></td>
-<td>Old one: <code>status: previous</code> and <code>show_in_hero: false</code>. New one: <code>status: current</code>, <code>visible: true</code> and <code>show_in_hero: true</code></td>
-</tr>
-<tr class="even">
-<td>Hide an earlier training instance</td>
-<td><code>data/instances.yml</code></td>
-<td>Set <code>visible: false</code></td>
-</tr>
-<tr class="odd">
-<td>Change the text on a button</td>
-<td><code>data/instances.yml</code></td>
-<td>Change <code>label</code></td>
-</tr>
-<tr class="even">
-<td>Change the order</td>
-<td><code>data/instances.yml</code></td>
-<td>Set <code>sort_key</code> to the year and month, as YYYYMM</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="hero-buttons" class="level3 unnumbered unlisted">
-<h3 class="unnumbered unlisted" data-anchor-id="hero-buttons">Hero buttons</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>To…</th>
-<th>File</th>
-<th>What to change</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Add the registration link</td>
-<td><code>data/instances.yml</code></td>
-<td><code>registration_url</code> of the current training instance</td>
-</tr>
-<tr class="even">
-<td>Hide the registration button</td>
-<td><code>data/instances.yml</code></td>
-<td>Set <code>registration_url: ""</code> for the current training instance</td>
-</tr>
-<tr class="odd">
-<td>Hide the current instance button</td>
-<td><code>data/instances.yml</code></td>
-<td>Set <code>show_in_hero: false</code> for the current training instance</td>
+<td>Delete all lines of the logo</td>
 </tr>
 <tr class="even">
 <td>Change the button texts</td>
@@ -1137,11 +679,21 @@ Important
 <td><code>data/website.yml</code></td>
 <td><code>instances_band_title</code> under <code>labels</code></td>
 </tr>
+<tr class="even">
+<td>Change the banner image</td>
+<td><code>img/images/</code> and <code>data/website.yml</code></td>
+<td>Copy the image into the img folder, and change <code>image</code> under <code>instances_band</code></td>
+</tr>
+<tr class="odd">
+<td>Show no banner image</td>
+<td><code>data/website.yml</code></td>
+<td>Set <code>image: ""</code> under <code>instances_band</code></td>
+</tr>
 </tbody>
 </table>
 </section>
-<section id="banner-image" class="level3 unnumbered unlisted">
-<h3 class="unnumbered unlisted" data-anchor-id="banner-image">Banner image</h3>
+<section id="describe-your-training-1" class="level3 unnumbered unlisted">
+<h3 class="unnumbered unlisted" data-anchor-id="describe-your-training-1">Describe your training</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -1151,78 +703,51 @@ Important
 <thead>
 <tr class="header">
 <th>To…</th>
-<th>File</th>
-<th>What to change</th>
+<th>Where</th>
+<th>What to do</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Add your image</td>
-<td><code>img/images/</code></td>
-<td>Copy your image into the folder</td>
+<td>Change the title and subtitle</td>
+<td><code>data/course.yml</code></td>
+<td><code>title</code> and <code>subtitle</code></td>
 </tr>
 <tr class="even">
-<td>Use your image</td>
-<td><code>data/website.yml</code></td>
-<td><code>image</code> under <code>instances_band</code></td>
+<td>Change the training content</td>
+<td><code>data/course.yml</code></td>
+<td>The text under <code>description</code></td>
 </tr>
 <tr class="odd">
-<td>Show no image</td>
-<td><code>data/website.yml</code></td>
-<td>Set <code>image: ""</code></td>
+<td>Change the learning outcomes, keywords or topics</td>
+<td><code>data/course.yml</code></td>
+<td>The lists under <code>learning_outcomes</code>, <code>keywords</code> and <code>topics</code></td>
 </tr>
 <tr class="even">
-<td>Adjust the cropping (optional)</td>
-<td><code>styles.css</code></td>
-<td><code>object-position</code> in <code>.instances-band__image</code></td>
+<td>Leave out the subtitle or funding</td>
+<td><code>data/course.yml</code></td>
+<td>Set <code>subtitle: ""</code> or <code>funding: []</code></td>
 </tr>
-</tbody>
-</table>
-</section>
-<section id="footer" class="level3 unnumbered unlisted">
-<h3 class="unnumbered unlisted" data-anchor-id="footer">Footer</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>To…</th>
-<th>File</th>
-<th>What to change</th>
-</tr>
-</thead>
-<tbody>
 <tr class="odd">
-<td>Change the organisation</td>
-<td><code>data/website.yml</code></td>
-<td><code>organisation</code> under <code>footer</code></td>
+<td>Change the organisation in the footer</td>
+<td><code>data/course.yml</code></td>
+<td><code>organizers</code></td>
 </tr>
 <tr class="even">
 <td>Change the licence</td>
-<td><code>data/website.yml</code> and <code>data/course.yml</code></td>
-<td><code>licence</code> under <code>footer</code>, and <code>licence</code> under <code>reuse</code>. Also replace <code>LICENSE.md</code></td>
+<td><code>data/course.yml</code></td>
+<td><code>licence</code> and <code>licence_url</code> under <code>reuse</code>. Also replace <code>LICENSE.md</code></td>
 </tr>
 <tr class="odd">
-<td>Link to your repository</td>
-<td><code>data/website.yml</code></td>
-<td><code>url</code> under <code>footer</code> → <code>repository</code></td>
+<td>Add or change founders and contributors</td>
+<td><code>data/team.yml</code></td>
+<td>Add or edit a person, with <code>roles</code> set to <code>Founder</code> or <code>Contributor</code></td>
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="next-steps" class="level2 unnumbered unlisted">
-<h2 class="unnumbered unlisted" data-anchor-id="next-steps">Next steps</h2>
-<p>Your landing page now describes your training. Continue with:</p>
-<ul>
-<li><a href="./training-instances.html">Training instances</a>: create the website for each time your training is given.</li>
-<li><a href="./fairification.html">FAIRification</a>: make your training citable and findable.</li>
-</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1626,12 +1151,25 @@ Important
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./training-instances.html" class="pagination-link" aria-label="Course instances">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Course instances</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./training-instances.html" class="pagination-link" aria-label="Training instances">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Training instances</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>This User Guide is maintained by the SciLifeLab Training Hub.<br> Questions, problems or ideas for improving the guide or the template? <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template/issues">Open an issue</a> or email us at <a href="mailto:training@scilifelab.se">training@scilifelab.se</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

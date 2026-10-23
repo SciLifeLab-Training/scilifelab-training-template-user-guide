@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7e1b33d4ae04fceeae7f1a313bee935a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-95863af46656191e6a2cf1560d98dcd6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -185,13 +185,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./training-instances.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Course instances</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Training instances</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./instance-pages-data-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Instance pages - Data files</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./instance-pages-content.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instance pages - Content</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./fairification.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">FAIRification and publishing your course</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">FAIRification</span></span></a>
   </div>
 </li>
     </ul>
@@ -201,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
   <li><a href="#install-the-software" id="toc-install-the-software" class="nav-link active" data-scroll-target="#install-the-software"><span class="header-section-number">2.1</span> Install the software</a></li>
@@ -235,10 +247,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>This chapter takes you through everything you need to do <strong>once</strong>, at the start, to get your own training website. You will create your own copy of the SciLifeLab Training Webpage Template, publish it as a website, and set it up on your computer so you can edit it.</p>
-<p>This is the only part of the guide you do just once, and takes about an hour. Take your time: each step explains what you are doing and why, and what you should see when it worked.</p>
-<p>Once you are done, the next chapter, <a href="./workflow.html">Regular workflow</a>, shows the few steps you repeat every time you update your website.</p>
 <p><img src="images/setup-overview-image.png" class="img-fluid" alt="Workflow showing the one-time setup steps."></p>
-<p><br></p>
+<p>Once you are done, the next chapter, <a href="./workflow.html">Regular workflow</a>, shows the few steps you repeat every time you update your website.</p>
 <section id="install-the-software" class="level2" data-number="2.1">
 <h2 data-number="2.1" data-anchor-id="install-the-software"><span class="header-section-number">2.1</span> Install the software</h2>
 <p>To work with the template, you need a free GitHub account and four free programs. If you already have some of them, you can skip those.</p>
@@ -311,7 +321,7 @@ Note
 </section>
 <section id="create-your-repository" class="level2" data-number="2.2">
 <h2 data-number="2.2" data-anchor-id="create-your-repository"><span class="header-section-number">2.2</span> Create your repository</h2>
-<p>A <strong>repository</strong> is the folder on GitHub that holds everything for your training: the information about it, the materials, and the website. You create your own repository as a copy of the template. The template itself stays unchanged, so you can’t break anything for others.</p>
+<p>A <strong>repository</strong> is the folder on GitHub that holds everything for your training: the information about it, the materials, and the website. You will create your own repository as a copy of the template. The template itself stays unchanged.</p>
 <ol type="1">
 <li>Open the <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template">SciLifeLab Training Webpage Template</a> on GitHub.</li>
 <li>In the top-right corner of the page, click the green <strong>Use this template</strong> button and select <strong>Create a new repository</strong>.</li>
@@ -538,12 +548,6 @@ Note
 <h2 class="unnumbered unlisted" data-anchor-id="youre-all-set">You’re all set!</h2>
 <p>Your training has its own repository and website, and your computer is ready to edit it. You won’t need to repeat any of these steps for this training.</p>
 <p>Continue with <a href="./workflow.html">Regular workflow</a> to make your first change and see it appear on your website.</p>
-<p><br></p>
-<div class="guide-footer">
-<hr>
-<p>This User Guide is maintained by the SciLifeLab Training Hub.<br>
-Questions, problems or ideas for improving the guide or the template? <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template/issues">Open an issue</a> or email us at <a href="mailto:training@scilifelab.se">training@scilifelab.se</a>.</p>
-</div>
 
 
 </section>
@@ -955,6 +959,19 @@ Questions, problems or ideas for improving the guide or the template? <a href="h
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>This User Guide is maintained by the SciLifeLab Training Hub.<br> Questions, problems or ideas for improving the guide or the template? <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template/issues">Open an issue</a> or email us at <a href="mailto:training@scilifelab.se">training@scilifelab.se</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
