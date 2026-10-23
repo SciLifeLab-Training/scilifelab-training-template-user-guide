@@ -604,6 +604,25 @@ Tip
 </section>
 
 </main> <!-- /main -->
+<script>
+// Show the page footer (set in _quarto.yml) as a card in the content
+// column, directly below the links to the previous and next chapter.
+document.addEventListener("DOMContentLoaded", function () {
+  var text = document.querySelector(".nav-footer .nav-footer-center");
+  var navigation = document.querySelector("nav.page-navigation");
+
+  if (!text || !navigation) {
+    return;
+  }
+
+  var card = document.createElement("div");
+  card.className = "guide-page-footer";
+  card.innerHTML = text.innerHTML;
+  navigation.insertAdjacentElement("afterend", card);
+
+  document.body.classList.add("has-guide-page-footer");
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const isCodeAnnotation = (el) => {
@@ -1013,11 +1032,11 @@ Tip
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>This User Guide is maintained by the SciLifeLab Training Hub.<br> Questions, problems or ideas for improving the guide or the template? <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template/issues">Open an issue</a> or email us at <a href="mailto:training@scilifelab.se">training@scilifelab.se</a>.</p>
-</div>   
-    <div class="nav-footer-center">
       &nbsp;
-    </div>
+    </div>   
+    <div class="nav-footer-center">
+<p>This User Guide is maintained by the SciLifeLab Training Hub.<br> Questions, problems or ideas for improving the guide or the template? <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template/issues">Open an issue</a> or email us at <a href="mailto:training@scilifelab.se">training@scilifelab.se</a>.</p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

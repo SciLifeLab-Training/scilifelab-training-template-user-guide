@@ -2,7 +2,7 @@
    SciLifeLab Training Webpage Template: User Guide
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 :root {
     /* Colours: SciLifeLab teal and green. */
@@ -14,6 +14,9 @@
     --guide-muted: #6b7276;
     --guide-border: #e3e7e9;
     --guide-surface: #f6f8f9;
+
+    /* Width of a line of text. Shorter lines are easier to read. */
+    --guide-text-width: 44rem;
 }
 
 
@@ -21,27 +24,53 @@
    Text
    ========================================================================== */
 
+/* Regular weight and generous line spacing make long pages easier on
+   the eyes. */
 body {
     font-family: "Lato", sans-serif;
-    font-size: 1rem;
-    font-weight: 350;
-    line-height: 1.5;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.65;
     color: var(--guide-text);
 }
 
 /* Keep lines at a comfortable reading length. */
 main.content p,
-main.content li {
-    max-width: 52rem;
+main.content li,
+main.content .callout,
+main.content .done,
+main.content div.sourceCode {
+    max-width: var(--guide-text-width);
 }
 
-/* More space between paragraphs and list items. */
 main.content p {
     margin-bottom: 1.1rem;
 }
 
 main.content li + li {
-    margin-top: 0.10rem;
+    margin-top: 0.4rem;
+}
+
+/* Links in teal, with a thin underline. */
+main.content a {
+    color: var(--guide-teal);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+}
+
+main.content a:hover {
+    color: var(--guide-teal-dark);
+    text-decoration-thickness: 2px;
+}
+
+/* File names and short commands in the text: a light grey background
+   instead of Quarto's purple. */
+main.content :not(pre) > code {
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+    background: var(--guide-surface);
+    color: var(--guide-teal-dark);
+    font-size: 0.88em;
 }
 
 
@@ -55,35 +84,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .quarto-title h1.title {
-    font-size: 2.7rem;
+    font-size: 2.6rem;
     font-weight: 700;
     margin-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
 }
 
 /* Each section starts with clear space and a thin line above it, so the
    page reads as a series of separate steps. */
 main.content h2 {
-    font-size: 1.6rem;
+    font-size: 1.55rem;
     font-weight: 700;
-    margin-top: 2.5rem;
-    padding-top: 2.5rem;
+    margin-top: 3rem;
+    padding-top: 2.25rem;
     border-top: 1px solid var(--guide-border);
     border-bottom: none;
 }
 
-/* Section numbers as a small green badge, e.g. "2.3". */
+/* Section numbers, e.g. "2.3", in a lighter colour than the title. */
 main.content h2 .header-section-number {
-    display: inline-block;
-    padding: 0.05rem 1.5rem;
-    font-size: 1em;
-    font-weight: 700;
+    margin-right: 0.6rem;
+    color: var(--guide-muted);
 }
 
+/* Sub-headings in teal, so the steps within a section stand out. */
 main.content h3 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    margin-top: 2rem;
+    margin-top: 2.25rem;
+    color: var(--guide-teal-dark);
 }
 
 
@@ -92,7 +121,7 @@ main.content h3 {
    ========================================================================== */
 
 .sidebar-logo {
-    max-width: 90px;
+    max-width: 80px;
     margin-bottom: 0.7rem;
 }
 
@@ -102,10 +131,10 @@ main.content h3 {
 
 .sidebar-item {
     color: var(--guide-text);
-    font-weight: 400;
 }
 
 .sidebar-item .active {
+    color: var(--guide-teal) !important;
     font-weight: 700;
 }
 
@@ -117,12 +146,54 @@ main.content h3 {
 /* Line the table of contents up with the page title, and keep it in view
    while scrolling. */
 #quarto-margin-sidebar {
-    padding-top: 2rem;
+    padding-top: 2.5rem;
 }
 
 #TOC {
     position: sticky;
     top: 2rem;
+}
+
+/* "On this page" label: small and quiet. */
+#toc-title {
+    margin: 0 0 0.6rem;
+    padding: 0;
+    border: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--guide-muted);
+}
+
+/* One thin line along the left of the list. */
+#TOC > ul {
+    padding-left: 0;
+    border-left: 2px solid var(--guide-border);
+}
+
+#TOC .nav-link,
+.sidebar nav[role="doc-toc"] ul > li > a {
+    margin-left: -2px;
+    padding: 0.25rem 0 0.25rem 0.9rem;
+    border-left: 2px solid transparent;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--guide-muted);
+}
+
+#TOC .nav-link:hover {
+    color: var(--guide-teal);
+}
+
+/* The section you are reading now. */
+#TOC .nav-link.active,
+.sidebar nav[role="doc-toc"] ul > li > a.active,
+.sidebar nav[role="doc-toc"] ul > li > ul > li > a.active {
+    /* !important is needed to override Quarto's own blue. */
+    border-left-color: var(--guide-teal) !important;
+    color: var(--guide-teal-dark) !important;
+    font-weight: 700;
 }
 
 
@@ -134,6 +205,18 @@ main.content h3 {
 main.content ol > li::marker {
     color: var(--guide-teal);
     font-weight: 700;
+}
+
+
+/* ==========================================================================
+   Screenshots
+   ========================================================================== */
+
+/* Screenshots get a thin frame and rounded corners, and some space
+   around them, so they don't run into the text. */
+main.content img:not(.sidebar-logo) {
+    margin: 0.75rem 0 1.25rem;
+    border-radius: 8px;
 }
 
 
@@ -151,11 +234,10 @@ main.content ol > li::marker {
     display: flex;
     align-items: center;
     gap: 0.85rem;
-    margin: 1.75rem 0 0.5rem;
+    margin: 2rem 0 0.5rem;
     padding: 0.85rem 1.1rem;
     border-radius: 10px;
     background: var(--guide-green-light);
-    max-width: 46rem;
 }
 
 .done::before {
@@ -174,15 +256,38 @@ main.content ol > li::marker {
 /* "main.content" is needed to beat the normal paragraph spacing. */
 main.content .done p {
     margin: 0;
+    min-width: 0;
 }
+
 
 /* ==========================================================================
-   Callouts, code, tables and screenshots
+   Callouts
    ========================================================================== */
 
-.callout {
-    max-width: 52rem;
+/* Calmer callouts: a thin border all round and a softer coloured edge,
+   instead of Quarto's thick bar and heavy header. */
+main.content .callout {
+    margin: 1.5rem 0;
+    border: 1px solid var(--guide-border);
+    border-left-width: 4px;
+    border-radius: 8px;
+    box-shadow: none;
 }
+
+main.content .callout .callout-header {
+    background: transparent !important;
+    border-bottom: none;
+    font-weight: 700;
+}
+
+main.content .callout .callout-body-container {
+    padding-top: 0;
+}
+
+
+/* ==========================================================================
+   Code blocks
+   ========================================================================== */
 
 /* Code blocks: a calm background, so commands are easy to spot. */
 div.sourceCode,
@@ -190,26 +295,36 @@ pre {
     border-radius: 8px;
     background: var(--guide-surface) !important;
     border: 1px solid var(--guide-border);
-    max-width: 46rem;
 }
 
-table {
-    border-radius: 3px;
-    overflow: hidden;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-}
 
-/* Table rows in alternating colours, so long tables are easy to follow. */
-main.content table tbody tr:nth-child(even) {
-    background: var(--guide-surface);
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/* Lighter tables: slightly smaller text, thin lines between the rows,
+   and a quiet header. */
+main.content table {
+    margin: 1rem 0 2rem;
+    font-size: 0.93rem;
+    line-height: 1.55;
 }
 
 main.content table thead th {
-    background: #eaf3f3;
+    background: transparent;
+    border-bottom: 2px solid var(--guide-teal);
+    color: var(--guide-teal-dark);
     font-weight: 700;
 }
 
+main.content table td {
+    border-bottom: 1px solid var(--guide-border);
+    vertical-align: top;
+}
+
+main.content table tbody tr:last-child td {
+    border-bottom: none;
+}
 
 
 /* ==========================================================================
@@ -240,9 +355,11 @@ main.content table thead th {
     color: var(--guide-text);
 }
 
+
 /* ==========================================================================
    Text styled like the template banner, e.g. "Want to use this template?"
    ========================================================================== */
+
 .template-label {
     padding: 0.1rem 0.45rem;
     border-radius: 4px;
@@ -252,38 +369,41 @@ main.content table thead th {
     white-space: nowrap;
 }
 
+
 /* ==========================================================================
-   Page footer (set in _quarto.yml, below the chapter navigation)
+   Page footer (set in _quarto.yml)
    ========================================================================== */
 
-/* No full-width band or line: just quiet text below the page, centred
-   under the content. */
-.nav-footer {
-    margin-top: 1rem;
-    border-top: none;
-    background: transparent;
-    font-size: 0.85rem;
+/* footer.html moves the footer text into a card in the content column,
+   below the chapter navigation. Quarto's own footer is then hidden. */
+.guide-page-footer {
+    grid-column: body-content-start / body-content-end;
+    margin: 2.5rem 0 2rem;
+    padding: 1.1rem 1.4rem;
+    border-radius: 10px;
+    background: var(--guide-surface);
+    font-size: 0.8rem;
+    line-height: 1.6;
     color: var(--guide-muted);
+    text-align: center;
 }
 
-/* Quarto keeps room for a left and right part, which this guide doesn't
-   use. Hiding them gives the text the full width on small screens. */
-.nav-footer .nav-footer-left,
-.nav-footer .nav-footer-right {
+.guide-page-footer p {
+    margin: 0;
+}
+
+.guide-page-footer a {
+    color: var(--guide-teal);
+}
+
+.has-guide-page-footer .nav-footer {
     display: none;
 }
 
-.nav-footer .nav-footer-center {
-    flex: 1 1 auto;
-    max-width: 46rem;
-    margin: 0 auto;
-    padding: 1.5rem 0 1rem;
-    line-height: 1.6;
-}
 
-.nav-footer a {
-    color: var(--guide-teal);
-}
+/* ==========================================================================
+   Small screens
+   ========================================================================== */
 
 /* On small screens, wide tables scroll sideways on their own, instead of
    making the whole page wider than the screen. */
@@ -301,9 +421,4 @@ main.content li code,
 main.content td code {
     white-space: pre-wrap;
     overflow-wrap: anywhere;
-}
-
-/* Let the text in a Done box shrink and wrap next to the check mark. */
-.done p {
-    min-width: 0;
 }

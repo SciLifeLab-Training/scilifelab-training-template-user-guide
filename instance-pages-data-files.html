@@ -219,7 +219,7 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="#required-information">Fill in the required information</a>: the training, the team and the overview page.</li>
 <li><a href="#optional-pages">Add the optional pages</a>: the schedule, announcements, practicalities, preparation, FAQ and resources.</li>
 </ul>
-<p>How to add your training materials and instructor notes is explained in the next chapter, <a href="training-materials.qmd">Training materials</a>.</p>
+<p>How to add your training materials and instructor notes is explained in the next chapter, <a href="./instance-pages-content.html">Instance pages - Content</a>.</p>
 <section id="before-you-start" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="before-you-start">Before you start</h3>
 <p>Everything in this chapter happens on the branch of your training instance, for example <strong>release-2705</strong>. Check the bottom-left corner of VS Code before you start: see <a href="./training-instances.html#switch-branch">Switch branch</a>.</p>
@@ -398,7 +398,7 @@ Important
 </tr>
 <tr class="even">
 <td><code>content</code></td>
-<td>The order of your modules: see <a href="training-materials.qmd">Training materials</a></td>
+<td>The order of your modules: see <a href="./instance-pages-content.html">Instance pages - Content</a></td>
 </tr>
 </tbody>
 </table>
@@ -556,6 +556,25 @@ Important
 </section>
 
 </main> <!-- /main -->
+<script>
+// Show the page footer (set in _quarto.yml) as a card in the content
+// column, directly below the links to the previous and next chapter.
+document.addEventListener("DOMContentLoaded", function () {
+  var text = document.querySelector(".nav-footer .nav-footer-center");
+  var navigation = document.querySelector("nav.page-navigation");
+
+  if (!text || !navigation) {
+    return;
+  }
+
+  var card = document.createElement("div");
+  card.className = "guide-page-footer";
+  card.innerHTML = text.innerHTML;
+  navigation.insertAdjacentElement("afterend", card);
+
+  document.body.classList.add("has-guide-page-footer");
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const isCodeAnnotation = (el) => {
@@ -965,11 +984,11 @@ Important
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>This User Guide is maintained by the SciLifeLab Training Hub.<br> Questions, problems or ideas for improving the guide or the template? <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template/issues">Open an issue</a> or email us at <a href="mailto:training@scilifelab.se">training@scilifelab.se</a>.</p>
-</div>   
-    <div class="nav-footer-center">
       &nbsp;
-    </div>
+    </div>   
+    <div class="nav-footer-center">
+<p>This User Guide is maintained by the SciLifeLab Training Hub.<br> Questions, problems or ideas for improving the guide or the template? <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template/issues">Open an issue</a> or email us at <a href="mailto:training@scilifelab.se">training@scilifelab.se</a>.</p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
