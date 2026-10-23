@@ -6,7 +6,7 @@ book:
     logo: images/logo-scilifelab-green.png
   title: "Training Webpage Template: User Guide"
   page-footer:
-    left: |
+    center: |
       This User Guide is maintained by the SciLifeLab Training Hub.<br>
       Questions, problems or ideas for improving the guide or the template?
       [Open an issue](https://github.com/SciLifeLab-Training/scilifelab-training-template/issues)
@@ -26,6 +26,7 @@ format:
   html:
     theme: default
     css: styles.css
+    include-after-body: footer.html
     toc: true
     toc-title: "On this page"
     toc-depth: 2

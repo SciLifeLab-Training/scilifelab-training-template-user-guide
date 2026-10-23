@@ -253,36 +253,33 @@ main.content table thead th {
 }
 
 /* ==========================================================================
-   Page footer (set in _quarto.yml, below the chapter navigation)
+   Page footer (set in _quarto.yml)
    ========================================================================== */
 
-/* No full-width band or line: just quiet text below the page, centred
-   under the content. */
-.nav-footer {
-    margin-top: 1rem;
-    border-top: none;
-    background: transparent;
-    font-size: 0.85rem;
-    color: var(--guide-muted);
-}
-
-/* Quarto keeps room for a left and right part, which this guide doesn't
-   use. Hiding them gives the text the full width on small screens. */
-.nav-footer .nav-footer-left,
-.nav-footer .nav-footer-right {
-    display: none;
-}
-
-.nav-footer .nav-footer-center {
-    flex: 1 1 auto;
-    max-width: 46rem;
-    margin: 0 auto;
-    padding: 1.5rem 0 1rem;
+/* footer.html moves the footer text into a card in the content column,
+   below the chapter navigation. Quarto's own footer is then hidden. */
+.guide-page-footer {
+    grid-column: body-content-start / body-content-end;
+    margin: 2.5rem 0 2rem;
+    padding: 1.1rem 1.4rem;
+    border-radius: 10px;
+    background: var(--guide-surface);
+    font-size: 0.8rem;
     line-height: 1.6;
+    color: var(--guide-muted);
+    text-align: center;
 }
 
-.nav-footer a {
+.guide-page-footer p {
+    margin: 0;
+}
+
+.guide-page-footer a {
     color: var(--guide-teal);
+}
+
+.has-guide-page-footer .nav-footer {
+    display: none;
 }
 
 /* On small screens, wide tables scroll sideways on their own, instead of

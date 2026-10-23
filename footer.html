@@ -1,0 +1,19 @@
+<script>
+// Show the page footer (set in _quarto.yml) as a card in the content
+// column, directly below the links to the previous and next chapter.
+document.addEventListener("DOMContentLoaded", function () {
+  var text = document.querySelector(".nav-footer .nav-footer-center");
+  var navigation = document.querySelector("nav.page-navigation");
+
+  if (!text || !navigation) {
+    return;
+  }
+
+  var card = document.createElement("div");
+  card.className = "guide-page-footer";
+  card.innerHTML = text.innerHTML;
+  navigation.insertAdjacentElement("afterend", card);
+
+  document.body.classList.add("has-guide-page-footer");
+});
+</script>

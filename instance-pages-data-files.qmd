@@ -22,7 +22,7 @@ In this chapter, you will learn how to:
   announcements, practicalities, preparation, FAQ and resources.
 
 How to add your training materials and instructor notes is explained in
-the next chapter, [Training materials](training-materials.qmd).
+the next chapter, [Instance pages - Content](instance-pages-content.qmd).
 
 ### Before you start {.unnumbered}
 
@@ -178,7 +178,7 @@ from other files. Open it, and work through it from top to bottom:
 | `registration` | The registration banner: when registration opens and closes, the link to the registration page or form, and the fee |
 | `pages` | The texts on the quick links to the other pages. You can usually leave them as they are |
 | `footer` | Only the line about how the website was built. The organisation and licence come from `data/course.yml`, and the GitHub link is worked out automatically |
-| `content` | The order of your modules: see [Training materials](training-materials.qmd) |
+| `content` | The order of your modules: see [Instance pages - Content](instance-pages-content.qmd) |
 
 : {tbl-colwidths="[30,70]"}
 
