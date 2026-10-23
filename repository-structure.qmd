@@ -29,7 +29,7 @@ Each of these branches holds the files for one part of your website:
   pages that visitors see. GitHub builds them from your other branches
   and updates this branch automatically every time you push a change.
 
-::: {.callout-warning}
+::: {.callout-important}
 Never edit the **gh-pages** branch yourself. GitHub updates it
 automatically every time you push a change to one of the other
 branches.
@@ -67,8 +67,6 @@ Your repository
 ├── release-2605      The website of your training in May 2026.
 ├── release-2705      The website of your training in May 2027.
 │
-├── release-0000      The example training instance that comes with
-│                     the template.
 │
 └── gh-pages          The published website. Updated automatically.
 ```
@@ -230,7 +228,7 @@ starting with `#` are explanations, the word before the colon is the
 field name, and the text after the colon is the value you change.
 :::
 
-::: {.callout-warning}
+::: {.callout-important}
 
 **Data files are very sensitive to layout:**
 
@@ -245,24 +243,3 @@ first. The error message usually names the file and the line.
 
 :::
 
-## Next steps {.unnumbered .unlisted}
-
-Now that you know your way around, continue with:
-
-- [Landing page](landing-page.qmd): describe your training on the
-  landing page.
-- [Training instances](training-instances.qmd): create the website for
-  each time your training is given.
-- [FAIRification](fairification.qmd): make your training citable and
-  findable.
-
-<br>
-
-::: {.guide-footer}
----
-
-This User Guide is maintained by the SciLifeLab Training Hub.   
-Questions, problems or ideas for improving the guide or the template?
-[Open an issue](https://github.com/SciLifeLab-Training/scilifelab-training-template/issues)
-or email us at [training@scilifelab.se](mailto:training@scilifelab.se).
-:::

@@ -21,8 +21,8 @@ In this chapter, you will learn how to:
   the next time your training is given.
 
 How to switch off template mode and fill in the website of a training instance (its dates, schedule,
-team and materials) is explained in the next chapter,
-[Instance pages](instance-pages.qmd).
+team and materials) is explained in the next chapters,
+[Instance pages - Data files](instance-pages-data-files.qmd) and [Instance pages - Content](instance-pages-content.qmd)
 
 ### Before you start {.unnumbered}
 
@@ -146,7 +146,7 @@ an error that explains what to fix.
 training instance.
 :::
 
-::: {.callout-note collapse="true"}
+::: {.callout-tip collapse="true"}
 ## Optional: delete release-0000
 
 Once your own training instance exists, you no longer need the example
@@ -210,12 +210,3 @@ the new branch: they belong to the previous training instance. See
 | Avoid citing the previous instance by mistake | The new **release-** branch, `data/course.yml` | Empty `version_doi` and `release_date` under `reuse` |
 
 : {tbl-colwidths="[28,24,48]"}
-
-
-## Next steps {.unnumbered .unlisted}
-
-Your training instance is online and linked from the landing page.
-Continue with [Training instance pages](instance-pages.qmd): fill in
-its dates, schedule, team and materials.
-
-

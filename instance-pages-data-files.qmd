@@ -1,0 +1,275 @@
+---
+title: "Instance pages - Data files"
+---
+
+Each training instance has its own website: an overview page, a
+schedule, the training materials, and information pages such as the
+syllabus, the team and practical information. In this chapter, you fill
+in the information for your own training instance.
+
+The figure below shows the parts of a training instance website, and
+the names this guide uses for them.
+
+fig-alt="Annotated example of a training instance website: the navigation bar with logos, the welcome section, the registration banner, the Next up section, the quick links, announcements, the team preview and the footer."
+
+In this chapter, you will learn how to:
+
+- [Switch off template mode](#switch-off-template-mode): replace the
+  README and remove the template banner.
+- [Fill in the required information](#required-information): the
+  training, the team and the overview page.
+- [Add the optional pages](#optional-pages): the schedule,
+  announcements, practicalities, preparation, FAQ and resources.
+
+How to add your training materials and instructor notes is explained in
+the next chapter, [Training materials](training-materials.qmd).
+
+### Before you start {.unnumbered}
+
+Everything in this chapter happens on the branch of your training
+instance, for example **release-2705**. Check the bottom-left corner of
+VS Code before you start: see
+[Switch branch](training-instances.qmd#switch-branch).
+
+Work as described in [Regular workflow](workflow.qmd): start the preview
+with `python scripts/preview.py`, make your changes, check them in your
+browser, and [commit and push](workflow.qmd#commit-and-push-your-changes).
+
+### The website builds itself from the data files {.unnumbered}
+
+Apart from the training materials, you never edit the pages of the
+website directly. Every page is built automatically from the data files
+in the `data` folder:
+
+- the **overview page**, with its welcome text, quick links, team
+  preview and latest announcements;
+- the **Schedule** page, and the **Next up** section on the overview
+  page, which always shows the next event and counts down to it;
+- the **registration banner**, which shows when registration opens, the
+  link while it is open, and that it has closed afterwards;
+- the **Syllabus**, **Team** and information pages, and the links to
+  them in the navigation bar, which only appear when their data file
+  contains information;
+- the footer, the README and the citation of your training instance.
+
+So you only fill in the data files, and the template takes care of the
+rest.
+
+::: {.callout-important}
+## Read the explanations in the data files
+
+Each data file explains how it works, in the lines starting with `#`:
+which fields are required, what each field does, the rules it must
+follow, and how to leave information out. Read these explanations
+carefully before you fill in a file. This chapter tells you which file
+to open for what, and points out what's easy to miss, but the files
+themselves have the details.
+
+If a file breaks one of its rules, the preview stops with an error that
+names the file and explains what to fix.
+:::
+
+Not sure how a data file works? See
+[Data files](repository-structure.qmd#data-files).
+
+<br>
+
+## Switch off template mode {#switch-off-template-mode}
+
+For your **first** training instance only. Later training instances
+start from your previous one, so these changes come along.
+
+### Replace the README {.unnumbered}
+
+The template comes with a ready-made README for a training instance, in
+`docs/_template-README.md`. It works the same way as on main: see
+[Replace the README](landing-page.qmd#switch-off-template-mode).
+
+1. Open `docs/_template-README.md`, select all text, and copy it.
+2. Open `README.md` in the main folder of your repository, select all
+   text, and paste, so the copied text replaces it.
+3. Delete the explanation at the top of the file, between `<!--` and
+   `-->`, and the note starting with `> **Template:**`.
+4. Fill in the parts marked **Write this yourself**, and save the file.
+
+### Remove the template banner {.unnumbered}
+
+1. Open `data/website.yml`.
+2. Change `template: true` to `template: false`.
+3. Save the file.
+
+The yellow [Want to use this template?]{.template-label} banner
+disappears from the overview page.
+
+::: {.done}
+**Done when:** the yellow banner is gone from the preview, and
+`README.md` shows the title of your training at the top.
+:::
+
+
+## Required information {#required-information}
+
+Every training instance needs three data files: `course.yml`,
+`team.yml` and `website.yml`. Fill them in first.
+
+### The training: course.yml {.unnumbered}
+
+`data/course.yml` describes this training instance. Most of it appears
+on the overview page and the **Syllabus** page.
+
+Open `data/course.yml` and work through it from top to bottom. The
+comments at the top list which fields are **required** and which are
+optional. Leave out optional fields that don't apply to your training,
+for example `start_date` and `end_date` for self-paced training.
+
+| Field | Where it appears |
+|---|---|
+| `title`, `subtitle` | The navigation bar, the welcome section and the browser tab |
+| `start_date`, `end_date`, `location`, `mode` | The welcome section, and the Syllabus page |
+| `description`, `learning_outcomes`, `prerequisites`, `credits`, `examination` | The Syllabus page |
+| `organizers` | The footer ("By …"), the Syllabus page and the citation |
+| `contact.email` | The Syllabus page: where participants can send questions |
+| `licence`, `licence_url` (under `reuse`) | The footer ("Licensed under …") and the citation. If you change the licence, also replace the text in `LICENSE.md` |
+
+: {tbl-colwidths="[40,60]"}
+
+The other fields under `reuse`, such as `doi`, `version_doi` and
+`release_date`, belong to publishing your training instance on Zenodo.
+Leave them empty for now: see [FAIRification](fairification.qmd).
+
+::: {.callout-tip}
+Use the same title, description, learning outcomes and keywords as on
+main, unless this training instance is different. The landing page and
+the training instances then describe the same training.
+:::
+
+### The team: team.yml {.unnumbered}
+
+The people in `data/team.yml` appear on the **Team** page, on the
+Syllabus page, and in a team preview on the overview page. They are also
+credited in the citation of the training instance.
+
+Open `data/team.yml` and fill in each person. To **add** a person, copy
+a whole entry, from `- given_names:` to the line before the next person,
+paste it below, and change the values. To **remove** a person, delete
+their whole entry.
+
+::: {.callout-important}
+- Every person needs `given_names`, `family_names`, `roles` and
+  `affiliation`. The roles are `Training lead`, `Instructor` and
+  `Contributor`.
+- At least one person needs `course_contact: true` and an `email`:
+  participants contact them with questions.
+:::
+
+The overview page shows up to two people: training leads first, then
+instructors. Photos are optional: put them in the `img/photos` folder,
+and add their path under `image`.
+
+### The overview page: website.yml {.unnumbered}
+
+`data/website.yml` sets the parts of the overview page that don't come
+from other files. Open it, and work through it from top to bottom:
+
+| Part of the file | What it sets |
+|---|---|
+| `navbar` → `logos` | The logos in the navigation bar. As on main, the logo with `primary: true` (SciLifeLab) is always on the right, and you set the size of each logo with `height`. See [Logos](landing-page.qmd#customise-the-look) |
+| `welcome` | The title, text and image of the welcome section. Put the image in the `img` folder |
+| `registration` | The registration banner: when registration opens and closes, the link to the registration page or form, and the fee |
+| `pages` | The texts on the quick links to the other pages. You can usually leave them as they are |
+| `footer` | Only the line about how the website was built. The organisation and licence come from `data/course.yml`, and the GitHub link is worked out automatically |
+| `content` | The order of your modules: see [Training materials](training-materials.qmd) |
+
+: {tbl-colwidths="[30,70]"}
+
+::: {.callout-note}
+## About registration
+
+The registration banner switches between "opens on", "open" and
+"closed" by itself, based on the dates you set. It checks the date when
+the website is built, so the banner changes the next time you push a
+change. To update it without changing anything, for example on the
+day registration opens, start the build yourself on GitHub: in the
+**Actions** tab, choose **deploy-instance**, then **Run workflow**.
+
+There are also two registration links: the banner here, set in
+`registration` in `data/website.yml`, and the **Register now** button
+on the landing page, set in `registration_url` in `data/instances.yml`
+on **main**. Use the same link in both places.
+:::
+
+::: {.done}
+**Done when:** the overview, Syllabus and Team pages in the preview show
+your own training instance, team, logos and welcome text.
+:::
+
+
+## Optional pages {#optional-pages}
+
+All other data files are optional. Each one adds a page, or a part of
+the overview page, when it contains information. Fill in the ones you
+need, and leave out the others.
+
+| Page | Data file | What it's for |
+|---|---|---|
+| **Schedule** | `data/schedule.yml` | The sessions, breaks and other events of the training. Also adds the **Next up** section to the overview page |
+| **Announcements** | `data/announcements.yml` | News for participants. The two most recent also appear on the overview page |
+| **Practicalities** | `data/practicalities.yml` | The venue, transport, accommodation and food |
+| **Preparation** | `data/preparation.yml` | What participants should do before the training, such as installing software |
+| **FAQ** | `data/faq.yml` | Frequently asked questions and their answers |
+| **Resources** | `data/resources.yml` | Further reading, tools and datasets for after the training |
+
+: {tbl-colwidths="[20,30,50]"}
+
+Each file starts with a short explanation of the page, and a part called
+**Leaving information out**. It explains how to leave out one item, a
+whole section, or the whole page.
+
+To leave out a whole page, delete everything in its file, or delete the
+file. The page and its link in the navigation bar disappear by
+themselves.
+
+### The schedule {.unnumbered}
+
+The schedule needs a bit more care than the other pages, because the
+website uses its dates and times:
+
+- Each event, such as a lecture, an exercise or a break, is one entry,
+  from `- title:` to `content:`. Every event needs a `title`, `type`,
+  `group`, `start` and `end`.
+- Write dates and times exactly as explained in the file, for example
+  `2027-05-12T09:00`, and use one of the event types listed there.
+- Events with the same `group`, for example `"Day 1"`, are shown
+  together, in order of their start time.
+- To link an event to a page of your materials, fill in `content` with
+  the path to that page, for example
+  `"content/module-1/introduction.qmd"`.
+
+The **Next up** section on the overview page then always shows the next
+event, with a countdown, without you having to change anything during
+the training.
+
+::: {.done}
+**Done when:** the navigation bar in the preview shows the pages you
+filled in, and none of the pages you left out.
+:::
+
+
+## Cheat sheet {#cheat-sheet}
+
+All on the branch of your training instance.
+
+| To... | Where | What to do |
+|---|---|---|
+| Switch off template mode (first instance only) | `data/website.yml` and `README.md` | Set `template: false`, and replace the README with `docs/_template-README.md` |
+| Describe the training instance | `data/course.yml` | Fill in the required fields listed at the top of the file |
+| Add the team | `data/team.yml` | One entry per person. At least one person with `course_contact: true` and an `email` |
+| Change the logos | `data/website.yml` | `logos` under `navbar` |
+| Change the welcome section | `data/website.yml` | `welcome` |
+| Set up registration | `data/website.yml` | `registration`. Use the same link as `registration_url` in `data/instances.yml` on **main** |
+| Update the registration banner on its opening or closing day | GitHub, **Actions** tab | **deploy-instance** → **Run workflow** |
+| Add a schedule | `data/schedule.yml` | One entry per event. Empty the file to leave out the schedule |
+| Fill in an information page | `data/announcements.yml`, `practicalities.yml`, `preparation.yml`, `faq.yml` or `resources.yml` | Empty or delete the file to leave out the page |
+
+: {tbl-colwidths="[28,30,42]"}
+

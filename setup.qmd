@@ -7,16 +7,12 @@ start, to get your own training website. You will create your own copy of
 the SciLifeLab Training Webpage Template, publish it as a website, and set
 it up on your computer so you can edit it.
 
-This is the only part of the guide you do just once, and takes about an hour. Take your
-time: each step explains what you are doing and why, and what you should
-see when it worked.
+![](images/setup-overview-image.png){fig-alt="Workflow showing the one-time setup steps."}
 
 Once you are done, the next chapter, [Regular workflow](workflow.qmd),
 shows the few steps you repeat every time you update your website.
 
-![](images/setup-overview-image.png){fig-alt="Workflow showing the one-time setup steps."}
 
-<br>
 
 ## Install the software
 
@@ -353,14 +349,3 @@ training.
 
 Continue with [Regular workflow](workflow.qmd) to make your first change
 and see it appear on your website.
-
-<br>
-
-::: {.guide-footer}
----
-
-This User Guide is maintained by the SciLifeLab Training Hub.   
-Questions, problems or ideas for improving the guide or the template?
-[Open an issue](https://github.com/SciLifeLab-Training/scilifelab-training-template/issues)
-or email us at [training@scilifelab.se](mailto:training@scilifelab.se).
-:::

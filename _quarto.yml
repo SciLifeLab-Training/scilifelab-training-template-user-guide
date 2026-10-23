@@ -5,6 +5,12 @@ book:
   sidebar:
     logo: images/logo-scilifelab-green.png
   title: "Training Webpage Template: User Guide"
+  page-footer:
+    left: |
+      This User Guide is maintained by the SciLifeLab Training Hub.<br>
+      Questions, problems or ideas for improving the guide or the template?
+      [Open an issue](https://github.com/SciLifeLab-Training/scilifelab-training-template/issues)
+      or email us at [training@scilifelab.se](mailto:training@scilifelab.se).
   chapters:
     - index.qmd
     - setup.qmd
@@ -12,7 +18,8 @@ book:
     - repository-structure.qmd
     - landing-page.qmd
     - training-instances.qmd
-    - instance-pages.qmd
+    - instance-pages-data-files.qmd
+    - instance-pages-content.qmd
     - fairification.qmd
 
 format:

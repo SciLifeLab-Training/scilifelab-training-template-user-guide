@@ -7,11 +7,8 @@ This chapter shows the steps you repeat **every time** you work on your
 training website: open your training, preview it, make your changes, and
 publish them.
 
-The steps are always the same, whether you change a date, add a team
-member or write a new page of materials.
-The [cheat sheet](#cheat-sheet) at the end
-of this chapter lists all of them in one table, for when you just need a
-reminder.
+The steps are always the same, whether you change a date, add a team member or write a new page of materials.
+The [cheat sheet](#cheat-sheet) at the end of this chapter lists all of them in one table.
 
 ![](images/workflow-overview-image.png){fig-alt="Workflow showing the regular editing and publishing steps."}
 
@@ -21,7 +18,7 @@ This chapter assumes you have done the one-time setup in
 [Set up your training](setup.qmd).
 :::
 
-<br>
+
 
 ## Open your training
 
@@ -154,7 +151,7 @@ The new title now appears at the top of the website preview in your browser.
 
 ![](images/workflow-11-changedtrainingtitle.png){width=80% fig-alt="Screenshot: Updated title in the preview."}
 
-::: {.callout-warning}
+::: {.callout-important}
 **The data files are very sensitive to layout!** Keep the quotation marks, and
 keep the indentation at the start of each line exactly as it is. If the
 preview shows an error after you save, check the file layout first. The lines
@@ -298,27 +295,3 @@ Every time you work on your training, follow these steps in this order.
 | The website still shows the old version | Publishing isn't finished, or your browser shows an old copy | Wait a minute, then refresh the page |
 | You changed something by mistake (not committed yet) | — | Source Control panel: hover over the file and click the curved arrow (**Discard Changes**) |
 
-## Next steps {.unnumbered .unlisted}
-
-You now know the routine for every change. Continue with:
-
-- [Repository structure](repository-structure.qmd): find your way
-  around your repository, and learn which files to change and which to
-  leave alone.
-- [Landing page](landing-page.qmd): describe your training on the
-  landing page.
-- [Training instances](training-instances.qmd): create the website for
-  each time your training is given.
-- [FAIRification](fairification.qmd): make your training citable and
-  findable.
-
-<br>
-
-::: {.guide-footer}
----
-
-This User Guide is maintained by the SciLifeLab Training Hub.   
-Questions, problems or ideas for improving the guide or the template?
-[Open an issue](https://github.com/SciLifeLab-Training/scilifelab-training-template/issues)
-or email us at [training@scilifelab.se](mailto:training@scilifelab.se).
-:::

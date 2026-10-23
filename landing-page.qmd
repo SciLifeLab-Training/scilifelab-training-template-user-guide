@@ -428,13 +428,3 @@ the **main** branch.
 | Change the organisation in the footer | `data/course.yml` | `organizers` |
 | Change the licence | `data/course.yml` | `licence` and `licence_url` under `reuse`. Also replace `LICENSE.md` |
 | Add or change founders and contributors | `data/team.yml` | Add or edit a person, with `roles` set to `Founder` or `Contributor` |
-
-
-## Next steps {.unnumbered .unlisted}
-
-Your landing page now describes your training. Continue with:
-
-- [Training instances](training-instances.qmd): create the website for
-  each time your training is given.
-- [FAIRification](fairification.qmd): make your training citable and
-  findable.

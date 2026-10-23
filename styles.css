@@ -253,16 +253,57 @@ main.content table thead th {
 }
 
 /* ==========================================================================
-   Footer
+   Page footer (set in _quarto.yml, below the chapter navigation)
    ========================================================================== */
 
-.guide-footer {
-    margin-top: 3rem;
-    font-size: 0.80rem;
+/* No full-width band or line: just quiet text below the page, centred
+   under the content. */
+.nav-footer {
+    margin-top: 1rem;
+    border-top: none;
+    background: transparent;
+    font-size: 0.85rem;
     color: var(--guide-muted);
-    font-weight: 400;
 }
 
-.guide-footer p {
-    margin-bottom: 0.5rem;
+/* Quarto keeps room for a left and right part, which this guide doesn't
+   use. Hiding them gives the text the full width on small screens. */
+.nav-footer .nav-footer-left,
+.nav-footer .nav-footer-right {
+    display: none;
+}
+
+.nav-footer .nav-footer-center {
+    flex: 1 1 auto;
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 1.5rem 0 1rem;
+    line-height: 1.6;
+}
+
+.nav-footer a {
+    color: var(--guide-teal);
+}
+
+/* On small screens, wide tables scroll sideways on their own, instead of
+   making the whole page wider than the screen. */
+@media (max-width: 767px) {
+    main.content table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* Long web addresses and file names in the text may wrap onto the next
+   line, so they never make the page wider than the screen. */
+main.content p code,
+main.content li code,
+main.content td code {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* Let the text in a Done box shrink and wrap next to the check mark. */
+.done p {
+    min-width: 0;
 }

@@ -1,8 +1,6 @@
 ---
-title: "FAIRification and publishing your course"
+title: "FAIRification"
 ---
-<img src="/images/SciLifeLab_symbol_green-2048x1950.png"
-     class="guide-logo">
 
 <br>
 

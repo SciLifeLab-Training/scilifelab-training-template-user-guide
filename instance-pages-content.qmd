@@ -1,0 +1,164 @@
+---
+title: "Instance pages - Content"
+---
+
+The training materials are the heart of your training instance website:
+the modules and pages participants work through. Unlike the other pages
+of the website, you write these pages yourself, in Markdown.
+
+In this chapter, you will learn how to:
+
+- [Organise your modules and pages](#modules-and-pages).
+- [Add images, presentations and other files](#images-presentations-and-other-files).
+- [Write instructor notes](#write-instructor-notes) for everyone who
+  teaches or reuses your training.
+
+### Before you start {.unnumbered}
+
+Everything in this chapter happens on the branch of your training
+instance, for example **release-2705**. Check the bottom-left corner of
+VS Code before you start: see
+[Switch branch](training-instances.qmd#switch-branch).
+
+Your training materials are in the `content` folder: one folder for
+each **module**, with one `.qmd` file for each page.
+
+```text
+content/
+├── index.qmd          The Content page: an overview of all modules
+├── module-1/
+│   ├── introduction.qmd
+│   ├── headings-and-text.qmd
+│   └── ...
+├── module-2/
+└── module-3/
+```
+
+::: {.callout-tip}
+## The example pages are a guide
+
+The example pages that come with the template are a short guide to
+writing training materials. They show how to write headings, lists,
+tables, callout boxes, images, videos and links, each with the Markdown
+to copy. Read them before you replace them with your own materials.
+:::
+
+<br>
+
+## Modules and pages 
+
+### Modules {.unnumbered}
+
+The modules and their order are set in the `content` part at the bottom
+of `data/website.yml`:
+
+```yaml
+content:
+  sections:
+    - id: module-1
+      label: "Module 1"
+      title: "How to structure a page"
+```
+
+- `id` is the name of the module's folder in `content`.
+- `label` is the short name in the navigation.
+- `title` appears when visitors hover over the module in the navigation.
+
+To **add** a module, create a new folder in `content`, and add an entry
+for it here. To **remove** one, delete its folder and its entry. The
+modules appear in the order of this list.
+
+::: {.callout-important}
+A module needs both: a folder in `content`, and an entry in
+`data/website.yml` with the folder's name as `id`. If you rename a
+module's folder, also change its `id`.
+:::
+
+### Pages {.unnumbered}
+
+Each page is a `.qmd` file in its module's folder, written in Markdown.
+It starts with a short header between two `---` lines:
+
+```markdown
+---
+title: "How to structure a page"
+order: 1
+---
+```
+
+- `title` is the title of the page.
+- `order` sets the order of the pages within the module: 1 first, then
+  2, and so on. Give every page in a module an `order`.
+
+To **add** a page, copy an existing page in the same module, rename the
+file, and change its title, order and text. To **remove** a page, delete
+its file.
+
+::: {.done}
+**Done when:** the Content page in the preview lists your own modules,
+and each module shows its pages in the right order.
+:::
+
+
+## Images, presentations and other files 
+
+Put images, PDFs and other files you use on your pages in the `docs`
+folder. The example page **Images, presentations and videos** shows how
+to add them to a page.
+
+You choose how to make and share your presentations. Common options:
+
+| Option | Good to know |
+|---|---|
+| **Upload files to the repository**, for example PDF slides | Archived with your training, so they stay available as long as the materials do. Keep files small: GitHub warns above 50 MB |
+| **Make presentations in Quarto** | Part of your training website, and archived with it. Takes some getting used to |
+| **Link to an online tool**, such as Google Slides | Easy to make and update together. The link can stop working, or need access rights that others don't have |
+
+: {tbl-colwidths="[35,65]"}
+
+Whatever you choose, link to your materials from the module's pages, so
+participants can find them, and note in the instructor notes where the
+editable versions are.
+
+
+## Write instructor notes 
+
+The `instructors` folder holds notes for instructors: everything someone
+needs to teach this training, such as the timing of each module, how to
+prepare, and what to watch out for. The notes help your own team, and
+anyone who wants to reuse your training.
+
+- `instructors/README.md` covers the training as a whole: the timing,
+  preparation and setup.
+- `instructors/module-1.md`, `module-2.md` and so on cover each module:
+  its key points, teaching flow, exercises and common problems.
+
+Fill in the example files, and add a file for each new module. The files
+are plain Markdown. On GitHub, `instructors/README.md` is shown as soon
+as you open the folder.
+
+::: {.callout-warning}
+The instructor notes are **not** part of the website, but they are
+**not private** either: anyone can read them on GitHub, and they are
+archived on Zenodo with the materials. Never write anything that must
+stay secret, such as passwords, access codes, or answers to exams and
+graded assignments. Once pushed, deleting it does not remove it: it
+stays in the history of your repository.
+:::
+
+
+## Cheat sheet {#cheat-sheet}
+
+All on the branch of your training instance.
+
+| To... | Where | What to do |
+|---|---|---|
+| Add a module | `content/` and `data/website.yml` | Create a folder, and add an entry with the folder's name as `id` under `content` → `sections` |
+| Reorder modules | `data/website.yml` | Change the order of the entries under `content` → `sections` |
+| Add a page | `content/module-.../` | Copy a page in the same module, rename it, and change `title`, `order` and the text |
+| Reorder pages | The pages' `.qmd` files | Change `order` at the top of each page |
+| Add images and files | `docs/` | Put the file in the folder, and link to it from the page |
+| Write instructor notes | `instructors/` | `README.md` for the training, a file per module |
+
+: {tbl-colwidths="[25,30,45]"}
+
