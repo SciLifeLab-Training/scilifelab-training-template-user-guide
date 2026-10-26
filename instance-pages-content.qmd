@@ -3,12 +3,14 @@ title: "Instance pages - Content"
 ---
 
 The training materials are the heart of your training instance website:
-the modules and pages participants work through. Unlike the other pages
-of the website, you write these pages yourself, in Markdown.
+the pages participants work through. Unlike the rest of the website,
+these pages aren't built from data files: you write them yourself, in
+Markdown, in `.qmd` files in the `content` folder. Your instructor notes,
+in the `instructors` folder, are also written in Markdown.
 
 In this chapter, you will learn how to:
 
-- [Organise your modules and pages](#modules-and-pages).
+- [Organise your sections and pages](#organise-your-sections-and-pages).
 - [Add images, presentations and other files](#images-presentations-and-other-files).
 - [Write instructor notes](#write-instructor-notes) for everyone who
   teaches or reuses your training.
@@ -20,21 +22,147 @@ instance, for example **release-2705**. Check the bottom-left corner of
 VS Code before you start: see
 [Switch branch](training-instances.qmd#switch-branch).
 
-Your training materials are in the `content` folder: one folder for
-each **module**, with one `.qmd` file for each page.
 
-```text
+## Organise your training sections and pages 
+
+### How the content folder is organised {.unnumbered}
+Your training materials are in the `content` folder. It contains:
+
+- `index.qmd`: the **Content introduction page**, which introduces your materials
+  and gives an overview of the sections.
+- `_metadata.yml`: the settings for all pages in the `content` folder,
+  such as the table of contents on the right. You don't need to change
+  this file.
+- One folder for each **section**, with one `.qmd` file for each page in
+  that section.
+
+What a section is, is up to you: a module, a day, a topic or a week. You
+choose the names of the folders. The template's examples use modules:
+`module-1`, `module-2` and `module-3`.
+
+On the website, each section gets its own dropdown menu in the navigation bar of
+the content pages, listing its pages.
+
+For example, a training of three days, with a few topics per day:
+
+```yaml
 content/
-├── index.qmd          The Content page: an overview of all modules
-├── module-1/
+├── _metadata.yml      Settings for the content pages: leave as it is
+├── index.qmd          The Content introduction page
+├── day-1/             A section, with its pages:
 │   ├── introduction.qmd
-│   ├── headings-and-text.qmd
+│   ├── topic-1.qmd
+│   └── topic-2.qmd
+├── day-2/
 │   └── ...
-├── module-2/
-└── module-3/
+└── day-3/
+    └── ...
 ```
 
 ::: {.callout-tip}
+To see what ends up where, open the example folders in VS Code next to
+the preview in your browser, and compare the files with the website content pages.
+:::
+
+
+### Add a content section {.unnumbered}
+
+Adding a section always takes two steps: create its folder inside the `content` folder, and list it
+in `data/website.yml`. A folder that isn't listed doesn't appear on the website.
+
+**Step 1: create the folder and its pages**
+
+1. In the Explorer panel in VS Code, right-click the `content` folder and
+   choose **New Folder...**.
+2. Type the name of the folder, and press **Enter**. Use only lowercase
+   letters, numbers and hyphens: no capital letters, no spaces. For
+   example: `day-1` or `module-4`.
+3. Right-click your new folder and choose **New File...**.
+4. Type the name of the page, ending in `.qmd`, and press **Enter**. For
+   example: `introduction.qmd`. Use lowercase letters, numbers and
+   hyphens here too.
+5. The new file opens. Type this header at the very top, with your own
+   title:
+
+   ```markdown
+   ---
+   title: "Introduction"
+   order: 1
+   ---
+   ```
+
+   Then write the text of the page below it, and save the file.
+6. Add more pages to the folder the same way, with `order: 2`,
+   `order: 3` and so on.
+   
+The pages appear in the section's dropdown menu in the order of their
+`order` numbers. To change the order, change the numbers.
+
+**Step 2: list the section in website.yml**
+
+1. Open `data/website.yml`, and scroll to the `content` part at the
+   bottom. Each section has an entry of three lines, like this one from
+   the template:
+
+   ```yaml
+   content:
+     sections:
+       - id: module-1
+         label: "Module 1"
+         title: "How to structure a page"
+   ```
+
+2. Copy a whole entry, from `- id:` to `title:`, and paste it below the
+   last entry.
+3. Change the three values to your new section:
+   - `id`: the name of your folder, exactly as you typed it in step 1,
+     for example `day-1`.
+   - `label`: the short name in the navigation bar, for example
+     `"Day 1"`.
+   - `title`: the text visitors see when they hover over the section in
+     the navigation bar, for example `"Getting started"`.
+   Keep the spaces at the start of each line exactly as in the other
+   entries!
+4. Save the file, and check the preview: your section appears in the
+   navigation bar of the content pages.
+
+::: {.callout-important}
+The `id` must be exactly the same as the name of the folder, letter for
+letter. If you rename a folder later, also change its `id`, or the
+preview stops with an error that names the missing folder.
+:::
+
+For example, after adding a section called `day-1`, the `content` part
+of `data/website.yml` looks like this:
+
+```yaml
+content:
+  sections:
+    - id: module-1
+      label: "Module 1"
+      title: "How to structure a page"
+    - id: day-1
+      label: "Day 1"
+      title: "Getting started"
+```
+
+The sections appear in the content navigation bar in the order of the section list in `data/website.yml`. To
+change the order, move whole entries up or down.
+
+### Remove a content section {.unnumbered}
+
+Do two steps in this order, so the website never lists a folder that's gone:
+
+1. In `data/website.yml`, delete the section's whole entry, from
+   `- id:` to `title:`, and save the file.
+2. In the Explorer panel, right-click the section's folder in `content`
+   and choose **Delete**. This deletes all its pages too.
+
+
+## Images, presentations and other files 
+
+::: {.callout-tip}
+
 ## The example pages are a guide
 
 The example pages that come with the template are a short guide to
@@ -43,64 +171,6 @@ tables, callout boxes, images, videos and links, each with the Markdown
 to copy. Read them before you replace them with your own materials.
 :::
 
-<br>
-
-## Modules and pages 
-
-### Modules {.unnumbered}
-
-The modules and their order are set in the `content` part at the bottom
-of `data/website.yml`:
-
-```yaml
-content:
-  sections:
-    - id: module-1
-      label: "Module 1"
-      title: "How to structure a page"
-```
-
-- `id` is the name of the module's folder in `content`.
-- `label` is the short name in the navigation.
-- `title` appears when visitors hover over the module in the navigation.
-
-To **add** a module, create a new folder in `content`, and add an entry
-for it here. To **remove** one, delete its folder and its entry. The
-modules appear in the order of this list.
-
-::: {.callout-important}
-A module needs both: a folder in `content`, and an entry in
-`data/website.yml` with the folder's name as `id`. If you rename a
-module's folder, also change its `id`.
-:::
-
-### Pages {.unnumbered}
-
-Each page is a `.qmd` file in its module's folder, written in Markdown.
-It starts with a short header between two `---` lines:
-
-```markdown
----
-title: "How to structure a page"
-order: 1
----
-```
-
-- `title` is the title of the page.
-- `order` sets the order of the pages within the module: 1 first, then
-  2, and so on. Give every page in a module an `order`.
-
-To **add** a page, copy an existing page in the same module, rename the
-file, and change its title, order and text. To **remove** a page, delete
-its file.
-
-::: {.done}
-**Done when:** the Content page in the preview lists your own modules,
-and each module shows its pages in the right order.
-:::
-
-
-## Images, presentations and other files 
 
 Put images, PDFs and other files you use on your pages in the `docs`
 folder. The example page **Images, presentations and videos** shows how

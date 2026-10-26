@@ -91,7 +91,7 @@ Open `data/course.yml`, and work through it from the top down to the
 **Leaving out optional fields.** If an optional field doesn't apply to
 your training, such as `credits` or `examination`:
 
-- delete it: the field name and all lines that belong to it, or;  
+- delete it: the field name and all lines that belong to it; or  
 - leave it empty: nothing after the colon, `""` or `[]`.
 
 ::: {.callout-tip}
@@ -176,67 +176,98 @@ and add their path under `image`.
 ### The overview page: website.yml {.unnumbered}
 
 `data/website.yml` sets the parts of the overview page that don't come
-from other files. Open it, and work through it from top to bottom:
+from other files. Open it, and work through the parts below. You can
+leave the rest of the file as it is: the `content` part follows in the
+next chapter, and the footer fills itself in.
 
 | Part of the file | What it sets |
 |---|---|
-| `navbar` → `logos` | The logos in the navigation bar. As on main, the logo with `primary: true` (SciLifeLab) is always on the right, and you set the size of each logo with `height`. See [Logos](landing-page.qmd#customise-the-look) |
+| `navbar` → `logos` | The logos in the navigation bar. As on the landing page, the logo with `primary: true` (SciLifeLab) is always on the right, and you set the size of each logo with `height`. See [Logos](landing-page.qmd#customise-the-look) |
 | `welcome` | The title, text and image of the welcome section. Put the image in the `img` folder |
 | `registration` | The registration banner: when registration opens and closes, the link to the registration page or form, and the fee |
-| `pages` | The texts on the quick links to the other pages. You can usually leave them as they are |
-| `footer` | Only the line about how the website was built. The organisation and licence come from `data/course.yml`, and the GitHub link is worked out automatically |
-| `content` | The order of your modules: see [Instance pages - Content](instance-pages-content.qmd) |
+| `pages` | The texts on the quick links. You can usually leave them as they are: see the note below |
 
 : {tbl-colwidths="[30,70]"}
 
-::: {.callout-note}
-## About registration
+::: {.callout-note collapse="true"}
+## About the quick links
 
-The registration banner switches between "opens on", "open" and
-"closed" by itself, based on the dates you set. It checks the date when
-the website is built, so the banner changes the next time you push a
-change. To update it without changing anything, for example on the
-day registration opens, start the build yourself on GitHub: in the
-**Actions** tab, choose **deploy-instance**, then **Run workflow**.
+The overview page shows up to four **quick links**: cards that lead to
+the most important pages. **Content** and **Syllabus** always get one.
+The other pages, in the order Schedule, Practicalities, Preparation,
+Resources and FAQ, get one only when their data file contains
+information, while there's room.
 
-There are also two registration links: the banner here, set in
-`registration` in `data/website.yml`, and the **Register now** button
-on the landing page, set in `registration_url` in `data/instances.yml`
-on **main**. Use the same link in both places.
+In the `pages` part of `data/website.yml`, you can change the title,
+description and icon of each quick link. The icons come from
+[Bootstrap Icons](https://icons.getbootstrap.com/).
+
+To keep a page out of the quick links, delete its entry in
+`data/website.yml`. The page itself stays in the navigation bar, as long
+as its data file contains information.
 :::
 
-::: {.done}
-**Done when:** the overview, Syllabus and Team pages in the preview show
-your own training instance, team, logos and welcome text.
+::: {.callout-note collapse="true"}
+## About the footer
+
+You don't need to change anything in the `footer` part of
+`data/website.yml`. The footer fills itself in:
+
+- **The organisation** ("By …") comes from `organizers` in
+  `data/course.yml`.
+- **The licence** ("Licensed under …") comes from `licence` and
+  `licence_url` under `reuse` in `data/course.yml`.
+- **The GitHub logo** links to your own repository, worked out
+  automatically.
+
+The `built_with` part credits the SciLifeLab Training Webpage Template,
+which your website is built with. Please leave it as it is.
 :::
 
+::: {.callout-note collapse="true"}
+## About the content part
+
+The `content` part at the bottom of `data/website.yml` lists the modules
+of your training materials, and the order in which they appear in the
+navigation. Leave it as it is for now: you'll change it when you add
+your own materials, as described in
+[Instance pages - Content](instance-pages-content.qmd).
+:::
 
 ## Optional pages {#optional-pages}
 
-All other data files are optional. Each one adds a page, or a part of
-the overview page, when it contains information. Fill in the ones you
-need, and leave out the others.
+The other data files are the flexible part of your training instance.
+Which ones you need depends on your training: a self-paced training has
+no schedule, an online training needs no practicalities about a venue,
+and a short workshop may not need announcements.
 
-| Page | Data file | What it's for |
+| Page | Data file | Where it appears |
 |---|---|---|
-| **Schedule** | `data/schedule.yml` | The sessions, breaks and other events of the training. Also adds the **Next up** section to the overview page |
-| **Announcements** | `data/announcements.yml` | News for participants. The two most recent also appear on the overview page |
-| **Practicalities** | `data/practicalities.yml` | The venue, transport, accommodation and food |
-| **Preparation** | `data/preparation.yml` | What participants should do before the training, such as installing software |
-| **FAQ** | `data/faq.yml` | Frequently asked questions and their answers |
-| **Resources** | `data/resources.yml` | Further reading, tools and datasets for after the training |
+| **Schedule** | `data/schedule.yml` | Its own link in the navigation bar, and the **Next up** section on the overview page |
+| **Announcements** | `data/announcements.yml` | The **Information** menu, and the two latest announcements on the overview page |
+| **Practicalities** | `data/practicalities.yml` | The **Information** menu |
+| **Preparation** | `data/preparation.yml` | The **Information** menu |
+| **FAQ** | `data/faq.yml` | The **Information** menu |
+| **Resources** | `data/resources.yml` | The **Information** menu |
 
 : {tbl-colwidths="[20,30,50]"}
 
-Each file starts with a short explanation of the page, and a part called
-**Leaving information out**. It explains how to leave out one item, a
-whole section, or the whole page.
+A page only appears when its data file contains information. **Team**
+and **Syllabus** are always in the **Information** menu: they come from
+the required files `team.yml` and `course.yml`.
 
-To leave out a whole page, delete everything in its file, or delete the
-file. The page and its link in the navigation bar disappear by
-themselves.
+Fill in the files you need, and leave out the others.
 
-### The schedule {.unnumbered}
+### Fill in a page {.unnumbered}
+
+Each data file starts with an explanation of its page. Read it carefully
+before you fill in the file: it describes what each field does, which
+fields are required, and how the page behaves. It also has a part called
+**Leaving information out**, which explains how to leave out one item or
+a whole section without breaking the page.
+
+::: {.callout-important collapse="true"}
+## Using a schedule? Read this first
 
 The schedule needs a bit more care than the other pages, because the
 website uses its dates and times:
@@ -255,28 +286,31 @@ website uses its dates and times:
 The **Next up** section on the overview page then always shows the next
 event, with a countdown, without you having to change anything during
 the training.
-
-::: {.done}
-**Done when:** the navigation bar in the preview shows the pages you
-filled in, and none of the pages you left out.
 :::
 
+### Leave a page out {.unnumbered}
+
+Delete its data file, or delete everything in it. The page and its link
+in the navigation bar disappear by themselves.
+
+::: {.callout-tip}
+Changed your mind later? Every data file is still in the template, on
+the **release-0000** branch. Copy it from there, or from one of your
+earlier training instances.
+:::
 
 ## Cheat sheet {#cheat-sheet}
 
 All on the branch of your training instance.
 
+
 | To... | Where | What to do |
 |---|---|---|
 | Switch off template mode (first instance only) | `data/website.yml` and `README.md` | Set `template: false`, and replace the README with `docs/_template-README.md` |
-| Describe the training instance | `data/course.yml` | Fill in the required fields listed at the top of the file |
+| Describe the training instance | `data/course.yml` | Fill in the required fields listed at the top of the file, and check the licence under `reuse` |
 | Add the team | `data/team.yml` | One entry per person. At least one person with `course_contact: true` and an `email` |
-| Change the logos | `data/website.yml` | `logos` under `navbar` |
-| Change the welcome section | `data/website.yml` | `welcome` |
-| Set up registration | `data/website.yml` | `registration`. Use the same link as `registration_url` in `data/instances.yml` on **main** |
-| Update the registration banner on its opening or closing day | GitHub, **Actions** tab | **deploy-instance** → **Run workflow** |
-| Add a schedule | `data/schedule.yml` | One entry per event. Empty the file to leave out the schedule |
-| Fill in an information page | `data/announcements.yml`, `practicalities.yml`, `preparation.yml`, `faq.yml` or `resources.yml` | Empty or delete the file to leave out the page |
+| Set up the overview page | `data/website.yml` | `logos` under `navbar`, `welcome`, `registration` and `pages` |
+| Fill in an optional page | `data/schedule.yml`, `announcements.yml`, `practicalities.yml`, `preparation.yml`, `faq.yml` or `resources.yml` | Read the explanation at the top of the file first |
+| Leave out an optional page | The page's data file | Delete the file, or everything in it |
 
 : {tbl-colwidths="[28,30,42]"}
-
