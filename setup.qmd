@@ -43,11 +43,6 @@ another editor if you prefer, but the instructions and screenshots assume
 VS Code.
 :::
 
-::: {.done}
-**Done when:** you have a GitHub account, and VS Code opens on your
-computer.
-:::
-
 ## Create your repository
 
 A **repository** is the folder on GitHub that holds everything for your
@@ -66,8 +61,7 @@ stays unchanged.
 3. Fill in the form:
    - Turn **Include all branches** **on**. This is required: the template
      keeps the landing page and each training instance in separate
-     *branches* (you will learn about these later), and you need all of
-     them.
+     *branches* (see [Repository structure](repository-structure.qmd#branches)), and you need all of them.
    - Under **Owner**, select the GitHub organisation or account where the
      repository should live, for example SciLifeLab-Training, NBISweden,
      or your personal account.
@@ -104,11 +98,6 @@ access to the repository. You can also do this later.
 The options you see depend on whether the repository belongs to you or
 to an organisation, and on your permissions in that organisation.
 :::
-
-::: {.done}
-**Done when:** you see your own repository on GitHub, with the name
-you chose.
-::: 
 
 ## Publish your website
 
@@ -179,10 +168,6 @@ always find your website quickly:
 3. Tick **Use your GitHub Pages website** and click **Save changes**.
 ![](images/setup-11-aboutsettings.png){fig-alt="Edit repository details dialog with the GitHub Pages option selected."}
 
-::: {.done}
-**Done when:** the website link appears under **About**, and clicking
-it opens the template website.
-:::
 
 ## Open the repository on your computer
 
@@ -226,11 +211,6 @@ git clone https://github.com/ORGANISATION/REPOSITORY-NAME.git
 ```
 
 Then open the new folder in VS Code with **File → Open Folder...**
-:::
-
-::: {.done}
-**✓ Done when:** you see your repository's files in the Explorer panel
-in VS Code.
 :::
 
 ## Set up the environment
@@ -335,11 +315,6 @@ You can let VS Code do that for you:
 
 From now on, every new terminal you open in this repository starts with
 the environment switched on.
-
-::: {.done}
-**Done when:** a new terminal (**Terminal → New Terminal**) starts with
-`(.venv)`.
-:::
 
 ## You're all set! {.unnumbered .unlisted}
 

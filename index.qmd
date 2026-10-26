@@ -4,32 +4,31 @@ title: "Introduction"
 
 Welcome to the **SciLifeLab Training Webpage Template User Guide**!
 
+### What is the template? {.unnumbered}
+
 The **[SciLifeLab Training Webpage Template](https://scilifelab-training.github.io/scilifelab-training-template/)**
-helps training organisers across SciLifeLab create consistent, reusable
-and FAIR training websites. No programming is needed: you fill in
-text files with information about your training, write your materials in
-Markdown, and the website is built and published for you.
+helps you create a consistent, reusable and FAIR website for your
+training. No programming is needed: you fill in text files and write
+your materials in Markdown, and the website is built and published for
+you.
 
-### How a training website is organised {.unnumbered}
+### How is a training website organised? {.unnumbered}
 
-Each training gets one website with two main parts:
+- **A landing page** introduces the training as a whole, and links to
+  every training instance.
+- **A training instance** is one time the training is given, or one
+  version of its materials, with its own schedule, team and materials.
 
-- **A landing page** with general information about the training and links
-  to every time it is given.
-- **A training instance** for each time the training is given, with its own
-  overview, schedule, materials and practical information.
+### Which trainings is it for? {.unnumbered}
 
-### What this guide covers {.unnumbered}
+Most kinds: online or in-person, recurring courses and workshops, one-off trainings,
+self-paced training, and training in cohorts. See
+[Training instances](training-instances.qmd) for how each one fits.
 
-This guide takes you step by step from an empty template to a published,
-citable training website. It covers how to:
+### What does this guide cover? {.unnumbered}
 
-- create your own copy of the template and preview it on your computer;
-- set up the landing page;
-- create a training instance and add your materials;
-- prepare your training materials for publication, citation, and reuse following FAIR principles.
+Everything from an empty template to a published, citable training
+website: setting up your copy, the landing page, your training
+instances and materials, and making your training FAIR.
 
-No prior experience with Git, Python or Quarto is needed. Start with
-[Set up your training](setup.qmd) and follow it once from beginning
-to end. After that, you can go straight to the chapter you need.
-
+No experience with Git, Python or Quarto is needed! 

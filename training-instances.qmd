@@ -3,26 +3,26 @@ title: "Training instances"
 ---
 
 A **training instance** is one time your training is given, for example
-in May 2026. Each training instance has its own branch in your
-repository, and its own website with its own dates, schedule, team and
+in May 2027. Each training instance has its own branch in your
+repository, and from that its own website is created with dates, schedule, team and
 materials.
 
-The landing page links to all of them: the current training instance in
-the hero, and every training instance in the **All training instances**
+The landing page can link to all instances: 
+
+- the current training instance is linked in the hero 
+- all training instance are linked in the **All training instances**
 banner.
 
 In this chapter, you will learn how to:
 
-- [Create a new training instance](#create-a-new-training-instance): make a new
-  branch, and publish its website.
+- [Create your first new training instance](#create-your-first-new-training-instance): make a new branch, and publish its website.
 - [Add an instance to the landing page](#add-an-instance-to-the-landing-page): list it in
-  the **All training instances** banner, and set up the hero buttons.
-- [Create your next training instance](#create-your-next-training-instance),
+  the **All training instances** banner, and link it in the hero buttons.
+- [Create additional training instances](#create-additional-training-instances),
   the next time your training is given.
 
-How to switch off template mode and fill in the website of a training instance (its dates, schedule,
-team and materials) is explained in the next chapters,
-[Instance pages - Data files](instance-pages-data-files.qmd) and [Instance pages - Content](instance-pages-content.qmd)
+How to switch off template mode and fill in the website of a training instance (its dates, schedule, team and materials) is explained in the next chapters,
+[Instance pages - Data files](instance-pages-data-files.qmd) and [Instance pages - Content](instance-pages-content.qmd).
 
 ### Before you start {.unnumbered}
 
@@ -36,12 +36,12 @@ branch, where you might commit them by mistake.
 :::
 
 
-## Create new a training instance
+## Create your first new training instance
 
 ### Choose a name {.unnumbered}
 
 Each training instance branch is named **release-** followed by the year
-and month in which the training instance starts, written as YYMM (see [Branches](repository-structure.qmd#branches)). For
+and month in which the training instance is given, written as YYMM (see [Branches](repository-structure.qmd#branches)). For
 example:
 
 | Training instance | Branch name |
@@ -52,19 +52,75 @@ example:
 : {tbl-colwidths="[40,60]"}
 
 The four digits also become the address of its website:
-`https://ORGANISATION.github.io/REPOSITORY-NAME/2605/`.
+`https://ORGANISATION.github.io/REPOSITORY-NAME/2705/`.
 
+::: {.callout-note collapse="true"}
+## Self-paced training: what is a training instance?
+
+In self-paced training, participants start whenever they like, so there
+is no "time the training is given". Instead, think of a training instance
+as a **version** of your materials:
+
+- **Name the branch after the year and month the version is released.**
+  For example, `release-2705` for a version published in May 2027.
+- **Create a new training instance when you update the materials
+  substantially**, for example a new module or a revised structure.
+  Small fixes, such as typos, go into the current training instance.
+- **Earlier versions stay online.** Participants who started with an
+  earlier version can finish with the materials they began with.
+
+Some settings will work differently for self-paced training.
+
+- On the **main** branch in `data/instances.yml`: the latest version is the current
+  training instance. If participants don't register, set `registration_url: ""`.
+- On the **instance** branches: this will be explained further in [Instance pages - Data files](instance-pages-data-files.qmd) and [Instance pages - Content](instance-pages-content.qmd).
+:::
+
+::: {.callout-note collapse="true"}
+## Training in cohorts: one training instance per cohort?
+
+If your training runs in **cohorts**, groups of participants who follow
+the same training at different times, how you set up your training
+instances depends on how your training is organised: does each cohort
+need its own website, or do the cohorts share one?
+
+**Option 1: one training instance per cohort**
+
+- **When:** each cohort has its own dates, schedule, team or
+  announcements.
+- **Branch name:** the year and month the cohort starts, for example
+  `release-2702` for a cohort starting in February 2027, and
+  `release-2709` for the next one in September.
+- **What it represents:** one cohort, with its own website. Each new
+  cohort starts from the previous one, as described in
+  [Create additional training instances](#create-additional-training-instances).
+
+**Option 2: one training instance for several cohorts**
+
+- **When:** the cohorts follow the same materials and website, and
+  only their start dates differ.
+- **Branch name:** the year and month the materials are released, as for
+  self-paced training, for example `release-2702`.
+- **What it represents:** a version of your materials. List the cohorts
+  and their dates on the website, for example in the announcements or
+  practicalities (see
+  [Instance pages - Data files](instance-pages-data-files.qmd)). Create
+  a new training instance only when the materials change substantially.
+
+Each branch name must be unique, so with option 1, two cohorts can't
+start in the same month.
+
+This is the advice of the SciLifeLab Training Hub, but you know your
+training best: choose the setup that suits it.
+:::
 
 ### Switch branch {#switch-branch .unnumbered}
 
 You create a new branch as a copy of an existing one, so first switch to
-the branch you want to copy:
+the branch you want to copy. 
 
-- For your **first** training instance: switch to **release-0000**, the example
-  training instance that comes with the template.
-- For **later** training instances: switch to your previous training instance, for
-  example **release-2705**. See
-  [Create your next training instance](#create-your-next-training-instance).
+For your **first** training instance: switch to **release-0000**, the example
+training instance that comes with the template.
 
 To switch branch in VS Code:
 
@@ -81,8 +137,7 @@ the bottom-left corner shows its name.
 ### Create the branch {.unnumbered}
 
 1. Check that the bottom-left corner shows the branch you want to copy.
-2. Click the branch name, and choose **Create new branch...** at the top
-   of the list.
+2. Click the branch name, and choose **Create new branch...** in the list that opens at the top. 
 3. Type the name of the new branch, for example `release-2705`, and
    press **Enter**.
 4. Open the **Source Control** panel and click **Publish Branch**. This
@@ -94,21 +149,13 @@ As soon as the branch is on GitHub, GitHub builds its website, as with
 every push: see
 [Check the published website](workflow.qmd#check-the-published-website).
 
-::: {.done}
-**Done when:** the bottom-left corner of VS Code shows your new branch,
-and the website of your training instance opens at
-`https://ORGANISATION.github.io/REPOSITORY-NAME/YYMM/`. For now, it
-still shows the example content.
-:::
-
 ## Add an instance to the landing page
 
 Creating a **release-** branch does **not** add it to the landing page
 automatically. You add it yourself, in `data/instances.yml` on the
 **main** branch.
 
-1. Switch to the **main** branch, as described in
-   [Switch branch](#switch-branch).
+1. Make sure you've committed any changes you made on your new branch, and switch to the **main** branch, as described in [Switch branch](#switch-branch).
 2. Open `data/instances.yml`. It lists the training instances the
    landing page links to: one entry per training instance, from
    `- slug:` to `sort_key:`. The guiding comments at the top of the file explain
@@ -116,35 +163,28 @@ automatically. You add it yourself, in `data/instances.yml` on the
 3. The template list contains example training instances. Change the first
    one, with `slug: "0000"`, into your own training instance: change its
    `slug`, `label`, `instance_url` and `sort_key`. Add a url to a registration page or form
-   under `registration:url` if registration is open.  
+   under `registration_url` if registration is open.  
 
    For example, for a May 2027 instance:
 
-```yaml
-     - slug: "2705"
-       label: "May 2027"
-       status: current
-       visible: true
-       show_in_hero: true
-       instance_url: "./2705/"
-       registration_url: ""
-       sort_key: 202705
-```
+   ```yaml
+      - slug: "2705"
+         label: "May 2027"
+         status: current
+         visible: true
+         show_in_hero: true
+         instance_url: "./2705/"
+         registration_url: ""
+         sort_key: 202705
+   ```
 
 4. Delete the other examples, **2505** and **2411**: each whole entry,
-   from `- slug:` to `sort_key:`. They link to websites that don't exist
-   in your repository.
+   from `- slug:` to `sort_key:`. They are part of the template for demonstration purposes and link to websites that don't exist in your repository.
 5. Save the file, and check the preview. Then commit and push your
    changes.
 
 If you break one of the rules described in the file, the preview shows
 an error that explains what to fix.
-
-::: {.done}
-**Done when:** the landing page shows one button in the
-**All training instances** banner, and it opens the website of your
-training instance.
-:::
 
 ::: {.callout-tip collapse="true"}
 ## Optional: delete release-0000
@@ -164,7 +204,7 @@ later training instances start from your own previous one, so you don't
 need **release-0000** for those. But once deleted, it's gone!
 :::
 
-## Create your next training instance
+## Create additional training instances
 
 The next time your training is given, start from your previous training
 instance rather than from **release-0000**. That way, everything you
@@ -176,9 +216,11 @@ were.
 1. Switch to your previous training instance, for example
    **release-2705**, and create a new branch from it, for example
    `release-2711`, as described in
-   [Create a new training instance](#create-a-new-training-instance).
-2. Switch to **main**, and open `data/instances.yml`.
-3. Add the new training instance: copy the entry of the current one,
+   [Create your first new training instance](#create-your-first-new-training-instance).
+2. Update the information of the new training instance, such as its
+   dates, schedule and team: see [Instance pages - Data files](instance-pages-data-files.qmd).
+3. Switch to **main**, and open `data/instances.yml`.
+4. Add the new training instance: copy the entry of the current one,
    paste it at the top of the list, and change `slug`, `label`,
    `instance_url` and `sort_key`.
 5. Make the new training instance the current one. In the entry of the

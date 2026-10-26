@@ -62,11 +62,11 @@ file to open and what to change for each part of the landing page.
 Your repository starts as a copy of the template, so it still presents
 itself as the template, in two places:
 
-- the yellow [Want to use this template?]{.template-label} banner at the
-  top of the landing page (see the overview image above);
 - the `README.md` file, the description shown on your repository's main
   page on GitHub, which still describes the template instead of your
-  training.
+  training;
+- the yellow [Want to use this template?]{.template-label} banner at the
+  top of the landing page (see the overview image above).
 
 In this section, you replace the README and then switch off
 **template mode**, so your repository presents your own training.
@@ -126,15 +126,25 @@ This changes three things:
 
    ![](images/landing-06-changesaftersaving.png){width=80% fig-alt="Screenshot: changed template:true to template:false in data/website.yml."}
 
+::: {.callout-note collapse="true"}
+## Optional: delete the template files you no longer need
+
+Two things on main are only needed while you set up your repository:
+
+- The `docs/_template-README.md` file (keep the rest of the `docs` folder)
+- The `_template` folder
+
+You can delete both: in the Explorer panel, right-click each and choose
+**Delete**. 
+
+If you ever set `template: true` again, the preview stops with an
+error, because the `_template` folder is missing.
+:::
+
 ::: {.callout-tip}
 The README shows the details you have filled in so far. Did you not
 fill in the data files yet? No problem: the README updates by itself
 every time you change them.
-:::
-
-::: {.done}
-**Done when:** the yellow banner is gone from the preview, and
-`README.md` shows the title of your training at the top.
 :::
 
 ## Customise the look
@@ -275,11 +285,6 @@ the website, so make it carefully:
    visible part to the left.
 :::
 
-::: {.done}
-**Done when:** the preview shows your logos and banner image.
-:::
-
-
 ## Describe your training
 
 What the landing page says about your training comes from two data
@@ -388,15 +393,7 @@ Every person needs `given_names`, `family_names`, `roles` (`Founder` or
 an error that names the person and the missing field.
 :::
 
-::: {.done}
-**Done when:** the hero, the information cards and the footer in the
-preview show your own training and team, instead of the example text.
-:::
-
 ## Cheat sheet
-
-All changes on the landing page, on one screen. Everything happens on
-the **main** branch.
 
 ### Switch off template mode {.unnumbered .unlisted}
 
