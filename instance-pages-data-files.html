@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-95863af46656191e6a2cf1560d98dcd6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ad298df765bf73ccd67162335a1d55c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -210,61 +210,50 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Each training instance has its own website: an overview page, a schedule, the training materials, and information pages such as the syllabus, the team and practical information. In this chapter, you fill in the information for your own training instance.</p>
+<p>Each <strong>training instance</strong> has its own website: an overview page, a schedule, the training materials, and information pages such as the syllabus and the team. In this chapter, you fill in the information for your own training instance.</p>
 <p>The figure below shows the parts of a training instance website, and the names this guide uses for them.</p>
-<p>fig-alt=“Annotated example of a training instance website: the navigation bar with logos, the welcome section, the registration banner, the Next up section, the quick links, announcements, the team preview and the footer.”</p>
+<p>FIG fig-alt=“Annotated example of a training instance website: the navigation bar with logos, the welcome section, the registration banner, the Next up section, the quick links, announcements, the team preview and the footer.”</p>
 <p>In this chapter, you will learn how to:</p>
 <ul>
 <li><a href="#switch-off-template-mode">Switch off template mode</a>: replace the README and remove the template banner.</li>
 <li><a href="#required-information">Fill in the required information</a>: the training, the team and the overview page.</li>
 <li><a href="#optional-pages">Add the optional pages</a>: the schedule, announcements, practicalities, preparation, FAQ and resources.</li>
 </ul>
-<p>How to add your training materials and instructor notes is explained in the next chapter, <a href="./instance-pages-content.html">Instance pages - Content</a>.</p>
+<p>How to add your training materials and instructor notes follows in the next chapter, <a href="./instance-pages-content.html">Instance pages - Content</a>.</p>
 <section id="before-you-start" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="before-you-start">Before you start</h3>
-<p>Everything in this chapter happens on the branch of your training instance, for example <strong>release-2705</strong>. Check the bottom-left corner of VS Code before you start: see <a href="./training-instances.html#switch-branch">Switch branch</a>.</p>
-<p>Work as described in <a href="./workflow.html">Regular workflow</a>: start the preview with <code>python scripts/preview.py</code>, make your changes, check them in your browser, and <a href="./workflow.html#commit-and-push-your-changes">commit and push</a>.</p>
+<p>Work on the branch of your training instance, for example <strong>release-2705</strong>, as described in <a href="./workflow.html">Regular workflow</a>.</p>
+<p>Everything in this chapter happens in the data files in the <code>data</code> folder. Each data file explains how it works, in the lines starting with <code>#</code>: which fields are required, what they do, and the rules they must follow. Read these explanations carefully before you fill in a file.</p>
 </section>
-<section id="the-website-builds-itself-from-the-data-files" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="the-website-builds-itself-from-the-data-files">The website builds itself from the data files</h3>
-<p>Apart from the training materials, you never edit the pages of the website directly. Every page is built automatically from the data files in the <code>data</code> folder:</p>
-<ul>
-<li>the <strong>overview page</strong>, with its welcome text, quick links, team preview and latest announcements;</li>
-<li>the <strong>Schedule</strong> page, and the <strong>Next up</strong> section on the overview page, which always shows the next event and counts down to it;</li>
-<li>the <strong>registration banner</strong>, which shows when registration opens, the link while it is open, and that it has closed afterwards;</li>
-<li>the <strong>Syllabus</strong>, <strong>Team</strong> and information pages, and the links to them in the navigation bar, which only appear when their data file contains information;</li>
-<li>the footer, the README and the citation of your training instance.</li>
-</ul>
-<p>So you only fill in the data files, and the template takes care of the rest.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
+<section id="switch-off-template-mode" class="level2" data-number="7.1">
+<h2 data-number="7.1" data-anchor-id="switch-off-template-mode"><span class="header-section-number">7.1</span> Switch off template mode</h2>
+<p>Do this once, on the branch of your <strong>first</strong> training instance: the one you created from <strong>release-0000</strong> (see <a href="./training-instances.html#create-your-first-new-training-instance">Create your first new training instance</a>). Later training instances start from this one, so these changes come along.</p>
+<section id="replace-the-readme" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="replace-the-readme">Replace the README</h3>
+<p>Your new branch still has the README of the template. Replace it with the ready-made README for a training instance, which is already on your branch, in the <code>docs</code> folder:</p>
+<ol type="1">
+<li>Open <code>docs/_template-README.md</code>, select all text, and copy it.</li>
+<li>Open <code>README.md</code>, at the top level of your training instance repository. Select all text, and paste, so the copied text replaces it.</li>
+<li>Delete the explanation at the top of the file, between <code>&lt;!--</code> and <code>--&gt;</code>, and the note starting with <code>&gt; **Template:**</code>.</li>
+<li>Fill in the parts marked <strong>Write this yourself</strong>, and save the file.</li>
+</ol>
+<p>The other parts of the README, between <code>&lt;!-- generated:... --&gt;</code> lines, fill in by themselves, from the data files of your training instance.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Read the explanations in the data files
+<span class="screen-reader-only">Note</span>Optional: delete docs/_template-README.md
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Each data file explains how it works, in the lines starting with <code>#</code>: which fields are required, what each field does, the rules it must follow, and how to leave information out. Read these explanations carefully before you fill in a file. This chapter tells you which file to open for what, and points out what’s easy to miss, but the files themselves have the details.</p>
-<p>If a file breaks one of its rules, the preview stops with an error that names the file and explains what to fix.</p>
+<p>You now no longer need <code>docs/_template-README.md</code>. In the Explorer panel, right-click the file and choose <strong>Delete</strong>.</p>
 </div>
 </div>
-<p>Not sure how a data file works? See <a href="./repository-structure.html#data-files">Data files</a>.</p>
-<p><br></p>
-</section>
-<section id="switch-off-template-mode" class="level2" data-number="7.1">
-<h2 data-number="7.1" data-anchor-id="switch-off-template-mode"><span class="header-section-number">7.1</span> Switch off template mode</h2>
-<p>For your <strong>first</strong> training instance only. Later training instances start from your previous one, so these changes come along.</p>
-<section id="replace-the-readme" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="replace-the-readme">Replace the README</h3>
-<p>The template comes with a ready-made README for a training instance, in <code>docs/_template-README.md</code>. It works the same way as on main: see <a href="./landing-page.html#switch-off-template-mode">Replace the README</a>.</p>
-<ol type="1">
-<li>Open <code>docs/_template-README.md</code>, select all text, and copy it.</li>
-<li>Open <code>README.md</code> in the main folder of your repository, select all text, and paste, so the copied text replaces it.</li>
-<li>Delete the explanation at the top of the file, between <code>&lt;!--</code> and <code>--&gt;</code>, and the note starting with <code>&gt; **Template:**</code>.</li>
-<li>Fill in the parts marked <strong>Write this yourself</strong>, and save the file.</li>
-</ol>
+</div>
 </section>
 <section id="remove-the-template-banner" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="remove-the-template-banner">Remove the template banner</h3>
@@ -274,57 +263,21 @@ ul.task-list li input[type="checkbox"] {
 <li>Save the file.</li>
 </ol>
 <p>The yellow <span class="template-label">Want to use this template?</span> banner disappears from the overview page.</p>
-<div class="done">
-<p><strong>Done when:</strong> the yellow banner is gone from the preview, and <code>README.md</code> shows the title of your training at the top.</p>
-</div>
 </section>
 </section>
 <section id="required-information" class="level2" data-number="7.2">
 <h2 data-number="7.2" data-anchor-id="required-information"><span class="header-section-number">7.2</span> Required information</h2>
-<p>Every training instance needs three data files: <code>course.yml</code>, <code>team.yml</code> and <code>website.yml</code>. Fill them in first.</p>
+<p>Every training instance requires three data files to be filled in: <code>course.yml</code>, <code>team.yml</code> and <code>website.yml</code>.</p>
 <section id="the-training-course.yml" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="the-training-course.yml">The training: course.yml</h3>
 <p><code>data/course.yml</code> describes this training instance. Most of it appears on the overview page and the <strong>Syllabus</strong> page.</p>
-<p>Open <code>data/course.yml</code> and work through it from top to bottom. The comments at the top list which fields are <strong>required</strong> and which are optional. Leave out optional fields that don’t apply to your training, for example <code>start_date</code> and <code>end_date</code> for self-paced training.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 40%">
-<col style="width: 60%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Where it appears</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>title</code>, <code>subtitle</code></td>
-<td>The navigation bar, the welcome section and the browser tab</td>
-</tr>
-<tr class="even">
-<td><code>start_date</code>, <code>end_date</code>, <code>location</code>, <code>mode</code></td>
-<td>The welcome section, and the Syllabus page</td>
-</tr>
-<tr class="odd">
-<td><code>description</code>, <code>learning_outcomes</code>, <code>prerequisites</code>, <code>credits</code>, <code>examination</code></td>
-<td>The Syllabus page</td>
-</tr>
-<tr class="even">
-<td><code>organizers</code></td>
-<td>The footer (“By …”), the Syllabus page and the citation</td>
-</tr>
-<tr class="odd">
-<td><code>contact.email</code></td>
-<td>The Syllabus page: where participants can send questions</td>
-</tr>
-<tr class="even">
-<td><code>licence</code>, <code>licence_url</code> (under <code>reuse</code>)</td>
-<td>The footer (“Licensed under …”) and the citation. If you change the licence, also replace the text in <code>LICENSE.md</code></td>
-</tr>
-</tbody>
-</table>
-<p>The other fields under <code>reuse</code>, such as <code>doi</code>, <code>version_doi</code> and <code>release_date</code>, belong to publishing your training instance on Zenodo. Leave them empty for now: see <a href="./fairification.html">FAIRification</a>.</p>
+<p>Open <code>data/course.yml</code>, and work through it from the top down to the <code>reuse</code> part. The comments at the top list which fields are <strong>required</strong> and which are optional.</p>
+<p><strong>Leaving out optional fields.</strong> If an optional field doesn’t apply to your training, such as <code>credits</code> or <code>examination</code>:</p>
+<ul>
+<li>delete it: the field name and all lines that belong to it; or<br>
+</li>
+<li>leave it empty: nothing after the colon, <code>""</code> or <code>[]</code>.</li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -335,7 +288,70 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Use the same title, description, learning outcomes and keywords as on main, unless this training instance is different. The landing page and the training instances then describe the same training.</p>
+<p>Use the same title, description, learning outcomes and keywords as on the landing page, unless this training instance is different. The landing page and the training instances then describe the same training.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Self-paced training
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Leave out <code>start_date</code> and <code>end_date</code>.</li>
+<li>Use <code>duration</code> for the expected workload, for example <code>"About 10 hours"</code>.</li>
+<li>Set <code>mode</code> and <code>location</code> to <code>"Online"</code>.</li>
+<li>Describe how participants work in <code>instruction</code>, for example <code>"Self-study"</code>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Training in cohorts
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It depends on how you set up your training instances (see <a href="./training-instances.html">Training instances</a>):</p>
+<ul>
+<li><strong>One training instance per cohort:</strong> fill in the dates of that cohort, as for any other training instance.</li>
+<li><strong>One training instance for several cohorts:</strong> leave out <code>start_date</code> and <code>end_date</code>, and list the cohorts and their dates on the Announcements or Practicalities page instead.</li>
+</ul>
+</div>
+</div>
+</div>
+<p><strong>Reuse and citation</strong>. The <code>reuse</code> part at the bottom of <code>data/course.yml</code> describes how others may reuse and cite your training. <strong>Right now, the only thing to fill in is the licence:</strong></p>
+<ul>
+<li><code>licence</code> and <code>licence_url</code>: CC BY 4.0 by default. Keep it, or change it. If you change it, also replace the text in <code>LICENSE.md</code> with the full text of your new licence.</li>
+</ul>
+<p>Leave the other fields empty for now:</p>
+<ul>
+<li><code>doi</code>, <code>version_doi</code>, <code>release_date</code> and <code>zenodo_communities</code> belong to publishing your training instance on Zenodo, and are explained in <a href="./fairification.html">FAIRification</a>.</li>
+<li><code>licence_id</code>, <code>version</code>, <code>website_url</code> and <code>preferred_citation</code> can stay empty for most trainings. The template works out the version and the address of your website, and creates the citation from your team, title and DOI.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Creating a training instance from one of your own earlier training instances? Then <code>version_doi</code> and <code>release_date</code> are probably filled in: empty them, because they belong to the earlier training instance. Keep <code>doi</code>: it stays the same for all your training instances.</p>
 </div>
 </div>
 </section>
@@ -363,7 +379,7 @@ Important
 </section>
 <section id="the-overview-page-website.yml" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="the-overview-page-website.yml">The overview page: website.yml</h3>
-<p><code>data/website.yml</code> sets the parts of the overview page that don’t come from other files. Open it, and work through it from top to bottom:</p>
+<p><code>data/website.yml</code> sets the parts of the overview page that don’t come from other files. Open it, and work through the parts below. You can leave the rest of the file as it is: the <code>content</code> part follows in the next chapter, and the footer fills itself in.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 30%">
@@ -378,7 +394,7 @@ Important
 <tbody>
 <tr class="odd">
 <td><code>navbar</code> → <code>logos</code></td>
-<td>The logos in the navigation bar. As on main, the logo with <code>primary: true</code> (SciLifeLab) is always on the right, and you set the size of each logo with <code>height</code>. See <a href="./landing-page.html#customise-the-look">Logos</a></td>
+<td>The logos in the navigation bar. As on the landing page, the logo with <code>primary: true</code> (SciLifeLab) is always on the right, and you set the size of each logo with <code>height</code>. See <a href="./landing-page.html#customise-the-look">Logos</a></td>
 </tr>
 <tr class="even">
 <td><code>welcome</code></td>
@@ -390,40 +406,71 @@ Important
 </tr>
 <tr class="even">
 <td><code>pages</code></td>
-<td>The texts on the quick links to the other pages. You can usually leave them as they are</td>
-</tr>
-<tr class="odd">
-<td><code>footer</code></td>
-<td>Only the line about how the website was built. The organisation and licence come from <code>data/course.yml</code>, and the GitHub link is worked out automatically</td>
-</tr>
-<tr class="even">
-<td><code>content</code></td>
-<td>The order of your modules: see <a href="./instance-pages-content.html">Instance pages - Content</a></td>
+<td>The texts on the quick links. You can usually leave them as they are: see the note below</td>
 </tr>
 </tbody>
 </table>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>About registration
+<span class="screen-reader-only">Note</span>About the quick links
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The registration banner switches between “opens on”, “open” and “closed” by itself, based on the dates you set. It checks the date when the website is built, so the banner changes the next time you push a change. To update it without changing anything, for example on the day registration opens, start the build yourself on GitHub: in the <strong>Actions</strong> tab, choose <strong>deploy-instance</strong>, then <strong>Run workflow</strong>.</p>
-<p>There are also two registration links: the banner here, set in <code>registration</code> in <code>data/website.yml</code>, and the <strong>Register now</strong> button on the landing page, set in <code>registration_url</code> in <code>data/instances.yml</code> on <strong>main</strong>. Use the same link in both places.</p>
+<p>The overview page shows up to four <strong>quick links</strong>: cards that lead to the most important pages. <strong>Content</strong> and <strong>Syllabus</strong> always get one. The other pages, in the order Schedule, Practicalities, Preparation, Resources and FAQ, get one only when their data file contains information, while there’s room.</p>
+<p>In the <code>pages</code> part of <code>data/website.yml</code>, you can change the title, description and icon of each quick link. The icons come from <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>.</p>
+<p>To keep a page out of the quick links, delete its entry in <code>data/website.yml</code>. The page itself stays in the navigation bar, as long as its data file contains information.</p>
 </div>
 </div>
-<div class="done">
-<p><strong>Done when:</strong> the overview, Syllabus and Team pages in the preview show your own training instance, team, logos and welcome text.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>About the footer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You don’t need to change anything in the <code>footer</code> part of <code>data/website.yml</code>. The footer fills itself in:</p>
+<ul>
+<li><strong>The organisation</strong> (“By …”) comes from <code>organizers</code> in <code>data/course.yml</code>.</li>
+<li><strong>The licence</strong> (“Licensed under …”) comes from <code>licence</code> and <code>licence_url</code> under <code>reuse</code> in <code>data/course.yml</code>.</li>
+<li><strong>The GitHub logo</strong> links to your own repository, worked out automatically.</li>
+</ul>
+<p>The <code>built_with</code> part credits the SciLifeLab Training Webpage Template, which your website is built with. Please leave it as it is.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>About the content part
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The <code>content</code> part at the bottom of <code>data/website.yml</code> lists the modules of your training materials, and the order in which they appear in the navigation. Leave it as it is for now: you’ll change it when you add your own materials, as described in <a href="./instance-pages-content.html">Instance pages - Content</a>.</p>
+</div>
+</div>
 </div>
 </section>
 </section>
 <section id="optional-pages" class="level2" data-number="7.3">
 <h2 data-number="7.3" data-anchor-id="optional-pages"><span class="header-section-number">7.3</span> Optional pages</h2>
-<p>All other data files are optional. Each one adds a page, or a part of the overview page, when it contains information. Fill in the ones you need, and leave out the others.</p>
+<p>The other data files are the flexible part of your training instance. Which ones you need depends on your training: a self-paced training has no schedule, an online training needs no practicalities about a venue, and a short workshop may not need announcements.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -434,46 +481,59 @@ Important
 <tr class="header">
 <th>Page</th>
 <th>Data file</th>
-<th>What it’s for</th>
+<th>Where it appears</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>Schedule</strong></td>
 <td><code>data/schedule.yml</code></td>
-<td>The sessions, breaks and other events of the training. Also adds the <strong>Next up</strong> section to the overview page</td>
+<td>Its own link in the navigation bar, and the <strong>Next up</strong> section on the overview page</td>
 </tr>
 <tr class="even">
 <td><strong>Announcements</strong></td>
 <td><code>data/announcements.yml</code></td>
-<td>News for participants. The two most recent also appear on the overview page</td>
+<td>The <strong>Information</strong> menu, and the two latest announcements on the overview page</td>
 </tr>
 <tr class="odd">
 <td><strong>Practicalities</strong></td>
 <td><code>data/practicalities.yml</code></td>
-<td>The venue, transport, accommodation and food</td>
+<td>The <strong>Information</strong> menu</td>
 </tr>
 <tr class="even">
 <td><strong>Preparation</strong></td>
 <td><code>data/preparation.yml</code></td>
-<td>What participants should do before the training, such as installing software</td>
+<td>The <strong>Information</strong> menu</td>
 </tr>
 <tr class="odd">
 <td><strong>FAQ</strong></td>
 <td><code>data/faq.yml</code></td>
-<td>Frequently asked questions and their answers</td>
+<td>The <strong>Information</strong> menu</td>
 </tr>
 <tr class="even">
 <td><strong>Resources</strong></td>
 <td><code>data/resources.yml</code></td>
-<td>Further reading, tools and datasets for after the training</td>
+<td>The <strong>Information</strong> menu</td>
 </tr>
 </tbody>
 </table>
-<p>Each file starts with a short explanation of the page, and a part called <strong>Leaving information out</strong>. It explains how to leave out one item, a whole section, or the whole page.</p>
-<p>To leave out a whole page, delete everything in its file, or delete the file. The page and its link in the navigation bar disappear by themselves.</p>
-<section id="the-schedule" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="the-schedule">The schedule</h3>
+<p>A page only appears when its data file contains information. <strong>Team</strong> and <strong>Syllabus</strong> are always in the <strong>Information</strong> menu: they come from the required files <code>team.yml</code> and <code>course.yml</code>.</p>
+<p>Fill in the files you need, and leave out the others.</p>
+<section id="fill-in-a-page" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="fill-in-a-page">Fill in a page</h3>
+<p>Each data file starts with an explanation of its page. Read it carefully before you fill in the file: it describes what each field does, which fields are required, and how the page behaves. It also has a part called <strong>Leaving information out</strong>, which explains how to leave out one item or a whole section without breaking the page.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Using a schedule? Read this first
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>The schedule needs a bit more care than the other pages, because the website uses its dates and times:</p>
 <ul>
 <li>Each event, such as a lecture, an exercise or a break, is one entry, from <code>- title:</code> to <code>content:</code>. Every event needs a <code>title</code>, <code>type</code>, <code>group</code>, <code>start</code> and <code>end</code>.</li>
@@ -482,8 +542,25 @@ Important
 <li>To link an event to a page of your materials, fill in <code>content</code> with the path to that page, for example <code>"content/module-1/introduction.qmd"</code>.</li>
 </ul>
 <p>The <strong>Next up</strong> section on the overview page then always shows the next event, with a countdown, without you having to change anything during the training.</p>
-<div class="done">
-<p><strong>Done when:</strong> the navigation bar in the preview shows the pages you filled in, and none of the pages you left out.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="leave-a-page-out" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="leave-a-page-out">Leave a page out</h3>
+<p>Delete its data file, or delete everything in it. The page and its link in the navigation bar disappear by themselves.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Changed your mind later? Every data file is still in the template, on the <strong>release-0000</strong> branch. Copy it from there, or from one of your earlier training instances.</p>
+</div>
 </div>
 </section>
 </section>
@@ -512,7 +589,7 @@ Important
 <tr class="even">
 <td>Describe the training instance</td>
 <td><code>data/course.yml</code></td>
-<td>Fill in the required fields listed at the top of the file</td>
+<td>Fill in the required fields listed at the top of the file, and check the licence under <code>reuse</code></td>
 </tr>
 <tr class="odd">
 <td>Add the team</td>
@@ -520,34 +597,19 @@ Important
 <td>One entry per person. At least one person with <code>course_contact: true</code> and an <code>email</code></td>
 </tr>
 <tr class="even">
-<td>Change the logos</td>
+<td>Set up the overview page</td>
 <td><code>data/website.yml</code></td>
-<td><code>logos</code> under <code>navbar</code></td>
+<td><code>logos</code> under <code>navbar</code>, <code>welcome</code>, <code>registration</code> and <code>pages</code></td>
 </tr>
 <tr class="odd">
-<td>Change the welcome section</td>
-<td><code>data/website.yml</code></td>
-<td><code>welcome</code></td>
+<td>Fill in an optional page</td>
+<td><code>data/schedule.yml</code>, <code>announcements.yml</code>, <code>practicalities.yml</code>, <code>preparation.yml</code>, <code>faq.yml</code> or <code>resources.yml</code></td>
+<td>Read the explanation at the top of the file first</td>
 </tr>
 <tr class="even">
-<td>Set up registration</td>
-<td><code>data/website.yml</code></td>
-<td><code>registration</code>. Use the same link as <code>registration_url</code> in <code>data/instances.yml</code> on <strong>main</strong></td>
-</tr>
-<tr class="odd">
-<td>Update the registration banner on its opening or closing day</td>
-<td>GitHub, <strong>Actions</strong> tab</td>
-<td><strong>deploy-instance</strong> → <strong>Run workflow</strong></td>
-</tr>
-<tr class="even">
-<td>Add a schedule</td>
-<td><code>data/schedule.yml</code></td>
-<td>One entry per event. Empty the file to leave out the schedule</td>
-</tr>
-<tr class="odd">
-<td>Fill in an information page</td>
-<td><code>data/announcements.yml</code>, <code>practicalities.yml</code>, <code>preparation.yml</code>, <code>faq.yml</code> or <code>resources.yml</code></td>
-<td>Empty or delete the file to leave out the page</td>
+<td>Leave out an optional page</td>
+<td>The page’s data file</td>
+<td>Delete the file, or everything in it</td>
 </tr>
 </tbody>
 </table>

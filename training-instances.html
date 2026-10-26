@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-95863af46656191e6a2cf1560d98dcd6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ad298df765bf73ccd67162335a1d55c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -216,9 +216,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#create-new-a-training-instance" id="toc-create-new-a-training-instance" class="nav-link active" data-scroll-target="#create-new-a-training-instance"><span class="header-section-number">6.1</span> Create new a training instance</a></li>
+  <li><a href="#create-your-first-new-training-instance" id="toc-create-your-first-new-training-instance" class="nav-link active" data-scroll-target="#create-your-first-new-training-instance"><span class="header-section-number">6.1</span> Create your first new training instance</a></li>
   <li><a href="#add-an-instance-to-the-landing-page" id="toc-add-an-instance-to-the-landing-page" class="nav-link" data-scroll-target="#add-an-instance-to-the-landing-page"><span class="header-section-number">6.2</span> Add an instance to the landing page</a></li>
-  <li><a href="#create-your-next-training-instance" id="toc-create-your-next-training-instance" class="nav-link" data-scroll-target="#create-your-next-training-instance"><span class="header-section-number">6.3</span> Create your next training instance</a></li>
+  <li><a href="#create-additional-training-instances" id="toc-create-additional-training-instances" class="nav-link" data-scroll-target="#create-additional-training-instances"><span class="header-section-number">6.3</span> Create additional training instances</a></li>
   <li><a href="#cheat-sheet" id="toc-cheat-sheet" class="nav-link" data-scroll-target="#cheat-sheet"><span class="header-section-number">6.4</span> Cheat sheet</a></li>
   </ul>
 </nav>
@@ -245,15 +245,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>A <strong>training instance</strong> is one time your training is given, for example in May 2026. Each training instance has its own branch in your repository, and its own website with its own dates, schedule, team and materials.</p>
-<p>The landing page links to all of them: the current training instance in the hero, and every training instance in the <strong>All training instances</strong> banner.</p>
+<p>A <strong>training instance</strong> is one time your training is given, for example in May 2027. Each training instance has its own branch in your repository, and from that its own website is created with dates, schedule, team and materials.</p>
+<p>The landing page can link to all instances:</p>
+<ul>
+<li>the current training instance is linked in the hero</li>
+<li>all training instance are linked in the <strong>All training instances</strong> banner.</li>
+</ul>
 <p>In this chapter, you will learn how to:</p>
 <ul>
-<li><a href="#create-a-new-training-instance">Create a new training instance</a>: make a new branch, and publish its website.</li>
-<li><a href="#add-an-instance-to-the-landing-page">Add an instance to the landing page</a>: list it in the <strong>All training instances</strong> banner, and set up the hero buttons.</li>
-<li><a href="#create-your-next-training-instance">Create your next training instance</a>, the next time your training is given.</li>
+<li><a href="#create-your-first-new-training-instance">Create your first new training instance</a>: make a new branch, and publish its website.</li>
+<li><a href="#add-an-instance-to-the-landing-page">Add an instance to the landing page</a>: list it in the <strong>All training instances</strong> banner, and link it in the hero buttons.</li>
+<li><a href="#create-additional-training-instances">Create additional training instances</a>, the next time your training is given.</li>
 </ul>
-<p>How to switch off template mode and fill in the website of a training instance (its dates, schedule, team and materials) is explained in the next chapters, <a href="./instance-pages-data-files.html">Instance pages - Data files</a> and <a href="./instance-pages-content.html">Instance pages - Content</a></p>
+<p>How to switch off template mode and fill in the website of a training instance (its dates, schedule, team and materials) is explained in the next chapters, <a href="./instance-pages-data-files.html">Instance pages - Data files</a> and <a href="./instance-pages-content.html">Instance pages - Content</a>.</p>
 <section id="before-you-start" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="before-you-start">Before you start</h3>
 <p>In this chapter, you work on two branches: the new <strong>release-</strong> branch, and <strong>main</strong> for the landing page.</p>
@@ -271,11 +275,11 @@ Important
 </div>
 </div>
 </section>
-<section id="create-new-a-training-instance" class="level2" data-number="6.1">
-<h2 data-number="6.1" data-anchor-id="create-new-a-training-instance"><span class="header-section-number">6.1</span> Create new a training instance</h2>
+<section id="create-your-first-new-training-instance" class="level2" data-number="6.1">
+<h2 data-number="6.1" data-anchor-id="create-your-first-new-training-instance"><span class="header-section-number">6.1</span> Create your first new training instance</h2>
 <section id="choose-a-name" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="choose-a-name">Choose a name</h3>
-<p>Each training instance branch is named <strong>release-</strong> followed by the year and month in which the training instance starts, written as YYMM (see <a href="./repository-structure.html#branches">Branches</a>). For example:</p>
+<p>Each training instance branch is named <strong>release-</strong> followed by the year and month in which the training instance is given, written as YYMM (see <a href="./repository-structure.html#branches">Branches</a>). For example:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 40%">
@@ -298,15 +302,68 @@ Important
 </tr>
 </tbody>
 </table>
-<p>The four digits also become the address of its website: <code>https://ORGANISATION.github.io/REPOSITORY-NAME/2605/</code>.</p>
+<p>The four digits also become the address of its website: <code>https://ORGANISATION.github.io/REPOSITORY-NAME/2705/</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Self-paced training: what is a training instance?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In self-paced training, participants start whenever they like, so there is no “time the training is given”. Instead, think of a training instance as a <strong>version</strong> of your materials:</p>
+<ul>
+<li><strong>Name the branch after the year and month the version is released.</strong> For example, <code>release-2705</code> for a version published in May 2027.</li>
+<li><strong>Create a new training instance when you update the materials substantially</strong>, for example a new module or a revised structure. Small fixes, such as typos, go into the current training instance.</li>
+<li><strong>Earlier versions stay online.</strong> Participants who started with an earlier version can finish with the materials they began with.</li>
+</ul>
+<p>Some settings will work differently for self-paced training.</p>
+<ul>
+<li>On the <strong>main</strong> branch in <code>data/instances.yml</code>: the latest version is the current training instance. If participants don’t register, set <code>registration_url: ""</code>.</li>
+<li>On the <strong>instance</strong> branches: this will be explained further in <a href="./instance-pages-data-files.html">Instance pages - Data files</a> and <a href="./instance-pages-content.html">Instance pages - Content</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Training in cohorts: one training instance per cohort?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If your training runs in <strong>cohorts</strong>, groups of participants who follow the same training at different times, how you set up your training instances depends on how your training is organised: does each cohort need its own website, or do the cohorts share one?</p>
+<p><strong>Option 1: one training instance per cohort</strong></p>
+<ul>
+<li><strong>When:</strong> each cohort has its own dates, schedule, team or announcements.</li>
+<li><strong>Branch name:</strong> the year and month the cohort starts, for example <code>release-2702</code> for a cohort starting in February 2027, and <code>release-2709</code> for the next one in September.</li>
+<li><strong>What it represents:</strong> one cohort, with its own website. Each new cohort starts from the previous one, as described in <a href="#create-additional-training-instances">Create additional training instances</a>.</li>
+</ul>
+<p><strong>Option 2: one training instance for several cohorts</strong></p>
+<ul>
+<li><strong>When:</strong> the cohorts follow the same materials and website, and only their start dates differ.</li>
+<li><strong>Branch name:</strong> the year and month the materials are released, as for self-paced training, for example <code>release-2702</code>.</li>
+<li><strong>What it represents:</strong> a version of your materials. List the cohorts and their dates on the website, for example in the announcements or practicalities (see <a href="./instance-pages-data-files.html">Instance pages - Data files</a>). Create a new training instance only when the materials change substantially.</li>
+</ul>
+<p>Each branch name must be unique, so with option 1, two cohorts can’t start in the same month.</p>
+<p>This is the advice of the SciLifeLab Training Hub, but you know your training best: choose the setup that suits it.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="switch-branch" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="switch-branch">Switch branch</h3>
-<p>You create a new branch as a copy of an existing one, so first switch to the branch you want to copy:</p>
-<ul>
-<li>For your <strong>first</strong> training instance: switch to <strong>release-0000</strong>, the example training instance that comes with the template.</li>
-<li>For <strong>later</strong> training instances: switch to your previous training instance, for example <strong>release-2705</strong>. See <a href="#create-your-next-training-instance">Create your next training instance</a>.</li>
-</ul>
+<p>You create a new branch as a copy of an existing one, so first switch to the branch you want to copy.</p>
+<p>For your <strong>first</strong> training instance: switch to <strong>release-0000</strong>, the example training instance that comes with the template.</p>
 <p>To switch branch in VS Code:</p>
 <ol type="1">
 <li>Click the branch name in the bottom-left corner of VS Code.</li>
@@ -319,44 +376,36 @@ Important
 <h3 class="unnumbered" data-anchor-id="create-the-branch">Create the branch</h3>
 <ol type="1">
 <li>Check that the bottom-left corner shows the branch you want to copy.</li>
-<li>Click the branch name, and choose <strong>Create new branch…</strong> at the top of the list.</li>
+<li>Click the branch name, and choose <strong>Create new branch…</strong> in the list that opens at the top.</li>
 <li>Type the name of the new branch, for example <code>release-2705</code>, and press <strong>Enter</strong>.</li>
 <li>Open the <strong>Source Control</strong> panel and click <strong>Publish Branch</strong>. This puts the new branch on GitHub.</li>
 </ol>
 <p><span style="color: red; font-weight: bold;">Screenshot: Create new branch in the branch list, and the Publish Branch button.</span></p>
 <p>As soon as the branch is on GitHub, GitHub builds its website, as with every push: see <a href="./workflow.html#check-the-published-website">Check the published website</a>.</p>
-<div class="done">
-<p><strong>Done when:</strong> the bottom-left corner of VS Code shows your new branch, and the website of your training instance opens at <code>https://ORGANISATION.github.io/REPOSITORY-NAME/YYMM/</code>. For now, it still shows the example content.</p>
-</div>
 </section>
 </section>
 <section id="add-an-instance-to-the-landing-page" class="level2" data-number="6.2">
 <h2 data-number="6.2" data-anchor-id="add-an-instance-to-the-landing-page"><span class="header-section-number">6.2</span> Add an instance to the landing page</h2>
 <p>Creating a <strong>release-</strong> branch does <strong>not</strong> add it to the landing page automatically. You add it yourself, in <code>data/instances.yml</code> on the <strong>main</strong> branch.</p>
 <ol type="1">
-<li><p>Switch to the <strong>main</strong> branch, as described in <a href="#switch-branch">Switch branch</a>.</p></li>
+<li><p>Make sure you’ve committed any changes you made on your new branch, and switch to the <strong>main</strong> branch, as described in <a href="#switch-branch">Switch branch</a>.</p></li>
 <li><p>Open <code>data/instances.yml</code>. It lists the training instances the landing page links to: one entry per training instance, from <code>- slug:</code> to <code>sort_key:</code>. The guiding comments at the top of the file explain each field.</p></li>
-<li><p>The template list contains example training instances. Change the first one, with <code>slug: "0000"</code>, into your own training instance: change its <code>slug</code>, <code>label</code>, <code>instance_url</code> and <code>sort_key</code>. Add a url to a registration page or form under <code>registration:url</code> if registration is open.</p>
-<p>For example, for a May 2027 instance:</p></li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="kw">-</span><span class="at"> </span><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"2705"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">       </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"May 2027"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">       </span><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">       </span><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">       </span><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">       </span><span class="fu">instance_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"./2705/"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">       </span><span class="fu">registration_url</span><span class="kw">:</span><span class="at"> </span><span class="st">""</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">       </span><span class="fu">sort_key</span><span class="kw">:</span><span class="at"> </span><span class="dv">202705</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="4" type="1">
-<li>Delete the other examples, <strong>2505</strong> and <strong>2411</strong>: each whole entry, from <code>- slug:</code> to <code>sort_key:</code>. They link to websites that don’t exist in your repository.</li>
-<li>Save the file, and check the preview. Then commit and push your changes.</li>
+<li><p>The template list contains example training instances. Change the first one, with <code>slug: "0000"</code>, into your own training instance: change its <code>slug</code>, <code>label</code>, <code>instance_url</code> and <code>sort_key</code>. Add a url to a registration page or form under <code>registration_url</code> if registration is open.</p>
+<p>For example, for a May 2027 instance:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">   </span><span class="kw">-</span><span class="at"> </span><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"2705"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"May 2027"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">status</span><span class="kw">:</span><span class="at"> current</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">visible</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">show_in_hero</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">instance_url</span><span class="kw">:</span><span class="at"> </span><span class="st">"./2705/"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">registration_url</span><span class="kw">:</span><span class="at"> </span><span class="st">""</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">sort_key</span><span class="kw">:</span><span class="at"> </span><span class="dv">202705</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Delete the other examples, <strong>2505</strong> and <strong>2411</strong>: each whole entry, from <code>- slug:</code> to <code>sort_key:</code>. They are part of the template for demonstration purposes and link to websites that don’t exist in your repository.</p></li>
+<li><p>Save the file, and check the preview. Then commit and push your changes.</p></li>
 </ol>
 <p>If you break one of the rules described in the file, the preview shows an error that explains what to fix.</p>
-<div class="done">
-<p><strong>Done when:</strong> the landing page shows one button in the <strong>All training instances</strong> banner, and it opens the website of your training instance.</p>
-</div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -365,7 +414,7 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Once your own training instance exists, you no longer need the example on <strong>release-0000</strong>. You can keep it, to look up how something was set up in the template, or delete it:</p>
 <ol type="1">
@@ -377,11 +426,12 @@ Important
 </div>
 </div>
 </section>
-<section id="create-your-next-training-instance" class="level2" data-number="6.3">
-<h2 data-number="6.3" data-anchor-id="create-your-next-training-instance"><span class="header-section-number">6.3</span> Create your next training instance</h2>
+<section id="create-additional-training-instances" class="level2" data-number="6.3">
+<h2 data-number="6.3" data-anchor-id="create-additional-training-instances"><span class="header-section-number">6.3</span> Create additional training instances</h2>
 <p>The next time your training is given, start from your previous training instance rather than from <strong>release-0000</strong>. That way, everything you prepared last time comes along: your materials, instructor notes, team and settings. The previous training instance keeps its own branch and website, so participants can always go back to the materials as they were.</p>
 <ol type="1">
-<li>Switch to your previous training instance, for example <strong>release-2705</strong>, and create a new branch from it, for example <code>release-2711</code>, as described in <a href="#create-a-new-training-instance">Create a new training instance</a>.</li>
+<li>Switch to your previous training instance, for example <strong>release-2705</strong>, and create a new branch from it, for example <code>release-2711</code>, as described in <a href="#create-your-first-new-training-instance">Create your first new training instance</a>.</li>
+<li>Update the information of the new training instance, such as its dates, schedule and team: see <a href="./instance-pages-data-files.html">Instance pages - Data files</a>.</li>
 <li>Switch to <strong>main</strong>, and open <code>data/instances.yml</code>.</li>
 <li>Add the new training instance: copy the entry of the current one, paste it at the top of the list, and change <code>slug</code>, <code>label</code>, <code>instance_url</code> and <code>sort_key</code>.</li>
 <li>Make the new training instance the current one. In the entry of the previous training instance, change <code>status: current</code> to <code>status: previous</code>, and <code>show_in_hero: true</code> to <code>show_in_hero: false</code>.</li>

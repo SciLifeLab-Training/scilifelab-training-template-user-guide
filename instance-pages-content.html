@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-95863af46656191e6a2cf1560d98dcd6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ad298df765bf73ccd67162335a1d55c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#modules-and-pages" id="toc-modules-and-pages" class="nav-link active" data-scroll-target="#modules-and-pages"><span class="header-section-number">8.1</span> Modules and pages</a></li>
+  <li><a href="#organise-your-training-sections-and-pages" id="toc-organise-your-training-sections-and-pages" class="nav-link active" data-scroll-target="#organise-your-training-sections-and-pages"><span class="header-section-number">8.1</span> Organise your training sections and pages</a></li>
   <li><a href="#images-presentations-and-other-files" id="toc-images-presentations-and-other-files" class="nav-link" data-scroll-target="#images-presentations-and-other-files"><span class="header-section-number">8.2</span> Images, presentations and other files</a></li>
   <li><a href="#write-instructor-notes" id="toc-write-instructor-notes" class="nav-link" data-scroll-target="#write-instructor-notes"><span class="header-section-number">8.3</span> Write instructor notes</a></li>
   <li><a href="#cheat-sheet" id="toc-cheat-sheet" class="nav-link" data-scroll-target="#cheat-sheet"><span class="header-section-number">8.4</span> Cheat sheet</a></li>
@@ -245,25 +245,125 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The training materials are the heart of your training instance website: the modules and pages participants work through. Unlike the other pages of the website, you write these pages yourself, in Markdown.</p>
+<p>The training materials are the heart of your training instance website: the pages participants work through. Unlike the rest of the website, these pages aren’t built from data files: you write them yourself, in Markdown, in <code>.qmd</code> files in the <code>content</code> folder. Your instructor notes, in the <code>instructors</code> folder, are also written in Markdown.</p>
 <p>In this chapter, you will learn how to:</p>
 <ul>
-<li><a href="#modules-and-pages">Organise your modules and pages</a>.</li>
+<li><a href="#organise-your-sections-and-pages">Organise your sections and pages</a>.</li>
 <li><a href="#images-presentations-and-other-files">Add images, presentations and other files</a>.</li>
 <li><a href="#write-instructor-notes">Write instructor notes</a> for everyone who teaches or reuses your training.</li>
 </ul>
 <section id="before-you-start" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="before-you-start">Before you start</h3>
 <p>Everything in this chapter happens on the branch of your training instance, for example <strong>release-2705</strong>. Check the bottom-left corner of VS Code before you start: see <a href="./training-instances.html#switch-branch">Switch branch</a>.</p>
-<p>Your training materials are in the <code>content</code> folder: one folder for each <strong>module</strong>, with one <code>.qmd</code> file for each page.</p>
-<pre class="text"><code>content/
-├── index.qmd          The Content page: an overview of all modules
-├── module-1/
-│   ├── introduction.qmd
-│   ├── headings-and-text.qmd
-│   └── ...
-├── module-2/
-└── module-3/</code></pre>
+</section>
+<section id="organise-your-training-sections-and-pages" class="level2" data-number="8.1">
+<h2 data-number="8.1" data-anchor-id="organise-your-training-sections-and-pages"><span class="header-section-number">8.1</span> Organise your training sections and pages</h2>
+<section id="how-the-content-folder-is-organised" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="how-the-content-folder-is-organised">How the content folder is organised</h3>
+<p>Your training materials are in the <code>content</code> folder. It contains:</p>
+<ul>
+<li><code>index.qmd</code>: the <strong>Content introduction page</strong>, which introduces your materials and gives an overview of the sections.</li>
+<li><code>_metadata.yml</code>: the settings for all pages in the <code>content</code> folder, such as the table of contents on the right. You don’t need to change this file.</li>
+<li>One folder for each <strong>section</strong>, with one <code>.qmd</code> file for each page in that section.</li>
+</ul>
+<p>What a section is, is up to you: a module, a day, a topic or a week. You choose the names of the folders. The template’s examples use modules: <code>module-1</code>, <code>module-2</code> and <code>module-3</code>.</p>
+<p>On the website, each section gets its own dropdown menu in the navigation bar of the content pages, listing its pages.</p>
+<p>For example, a training of three days, with a few topics per day:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">content/</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">├── _metadata.yml      Settings for the content pages</span><span class="kw">:</span><span class="at"> leave as it is</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">├── index.qmd          The Content introduction page</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">├── day-1/             A section, with its pages</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">│   ├── introduction.qmd</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">│   ├── topic-1.qmd</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">│   └── topic-2.qmd</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">├── day-2/</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">│   └── ...</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">└── day-3/</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    └── ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To see what ends up where, open the example folders in VS Code next to the preview in your browser, and compare the files with the website content pages.</p>
+</div>
+</div>
+</section>
+<section id="add-a-content-section" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="add-a-content-section">Add a content section</h3>
+<p>Adding a section always takes two steps: create its folder inside the <code>content</code> folder, and list it in <code>data/website.yml</code>. A folder that isn’t listed doesn’t appear on the website.</p>
+<p><strong>Step 1: create the folder and its pages</strong></p>
+<ol type="1">
+<li><p>In the Explorer panel in VS Code, right-click the <code>content</code> folder and choose <strong>New Folder…</strong>.</p></li>
+<li><p>Type the name of the folder, and press <strong>Enter</strong>. Use only lowercase letters, numbers and hyphens: no capital letters, no spaces. For example: <code>day-1</code> or <code>module-4</code>.</p></li>
+<li><p>Right-click your new folder and choose <strong>New File…</strong>.</p></li>
+<li><p>Type the name of the page, ending in <code>.qmd</code>, and press <strong>Enter</strong>. For example: <code>introduction.qmd</code>. Use lowercase letters, numbers and hyphens here too.</p></li>
+<li><p>The new file opens. Type this header at the very top, with your own title:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Introduction"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">order:</span><span class="co"> 1</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then write the text of the page below it, and save the file.</p></li>
+<li><p>Add more pages to the folder the same way, with <code>order: 2</code>, <code>order: 3</code> and so on.</p></li>
+</ol>
+<p>The pages appear in the section’s dropdown menu in the order of their <code>order</code> numbers. To change the order, change the numbers.</p>
+<p><strong>Step 2: list the section in website.yml</strong></p>
+<ol type="1">
+<li><p>Open <code>data/website.yml</code>, and scroll to the <code>content</code> part at the bottom. Each section has an entry of three lines, like this one from the template:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">content</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> module-1</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Module 1"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"How to structure a page"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Copy a whole entry, from <code>- id:</code> to <code>title:</code>, and paste it below the last entry.</p></li>
+<li><p>Change the three values to your new section:</p>
+<ul>
+<li><code>id</code>: the name of your folder, exactly as you typed it in step 1, for example <code>day-1</code>.</li>
+<li><code>label</code>: the short name in the navigation bar, for example <code>"Day 1"</code>.</li>
+<li><code>title</code>: the text visitors see when they hover over the section in the navigation bar, for example <code>"Getting started"</code>. Keep the spaces at the start of each line exactly as in the other entries!</li>
+</ul></li>
+<li><p>Save the file, and check the preview: your section appears in the navigation bar of the content pages.</p></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>id</code> must be exactly the same as the name of the folder, letter for letter. If you rename a folder later, also change its <code>id</code>, or the preview stops with an error that names the missing folder.</p>
+</div>
+</div>
+<p>For example, after adding a section called <code>day-1</code>, the <code>content</code> part of <code>data/website.yml</code> looks like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">content</span><span class="kw">:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> module-1</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Module 1"</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"How to structure a page"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> day-1</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Day 1"</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Getting started"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The sections appear in the content navigation bar in the order of the section list in <code>data/website.yml</code>. To change the order, move whole entries up or down.</p>
+</section>
+<section id="remove-a-content-section" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="remove-a-content-section">Remove a content section</h3>
+<p>Do two steps in this order, so the website never lists a folder that’s gone:</p>
+<ol type="1">
+<li>In <code>data/website.yml</code>, delete the section’s whole entry, from <code>- id:</code> to <code>title:</code>, and save the file.</li>
+<li>In the Explorer panel, right-click the section’s folder in <code>content</code> and choose <strong>Delete</strong>. This deletes all its pages too.</li>
+</ol>
+</section>
+</section>
+<section id="images-presentations-and-other-files" class="level2" data-number="8.2">
+<h2 data-number="8.2" data-anchor-id="images-presentations-and-other-files"><span class="header-section-number">8.2</span> Images, presentations and other files</h2>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -277,57 +377,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The example pages that come with the template are a short guide to writing training materials. They show how to write headings, lists, tables, callout boxes, images, videos and links, each with the Markdown to copy. Read them before you replace them with your own materials.</p>
 </div>
 </div>
-<p><br></p>
-</section>
-<section id="modules-and-pages" class="level2" data-number="8.1">
-<h2 data-number="8.1" data-anchor-id="modules-and-pages"><span class="header-section-number">8.1</span> Modules and pages</h2>
-<section id="modules" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="modules">Modules</h3>
-<p>The modules and their order are set in the <code>content</code> part at the bottom of <code>data/website.yml</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">content</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> module-1</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Module 1"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"How to structure a page"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li><code>id</code> is the name of the module’s folder in <code>content</code>.</li>
-<li><code>label</code> is the short name in the navigation.</li>
-<li><code>title</code> appears when visitors hover over the module in the navigation.</li>
-</ul>
-<p>To <strong>add</strong> a module, create a new folder in <code>content</code>, and add an entry for it here. To <strong>remove</strong> one, delete its folder and its entry. The modules appear in the order of this list.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A module needs both: a folder in <code>content</code>, and an entry in <code>data/website.yml</code> with the folder’s name as <code>id</code>. If you rename a module’s folder, also change its <code>id</code>.</p>
-</div>
-</div>
-</section>
-<section id="pages" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="pages">Pages</h3>
-<p>Each page is a <code>.qmd</code> file in its module’s folder, written in Markdown. It starts with a short header between two <code>---</code> lines:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "How to structure a page"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">order:</span><span class="co"> 1</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li><code>title</code> is the title of the page.</li>
-<li><code>order</code> sets the order of the pages within the module: 1 first, then 2, and so on. Give every page in a module an <code>order</code>.</li>
-</ul>
-<p>To <strong>add</strong> a page, copy an existing page in the same module, rename the file, and change its title, order and text. To <strong>remove</strong> a page, delete its file.</p>
-<div class="done">
-<p><strong>Done when:</strong> the Content page in the preview lists your own modules, and each module shows its pages in the right order.</p>
-</div>
-</section>
-</section>
-<section id="images-presentations-and-other-files" class="level2" data-number="8.2">
-<h2 data-number="8.2" data-anchor-id="images-presentations-and-other-files"><span class="header-section-number">8.2</span> Images, presentations and other files</h2>
 <p>Put images, PDFs and other files you use on your pages in the <code>docs</code> folder. The example page <strong>Images, presentations and videos</strong> shows how to add them to a page.</p>
 <p>You choose how to make and share your presentations. Common options:</p>
 <table class="caption-top table">
