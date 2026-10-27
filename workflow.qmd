@@ -2,23 +2,15 @@
 title: "Regular workflow"
 ---
 
+Your training now has its own repository and website, and a copy on your
+computer that you can edit. This chapter shows you how to make edits in your repository. These are the steps you repeat **every time** you work on your training website: open your training repository in VS Code, preview it, make your changes, and publish them.
 
-This chapter shows the steps you repeat **every time** you work on your
-training website: open your training, preview it, make your changes, and
-publish them.
-
-The steps are always the same, whether you change a date, add a team member or write a new page of materials.
-The [cheat sheet](#cheat-sheet) at the end of this chapter lists all of them in one table.
+The figure below shows the steps you will follow:
 
 ![](images/workflow-overview-image.png){fig-alt="Workflow showing the regular editing and publishing steps."}
 
-
-::: {.callout-note}
-This chapter assumes you have done the one-time setup in
-[Set up your training](setup.qmd).
-:::
-
-
+The [cheat sheet](#cheat-sheet) at the end of this chapter lists them
+all in one table.
 
 ## Open your training
 
@@ -31,8 +23,6 @@ sure you have the latest version.
    and select your repository folder.   
 ![](images/workflow-02-openrepository.png){width=80% fig-alt="Screenshot: Opening the repository from file."}
 
-
-
 2. **Get the latest version.** If you work together with others, they
    may have uploaded changes since you last worked. In the bottom-left
    corner of VS Code, click the circular arrows next to the branch name
@@ -42,28 +32,38 @@ sure you have the latest version.
 
 ### Which part of your website are you working on? {#switch-branch .unnumbered}
 
-The bottom-left corner of VS Code also shows the **branch** you are
-working on. Your repository keeps each part of your training website in its own
-branch (see [Repository structure](repository-structure.qmd#branches)):
+Apart from having the latest version, you also need to make sure you're
+working on the right part of your website. Your website has two kinds of
+parts, and your repository keeps each one in its own **branch**:
 
-- **main**: the training landing page.
-- **release-** followed by four digits, for example **release-2605**: one
-  training instance in May 2026. In your template copy, it will say **release-0000**
+- **main**: the landing page of your training.
+- **release-** followed by four digits: one training instance. Your copy of the template comes with one example training instance: **release-0000**.
+
+The bottom-left corner of VS Code shows the branch you're working on:
 
    ![](images/workflow-04-branches.png){width=60% fig-alt="Screenshot: VS Code status bar showing the branch name main."}
+ 
+Branches are explained in more detail in
+[Repository structure](repository-structure.qmd#branches).
 
-Before you start editing, check that you are on the branch you want to
-change. For your first change below, stay on **main**.
+Before you start editing, **always** check that you're on the branch you
+want to change. To move to another branch, see
+[Switch branch](training-instances.qmd#switch-branch). 
+
+For your first change below, stay on **main**.
 
 ## Preview your website
 
-A **preview** shows your website in your web browser while you work on
-it, before anything is published. The preview runs on your own computer,
-so only you can see it. This lets you check every change before your
-collaborators or participants see it.
+You're now ready to start editing. Before you change anything, start a
+**preview**: it shows your website in your web browser while you work,
+and updates every time you save a file. That way, you see straight away
+what each change does.
 
-To start the preview, open a terminal (**Terminal → New Terminal**, see [Open a terminal](setup.qmd#open-a-terminal)) and
-run:
+The preview runs on your own computer, so only you can see it. Nothing
+is published until you decide to, so you can check every change before
+your collaborators or participants see it.
+
+To start the preview, open a terminal (**Terminal → New Terminal**, see [Open a terminal](setup.qmd#open-a-terminal)) and run:
 
 ```bash
 python scripts/preview.py
@@ -71,23 +71,28 @@ python scripts/preview.py
 
 ![](images/workflow-05-quartopreview.png){fig-alt="Terminal displaying command 'quarto preview'"}
 
-Quarto now builds your website. After a few seconds, it opens in your
+Quarto now builds your website. After a few seconds, it automatically opens in your
 web browser. 
 
 ![](images/workflow-06-previewinbrowser.png){width=75% fig-alt="Landing page displayed locally in a web browser using Quarto preview."}
 
 If it doesn't open by itself, copy the address shown in the
-terminal, for example `http://localhost:4268/`, and paste it into your
+terminal, for example `http://localhost:4123/`, and paste it into your
 browser.
 
+Keep the preview running while you work. To see a change, save the file
+you edited: press **Cmd+S** (macOS) or **Ctrl+S** (Windows and Linux).
+The preview in your browser then updates by itself.
 
-Keep the preview running while you work. Each time you save a file (Cmd+S (macOS) or Ctrl+S (Windows and Linux)), the preview updates by itself.
+To **stop the preview** when you are done editing, click in the terminal and press **Ctrl+C**.
 
-- To **run other commands** while the preview is running, open a second
-  terminal with **Terminal → New Terminal**. The terminal running the
-  preview is busy.
-- To **stop the preview** when you are done, click in the terminal
-  where it runs and press **Ctrl+C**.
+::: {.callout-note collapse="true"}
+## Want to run another command while the preview is running?
+
+The terminal running the preview is busy, so you can't type other
+commands in it. Open a second terminal with **Terminal → New Terminal**,
+and run your command there.
+:::
 
 ::: {.callout-tip collapse="true"}
 ## Another way to start the preview: the Preview button
@@ -105,20 +110,18 @@ The website then opens inside VS Code. To see it in your browser instead, click 
 
 ## Make a change
 
+With the preview running, you will now make your first change: adding the title of your training. You will then publish this change, so you go
+through the whole process once from start to finish.
+
 Almost everything on your website comes from the files in the `data`
-folder: the title, dates, team, schedule, and so on. You change your
-website by changing these files, without touching any code.
+folder: the training title, dates, team, schedule, and so on. You change your
+website by changing these files, without touching any code. How these files are organised is explained in [Repository structure](repository-structure.qmd). 
 
-How these files are organised is explained in
-[Repository structure](repository-structure.qmd). For now, we focus on
-making one change and publishing it, so you can practice the whole process
-from start to finish.
-
-As a first change, try changing the title of your training:
+To change the title of your training:
 
 1. In the Explorer panel, open the `data` folder and click `course.yml`.
 
-![](images/workflow-09-datafolder.png){width=30% fig-alt="Screenshot: VS Code showing the explorer panel with data folder"}
+   ![](images/workflow-09-datafolder.png){width=30% fig-alt="Screenshot: VS Code showing the explorer panel with data folder"}
 
 2. Scroll down a bit and find the line:
 
@@ -132,7 +135,7 @@ As a first change, try changing the title of your training:
    title: "Introduction to R"
    ```
 
-![](images/workflow-10-changetrainingname.png){width=80% fig-alt="Screenshot: VS Code showing course.yml and training title change."}
+   ![](images/workflow-10-changetrainingname.png){width=80% fig-alt="Screenshot: VS Code showing course.yml and training title change."}
 
 4. Save the file with **Cmd+S** (macOS) or **Ctrl+S** (Windows and
    Linux).
@@ -141,18 +144,12 @@ The new title now appears at the top of the website preview in your browser.
 
 ![](images/workflow-11-changedtrainingtitle.png){width=80% fig-alt="Screenshot: Updated title in the preview."}
 
-::: {.callout-important}
-**The data files are very sensitive to layout!** Keep the quotation marks, and
-keep the indentation at the start of each line exactly as it is. If the
-preview shows an error after you save, check the file layout first. The lines
-starting with `#` are explanations: they don't appear on the website.
-:::
-
 ## Commit and push your changes
 
-Your change is now saved on your computer, but nobody else can see it
-yet. Publishing it takes two steps, both in VS Code's **Source Control**
-panel:
+Your new title now shows in the preview, but only on your computer: it
+isn't on your public website yet. To publish it, you send your change to
+GitHub. This takes two steps, both in the **Source Control** panel of VS
+Code:
 
 - **Commit**: save a version of your changes, with a short description of
   what you changed. Each commit is kept, so you can always see what
@@ -160,16 +157,24 @@ panel:
 - **Push**: upload your commits to GitHub. GitHub then updates your
   website automatically.
 
+To commit and push your change:
+
 1. Click the **Source Control** icon on the left side of VS Code. Your
    changed files are listed under **Changes**.
 
+   ![](images/workflow-12-sourcecontrol.png){width=35% fig-alt="Screenshot: Source Control panel showing the changed files."}
+
+   ::: {.callout-note}
+   ## More files than you changed?
+
    You changed only `course.yml`, but you probably see more files, for
-   example files in the `_generated` folder. That's expected: the
-   template updates these files automatically from your data files,
-   while the preview runs. Depending on what you change, you may also
-   see `README.md`, `CITATION.cff` or `.zenodo.json`. Always commit
-   **all** changed files together.   
-  ![](images/workflow-12-sourcecontrol.png){width=35% fig-alt="Screenshot: Source Control panel showing the changed file."}
+   example in the `_generated` folder. That's expected: while the
+   preview runs, the template updates these files automatically from
+   your data files. Depending on what you change, you may also see
+   `README.md`, `CITATION.cff` or `.zenodo.json`.
+
+   Always commit **all** changed files together.
+   :::
 
 2. Hover over the word **Changes** and click the **+** next to it
    (**Stage All Changes**). This tells VS Code to include all changed
@@ -188,11 +193,6 @@ panel:
 ::: {.callout-note}
 The first time you push, VS Code may ask you to sign in to GitHub. Follow
 the instructions in your browser, then return to VS Code.
-:::
-
-::: {.callout-important}
-If you want to make changes on several branches, commit and push your changes on one branch **before** you switch to another branch. Changes you haven't committed yet move along with you to the other
-branch, where you might commit them by mistake.
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -216,8 +216,9 @@ start the preview (`python scripts/preview.py`) and wait a few seconds.
 
 ## Check the published website
 
-After you push your local changes to GitHub to be published, GitHub rebuilds your website by itself.
-This usually takes one or two minutes. You can follow it on GitHub:
+After you push your local changes to GitHub to be published, GitHub rebuilds your training website by itself. This usually takes one or two minutes. 
+
+To follow it on GitHub:
 
 1. Open your repository on GitHub and click the **Actions** tab.  
  ![](images/workflow-17-githubactionstab.png){width=75% fig-alt="Screenshot: Github actions tab."}
@@ -232,43 +233,27 @@ This usually takes one or two minutes. You can follow it on GitHub:
    A yellow dot means it is still running.
 
 3. Open your website with the link under **About** on your repository's
-   main page, see [About link](setup.qmd#about-link). 
-
-::: {.callout-tip}
-Still seeing the old version? Wait a minute and refresh the page.
-Browsers sometimes show an older copy for a short while.
-
-A red cross in the Actions tab means something went wrong. Click it to
-see the error message, or see the [cheat sheet](#cheat-sheet) below.
-:::
+   main page, see [Add the website link to your repository](setup.qmd#about-link). 
+   Still seeing the old version? Wait a minute and refresh the page.
+   Browsers sometimes show an older copy for a short while.
 
 ## Cheat sheet
 
-
 Every time you work on your training, follow these steps in this order.
 
-| To... | Where | What to do | What you should see |
-|---|---|---|---|
-| **1. Open your training repository** | VS Code | Open VS Code. If your repository isn't open, choose **File → Open Recent** | Your files in the Explorer panel on the left |
-| **2. Get the latest version** | VS Code, bottom-left corner | Click the circular 'sync changes' arrows next to the branch name | Your collaborators' changes appear in your files |
-| **3. Check the branch** | VS Code, bottom-left corner | Read the branch name: **main** for the landing page, **release-YYMM** for a training instance | The branch you want to change |
-| **4. Start the preview** | Terminal (**Terminal → New Terminal**) | Type `python scripts/preview.py` and press **Enter** | Your website opens in your browser |
-| **5. Make your changes** | Explorer panel | Open a file, usually in the `data` folder. Change only the text after the colon, and save with **Cmd+S** or **Ctrl+S** | The preview updates by itself after a few seconds |
-| **6. Stage your changes** | Source Control panel (left side) | Hover over **Changes** and click **+** to stage all changed files, including files you didn't change yourself | The files move to **Staged Changes** |
-| **7. Commit** | Source Control panel | Type a short description in **Message** and click **Commit** | The **Sync Changes** button appears |
-| **8. Push** | Source Control panel | Click **Sync Changes** | No more changes listed |
-| **9. Check** | GitHub, **Actions** tab | Wait for two green checkmarks | Your change on the published website |
-| **10. Stop the preview** | Terminal running the preview | Press **Ctrl+C** | The terminal accepts commands again |
-
-## If something goes wrong
-
-| What you see | What it means | What to do |
+| To... | Where | What to do | 
 |---|---|---|
-| The terminal line doesn't start with `(.venv)` | The environment is switched off | Open a new terminal. If that doesn't help, run `source .venv/bin/activate` (Windows: `.venv\Scripts\activate`) |
-| command not found: python | The environment is switched off | Same as above |
-| The preview shows an error after you saved a data file | The file's layout is broken | Check the quotation marks and the spaces at the start of the lines you changed |
-| Sync Changes asks you to sign in | VS Code isn't connected to GitHub yet | Follow the sign-in steps in your browser |
-| A red cross in the **Actions** tab | Building the website failed | Click it to read the error message; it usually names the data file and the field to fix |
-| The website still shows the old version | Publishing isn't finished, or your browser shows an old copy | Wait a minute, then refresh the page |
-| You changed something by mistake (not committed yet) | — | Source Control panel: hover over the file and click the curved arrow (**Discard Changes**) |
+| 1. Open your training repository | VS Code | Open VS Code. If your repository isn't open, choose **File → Open Recent** | 
+| 2. Get the latest version | VS Code, bottom-left corner | Click the circular 'sync changes' arrows next to the branch name | 
+| 3. Check the branch | VS Code, bottom-left corner | Read the branch name: **main** for the landing page, **release-YYMM** for a training instance | 
+| 4. Start the preview | Terminal (**Terminal → New Terminal**) | Type `python scripts/preview.py` and press **Enter** | 
+| 5. Make your changes | Explorer panel | Open a file, usually in the `data` folder. Change only the text after the colon, and save with **Cmd+S** or **Ctrl+S** |
+| 6. Stage your changes | Source Control panel (left side) | Hover over **Changes** and click **+** to stage all changed files, including files you didn't change yourself | 
+| 7. Commit | Source Control panel | Type a short description in **Message** and click **Commit** | 
+| 8. Push | Source Control panel | Click **Sync Changes** |
+| 9. Check | GitHub, **Actions** tab | Wait for two green checkmarks | 
+| 10. Stop the preview | Terminal running the preview | Press **Ctrl+C** | 
+
+: {tbl-colwidths="[28,24,48]"}
+
 

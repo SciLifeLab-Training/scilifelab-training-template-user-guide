@@ -13,7 +13,7 @@ The figure below shows the steps you will follow:
 ![](images/setup-overview-image.png){fig-alt="Workflow showing the one-time setup steps."}
 
 Once you are done, the next chapter, [Regular workflow](workflow.qmd),
-shows the few steps you repeat every time you want to update your website.
+shows the steps you repeat every time you want to update your training website.
 
 
 ## Install the software
@@ -133,7 +133,7 @@ yourself:
 
 ### Check that your website can be updated {.unnumbered}
 
-Every time you upload a change, GitHub runs a small automatic process
+every time you send a change to GitHub, GitHub runs a small automatic process
 that rebuilds your website. This process needs permission to update the
 website.
 
