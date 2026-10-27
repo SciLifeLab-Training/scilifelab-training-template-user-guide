@@ -2,22 +2,24 @@
 title: "Set up your training"
 ---
 
-This chapter takes you through everything you need to do **once**, at the
-start, to get your own training website. You will create your own copy of
-the SciLifeLab Training Webpage Template, publish it as a website, and set
-it up on your computer so you can edit it.
+To turn the SciLifeLab Training Webpage Template into a website for your
+own training, you first need your own copy of the template. This chapter takes you
+through everything you need to do **once**, at the start: you will create
+your own copy, publish it as a website, and set it up on your computer so
+you can edit it.
+
+The figure below shows the steps you will follow:
 
 ![](images/setup-overview-image.png){fig-alt="Workflow showing the one-time setup steps."}
 
 Once you are done, the next chapter, [Regular workflow](workflow.qmd),
-shows the few steps you repeat every time you update your website.
-
+shows the few steps you repeat every time you want to update your website.
 
 
 ## Install the software
 
 To work with the template, you need a free GitHub account and four free
-programs. If you already have some of them, you can skip those.
+programs. If you already have some of them, you can skip those. Install each program with the default settings. 
 
 | What | What it does for you | Where to get it |
 |---|---|---|
@@ -27,8 +29,6 @@ programs. If you already have some of them, you can skip those.
 | Python | Runs the small scripts that build your website | <https://www.python.org/downloads/> |
 | Quarto | Turns your files into a website, and shows you a preview | <https://quarto.org/docs/get-started/> |
 
-Install each program with the default settings. Then open Visual Studio
-Code (VS Code) once, to check that it starts.
 
 ::: {.callout-note}
 If your training will be hosted in a GitHub organisation, such as
@@ -46,9 +46,8 @@ VS Code.
 ## Create your repository
 
 A **repository** is the folder on GitHub that holds everything for your
-training: the information about it, the materials, and the website. You will
-create your own repository as a copy of the template. The template itself
-stays unchanged.
+training: the information about it, the materials, and the website. Follow these steps to
+create your own repository as a copy of the template:
 
 1. Open the
    [SciLifeLab Training Webpage Template](https://github.com/SciLifeLab-Training/scilifelab-training-template)
@@ -59,9 +58,7 @@ stays unchanged.
 ![](images/setup-01-usethistemplate.png){fig-alt="GitHub repository page showing the Use this template button."}
 
 3. Fill in the form:
-   - Turn **Include all branches** **on**. This is required: the template
-     keeps the landing page and each training instance in separate
-     *branches* (see [Repository structure](repository-structure.qmd#branches)), and you need all of them.
+   - Turn **Include all branches** **on**. This is required!
    - Under **Owner**, select the GitHub organisation or account where the
      repository should live, for example SciLifeLab-Training, NBISweden,
      or your personal account.
@@ -84,7 +81,7 @@ page: it should be the name you just chose, not the template's name.
 ## Working with others? Add collaborators (optional)
 
 If other people will help develop or maintain the training, give them
-access to the repository. You can also do this later.
+access to the repository. You can also come back to this later.
 
 1. In your repository, click **Settings**.
 ![](images/setup-04-settings.png){fig-alt="GitHub page showing the link to setup."}
@@ -101,10 +98,13 @@ to an organisation, and on your permissions in that organisation.
 
 ## Publish your website
 
-Your new repository already contains a ready-made copy of the template
-website, and GitHub usually publishes it and sets it up by itself. In
-this step you check two settings, and add your website link to your
-repository's main page.
+Your new repository contains a full copy of the template website. From
+the files in your repository, GitHub automatically builds your training
+website, and publishes it at its own web address.
+
+In this step, you check two settings to make sure your website is
+online and can be updated, and you add the link to your website to the main page of your
+repository.
 
 ### Check that your website is online {.unnumbered}
 
@@ -116,10 +116,6 @@ repository's main page.
    `https://ORGANISATION.github.io/REPOSITORY-NAME/`, with your
    organisation (or user name) and repository name filled in.
 ![](images/setup-07-websitelive.png){fig-alt="GitHub settings page showing 'your site is live' message."}
-
-For now, your website shows the template's example content. It changes
-to your own content the first time you upload a change.
-
 
 ::: {.callout-note collapse="true"}
 ## Don't see "Your site is live at"?
@@ -172,17 +168,23 @@ always find your website quickly:
 ## Open the repository on your computer
 
 So far, your repository only exists on GitHub. To edit it, you make a
-copy on your computer. This is called **cloning**.
+copy of it on your computer. This is called **cloning**. Working on a
+copy has a big advantage: nothing you change is visible to anyone else
+until you decide to send it to GitHub. You can try things out, look at
+the result, and undo mistakes, all safely on your own computer.
 
-Working on a copy has a big advantage: nothing you change is visible to
-anyone else until you decide to upload it. You can try things out, look
-at the result, and undo mistakes, all safely on your own computer.
+You work on your copy in **Visual Studio Code**, or **VS Code** for
+short: a free program for editing text files. You will use it for most
+of your work: to open and edit your files, to see a preview of your
+website, and to send your changes to GitHub.
+
+To clone your repository and open it in VS Code:
 
 1. On your repository's main page on GitHub, click the green **Code**
    button, make sure **HTTPS** is selected, and copy the address.  
 ![](images/setup-12-httpslink.png){width=40% fig-alt="Screenshot: Code menu with the HTTPS address."}
 
-2. Open VS Code and click **Clone Git Repository** on the start screen.
+2. Open Visual Studio Code (VS Code) and click **Clone Git Repository** on the start screen.
    If you don't see it, open **View → Command Palette**, type
    `Git: Clone` and press **Enter**.  
 ![](images/setup-13-VScodeclone.png){width=50% fig-alt="Screenshot: VScode showing 'clone git repository'."}
