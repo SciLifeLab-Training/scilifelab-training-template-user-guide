@@ -10,8 +10,8 @@ in the `instructors` folder, are also written in Markdown.
 
 In this chapter, you will learn how to:
 
-- [Organise your sections and pages](#organise-your-sections-and-pages).
-- [Add images, presentations and other files](#images-presentations-and-other-files).
+- [Organise your training sections and pages](#organise-your-training-sections-and-pages).
+- [Add content to your pages](#add-content-to-your-pages).
 - [Write instructor notes](#write-instructor-notes) for everyone who
   teaches or reuses your training.
 
@@ -36,7 +36,7 @@ Your training materials are in the `content` folder. It contains:
 - One folder for each **section**, with one `.qmd` file for each page in
   that section.
 
-What a section is, is up to you: a module, a day, a topic or a week. You
+**What a section is, is up to you:** a module, a day, a topic or a week. You
 choose the names of the folders. The template's examples use modules:
 `module-1`, `module-2` and `module-3`.
 
@@ -45,7 +45,7 @@ the content pages, listing its pages.
 
 For example, a training of three days, with a few topics per day:
 
-```yaml
+```text
 content/
 ├── _metadata.yml      Settings for the content pages: leave as it is
 ├── index.qmd          The Content introduction page
@@ -68,7 +68,7 @@ the preview in your browser, and compare the files with the website content page
 ### Add a content section {.unnumbered}
 
 Adding a section always takes two steps: create its folder inside the `content` folder, and list it
-in `data/website.yml`. A folder that isn't listed doesn't appear on the website.
+in `data/website.yml`. A folder that isn't listed in the data file doesn't appear on the website.
 
 **Step 1: create the folder and its pages**
 
@@ -114,15 +114,14 @@ The pages appear in the section's dropdown menu in the order of their
 
 2. Copy a whole entry, from `- id:` to `title:`, and paste it below the
    last entry.
-3. Change the three values to your new section:
+3. Change the three values to your new section (Keep the spaces at the start of each line  exactly as in the other entries!):
    - `id`: the name of your folder, exactly as you typed it in step 1,
      for example `day-1`.
-   - `label`: the short name in the navigation bar, for example
-     `"Day 1"`.
+   - `label`: the short name in the navigation bar, for example`"Day 1"`.
    - `title`: the text visitors see when they hover over the section in
      the navigation bar, for example `"Getting started"`.
-   Keep the spaces at the start of each line exactly as in the other
-   entries!
+
+    
 4. Save the file, and check the preview: your section appears in the
    navigation bar of the content pages.
 
@@ -159,76 +158,163 @@ Do two steps in this order, so the website never lists a folder that's gone:
    and choose **Delete**. This deletes all its pages too.
 
 
-## Images, presentations and other files 
+## Add content to your pages
+
+With your sections and pages set up, it's time to add your training materials.
+You write them in the `.qmd` page files, in **Markdown**: a simple way
+of formatting text. For example, `**bold**` becomes **bold**, and a line
+starting with `#` becomes a heading.
 
 ::: {.callout-tip}
+## The example pages are your guide
 
-## The example pages are a guide
-
-The example pages that come with the template are a short guide to
-writing training materials. They show how to write headings, lists,
-tables, callout boxes, images, videos and links, each with the Markdown
-to copy. Read them before you replace them with your own materials.
+New to Markdown? The example pages that come with the template are a
+short guide to writing training materials. They show how to write
+headings, lists, tables, callout boxes, images, videos and links, each
+with the Markdown to copy. Read them before you replace them with your
+own materials, and copy and paste from them whenever you need something.
 :::
 
+### Images, PDFs and other files {.unnumbered}
 
-Put images, PDFs and other files you use on your pages in the `docs`
-folder. The example page **Images, presentations and videos** shows how
-to add them to a page.
+Put images, PDFs, videos and other files you use on your pages in the
+`docs` folder. The example page [**Images, presentations and videos**](https://scilifelab-training.github.io/scilifelab-training-template/0000/content/module-3/images-presentations-videos.html)
+shows how to add them to a page.
+
+### Presentations {.unnumbered}
 
 You choose how to make and share your presentations. Common options:
 
 | Option | Good to know |
 |---|---|
-| **Upload files to the repository**, for example PDF slides | Archived with your training, so they stay available as long as the materials do. Keep files small: GitHub warns above 50 MB |
+| **Upload files to the repository**, for example PDF slides | See [Linking to a file or resource within your training repository](https://scilifelab-training.github.io/scilifelab-training-template/0000/content/module-3/links.html). Archived with your training, so they stay available as long as the materials do. Keep files small: GitHub warns above 50 MB |
 | **Make presentations in Quarto** | Part of your training website, and archived with it. Takes some getting used to |
-| **Link to an online tool**, such as Google Slides | Easy to make and update together. The link can stop working, or need access rights that others don't have |
+| **Link to an online tool**, such as Google Slides | See [Linking to resources hosted elsewhere](https://scilifelab-training.github.io/scilifelab-training-template/0000/content/module-3/links.html). Easy to make and update together, but the link can stop working, or need access rights that others don't have |
 
 : {tbl-colwidths="[35,65]"}
 
-Whatever you choose, link to your materials from the module's pages, so
-participants can find them, and note in the instructor notes where the
-editable versions are.
+Whatever you choose, link to your presentations from the pages of the
+section, so participants can find them, and note in the
+[instructor notes](#write-instructor-notes) where the editable versions
+are.
+
+### The "On this page" list {.unnumbered}
+
+The **On this page** list on the right of each content page is made
+automatically from the headings of the page:
+
+- Headings starting with `##` appear in the list. Use them for the main
+  parts of a page.
+- Headings starting with `###` don't appear in the list. Use them for
+  smaller parts within a main part.
+- Don't use a heading starting with a single `#`: the page title, from
+  the header at the top of the file, is already the main heading.
+
+### Previous and next links {.unnumbered}
+
+At the bottom of each content page, **Previous** and **Next** links lead
+through all your materials in one sequence: first the Content
+introduction page, then the pages of each section, in the order of the
+sections in `data/website.yml` and the `order` numbers of the pages.
+The last page of a section links to the first page of the next one.
+
+The links are made automatically, and show the `title` of the page they
+lead to. To change where they lead, change the order of the sections or
+pages, as described in
+[Organise your training sections and pages](#organise-your-training-sections-and-pages).
 
 
-## Write instructor notes 
+## Write instructor notes {#write-instructor-notes}
 
-The `instructors` folder holds notes for instructors: everything someone
-needs to teach this training, such as the timing of each module, how to
-prepare, and what to watch out for. The notes help your own team, and
-anyone who wants to reuse your training.
+Instructor notes belong next to the materials they describe. They're in
+the `instructors` folder, on the same branch as your `content` folder.
+Because they live with your materials, they're copied to each new
+training instance, and archived together with your materials on Zenodo.
 
-- `instructors/README.md` covers the training as a whole: the timing,
-  preparation and setup.
-- `instructors/module-1.md`, `module-2.md` and so on cover each module:
-  its key points, teaching flow, exercises and common problems.
+### Why write instructor notes? {.unnumbered}
 
-Fill in the example files, and add a file for each new module. The files
-are plain Markdown. On GitHub, `instructors/README.md` is shown as soon
-as you open the folder.
+Your training materials show participants *what* to learn. Instructor
+notes show instructors *how to teach it*: how long each part takes, what
+to prepare, and where participants usually get stuck. They are useful
+whenever someone other than you teaches the training:
+
+- **Several people teach the training,** for example taking turns, or
+  each teaching a different section.
+- **New instructors join,** or the training is taught again a year
+  later. 
+- **Others want to reuse your training.** With instructor notes, they
+  can teach it themselves without having to ask you. That makes your
+  training much easier to reuse, which is one of the aims of FAIR
+  training materials.
+
+### What's in the instructors folder {.unnumbered}
+
+The `instructors` folder mirrors your `content` folder: one file for
+each section of your materials, plus a `README.md` for the training as a
+whole. All files are written in plain Markdown.
+
+```text
+content/                instructors/
+├── day-1/              ├── README.md      The training as a whole
+├── day-2/              ├── day-1.md
+└── day-3/              ├── day-2.md
+                        └── day-3.md
+```
+
+| File | What it covers |
+|---|---|
+| `README.md` | The training as a whole: who can teach it, the timing of each section, how to prepare, the technical setup, and what to do during and after the training |
+| One file per section, for example `day-1.md` | That section: its key points, teaching flow, materials, exercises, common problems, and what to skip if you're short of time |
+
+: {tbl-colwidths="[35,65]"}
+
+### Fill in the instructor notes {.unnumbered}
+
+1. Open `instructors/README.md`, and replace the example text with your
+   own. Keep the headings: they show what an instructor needs to know.
+2. For each section of your materials, open its instructor file, and
+   fill it in the same way.
+3. For a **new section**, add an instructor file with the same name as
+   the section's folder, for example `day-1.md` for the section `day-1`.
+   The easiest way is to copy an existing file:
+   - In the Explorer panel, right-click an existing section file, for
+     example `module-1.md`, and choose **Copy**.
+   - Right-click the `instructors` folder and choose **Paste**.
+   - Right-click the copy, choose **Rename...**, type the new name, and
+     press **Enter**.
+4. In the timing table in `instructors/README.md`, add a row for each
+   section, with a link to its file.
+5. For a **removed section**, delete its instructor file, and its row in
+   the timing table.
+6. Save your files, and commit and push them. Instructor notes don't
+   appear in the preview: to see how they look, open them on GitHub.
 
 ::: {.callout-warning}
-The instructor notes are **not** part of the website, but they are
-**not private** either: anyone can read them on GitHub, and they are
-archived on Zenodo with the materials. Never write anything that must
-stay secret, such as passwords, access codes, or answers to exams and
-graded assignments. Once pushed, deleting it does not remove it: it
-stays in the history of your repository.
+## Not on the website, but not private either
+
+Anyone can read your instructor notes on GitHub, and they are archived
+on Zenodo together with your materials.
+
+Never write anything that must stay secret, such as passwords, access
+codes, or answers to exams and graded assignments. Once pushed, deleting
+it does not remove it: it stays in the history of your repository.
 :::
 
-
-## Cheat sheet {#cheat-sheet}
+## Cheat sheet
 
 All on the branch of your training instance.
 
 | To... | Where | What to do |
 |---|---|---|
-| Add a module | `content/` and `data/website.yml` | Create a folder, and add an entry with the folder's name as `id` under `content` → `sections` |
-| Reorder modules | `data/website.yml` | Change the order of the entries under `content` → `sections` |
-| Add a page | `content/module-.../` | Copy a page in the same module, rename it, and change `title`, `order` and the text |
-| Reorder pages | The pages' `.qmd` files | Change `order` at the top of each page |
-| Add images and files | `docs/` | Put the file in the folder, and link to it from the page |
-| Write instructor notes | `instructors/` | `README.md` for the training, a file per module |
+| Add a section | `content/` and `data/website.yml` | Create a folder with its pages, and add an entry under `content` → `sections`, with the folder's name as `id` |
+| Reorder sections | `data/website.yml` | Move whole entries up or down under `content` → `sections` |
+| Remove a section | `data/website.yml`, then `content/` | First delete its entry, then its folder |
+| Add a page | The section's folder | Add a `.qmd` file with `title` and `order` in the header at the top |
+| Reorder pages | The pages' `.qmd` files | Change the `order` numbers |
+| Add a part to "On this page" | The page's `.qmd` file | Start its heading with `##` |
+| Add images, PDFs and other files | `docs/` | Put the file in the folder, and link to it from the page |
+| Write instructor notes | `instructors/` | Fill in `README.md` and the file for each section |
+| Add or remove a section's instructor notes | `instructors/` | Add or delete the file with the section's folder name, and its row in the timing table in `README.md` |
 
 : {tbl-colwidths="[25,30,45]"}
 

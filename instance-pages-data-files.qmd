@@ -2,10 +2,9 @@
 title: "Instance pages - Data files"
 ---
 
-Each **training instance** has its own website: an overview page, a
-schedule, the training materials, and information pages such as the
-syllabus and the team. In this chapter, you fill in the information for
-your own training instance.
+Now that you have made your new training instance, it is time to fill it with the content of your training. In this chapter, you will add all the content that describved your training, in data files, like for the landing page. 
+How to add your training materials and instructor notes follows in the next chapter,
+[Instance pages - Content](instance-pages-content.qmd).
 
 The figure below shows the parts of a training instance website, and
 the names this guide uses for them.
@@ -21,8 +20,6 @@ In this chapter, you will learn how to:
 - [Add the optional pages](#optional-pages): the schedule,
   announcements, practicalities, preparation, FAQ and resources.
 
-How to add your training materials and instructor notes follows in the next chapter,
-[Instance pages - Content](instance-pages-content.qmd).
 
 ### Before you start {.unnumbered}
 
@@ -39,12 +36,11 @@ Read these explanations carefully before you fill in a file.
 Do this once, on the branch of your **first** training instance: the
 one you created from **release-0000** (see
 [Create your first new training instance](training-instances.qmd#create-your-first-new-training-instance)).
-Later training instances start from this one, so these changes come
-along.
+Later additional training instances start from the branch of your first training instance, so all changes you've made on that branch will be copied.
 
 ### Replace the README {.unnumbered}
 
-Your new branch still has the README of the template. Replace it with
+Just like for the [landing page](landing-page.qmd), your new training instance branch still has the README of the template. Replace it with
 the ready-made README for a training instance, which is already on your
 branch, in the `docs` folder:
 
@@ -66,32 +62,32 @@ Explorer panel, right-click the file and choose **Delete**.
 :::
 
 ### Remove the template banner {.unnumbered}
+The training instance also has a template banner, and it is turned off in the same way as for the [landing page](landing-page.qmd). 
 
 1. Open `data/website.yml`.
 2. Change `template: true` to `template: false`.
 3. Save the file.
-
-The yellow [Want to use this template?]{.template-label} banner
+4. The yellow [Want to use this template?]{.template-label} banner
 disappears from the overview page.
 
 ## Required information {#required-information}
 
-Every training instance requires three data files to be filled in: `course.yml`,
+Every training instance **requires** three data files to be filled in: `course.yml`,
 `team.yml` and `website.yml`.
 
 ### The training: course.yml {.unnumbered}
 
-`data/course.yml` describes this training instance. Most of it appears
+`data/course.yml` describes your training instance. Most of it appears
 on the overview page and the **Syllabus** page.
 
-Open `data/course.yml`, and work through it from the top down to the
-`reuse` part. The comments at the top list which fields are
+Open `data/course.yml`, and work through it from the top down up to (not including) the
+`reuse` part. The comments at the top of the data file list which fields are
 **required** and which are optional.
 
 **Leaving out optional fields.** If an optional field doesn't apply to
-your training, such as `credits` or `examination`:
+your training, such as `credits` or `examination`, you can leave it out in two ways:
 
-- delete it: the field name and all lines that belong to it; or  
+- delete it: the field name and all lines that belong to it;  
 - leave it empty: nothing after the colon, `""` or `[]`.
 
 ::: {.callout-tip}
@@ -133,15 +129,7 @@ is the licence:**
   it. If you change it, also replace the text in `LICENSE.md` with the
   full text of your new licence.
 
-Leave the other fields empty for now:
-
-- `doi`, `version_doi`, `release_date` and `zenodo_communities` belong to
-  publishing your training instance on Zenodo, and are explained in
-  [FAIRification](fairification.qmd).
-- `licence_id`, `version`, `website_url` and `preferred_citation` can
-  stay empty for most trainings. The template works out the version and
-  the address of your website, and creates the citation from your team,
-  title and DOI.
+Leave the other fields empty for now. They behave the same as in [landing page](landing-page.qmd) and will be explained in [FAIRification](fairification.qmd).
 
 ::: {.callout-important}
 Creating a training instance from one of your own earlier training

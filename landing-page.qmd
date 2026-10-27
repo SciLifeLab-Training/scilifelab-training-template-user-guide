@@ -19,7 +19,7 @@ In this chapter, you will learn how to:
 - [Customise the look](#customise-the-look): the organisation logos,
   the button texts, and banner image.
 - [Describe your training](#describe-your-training): the title,
-  description, learning outcomes, team and footer, and how others may
+  subtitle, information cards, footer, and how others may
   reuse your training.
 
 How to create a training instance and add it to the landing page is
