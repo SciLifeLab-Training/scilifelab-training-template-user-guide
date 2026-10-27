@@ -26,41 +26,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -215,11 +180,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#licensing-your-training-materials" id="toc-licensing-your-training-materials" class="nav-link active" data-scroll-target="#licensing-your-training-materials"><span class="header-section-number">9.1</span> Licensing your training materials</a></li>
-  <li><a href="#make-your-materials-easy-to-cite" id="toc-make-your-materials-easy-to-cite" class="nav-link" data-scroll-target="#make-your-materials-easy-to-cite"><span class="header-section-number">9.2</span> Make your materials easy to cite</a></li>
-  <li><a href="#publishing-course-materials-on-zenodo" id="toc-publishing-course-materials-on-zenodo" class="nav-link" data-scroll-target="#publishing-course-materials-on-zenodo"><span class="header-section-number">9.3</span> Publishing course materials on Zenodo</a></li>
-  <li><a href="#adding-contributors-and-orcids" id="toc-adding-contributors-and-orcids" class="nav-link" data-scroll-target="#adding-contributors-and-orcids"><span class="header-section-number">9.4</span> Adding contributors and ORCIDs</a></li>
-  <li><a href="#adding-a-doi-to-your-course-page" id="toc-adding-a-doi-to-your-course-page" class="nav-link" data-scroll-target="#adding-a-doi-to-your-course-page"><span class="header-section-number">9.5</span> Adding a DOI to your course page</a></li>
+  <li><a href="#fair-training-what-and-how" id="toc-fair-training-what-and-how" class="nav-link active" data-scroll-target="#fair-training-what-and-how"><span class="header-section-number">9.1</span> FAIR training: what and how?</a></li>
+  <li><a href="#fill-in-the-fair-information" id="toc-fill-in-the-fair-information" class="nav-link" data-scroll-target="#fill-in-the-fair-information"><span class="header-section-number">9.2</span> Fill in the FAIR information</a></li>
   </ul>
 </nav>
     </div>
@@ -245,90 +207,100 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><br></p>
-<p>Make the materials Findable, Accessible, Interoperable and Reusable, with</p>
+<p>Your training website is set up, and your first training instance is ready. As a final step, the SciLifeLab Training Hub encourages you to make your training materials <strong>FAIR</strong>: Findable, Accessible, Interoperable and Reusable. FAIR training materials are easy to find, can be opened by anyone, are described in a standard way, and can be reused and cited by others.</p>
+<p>The template does most of this for you. All you need to do is fill in a few more fields in your data files. If you want, you can also publish your training on Zenodo.</p>
+<p>In this chapter, you will learn:</p>
 <ul>
-<li>licensing</li>
-<li><a href="#make-your-materials-easy-to-cite">citation metadata</a></li>
-<li>ORCIDs</li>
-<li>versioning/releases</li>
-<li>repository metadata</li>
+<li><a href="#fair-training-what-and-how">What FAIR training is, and how the template makes your training FAIR</a>.</li>
+<li><a href="#fill-in-the-fair-information">How to fill in the FAIR information</a>.</li>
+<li><a href="#publish-on-zenodo">How to publish a training instance on Zenodo</a>, if you choose to.</li>
+<li><a href="#new-training-instances">How to keep the DOIs right for new training instances</a>.</li>
 </ul>
-<section id="licensing-your-training-materials" class="level2" data-number="9.1">
-<h2 data-number="9.1" data-anchor-id="licensing-your-training-materials"><span class="header-section-number">9.1</span> Licensing your training materials</h2>
+<section id="before-you-start" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="before-you-start">Before you start</h3>
+<p>You fill in the FAIR information on the branch of your training instance, for example <strong>release-2705</strong>, and on <strong>main</strong>. Publishing on Zenodo starts from the branch of your training instance. Each step says which branch to use: see <a href="./training-instances.html#switch-branch">Switch branch</a>.</p>
 </section>
-<section id="make-your-materials-easy-to-cite" class="level2" data-number="9.2">
-<h2 data-number="9.2" data-anchor-id="make-your-materials-easy-to-cite"><span class="header-section-number">9.2</span> Make your materials easy to cite</h2>
-<p>To make your training easier to cite, you can provide citation information in a <code>CITATION.cff</code> file. This file contains structured information about how your training materials should be cited, including the course title, authors, <a href="https://orcid.org">ORCID identifiers</a>, licence, and links to the course repository and website.</p>
-<section id="create-the-citation-file-for-your-course" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" data-anchor-id="create-the-citation-file-for-your-course"><span class="header-section-number">9.2.1</span> Create the citation file for your course</h3>
-<p>The SciLifeLab Course Page Template already contains a <code>CITATION.cff</code> file in the root of the repository on the <code>main</code> branch. This file describes the <strong>template itself</strong>. When you use the template for your own course, replace the contents of <code>CITATION.cff</code> with citation information for your own training materials.</p>
-<ol type="1">
-<li>In the main branch, open <code>CITATION.cff</code>.</li>
-<li>Delete the existing contents of the file.</li>
-<li>Copy and paste the following starter text:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cff-version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.2.0</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="st">"If you use these training materials, please cite them as below."</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"COURSE TITLE"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">authors</span><span class="kw">:</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> </span><span class="st">"SURNAME"</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> </span><span class="st">"GIVEN NAME"</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">orcid</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://orcid.org/0000-0000-0000-0000"</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">license</span><span class="kw">:</span><span class="at"> CC-BY-4.0</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">repository-code</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://github.com/ORGANISATION/REPOSITORY"</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://ORGANISATION.github.io/REPOSITORY/"</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">references</span><span class="kw">:</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> software</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"SciLifeLab Course Page Template"</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">repository-code</span><span class="kw">:</span><span class="at"> </span><span class="st">"PERMANENT TEMPLATE REPOSITORY URL"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="4" type="1">
-<li>Replace the placeholder values with information about your course.</li>
-</ol>
+<section id="fair-training-what-and-how" class="level2" data-number="9.1">
+<h2 data-number="9.1" data-anchor-id="fair-training-what-and-how"><span class="header-section-number">9.1</span> FAIR training: what and how?</h2>
+<p>The FAIR principles were first written for research data, but they apply just as well to training materials. You put a lot of work into your training. FAIR makes sure that work can be found, used and credited, also by people outside your own team, and long after the training has been given.</p>
+<p>In practice, FAIR training materials are:</p>
+<ul>
+<li><strong>Findable:</strong> people looking for a training on your topic can find yours, for example in a search engine or a training registry.</li>
+<li><strong>Accessible:</strong> anyone can open the materials, without having to ask you for them.</li>
+<li><strong>Interoperable:</strong> the information about your training, such as its title, authors and licence, is written in standard formats. Other websites and tools can then read it automatically.</li>
+<li><strong>Reusable:</strong> others know what they’re allowed to do with your materials, how to credit you, and how to teach the training themselves.</li>
+</ul>
+<section id="how-the-template-makes-your-training-fair" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="how-the-template-makes-your-training-fair">How the template makes your training FAIR</h3>
+<p>Most of this is already taken care of: the template uses the information in your data files for FAIRification. The table shows what the template does for each part of FAIR, and what’s left for you to do:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 20%">
+<col style="width: 45%">
+<col style="width: 35%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Field</th>
-<th>What to enter</th>
+<th>FAIR</th>
+<th>How the template does it</th>
+<th>What you do</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>title</code></td>
-<td>The title of your course or training materials.</td>
+<td><strong>Findable</strong></td>
+<td>Keywords, and Bioschemas markup that registries such as ELIXIR TeSS can read</td>
+<td>Fill in <code>keywords</code></td>
 </tr>
 <tr class="even">
-<td><code>family-names</code></td>
-<td>The author’s family name or surname.</td>
+<td><strong>Accessible</strong></td>
+<td>A public website and repository</td>
+<td>Nothing</td>
 </tr>
 <tr class="odd">
-<td><code>given-names</code></td>
-<td>The author’s given name(s).</td>
+<td><strong>Interoperable</strong></td>
+<td>Standard formats: <code>CITATION.cff</code>, <code>.zenodo.json</code> and Bioschemas</td>
+<td>Nothing: the template creates them from your data files</td>
 </tr>
 <tr class="even">
-<td><code>orcid</code></td>
-<td>The author’s ORCID identifier, if they have one.</td>
+<td><strong>Reusable</strong></td>
+<td>A licence, a citation with the authors and their ORCIDs, and instructor notes</td>
+<td>Check the licence, add ORCIDs, and write instructor notes</td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="the-files-the-template-creates-for-you" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="the-files-the-template-creates-for-you">The files the template creates for you</h3>
+<p>Websites and tools can’t read your training pages the way people do. To find and cite your training, they need the information in a fixed, standard format. The template writes that information for you, in a few extra files. You don’t need to open them, but it helps to know they exist.</p>
+<p>Every time the website is built, the template creates or updates these files from <code>data/course.yml</code>, <code>data/team.yml</code> and <code>data/website.yml</code>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>What it’s for</th>
+</tr>
+</thead>
+<tbody>
 <tr class="odd">
-<td><code>license</code></td>
-<td>The licence under which the training materials are made available.</td>
+<td><code>CITATION.cff</code></td>
+<td>How to cite your training. GitHub shows it as a <strong>Cite this repository</strong> button, and reference managers such as Zotero can read it</td>
 </tr>
 <tr class="even">
-<td><code>repository-code</code></td>
-<td>The URL of the GitHub repository containing your course materials.</td>
+<td><code>.zenodo.json</code></td>
+<td>The title, authors, licence, keywords and funding, for Zenodo</td>
 </tr>
 <tr class="odd">
-<td><code>url</code></td>
-<td>The URL of the published course website.</td>
+<td>The generated parts of <code>README.md</code></td>
+<td>The training information, contributors, citation and licence</td>
+</tr>
+<tr class="even">
+<td>Bioschemas markup, hidden in the landing page and the overview page</td>
+<td>Lets training registries such as ELIXIR TeSS find your training.</td>
 </tr>
 </tbody>
 </table>
@@ -342,128 +314,69 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Keep:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cff-version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.2.0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>unchanged. This is the version of the <strong>Citation File Format specification</strong>, not the version of your course.</p>
+<p>Never edit these files by hand: your changes are overwritten the next time the website is built. Change the data files instead.</p>
 </div>
 </div>
 </section>
-<section id="add-multiple-authors" class="level3" data-number="9.2.2">
-<h3 data-number="9.2.2" data-anchor-id="add-multiple-authors"><span class="header-section-number">9.2.2</span> Add multiple authors</h3>
-<p>Add a separate entry under <code>authors</code> for each person who should be credited as an author of the training materials.</p>
-<p>For example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">authors</span><span class="kw">:</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> </span><span class="st">"Smith"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> </span><span class="st">"Anna"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">orcid</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://orcid.org/0000-0000-0000-0000"</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> </span><span class="st">"Jones"</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> </span><span class="st">"David"</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">orcid</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://orcid.org/0000-0000-0000-0000"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If an author does not have an ORCID, simply omit the <code>orcid</code> line:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">authors</span><span class="kw">:</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">family-names</span><span class="kw">:</span><span class="at"> </span><span class="st">"Jones"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">given-names</span><span class="kw">:</span><span class="at"> </span><span class="st">"David"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="https://orcid.org">ORCID</a> provides researchers with a persistent identifier that distinguishes them from other researchers. If your contributors have ORCID identifiers, include them in <code>CITATION.cff</code>.</p>
-</div>
-</div>
 </section>
-<section id="acknowledge-this-template-in-your-course" class="level3" data-number="9.2.3">
-<h3 data-number="9.2.3" data-anchor-id="acknowledge-this-template-in-your-course"><span class="header-section-number">9.2.3</span> Acknowledge this template in your course</h3>
-<p>The starter file contains the following entry:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">references</span><span class="kw">:</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> software</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"SciLifeLab Course Page Template"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">repository-code</span><span class="kw">:</span><span class="at"> </span><span class="st">"PERMANENT TEMPLATE REPOSITORY URL"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Keep this entry when adapting <code>CITATION.cff</code> for your course. It acknowledges the SciLifeLab Course Page Template as the resource used to create your course website.</p>
-</section>
-<section id="citation-files-for-individual-course-instances" class="level3" data-number="9.2.4">
-<h3 data-number="9.2.4" data-anchor-id="citation-files-for-individual-course-instances"><span class="header-section-number">9.2.4</span> Citation files for individual course instances</h3>
-<p>How you manage <code>CITATION.cff</code> depends on how you publish your course materials.</p>
-<p>If your course is maintained as one continuously updated resource, you can maintain the citation information in the main branch.</p>
-<p>If individual course instances are released separately (in this template by adding and publishing branches), their citation information may also differ. For example, different instances may have different contributors.</p>
-<p>In this case, update <code>CITATION.cff</code> in the specific course-instance branch before creating the release. This allows the citation metadata for that release to reflect the people and materials associated with that particular course instance.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Before publishing a course instance, check that <code>CITATION.cff</code> contains the correct title, authors, ORCIDs, licence, repository URL, and course website URL for the materials you are releasing.</p>
-</div>
-</div>
-<div class="quick-reference">
-<p><span class="quick-reference-title">Quick reference</span><br>
-<span class="quick-reference-subtitle"> Make your course citable </span></p>
+<section id="fill-in-the-fair-information" class="level2" data-number="9.2">
+<h2 data-number="9.2" data-anchor-id="fill-in-the-fair-information"><span class="header-section-number">9.2</span> Fill in the FAIR information</h2>
+<p>Most of this information is already part of your data files, so you probably filled it in already. Check these fields on the branch of your training instance, and on <strong>main</strong>:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 20%">
+<col style="width: 35%">
+<col style="width: 45%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>To…</th>
-<th>File</th>
-<th>Edit</th>
+<th>Information</th>
+<th>Where</th>
+<th>Good to know</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Add citation information for your course</td>
-<td><code>CITATION.cff</code></td>
-<td>Replace the template citation metadata with the starter CFF and enter your course information.</td>
+<td><strong>Licence</strong></td>
+<td><code>licence</code> and <code>licence_url</code> under <code>reuse</code> in <code>data/course.yml</code></td>
+<td>Says how others may reuse your materials. The template uses CC BY 4.0. If you choose another licence, also replace the text in <code>LICENSE.md</code></td>
 </tr>
 <tr class="even">
-<td>Add an author</td>
-<td><code>CITATION.cff</code></td>
-<td>Add another entry under <code>authors</code>.</td>
+<td><strong>Authors</strong></td>
+<td><code>data/team.yml</code></td>
+<td>Everyone in the team is an author in the citation and on Zenodo. To leave someone out, add <code>citation_author: false</code> to their entry: they are still shown on the website</td>
 </tr>
 <tr class="odd">
-<td>Add an ORCID</td>
-<td><code>CITATION.cff</code></td>
-<td>Add the author’s ORCID using the <code>orcid</code> field.</td>
+<td><strong>ORCIDs</strong></td>
+<td><code>orcid</code> for each person in <code>data/team.yml</code></td>
+<td>An ORCID is a personal identifier for researchers, so their work is always credited to the right person. Write it like <code>"https://orcid.org/0000-0002-1825-0097"</code></td>
 </tr>
 <tr class="even">
-<td>Credit an author without an ORCID</td>
-<td><code>CITATION.cff</code></td>
-<td>Include their name and omit the <code>orcid</code> field.</td>
+<td><strong>Keywords</strong></td>
+<td><code>keywords</code> in <code>data/course.yml</code></td>
+<td>Help people find your training on Zenodo and in training registries</td>
 </tr>
 <tr class="odd">
-<td>Cite a particular course instance</td>
-<td><code>CITATION.cff</code> in the course-instance branch</td>
-<td>Update the citation metadata before creating the release.</td>
+<td><strong>Organisers and funding</strong></td>
+<td><code>organizers</code> and <code>funding</code> in <code>data/course.yml</code></td>
+<td>Credit the organisations behind the training, and the grants that paid for it</td>
 </tr>
 </tbody>
 </table>
+<p>Leave the other fields under <code>reuse</code> empty for now. You add the DOIs after publishing on Zenodo, and the rest is worked out automatically.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</section>
-</section>
-<section id="publishing-course-materials-on-zenodo" class="level2" data-number="9.3">
-<h2 data-number="9.3" data-anchor-id="publishing-course-materials-on-zenodo"><span class="header-section-number">9.3</span> Publishing course materials on Zenodo</h2>
-<section id="creating-a-release" class="level3" data-number="9.3.1">
-<h3 data-number="9.3.1" data-anchor-id="creating-a-release"><span class="header-section-number">9.3.1</span> Creating a release</h3>
-</section>
-</section>
-<section id="adding-contributors-and-orcids" class="level2" data-number="9.4">
-<h2 data-number="9.4" data-anchor-id="adding-contributors-and-orcids"><span class="header-section-number">9.4</span> Adding contributors and ORCIDs</h2>
-</section>
-<section id="adding-a-doi-to-your-course-page" class="level2" data-number="9.5">
-<h2 data-number="9.5" data-anchor-id="adding-a-doi-to-your-course-page"><span class="header-section-number">9.5</span> Adding a DOI to your course page</h2>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ask everyone in the team for their ORCID before you publish on Zenodo. Zenodo copies the authors when you publish, so a missing ORCID can only be added later, by hand.</p>
+</div>
+</div>
 
 
 </section>

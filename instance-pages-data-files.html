@@ -210,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Each <strong>training instance</strong> has its own website: an overview page, a schedule, the training materials, and information pages such as the syllabus and the team. In this chapter, you fill in the information for your own training instance.</p>
+<p>Now that you have made your new training instance, it is time to fill it with the content of your training. In this chapter, you will add all the content that describved your training, in data files, like for the landing page. How to add your training materials and instructor notes follows in the next chapter, <a href="./instance-pages-content.html">Instance pages - Content</a>.</p>
 <p>The figure below shows the parts of a training instance website, and the names this guide uses for them.</p>
 <p>FIG fig-alt=“Annotated example of a training instance website: the navigation bar with logos, the welcome section, the registration banner, the Next up section, the quick links, announcements, the team preview and the footer.”</p>
 <p>In this chapter, you will learn how to:</p>
@@ -219,7 +219,6 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="#required-information">Fill in the required information</a>: the training, the team and the overview page.</li>
 <li><a href="#optional-pages">Add the optional pages</a>: the schedule, announcements, practicalities, preparation, FAQ and resources.</li>
 </ul>
-<p>How to add your training materials and instructor notes follows in the next chapter, <a href="./instance-pages-content.html">Instance pages - Content</a>.</p>
 <section id="before-you-start" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="before-you-start">Before you start</h3>
 <p>Work on the branch of your training instance, for example <strong>release-2705</strong>, as described in <a href="./workflow.html">Regular workflow</a>.</p>
@@ -227,10 +226,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="switch-off-template-mode" class="level2" data-number="7.1">
 <h2 data-number="7.1" data-anchor-id="switch-off-template-mode"><span class="header-section-number">7.1</span> Switch off template mode</h2>
-<p>Do this once, on the branch of your <strong>first</strong> training instance: the one you created from <strong>release-0000</strong> (see <a href="./training-instances.html#create-your-first-new-training-instance">Create your first new training instance</a>). Later training instances start from this one, so these changes come along.</p>
+<p>Do this once, on the branch of your <strong>first</strong> training instance: the one you created from <strong>release-0000</strong> (see <a href="./training-instances.html#create-your-first-new-training-instance">Create your first new training instance</a>). Later additional training instances start from the branch of your first training instance, so all changes you’ve made on that branch will be copied.</p>
 <section id="replace-the-readme" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="replace-the-readme">Replace the README</h3>
-<p>Your new branch still has the README of the template. Replace it with the ready-made README for a training instance, which is already on your branch, in the <code>docs</code> folder:</p>
+<p>Just like for the <a href="./landing-page.html">landing page</a>, your new training instance branch still has the README of the template. Replace it with the ready-made README for a training instance, which is already on your branch, in the <code>docs</code> folder:</p>
 <ol type="1">
 <li>Open <code>docs/_template-README.md</code>, select all text, and copy it.</li>
 <li>Open <code>README.md</code>, at the top level of your training instance repository. Select all text, and paste, so the copied text replaces it.</li>
@@ -257,24 +256,25 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="remove-the-template-banner" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="remove-the-template-banner">Remove the template banner</h3>
+<p>The training instance also has a template banner, and it is turned off in the same way as for the <a href="./landing-page.html">landing page</a>.</p>
 <ol type="1">
 <li>Open <code>data/website.yml</code>.</li>
 <li>Change <code>template: true</code> to <code>template: false</code>.</li>
 <li>Save the file.</li>
+<li>The yellow <span class="template-label">Want to use this template?</span> banner disappears from the overview page.</li>
 </ol>
-<p>The yellow <span class="template-label">Want to use this template?</span> banner disappears from the overview page.</p>
 </section>
 </section>
 <section id="required-information" class="level2" data-number="7.2">
 <h2 data-number="7.2" data-anchor-id="required-information"><span class="header-section-number">7.2</span> Required information</h2>
-<p>Every training instance requires three data files to be filled in: <code>course.yml</code>, <code>team.yml</code> and <code>website.yml</code>.</p>
+<p>Every training instance <strong>requires</strong> three data files to be filled in: <code>course.yml</code>, <code>team.yml</code> and <code>website.yml</code>.</p>
 <section id="the-training-course.yml" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="the-training-course.yml">The training: course.yml</h3>
-<p><code>data/course.yml</code> describes this training instance. Most of it appears on the overview page and the <strong>Syllabus</strong> page.</p>
-<p>Open <code>data/course.yml</code>, and work through it from the top down to the <code>reuse</code> part. The comments at the top list which fields are <strong>required</strong> and which are optional.</p>
-<p><strong>Leaving out optional fields.</strong> If an optional field doesn’t apply to your training, such as <code>credits</code> or <code>examination</code>:</p>
+<p><code>data/course.yml</code> describes your training instance. Most of it appears on the overview page and the <strong>Syllabus</strong> page.</p>
+<p>Open <code>data/course.yml</code>, and work through it from the top down up to (not including) the <code>reuse</code> part. The comments at the top of the data file list which fields are <strong>required</strong> and which are optional.</p>
+<p><strong>Leaving out optional fields.</strong> If an optional field doesn’t apply to your training, such as <code>credits</code> or <code>examination</code>, you can leave it out in two ways:</p>
 <ul>
-<li>delete it: the field name and all lines that belong to it; or<br>
+<li>delete it: the field name and all lines that belong to it;<br>
 </li>
 <li>leave it empty: nothing after the colon, <code>""</code> or <code>[]</code>.</li>
 </ul>
@@ -336,11 +336,7 @@ Tip
 <ul>
 <li><code>licence</code> and <code>licence_url</code>: CC BY 4.0 by default. Keep it, or change it. If you change it, also replace the text in <code>LICENSE.md</code> with the full text of your new licence.</li>
 </ul>
-<p>Leave the other fields empty for now:</p>
-<ul>
-<li><code>doi</code>, <code>version_doi</code>, <code>release_date</code> and <code>zenodo_communities</code> belong to publishing your training instance on Zenodo, and are explained in <a href="./fairification.html">FAIRification</a>.</li>
-<li><code>licence_id</code>, <code>version</code>, <code>website_url</code> and <code>preferred_citation</code> can stay empty for most trainings. The template works out the version and the address of your website, and creates the citation from your team, title and DOI.</li>
-</ul>
+<p>Leave the other fields empty for now. They behave the same as in <a href="./landing-page.html">landing page</a> and will be explained in <a href="./fairification.html">FAIRification</a>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

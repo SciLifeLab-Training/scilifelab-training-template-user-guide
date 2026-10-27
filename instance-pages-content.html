@@ -217,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul class="collapse">
   <li><a href="#organise-your-training-sections-and-pages" id="toc-organise-your-training-sections-and-pages" class="nav-link active" data-scroll-target="#organise-your-training-sections-and-pages"><span class="header-section-number">8.1</span> Organise your training sections and pages</a></li>
-  <li><a href="#images-presentations-and-other-files" id="toc-images-presentations-and-other-files" class="nav-link" data-scroll-target="#images-presentations-and-other-files"><span class="header-section-number">8.2</span> Images, presentations and other files</a></li>
+  <li><a href="#add-content-to-your-pages" id="toc-add-content-to-your-pages" class="nav-link" data-scroll-target="#add-content-to-your-pages"><span class="header-section-number">8.2</span> Add content to your pages</a></li>
   <li><a href="#write-instructor-notes" id="toc-write-instructor-notes" class="nav-link" data-scroll-target="#write-instructor-notes"><span class="header-section-number">8.3</span> Write instructor notes</a></li>
   <li><a href="#cheat-sheet" id="toc-cheat-sheet" class="nav-link" data-scroll-target="#cheat-sheet"><span class="header-section-number">8.4</span> Cheat sheet</a></li>
   </ul>
@@ -248,8 +248,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The training materials are the heart of your training instance website: the pages participants work through. Unlike the rest of the website, these pages aren’t built from data files: you write them yourself, in Markdown, in <code>.qmd</code> files in the <code>content</code> folder. Your instructor notes, in the <code>instructors</code> folder, are also written in Markdown.</p>
 <p>In this chapter, you will learn how to:</p>
 <ul>
-<li><a href="#organise-your-sections-and-pages">Organise your sections and pages</a>.</li>
-<li><a href="#images-presentations-and-other-files">Add images, presentations and other files</a>.</li>
+<li><a href="#organise-your-training-sections-and-pages">Organise your training sections and pages</a>.</li>
+<li><a href="#add-content-to-your-pages">Add content to your pages</a>.</li>
 <li><a href="#write-instructor-notes">Write instructor notes</a> for everyone who teaches or reuses your training.</li>
 </ul>
 <section id="before-you-start" class="level3 unnumbered">
@@ -266,20 +266,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>_metadata.yml</code>: the settings for all pages in the <code>content</code> folder, such as the table of contents on the right. You don’t need to change this file.</li>
 <li>One folder for each <strong>section</strong>, with one <code>.qmd</code> file for each page in that section.</li>
 </ul>
-<p>What a section is, is up to you: a module, a day, a topic or a week. You choose the names of the folders. The template’s examples use modules: <code>module-1</code>, <code>module-2</code> and <code>module-3</code>.</p>
+<p><strong>What a section is, is up to you:</strong> a module, a day, a topic or a week. You choose the names of the folders. The template’s examples use modules: <code>module-1</code>, <code>module-2</code> and <code>module-3</code>.</p>
 <p>On the website, each section gets its own dropdown menu in the navigation bar of the content pages, listing its pages.</p>
 <p>For example, a training of three days, with a few topics per day:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">content/</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">├── _metadata.yml      Settings for the content pages</span><span class="kw">:</span><span class="at"> leave as it is</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">├── index.qmd          The Content introduction page</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">├── day-1/             A section, with its pages</span><span class="kw">:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">│   ├── introduction.qmd</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">│   ├── topic-1.qmd</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">│   └── topic-2.qmd</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">├── day-2/</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">│   └── ...</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">└── day-3/</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    └── ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="text"><code>content/
+├── _metadata.yml      Settings for the content pages: leave as it is
+├── index.qmd          The Content introduction page
+├── day-1/             A section, with its pages:
+│   ├── introduction.qmd
+│   ├── topic-1.qmd
+│   └── topic-2.qmd
+├── day-2/
+│   └── ...
+└── day-3/
+    └── ...</code></pre>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -296,7 +296,7 @@ Tip
 </section>
 <section id="add-a-content-section" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="add-a-content-section">Add a content section</h3>
-<p>Adding a section always takes two steps: create its folder inside the <code>content</code> folder, and list it in <code>data/website.yml</code>. A folder that isn’t listed doesn’t appear on the website.</p>
+<p>Adding a section always takes two steps: create its folder inside the <code>content</code> folder, and list it in <code>data/website.yml</code>. A folder that isn’t listed in the data file doesn’t appear on the website.</p>
 <p><strong>Step 1: create the folder and its pages</strong></p>
 <ol type="1">
 <li><p>In the Explorer panel in VS Code, right-click the <code>content</code> folder and choose <strong>New Folder…</strong>.</p></li>
@@ -321,11 +321,11 @@ Tip
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Module 1"</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"How to structure a page"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Copy a whole entry, from <code>- id:</code> to <code>title:</code>, and paste it below the last entry.</p></li>
-<li><p>Change the three values to your new section:</p>
+<li><p>Change the three values to your new section (Keep the spaces at the start of each line exactly as in the other entries!):</p>
 <ul>
 <li><code>id</code>: the name of your folder, exactly as you typed it in step 1, for example <code>day-1</code>.</li>
-<li><code>label</code>: the short name in the navigation bar, for example <code>"Day 1"</code>.</li>
-<li><code>title</code>: the text visitors see when they hover over the section in the navigation bar, for example <code>"Getting started"</code>. Keep the spaces at the start of each line exactly as in the other entries!</li>
+<li><code>label</code>: the short name in the navigation bar, for example<code>"Day 1"</code>.</li>
+<li><code>title</code>: the text visitors see when they hover over the section in the navigation bar, for example <code>"Getting started"</code>.</li>
 </ul></li>
 <li><p>Save the file, and check the preview: your section appears in the navigation bar of the content pages.</p></li>
 </ol>
@@ -362,22 +362,28 @@ Important
 </ol>
 </section>
 </section>
-<section id="images-presentations-and-other-files" class="level2" data-number="8.2">
-<h2 data-number="8.2" data-anchor-id="images-presentations-and-other-files"><span class="header-section-number">8.2</span> Images, presentations and other files</h2>
+<section id="add-content-to-your-pages" class="level2" data-number="8.2">
+<h2 data-number="8.2" data-anchor-id="add-content-to-your-pages"><span class="header-section-number">8.2</span> Add content to your pages</h2>
+<p>With your sections and pages set up, it’s time to add your training materials. You write them in the <code>.qmd</code> page files, in <strong>Markdown</strong>: a simple way of formatting text. For example, <code>**bold**</code> becomes <strong>bold</strong>, and a line starting with <code>#</code> becomes a heading.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>The example pages are a guide
+<span class="screen-reader-only">Tip</span>The example pages are your guide
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The example pages that come with the template are a short guide to writing training materials. They show how to write headings, lists, tables, callout boxes, images, videos and links, each with the Markdown to copy. Read them before you replace them with your own materials.</p>
+<p>New to Markdown? The example pages that come with the template are a short guide to writing training materials. They show how to write headings, lists, tables, callout boxes, images, videos and links, each with the Markdown to copy. Read them before you replace them with your own materials, and copy and paste from them whenever you need something.</p>
 </div>
 </div>
-<p>Put images, PDFs and other files you use on your pages in the <code>docs</code> folder. The example page <strong>Images, presentations and videos</strong> shows how to add them to a page.</p>
+<section id="images-pdfs-and-other-files" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="images-pdfs-and-other-files">Images, PDFs and other files</h3>
+<p>Put images, PDFs, videos and other files you use on your pages in the <code>docs</code> folder. The example page <a href="https://scilifelab-training.github.io/scilifelab-training-template/0000/content/module-3/images-presentations-videos.html"><strong>Images, presentations and videos</strong></a> shows how to add them to a page.</p>
+</section>
+<section id="presentations" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="presentations">Presentations</h3>
 <p>You choose how to make and share your presentations. Common options:</p>
 <table class="caption-top table">
 <colgroup>
@@ -393,7 +399,7 @@ Important
 <tbody>
 <tr class="odd">
 <td><strong>Upload files to the repository</strong>, for example PDF slides</td>
-<td>Archived with your training, so they stay available as long as the materials do. Keep files small: GitHub warns above 50 MB</td>
+<td>See <a href="https://scilifelab-training.github.io/scilifelab-training-template/0000/content/module-3/links.html">Linking to a file or resource within your training repository</a>. Archived with your training, so they stay available as long as the materials do. Keep files small: GitHub warns above 50 MB</td>
 </tr>
 <tr class="even">
 <td><strong>Make presentations in Quarto</strong></td>
@@ -401,33 +407,100 @@ Important
 </tr>
 <tr class="odd">
 <td><strong>Link to an online tool</strong>, such as Google Slides</td>
-<td>Easy to make and update together. The link can stop working, or need access rights that others don’t have</td>
+<td>See <a href="https://scilifelab-training.github.io/scilifelab-training-template/0000/content/module-3/links.html">Linking to resources hosted elsewhere</a>. Easy to make and update together, but the link can stop working, or need access rights that others don’t have</td>
 </tr>
 </tbody>
 </table>
-<p>Whatever you choose, link to your materials from the module’s pages, so participants can find them, and note in the instructor notes where the editable versions are.</p>
+<p>Whatever you choose, link to your presentations from the pages of the section, so participants can find them, and note in the <a href="#write-instructor-notes">instructor notes</a> where the editable versions are.</p>
+</section>
+<section id="the-on-this-page-list" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="the-on-this-page-list">The “On this page” list</h3>
+<p>The <strong>On this page</strong> list on the right of each content page is made automatically from the headings of the page:</p>
+<ul>
+<li>Headings starting with <code>##</code> appear in the list. Use them for the main parts of a page.</li>
+<li>Headings starting with <code>###</code> don’t appear in the list. Use them for smaller parts within a main part.</li>
+<li>Don’t use a heading starting with a single <code>#</code>: the page title, from the header at the top of the file, is already the main heading.</li>
+</ul>
+</section>
+<section id="previous-and-next-links" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="previous-and-next-links">Previous and next links</h3>
+<p>At the bottom of each content page, <strong>Previous</strong> and <strong>Next</strong> links lead through all your materials in one sequence: first the Content introduction page, then the pages of each section, in the order of the sections in <code>data/website.yml</code> and the <code>order</code> numbers of the pages. The last page of a section links to the first page of the next one.</p>
+<p>The links are made automatically, and show the <code>title</code> of the page they lead to. To change where they lead, change the order of the sections or pages, as described in <a href="#organise-your-training-sections-and-pages">Organise your training sections and pages</a>.</p>
+</section>
 </section>
 <section id="write-instructor-notes" class="level2" data-number="8.3">
 <h2 data-number="8.3" data-anchor-id="write-instructor-notes"><span class="header-section-number">8.3</span> Write instructor notes</h2>
-<p>The <code>instructors</code> folder holds notes for instructors: everything someone needs to teach this training, such as the timing of each module, how to prepare, and what to watch out for. The notes help your own team, and anyone who wants to reuse your training.</p>
+<p>Instructor notes belong next to the materials they describe. They’re in the <code>instructors</code> folder, on the same branch as your <code>content</code> folder. Because they live with your materials, they’re copied to each new training instance, and archived together with your materials on Zenodo.</p>
+<section id="why-write-instructor-notes" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="why-write-instructor-notes">Why write instructor notes?</h3>
+<p>Your training materials show participants <em>what</em> to learn. Instructor notes show instructors <em>how to teach it</em>: how long each part takes, what to prepare, and where participants usually get stuck. They are useful whenever someone other than you teaches the training:</p>
 <ul>
-<li><code>instructors/README.md</code> covers the training as a whole: the timing, preparation and setup.</li>
-<li><code>instructors/module-1.md</code>, <code>module-2.md</code> and so on cover each module: its key points, teaching flow, exercises and common problems.</li>
+<li><strong>Several people teach the training,</strong> for example taking turns, or each teaching a different section.</li>
+<li><strong>New instructors join,</strong> or the training is taught again a year later.</li>
+<li><strong>Others want to reuse your training.</strong> With instructor notes, they can teach it themselves without having to ask you. That makes your training much easier to reuse, which is one of the aims of FAIR training materials.</li>
 </ul>
-<p>Fill in the example files, and add a file for each new module. The files are plain Markdown. On GitHub, <code>instructors/README.md</code> is shown as soon as you open the folder.</p>
+</section>
+<section id="whats-in-the-instructors-folder" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="whats-in-the-instructors-folder">What’s in the instructors folder</h3>
+<p>The <code>instructors</code> folder mirrors your <code>content</code> folder: one file for each section of your materials, plus a <code>README.md</code> for the training as a whole. All files are written in plain Markdown.</p>
+<pre class="text"><code>content/                instructors/
+├── day-1/              ├── README.md      The training as a whole
+├── day-2/              ├── day-1.md
+└── day-3/              ├── day-2.md
+                        └── day-3.md</code></pre>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>What it covers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>README.md</code></td>
+<td>The training as a whole: who can teach it, the timing of each section, how to prepare, the technical setup, and what to do during and after the training</td>
+</tr>
+<tr class="even">
+<td>One file per section, for example <code>day-1.md</code></td>
+<td>That section: its key points, teaching flow, materials, exercises, common problems, and what to skip if you’re short of time</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fill-in-the-instructor-notes" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="fill-in-the-instructor-notes">Fill in the instructor notes</h3>
+<ol type="1">
+<li>Open <code>instructors/README.md</code>, and replace the example text with your own. Keep the headings: they show what an instructor needs to know.</li>
+<li>For each section of your materials, open its instructor file, and fill it in the same way.</li>
+<li>For a <strong>new section</strong>, add an instructor file with the same name as the section’s folder, for example <code>day-1.md</code> for the section <code>day-1</code>. The easiest way is to copy an existing file:
+<ul>
+<li>In the Explorer panel, right-click an existing section file, for example <code>module-1.md</code>, and choose <strong>Copy</strong>.</li>
+<li>Right-click the <code>instructors</code> folder and choose <strong>Paste</strong>.</li>
+<li>Right-click the copy, choose <strong>Rename…</strong>, type the new name, and press <strong>Enter</strong>.</li>
+</ul></li>
+<li>In the timing table in <code>instructors/README.md</code>, add a row for each section, with a link to its file.</li>
+<li>For a <strong>removed section</strong>, delete its instructor file, and its row in the timing table.</li>
+<li>Save your files, and commit and push them. Instructor notes don’t appear in the preview: to see how they look, open them on GitHub.</li>
+</ol>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+<span class="screen-reader-only">Warning</span>Not on the website, but not private either
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The instructor notes are <strong>not</strong> part of the website, but they are <strong>not private</strong> either: anyone can read them on GitHub, and they are archived on Zenodo with the materials. Never write anything that must stay secret, such as passwords, access codes, or answers to exams and graded assignments. Once pushed, deleting it does not remove it: it stays in the history of your repository.</p>
+<p>Anyone can read your instructor notes on GitHub, and they are archived on Zenodo together with your materials.</p>
+<p>Never write anything that must stay secret, such as passwords, access codes, or answers to exams and graded assignments. Once pushed, deleting it does not remove it: it stays in the history of your repository.</p>
 </div>
 </div>
+</section>
 </section>
 <section id="cheat-sheet" class="level2" data-number="8.4">
 <h2 data-number="8.4" data-anchor-id="cheat-sheet"><span class="header-section-number">8.4</span> Cheat sheet</h2>
@@ -447,34 +520,49 @@ Warning
 </thead>
 <tbody>
 <tr class="odd">
-<td>Add a module</td>
+<td>Add a section</td>
 <td><code>content/</code> and <code>data/website.yml</code></td>
-<td>Create a folder, and add an entry with the folder’s name as <code>id</code> under <code>content</code> → <code>sections</code></td>
+<td>Create a folder with its pages, and add an entry under <code>content</code> → <code>sections</code>, with the folder’s name as <code>id</code></td>
 </tr>
 <tr class="even">
-<td>Reorder modules</td>
+<td>Reorder sections</td>
 <td><code>data/website.yml</code></td>
-<td>Change the order of the entries under <code>content</code> → <code>sections</code></td>
+<td>Move whole entries up or down under <code>content</code> → <code>sections</code></td>
 </tr>
 <tr class="odd">
-<td>Add a page</td>
-<td><code>content/module-.../</code></td>
-<td>Copy a page in the same module, rename it, and change <code>title</code>, <code>order</code> and the text</td>
+<td>Remove a section</td>
+<td><code>data/website.yml</code>, then <code>content/</code></td>
+<td>First delete its entry, then its folder</td>
 </tr>
 <tr class="even">
+<td>Add a page</td>
+<td>The section’s folder</td>
+<td>Add a <code>.qmd</code> file with <code>title</code> and <code>order</code> in the header at the top</td>
+</tr>
+<tr class="odd">
 <td>Reorder pages</td>
 <td>The pages’ <code>.qmd</code> files</td>
-<td>Change <code>order</code> at the top of each page</td>
+<td>Change the <code>order</code> numbers</td>
+</tr>
+<tr class="even">
+<td>Add a part to “On this page”</td>
+<td>The page’s <code>.qmd</code> file</td>
+<td>Start its heading with <code>##</code></td>
 </tr>
 <tr class="odd">
-<td>Add images and files</td>
+<td>Add images, PDFs and other files</td>
 <td><code>docs/</code></td>
 <td>Put the file in the folder, and link to it from the page</td>
 </tr>
 <tr class="even">
 <td>Write instructor notes</td>
 <td><code>instructors/</code></td>
-<td><code>README.md</code> for the training, a file per module</td>
+<td>Fill in <code>README.md</code> and the file for each section</td>
+</tr>
+<tr class="odd">
+<td>Add or remove a section’s instructor notes</td>
+<td><code>instructors/</code></td>
+<td>Add or delete the file with the section’s folder name, and its row in the timing table in <code>README.md</code></td>
 </tr>
 </tbody>
 </table>
