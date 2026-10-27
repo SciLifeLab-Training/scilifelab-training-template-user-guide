@@ -4,15 +4,29 @@ title: "Introduction"
 
 Welcome to the **SciLifeLab Training Webpage Template User Guide**!
 
+SciLifeLab offers a wide range of training, given by many different
+platforms, units and teams. The SciLifeLab Training Hub developed this
+template so that training websites are easy to set up and maintain,
+and follow the FAIR principles for citing and reusing training
+materials.
+
+This guide explains how to use the template, step by step.
+
 ### What is the template? {.unnumbered}
 
-The **[SciLifeLab Training Webpage Template](https://scilifelab-training.github.io/scilifelab-training-template/)**
-helps you create a consistent, reusable and FAIR website for your
-training. No programming is needed: you fill in text files and write
-your materials in Markdown, and the website is built and published for
-you.
+The **[SciLifeLab Training Webpage Template](https://scilifelab-training.github.io/scilifelab-training-template/)** is a ready-made, SciLifeLab-branded training website. You fill in your information in text files, and write your materials in Markdown.
+The website is then built and published for you. No programming is
+needed!
+
+::: {.callout-tip}
+## See it in action
+
+The [example training website](https://scilifelab-training.github.io/scilifelab-training-template) shows what your website will look like. 
+:::
 
 ### How is a training website organised? {.unnumbered}
+
+Your training website has two parts:
 
 - **A landing page** introduces the training as a whole, and links to
   every training instance.
@@ -21,14 +35,28 @@ you.
 
 ### Which trainings is it for? {.unnumbered}
 
-Most kinds: online or in-person, recurring courses and workshops, one-off trainings,
-self-paced training, and training in cohorts. See
-[Training instances](training-instances.qmd) for how each one fits.
+Most kinds: online or in-person, recurring courses and workshops,
+one-off trainings, self-paced training, and training in cohorts.
 
-### What does this guide cover? {.unnumbered}
+### What do I need? {.unnumbered}
 
-Everything from an empty template to a published, citable training
-website: setting up your copy, the landing page, your training
-instances and materials, and making your training FAIR.
+- A computer.
+- A free [GitHub](https://github.com) account.
+- No experience with Git, Python or Quarto: the guide explains every
+     step.
 
-No experience with Git, Python or Quarto is needed! 
+### How do I use this guide? {.unnumbered}
+
+The chapters follow the order in which you build your website: setting
+up your copy, the landing page, your training instances and materials,
+and making your training FAIR. Work through them in order the first
+time. Later, you can go straight to the chapter you need.
+
+### Where do I start? {.unnumbered}
+
+Start with [Setup](setup.qmd): create your own copy of the template,
+and get it ready to work on.
+
+### Need help? {.unnumbered}
+
+Contact the SciLifeLab Training Hub at <training@scilifelab.se>.
