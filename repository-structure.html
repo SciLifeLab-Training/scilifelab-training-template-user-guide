@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ad298df765bf73ccd67162335a1d55c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c8f2d02df1f4b512774f0d38834ca37e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -246,19 +246,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>You now know the routine for making a change to your training website, and how to publish it (see <a href="./workflow.html">Regular workflow</a>).<br>
-Before fully making the template your own, with the information and materials of your training, it helps to know how the repository is organised. This chapter shows you where different parts of the website live, so you always know where to make a change.</p>
-<p><br></p>
+<p>You now know how to make a change to your training website and publish it. Before you fill in all the information and add the materials of your own training, it helps to know how your repository is organised. This chapter shows where each part of your website lives, so you always know where to make a change.</p>
+<p>You will learn about:</p>
+<ul>
+<li>the <strong>branches</strong>: the separate parts of your repository, one for the landing page and one for each training instance;</li>
+<li>the <strong>files and folders</strong> on each branch: which ones you change, which ones are updated automatically, and which ones to leave alone;</li>
+<li>the <strong>data files</strong>: the files you fill in to build your website.</li>
+</ul>
 <section id="branches" class="level2" data-number="4.1">
 <h2 data-number="4.1" data-anchor-id="branches"><span class="header-section-number">4.1</span> Branches</h2>
 <p>Your training repository is divided into <strong>branches</strong>. Each branch holds the files for one part of your website. A new repository made from the template has three branches: <strong>main</strong>, <strong>release-0000</strong> and <strong>gh-pages</strong>.</p>
 <p><img src="images/structure-01-branches.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Github showing repository branches."></p>
 <p>Each of these branches holds the files for one part of your website:</p>
 <ul>
-<li><p>The <strong>main</strong> branch holds the <strong>landing page</strong>: the general page about your training, with its description, learning outcomes and team, and links to every time the training is given.<br>
-<img src="images/structure-02-landingpage.png" class="img-fluid" style="width:60.0%" alt="Screenshot: landing page."></p></li>
-<li><p>The <strong>gh-pages</strong> branch holds the <strong>published website</strong>: the finished pages that visitors see. GitHub builds them from your other branches and updates this branch automatically every time you push a change.</p></li>
-</ul>
+<li><p>The <strong>main</strong> branch holds the <strong>landing page</strong>: the general page about your training, with its description, learning outcomes and team, and links to every training instance.</p>
+<p><img src="images/structure-02-landingpage.png" class="img-fluid" style="width:60.0%" alt="Screenshot: landing page."></p></li>
+<li><p>The <strong>gh-pages</strong> branch holds the <strong>published website</strong>: the finished pages that visitors see. GitHub builds them from your other branches and updates this branch automatically every time you push a change.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -271,10 +274,9 @@ Important
 <div class="callout-body-container callout-body">
 <p>Never edit the <strong>gh-pages</strong> branch yourself. GitHub updates it automatically every time you push a change to one of the other branches.</p>
 </div>
-</div>
-<ul>
-<li>The <strong>release-0000</strong> branch is an example <strong>training instance</strong>: the website for one time the training is given, with its dates, schedule, practical information, team and training materials. You use it as the starting point for each new training instance, which gets a branch of its own.<br>
-<img src="images/structure-03-instancepage.png" class="img-fluid" style="width:60.0%" alt="Screenshot: training instance page."></li>
+</div></li>
+<li><p>The <strong>release-0000</strong> branch is an example <strong>training instance</strong>: the website for one time the training is given, with its dates, schedule, practical information, team and training materials. You use it as the starting point for each new training instance, which gets a branch of its own.<br>
+<img src="images/structure-03-instancepage.png" class="img-fluid" style="width:60.0%" alt="Screenshot: training instance page."></p></li>
 </ul>
 <p>Because each training instance has its own branch, you can prepare the next training without changing the website of an earlier one. Participants of earlier trainings can always go back to the materials as they were.</p>
 <section id="branch-names" class="level3 unnumbered">
