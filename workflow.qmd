@@ -84,7 +84,7 @@ Keep the preview running while you work. To see a change, save the file
 you edited: press **Cmd+S** (macOS) or **Ctrl+S** (Windows and Linux).
 The preview in your browser then updates by itself.
 
-To **stop the preview** when you are done editing, click in the terminal and press **Ctrl+C**.
+To **stop the preview** when you are done editing, click in the terminal and press **Ctrl+C** (macOS, Windows and Linux).
 
 ::: {.callout-note collapse="true"}
 ## Want to run another command while the preview is running?

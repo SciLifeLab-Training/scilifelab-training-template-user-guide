@@ -2,11 +2,17 @@
 title: "Repository structure"
 ---
 
-You now know the routine for making a change to your training website, and how to publish it (see [Regular workflow](workflow.qmd)).  
-Before fully making the template your own, with the information and materials of your training, it helps to know how the repository is organised. This chapter shows you where different parts of the website live, so you always know where
-to make a change.
+You now know how to make a change to your training website and publish it. Before you fill in all the information and add the materials of your own training, it helps to know
+how your repository is organised. This chapter shows where each part of
+your website lives, so you always know where to make a change.
 
-<br>
+You will learn about:
+
+- the **branches**: the separate parts of your repository, one for the
+  landing page and one for each training instance;
+- the **files and folders** on each branch: which ones you change,
+  which ones are updated automatically, and which ones to leave alone;
+- the **data files**: the files you fill in to build your website.
 
 ## Branches
 
@@ -21,18 +27,19 @@ Each of these branches holds the files for one part of your website:
 
 - The **main** branch holds the **landing page**: the general page about
   your training, with its description, learning outcomes and team, and
-  links to every time the training is given.  
+  links to every training instance. 
+
      ![](images/structure-02-landingpage.png){width=60% fig-alt="Screenshot: landing page."}
 
 - The **gh-pages** branch holds the **published website**: the finished
   pages that visitors see. GitHub builds them from your other branches
   and updates this branch automatically every time you push a change.
 
-::: {.callout-important}
-Never edit the **gh-pages** branch yourself. GitHub updates it
-automatically every time you push a change to one of the other
-branches.
-:::
+  ::: {.callout-important}
+  Never edit the **gh-pages** branch yourself. GitHub updates it
+  automatically every time you push a change to one of the other
+  branches.
+  :::
 
 - The **release-0000** branch is an example **training instance**: the
   website for one time the training is given, with its dates, schedule,

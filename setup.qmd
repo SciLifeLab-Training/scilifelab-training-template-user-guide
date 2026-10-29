@@ -133,7 +133,7 @@ yourself:
 
 ### Check that your website can be updated {.unnumbered}
 
-every time you send a change to GitHub, GitHub runs a small automatic process
+Every time you send a change to GitHub, GitHub runs a small automatic process
 that rebuilds your website. This process needs permission to update the
 website.
 
