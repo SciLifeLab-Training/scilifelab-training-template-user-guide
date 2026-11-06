@@ -2,9 +2,8 @@
 title: "Repository structure"
 ---
 
-You now know how to make a change to your training website and publish it. Before you fill in all the information and add the materials of your own training, it helps to know
-how your repository is organised. This chapter shows where each part of
-your website lives, so you always know where to make a change.
+You now know how to make a change to your training website by changing data files in your training repository, and how to publish it. Before you replace all the template data with your training's data and add your training materials, it helps to know how your repository is organised.   
+This chapter shows where each part of your website lives in the repository, so you always know where to make a change.
 
 You will learn about:
 
@@ -131,13 +130,13 @@ The table below explains what each one is for, and whether you edit it
 | `data/website.yml` | The logos, button texts and footer of the landing page | ✏️ |
 | `data/instances.yml` | The list of training instances, with links to their websites | ✏️ |
 | `img/` | The images and logos used on the landing page | ✏️ |
-| `docs/` | The README for your training (`_template-README.md`), which you copy over `README.md` when you start, and documentation for developers of the template | ✏️ |
+| `docs/` | The README for your training (`_template-README.md`)(which you copy over `README.md` when you start), and documentation for developers of the template | ✏️ |
 | `README.md` | The description shown on your repository's main page on GitHub. The parts between `<!-- generated:... -->` lines are updated automatically; you can edit the rest | ✏️ 🔄 |
 | `_generated/` | The sections of the landing page, built from your data files | 🔄 |
 | `CITATION.cff` | How to cite your training, built from your data files | 🔄 |
 | `.zenodo.json` | The information Zenodo uses when you publish your training, built from your data files | 🔄 |
 | `LICENSE.md` | The full text of the licence of your training: CC BY 4.0, unless you choose another licence in `data/course.yml`. Only replace it if you do | ✏️🔒 |
-| `CONTRIBUTING.md` | How others can report problems and suggest improvements to your training.Ready to use, but you can adapt it if you like | ✏️🔒 |
+| `CONTRIBUTING.md` | How others can report problems and suggest improvements to your training. Ready to use, but you can adapt it if you like | ✏️🔒 |
 | `index.qmd`, `_sections/` | The building blocks that put the landing page together | 🔒 |
 | `styles.css` | The look of the website: colours, fonts and layout | 🔒 |
 | `_template/` | Information about the template itself, used only while template mode is on. You can delete it once you've switched template mode off | 🔒 |
@@ -171,11 +170,11 @@ The table below explains what each one is for, and whether you edit it
 | `data/team.yml` | The organisers, instructors and helpers (required)| ✏️ |
 | `data/website.yml` | The logos, texts and sections of the overview page, and the footer (required)| ✏️ |
 | `data/schedule.yml` | The schedule of the training (optional) | ✏️ |
-| `data/announcements.yml`, `practicalities.yml`, `preparation.yml`, `faq.yml`, `resources.yml` | The information pages (all optional) | ✏️ |
+| `data/announcements.yml`, `practicalities.yml`, `preparation.yml`, `faq.yml`, `resources.yml` | The information pages, with extra information about the training instance: announcements, practicalities such as the venue and travel, preparation before the training, frequently asked questions, and further resources (all optional) | ✏️ |
 | `content/` | Your training materials | ✏️ |
 | `instructors/` | Notes for instructors: timing, preparation and teaching notes for each module. Not shown on the website, but anyone can read it on GitHub | ✏️ |
 | `img/` | The images, logos and photos used on the website | ✏️ |
-| `docs/` | The README for your training (`_template-README.md`), which you copy over `README.md` when you start, example files used in the example module pages; and documentation for developers of the template | ✏️ |
+| `docs/` | The README for your training (`_template-README.md`) (which you copy over `README.md` when you start), example files used in the example module pages, and documentation for developers of the template | ✏️ |
 | `README.md` | The description GitHub shows when someone opens this branch. The parts between `<!-- generated:... -->` lines are updated automatically; you can edit the rest | ✏️ 🔄 |
 | `CONTRIBUTING.md` | How others can report problems and suggest improvements to your training. Ready to use, but you can adapt it if you like | ✏️🔒 |
 | `LICENSE.md` | The full text of the licence of your training: CC BY 4.0, unless you choose another licence in `data/course.yml`. Only replace it if you do | ✏️🔒 |
@@ -195,9 +194,10 @@ uploaded to GitHub, and you can ignore them.
 
 ## Data files
 
-
 As the tables above show, most of the files you edit in the main branch as well as the instance branches are **data files**:
 the files ending in `.yml` in the `data` folder.
+
+### What you see in a data file {.unnumbered}
 
 When you open a data file, for example `data/course.yml` on the
 **main** branch, you see three kinds of text. VS Code shows each in its
@@ -234,15 +234,48 @@ starting with `#` are explanations, the word before the colon is the
 field name, and the text after the colon is the value you change.
 :::
 
+### Three kinds of values {.unnumbered}
+
+**Values** in data forms come in three forms:
+
+- **A single line of text**, between quotation marks:
+
+```yaml
+title: "Introduction to R"
+```
+
+- **Several paragraphs**, after `|`. Start each line with the same number
+of spaces, and separate paragraphs with an empty line:
+
+```yaml
+description: |
+  This training introduces R, a free and widely used programming
+  language for data analysis.
+
+  Through short demonstrations and hands-on exercises, you learn how to
+  read, clean, summarise and plot your data.
+```
+
+- **A list**: each line starting with `-` is one item. To add an item,
+copy a whole line, paste it below, and change the text. To remove an
+item, delete its whole line:
+
+```yaml
+keywords:
+  - "R"
+  - "Data analysis"
+  - "Data visualisation"
+```
+
+### Keep the layout as it is {.unnumbered}
+
 ::: {.callout-important}
 
 **Data files are very sensitive to layout:**
 
-- Keep the spaces at the start of each line exactly as they are.
+- Keep the number of spaces (indentation) at the start of each line exactly as they are.
   They show which information belongs together.
 - Keep the quotation marks around values.
-- Lines starting with `-` are list items. To add an item, copy a
-  whole line and change its value.
 
 If the preview shows an error after you save a data file, check these
 first. The error message usually names the file and the line.

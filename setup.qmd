@@ -64,7 +64,7 @@ create your own repository as a copy of the template:
      or your personal account.
    - Under **Repository name**, enter a short name in lowercase, with
      hyphens instead of spaces, for example `introduction-to-r`. The name
-     becomes part of your website address, so choose it carefully.
+     becomes part of your website URL, so choose it carefully.
    - Under **Visibility**, choose **Public**, so participants can see the
      website and materials.
 4. Click **Create repository**.
@@ -191,8 +191,8 @@ To clone your repository and open it in VS Code:
 3. Paste the HTTPS address you copied and press **Enter**.
 4. Choose where to save the repository on your computer, for example a
    folder called `GitHub` inside `Documents`, and click
-   **Select as Repository Destination**.
-![](images/setup-14-repositorydestination.png){width=80% fig-alt="Screenshot: folders and repository destination button."}
+   **Select as Repository Destination**.  
+   ![](images/setup-14-repositorydestination.png){width=80% fig-alt="Screenshot: folders and repository destination button."}
 5. When VS Code asks whether to open the repository, click **Open**.
 
 The files and folders of your repository now appear in the **Explorer**
@@ -322,7 +322,7 @@ the environment switched on.
 
 Your training has its own repository and website, and your computer is
 ready to edit it. You won't need to repeat any of these steps for this
-training.
+training repository.
 
 Continue with [Regular workflow](workflow.qmd) to make your first change
 and see it appear on your website.

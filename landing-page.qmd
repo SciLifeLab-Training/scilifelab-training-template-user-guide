@@ -2,9 +2,7 @@
 title: "Landing page"
 ---
 
-The [landing page](https://scilifelab-training.github.io/scilifelab-training-template/)
-is the front door of your training. It introduces the training as a
-whole, and helps visitors decide whether to register, or which training
+You are now ready to make the template your own. In this chapter, we start with customizing the [landing page](https://scilifelab-training.github.io/scilifelab-training-template/), which is the front door of your training. It introduces the training as a whole, and helps visitors decide whether to register, or which training
 instance to open.
 
 The figure below shows the parts of the landing page, and the names this
@@ -124,21 +122,22 @@ This changes three things:
 - `CITATION.cff` and `.zenodo.json` now describe your training instead
   of the template.
 
-   ![](images/landing-06-changesaftersaving.png){width=80% fig-alt="Screenshot: changed template:true to template:false in data/website.yml."}
+   ![](images/landing-06-changesaftersaving.png){fig-alt="Screenshot: changed template:true to template:false in data/website.yml."}
 
 ::: {.callout-note collapse="true"}
 ## Optional: delete the template files you no longer need
 
-Two things on main are only needed while you set up your repository:
+Now you have switched off template mode, two things on your main branch are not needed any more:
 
-- The `docs/_template-README.md` file (keep the rest of the `docs` folder)
-- The `_template` folder
+- The `docs/_template-README.md` file
+- The entire `_template` folder
 
 You can delete both: in the Explorer panel, right-click each and choose
 **Delete**. 
 
-If you ever set `template: true` again, the preview stops with an
-error, because the `_template` folder is missing.
+NOTE: Keep the rest of the `docs` folder!
+
+NOTE: Deleting these means you cannot switch template mode on again (by setting `template: true`), the preview will then stop with an error, because the `_template` folder is missing.
 :::
 
 ::: {.callout-tip}
@@ -153,27 +152,29 @@ You can make the landing page your own by changing the organisation logos, the b
 
 ### Logos {.unnumbered}
 
-The logos in the hero show the organisations behind your training. The
-SciLifeLab logo is always shown on the right. Your other logos appear to
-its left.
+The logos in the hero show the organisations behind your training. 
 
 **Add a logo**
 
-1. Save your logo as an **SVG** or **PNG** file.
+1. Save your logo on your computer as an **SVG** or **PNG** file.
 
    ::: {.callout-tip}
    Use a **white** version of your logo, or one made for a dark
-   background, so it stands out against the dark hero.
+   background, so it stands out against the dark teal of the hero.
    :::
 
-2. Copy the file into the `img/logos` folder: drag it from your computer
+2. Copy the logo file into the `img/logos` folder: drag it from your computer
    onto the folder in the Explorer panel in VS Code.
+
+   ![](images/landing-07-addlogoimage.png){fig-alt="Screenshot: add logo image from computer into img/logos folder."}
+
+   
 3. In `data/website.yml`, find the `hero` part:
 
    ```yaml
    hero:
-     logos:
-       - src: "img/logos/SciLifeLab_Logotype_NEG.png"
+      logos:
+         - src: "img/logos/scilifelab-neg.png"
          alt: "SciLifeLab"
          height: 56
          primary: true
@@ -185,13 +186,14 @@ its left.
    - `height` (optional): the height of the logo in pixels, 56 if you
      leave it out.
 
-   For example:
-
-IMAGE
+   For example:  
+   ![](images/landing-08-newlogodatafile.png){width=60% fig-alt="Screenshot: add a new logo path in website.yml."}
 
 5. Save the file, and check the preview. If the logos look like
    different sizes, adjust their `height` until they look about the
    same.
+
+   ![](images/landing-09-logoonlandingpage.png){width=60% fig-alt="Screenshot: the new logo is shown on the preview landing page."}
 
 The logo with `primary: true` (SciLifeLab) is always shown on the right.
 Your other logos appear to its left, in the same order as in the list.
@@ -200,7 +202,10 @@ Your other logos appear to its left, in the same order as in the list.
 
 1. In `data/website.yml`, delete all lines of the logo you want to
    remove, from `- src:` to its last line.
-2. Save the file.
+
+      ![](images/landing-10-logodeleted.png){width=60% fig-alt="Screenshot: the lines for the new logo in website.yml are deleted."}
+      
+2. Save the file and check the preview, the logo should be gone from the landing page. 
 3. Optional: if you no longer need the logo file, delete it from the
    `img/logos` folder. In VS Code, right-click the file and choose
    **Delete**.
@@ -221,16 +226,14 @@ You can change the text on the two hero buttons, and the heading of the
 
 2. Change the text between the quotation marks. For example:
 
-   ```yaml
-   hero_view_current_label: "Go to the latest training"
-   hero_registration_open_label: "Sign up"
-   ```
+   ![](images/landing-11-changebuttontext.png){width=80% fig-alt="Screenshot: new text in the labels part of data/website.yml."}
 
-3. Save the file.
+3. Save the file, check the preview. 
 
-This only changes the texts. Where the buttons lead, and when they are
-shown, is set in `data/instances.yml`: see
-[Training instances](training-instances.qmd).
+   ![](images/landing-12-buttontextlandingpage.png){width=60% fig-alt="Screenshot: landing page with changed buttons text."}
+
+Note that this only changes the texts. Where the buttons lead, and when they are
+shown, is set in `data/instances.yml`: see [Training instances](training-instances.qmd).
 
 ### Banner image {.unnumbered}
 
@@ -239,6 +242,8 @@ the buttons. You can replace it with an image that fits your training.
 
 1. Copy your image into the `img/images` folder: drag it from your
    computer onto the folder in the Explorer panel in VS Code.
+
+   ![](images/landing-13-bannerimage.png){width=80% fig-alt="Screenshot: add banner image from computer into img/images folder."}
 
    ::: {.callout-tip}
    Use a landscape image. The image is cropped automatically to fill
@@ -253,15 +258,14 @@ the buttons. You can replace it with an image that fits your training.
    ```
 
 3. Replace `navet-band.png` with the file name of your image, for
-   example:
+   example:  
 
-   ```yaml
-   instances_band:
-     image: "img/images/my-training-banner.jpg"
-   ```
+   ![](images/landing-14-addimgfile.png){width=80% fig-alt="Screenshot: add a new banner path in website.yml."}
 
 4. Save the file, and check the preview at different widths of your
    browser window.
+
+   ![](images/landing-15-newbannerimage.png){fig-alt="Screenshot: landing page with changed banner image."}
 
 To show no image at all, change it to `image: ""`.
 
@@ -279,6 +283,7 @@ the website, so make it carefully:
    ```css
    object-position: center;
    ```
+   ![](images/landing-16-imagecentering.png){fig-alt="Screenshot: css file with .instances-band__image properties."}
 
 3. Change `center` to the part you want to keep. For example,
    `center top` keeps the top of the image, and `30% center` moves the
@@ -297,44 +302,26 @@ Both files contain explanations at the top and between the fields,
 in the lines starting with `#`. This section covers the main points;
 the explanations in the files give the details.
 
-### How to fill in a data file {.unnumbered}
-
-You only change the **values**: the text after the colon. See
-[Data files](repository-structure.qmd#data-files) for how a data file is
-built. Values come in three forms:
-
-**A single line of text**, between quotation marks:
-
-```yaml
-title: "Introduction to R"
-```
-
-**Several paragraphs**, after `|`. Start each line with the same number
-of spaces, and separate paragraphs with an empty line:
-
-```yaml
-description: |
-  This training introduces R, a free and widely used programming
-  language for data analysis.
-
-  Through short demonstrations and hands-on exercises, you learn how to
-  read, clean, summarise and plot your data.
-```
-
-**A list**: each line starting with `-` is one item. To add an item,
-copy a whole line, paste it below, and change the text. To remove an
-item, delete its whole line:
-
-```yaml
-keywords:
-  - "R"
-  - "Data analysis"
-  - "Data visualisation"
-```
 
 ### The training: course.yml {.unnumbered}
 
-Open `data/course.yml` and work through it from top to bottom:
+Open `data/course.yml` and work through the fields below, from top to
+bottom. You only change the **values**: the text after the colon. See
+[Data files](repository-structure.qmd#data-files) for how a data file
+is built and the different types of data values.
+
+::: {.callout-important}
+
+**Data files are very sensitive to layout:**
+
+- Keep the number of spaces (indentation) at the start of each line exactly as they are.
+  They show which information belongs together.
+- Keep the quotation marks around values.
+
+If the preview shows an error after you save a data file, check these
+first. The error message usually names the file and the line.
+
+:::
 
 | Field | Where it appears | What to fill in |
 |---|---|---|
@@ -356,9 +343,16 @@ The other fields under `reuse` can stay empty for now:
 - `licence_id`, `website_url` and `preferred_citation` can stay empty for most trainings. The template works out the address 
    of your website, and creates the citation from your team, title and DOI.
 
-Example of a filled-in `course.yml`:
+For example, this is `data/course.yml` filled in for a made-up training,
+Introduction to R. The explanations starting with `#` are left out, so
+the whole file fits on one screen:  
 
-IMAGE
+![](images/landing-17-filledin.png){fig-alt="Screenshot: all values filled in for the mock course introduction to r in course.yml."}
+
+After saving the file, the preview shows the landing page with this
+information.  
+
+![](images/landing-18-fulllandingpage.png){fig-alt="Screenshot: landing page with all the values for the mock course."}
 
 ::: {.callout-tip}
 - **Subtitle**: keep it to one sentence, and start it with an action
@@ -383,15 +377,36 @@ the file explain every field. To **add** a person, copy a whole entry,
 from `- given_names:` to the line before the next person, paste it below,
 and change the values. To **remove** a person, delete their whole entry.
 
-Example of a filled-in `team.yml`:
-
-IMAGE
-
 ::: {.callout-important}
 Every person needs `given_names`, `family_names`, `roles` (`Founder` or
 `Contributor`) and `affiliation`. If one is missing, the preview shows
 an error that names the person and the missing field.
 :::
+
+::: {.callout-note}
+## Roles and authors
+
+`roles` says what someone did: it is shown on the landing page and in the
+README. `citation_author` says whether they are an author of the training. Everyone is an author, unless you set `citation_author: false`.
+**Only authors end up in the citation.** On Zenodo, authors are listed as
+"creators", and everyone else as "contributors".
+
+:::
+
+For example, this is `data/team.yml` for Introduction to R.
+
+![](images/landing-19-teamfilledin.png){width=80% fig-alt="Screenshot: all values filled in for the mock course introduction to r in team.yml."}
+
+After saving the file, the **Founders** and **Contributors** cards on the
+landing page show the new team:
+
+![](images/landing-20-teamlandingpage.png){fig-alt="Screenshot: landing page with all the team values for the mock course."}
+
+The team is also used for the citation of your training. Open
+`CITATION.cff`, `.zenodo.json` or `README.md`in the main folder of your repository: the template has updated these from your data files, while the preview was running.
+
+![](images/landing-21-citationfile.png){fig-alt="Screenshot: citation.cff with all the  values for the mock course."}
+
 
 ## Cheat sheet
 

@@ -5,8 +5,8 @@ title: "Introduction"
 Welcome to the **SciLifeLab Training Webpage Template User Guide**!
 
 SciLifeLab offers a wide range of training, given by many different
-platforms, units and teams. The SciLifeLab Training Hub developed this
-template so that training websites are easy to set up and maintain,
+platforms, units and teams. The SciLifeLab Training Hub has developed this
+template to make training websites easy to set up, maintain,
 and follow the FAIR principles for citing and reusing training
 materials.
 
