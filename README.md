@@ -1,6 +1,11 @@
 # SciLifeLab Training Webpage Template User Guide
 
-This repository contains the user guide for the **[SciLifeLab Training Webpage Template](https://scilifelab-training.github.io/scilifelab-training-template/)**, a Quarto-based template for creating, publishing, and maintaining reusable training materials with GitHub Pages.
+This repository contains the User Guide for the
+**[SciLifeLab Training Webpage Template](https://scilifelab-training.github.io/scilifelab-training-template/)**:
+a ready-made, SciLifeLab-branded website for your training, built with
+Quarto and published with GitHub Pages. With the template, you create,
+publish and maintain a FAIR website for your training: findable,
+citable and easy to reuse.
 
 ## Read the User Guide
 
@@ -8,65 +13,81 @@ The published User Guide is available at:
 
 **[SciLifeLab Training Webpage Template User Guide](https://scilifelab-training.github.io/scilifelab-training-template-user-guide/)**
 
-The guide provides step-by-step instructions for:
+The guide explains, step by step, how to:
 
-- setting up the template for a new course;
-- customising the course landing page;
-- creating and managing course instances;
-- customising course instance pages; 
-- previewing and publishing changes;  
-- preparing training materials for publication, citation, and reuse.
+- set up your own copy of the template, and publish it as a website;
+- make changes, preview them and publish them;
+- understand how the repository is organised;
+- fill in the landing page of your training;
+- create training instances, and add them to the landing page;
+- fill in the website of a training instance, and add your training
+  materials and instructor notes;
+- make your training FAIR, and optionally publish it on Zenodo.
 
-## Training Template
+No experience with Git, Python or Quarto is needed.
 
-The training template itself is maintained in a separate repository:
+## The template
 
-**[SciLifeLab Training Template](https://github.com/SciLifeLab-Training/scilifelab-training-template)**
+The template itself is maintained in a separate repository:
 
-Users of the template should normally start with the published User Guide rather than the files in this repository.
+**[SciLifeLab Training Webpage Template](https://github.com/SciLifeLab-Training/scilifelab-training-template)**
+
+If you want to use the template, start with the published User Guide
+rather than the files in this repository.
 
 ## Working on the User Guide locally
 
-The User Guide is built with [Quarto](https://quarto.org/).
+The User Guide is a [Quarto](https://quarto.org/) book.
 
-After cloning this repository, open the repository directory and preview the guide with:
+After cloning this repository, open its folder, and preview the guide
+with:
 
 ```bash
 quarto preview
 ```
 
-To render the complete guide without starting a preview server, run:
+To render the complete guide without starting a preview, run:
 
 ```bash
 quarto render
 ```
 
-The rendered site is generated locally and should not be edited directly. Changes to the documentation should be made in the source `.qmd` files.
+The rendered website is created on your computer: don't edit it
+directly. Make your changes in the `.qmd` files instead.
 
 ## Publishing
 
-The User Guide is published through GitHub Pages.
+The User Guide is published with GitHub Pages.
 
-Changes pushed to the `main` branch are automatically rendered and deployed by the GitHub Actions workflow in:
+Changes pushed to the `main` branch are rendered and published
+automatically by the GitHub Actions workflow in:
 
 ```text
 .github/workflows/publish.yml
 ```
 
-The published website is maintained on the `gh-pages` branch. Do not edit the `gh-pages` branch directly.
+The published website is kept on the `gh-pages` branch. Don't edit the
+`gh-pages` branch directly.
 
 ## Contributing
 
-Changes and improvements to the User Guide can be made by editing the relevant `.qmd` files in this repository.
+To improve the User Guide, edit the relevant `.qmd` files in this
+repository.
 
-Before committing documentation changes, preview the guide locally to check that pages, links, images, and formatting render as expected.
+Before you commit, preview the guide on your computer, and check that
+pages, links, images and formatting look as expected.
 
 ## Citation
 
-If you re-use the SciLifeLab Course Webpage Template User Guide, please cite as 
+If you reuse the SciLifeLab Training Webpage Template User Guide, please
+cite it as:
 
-Ineke Luijten (2026). The SciLifeLab Training Webpage Template User Guide (v1.0.0-alpha). Zenodo. https://doi.org/XX.XXXX/zenodo.XXXXX
+> Luijten, I. (2026). *SciLifeLab Training Webpage Template User Guide*
+> (v1.0.0-alpha). Zenodo. https://doi.org/XX.XXXX/zenodo.XXXXX
 
 ## Licence
 
-Unless otherwise stated, the SciLifeLab Training Webpage Template User Guide is licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) licence.
+Unless otherwise stated, the SciLifeLab Training Webpage Template User
+Guide is licensed under the
+[Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
+licence.
