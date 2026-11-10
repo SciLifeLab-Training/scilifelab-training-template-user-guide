@@ -317,7 +317,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Delete the note at the top of the file, between <code>&lt;!--</code> and <code>--&gt;</code>, and the line starting with <code>&gt; **Template:**</code>.</p></li>
 <li><p>Fill in the parts marked <strong>Write this yourself</strong>. The other parts, between <code>&lt;!-- generated:... --&gt;</code> lines, are filled in automatically from your data files.</p></li>
 <li><p>Save the file.</p>
-<p><img src="images/landing-04-editreadme.png" class="img-fluid" style="width:70.0%" alt="Screenshot: show which sections of the README to edit"></p></li>
+<p><img src="images/landing-04-editreadme.png" id="readme-sections" class="img-fluid" style="width:70.0%" alt="Screenshot: the README, with the parts to write yourself marked."></p></li>
 </ol>
 </section>
 <section id="remove-the-template-banner" class="level3 unnumbered">
@@ -641,6 +641,7 @@ Important
 <p><img src="images/landing-20-teamlandingpage.png" class="img-fluid" alt="Screenshot: landing page with all the team values for the mock course."></p>
 <p>The team is also used for the citation of your training. Open <code>CITATION.cff</code>, <code>.zenodo.json</code> or <code>README.md</code>in the main folder of your repository: the template has updated these from your data files, while the preview was running.</p>
 <p><img src="images/landing-21-citationfile.png" class="img-fluid" alt="Screenshot: citation.cff with all the  values for the mock course."></p>
+<p>Note that ‘Jonas Ek’ had <code>citation_author:</code> set to <code>false</code> and is therefore not included in CITATION.cff.</p>
 </section>
 </section>
 <section id="cheat-sheet" class="level2" data-number="5.4">

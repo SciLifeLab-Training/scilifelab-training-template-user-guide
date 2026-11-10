@@ -212,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Your landing page now introduces your training as a whole. The next step is to add the times your training is actually given: the training instances, which visitors reach from the landing page.</p>
+<p>Your landing page now introduces your training as a whole. The next step is to add the times your training is actually given, each with its own website and training materials. These are the <strong>training instances</strong>, which learners reach from the landing page.</p>
 <p>In this chapter, you will learn how to:</p>
 <ul>
 <li><a href="#what-is-a-training-instance">Define a training instance</a>, also for self-paced training and training in cohorts.</li>
@@ -234,7 +234,6 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Create a branch</strong> for the training instance: this creates its website.</li>
 <li><strong>Add it to the landing page</strong>, in <code>data/instances.yml</code> on the <strong>main</strong> branch: this makes the website findable.</li>
 </ol>
-<p>This is the same for your first training instance and every one after it.</p>
 </div>
 </div>
 <p>How to switch off template mode and fill in the website of a training instance (its dates, schedule, team and materials) is explained in the next chapters, <a href="./instance-pages-data-files.html">Instance pages - Data files</a> and <a href="./instance-pages-content.html">Instance pages - Content</a>.</p>
@@ -374,7 +373,7 @@ Important
 </section>
 <section id="switch-branch" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="switch-branch">Switch branch</h3>
-<p>A new branch is always created as a copy of an existing one, so you first have to switch to the branch you want to create a copy of.</p>
+<p>Once you have chosen a name, you can begin creating your new training instance, on a new repository branch. A new branch is always created as a copy of an existing one, so you first have to switch to the branch you want to create a copy of.</p>
 <p>For your <strong>first</strong> training instance: switch to <strong>release-0000</strong>, the example training instance that comes with the template.</p>
 <p>To switch branch in VS Code:</p>
 <ol type="1">
@@ -417,7 +416,7 @@ Important
 <li><p>Delete the other examples, <strong>2505</strong> and <strong>2411</strong>: each whole entry, from <code>- slug:</code> to <code>sort_key:</code>. They are only there to show how the list works in the template, and link to websites that don’t exist in your repository.</p></li>
 <li><p>Save the file, and check the preview: the hero button and the <strong>All training instances</strong> banner now show your training instance.</p>
 <p><img src="images/instance-11-instanceonlandingpage.png" class="img-fluid" style="width:75.0%" alt="Screenshot: landing page showing the june 2027 training instance."></p>
-<p>Then commit and push your changes.</p></li>
+<p>Commit and push your changes.</p></li>
 </ol>
 <p>If you break one of the rules described in the file, the preview shows an error that explains what to fix.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
