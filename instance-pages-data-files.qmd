@@ -126,7 +126,12 @@ For example, this is `data/website.yml` filled in for a made-up training,
 Introduction to R. The explanations starting with `#` are left out, so
 the whole file fits on one screen:  
 
+![](images/ipdatafiles-07-websiteymlfilledout.png){width=50% fig-alt="Screenshot: all values filled in for the mock course introduction to r in website.yml."}
 
+After saving the file, the preview shows the overview page with this
+information. 
+
+![](images/ipdatafiles-08-websiteymloverviewpage.png){width=80% fig-alt="Screenshot: overview page with all the values for the mock course."}
 
 There are two additional fields in `data/website.yml`: `footer` and `content`. Leave them as they are for now. The boxes below explain what they are for.
 
@@ -159,31 +164,85 @@ your own materials, as described in
 
 ### `course.yml`: the training {.unnumbered}
 
-`data/course.yml` describes your training instance, the same way as for the landing page on the main branch. The information you enter here appears on the overview page, the **Syllabus** page, 
+`data/course.yml` describes your training instance, in the same way as
+on the landing page. The information appears on the overview page, the
+**Syllabus** page, the README and the citation of your training. It also
+helps people find your training on Zenodo and in training registries
+such as TeSS.
 
-The information you enter in these files is also used in the README and
-the citation of your training, and helps people find it in Zenodo and
-training registries such as TeSS.
-
-Open `data/course.yml`, and work through it from the top down up to (not including) the
-`reuse` part. The comments at the top of the data file list which fields are
-**required** and which are optional.
-
-**Leaving out optional fields.** If an optional field doesn't apply to
-your training, such as `credits` or `examination`, you can leave it out in two ways:
-
-- delete it: the field name and all lines that belong to it;  
-- leave it empty: nothing after the colon, `""` or `[]`.
-
-::: {.callout-tip}
 Use the same title, description, learning outcomes and keywords as on
 the landing page, unless this training instance is different. The
-landing page and the training instances then describe the same
-training.
+landing page and the training instances then describe the same training.
+
+As on the landing page, some fields in `data/course.yml` are
+**required**, and some are optional. The explanations in the file, in
+the lines starting with `#`, say which: read them carefully.
+
+Work through `data/course.yml` with the table below. Required fields are
+marked with **\***.
+
+::: {.callout-important}
+## Leaving out optional fields 
+If an optional field doesn't apply to
+your training, such as `credits` or `examination`, you can leave it out
+in two ways:
+
+- delete it: the field name and all lines that belong to it;
+- leave it empty: nothing after the colon, `""` or `[]`.
 :::
 
+| Field | Where it appears | What to fill in |
+|---|---|---|
+| `title`**\***, `subtitle` | The navigation bar, the welcome section, the Syllabus page and the browser tab | The name of your training, and one sentence about it |
+| `description`**\*** | The Syllabus page | What the training covers |
+| `start_date`, `end_date` | The welcome section and the Syllabus page | The dates, as `"YYYY-MM-DD"` |
+| `duration`, `mode`**\***, `instruction`, `location`**\*** | The welcome section and the Syllabus page | How long, online or in person, how participants learn, and where |
+| `language`**\*** | The Syllabus page, the README and the citation | For example `"English"` |
+| `target_audience`**\***, `expertise_level`, `prerequisites` | The Syllabus page | Who the training is for, and what they need to know or have before |
+| `learning_outcomes`**\***, `keywords`**\*** | The Syllabus page and the citation | What participants can do afterwards, and a few terms that describe the subject |
+| `credits`, `examination` | The Syllabus page | Credits, and how participants are assessed, if at all |
+| `organizers`**\***, `content_providers`, `funding` | The Syllabus page and the footer; `organizers` also in the citation | The organisations behind the training |
+| `contact` → `email`**\*** | The Syllabus page | The address participants send questions to |
+| `reuse` → `licence`**\***, `licence_url` | The footer ("Licensed under …"), the README and the citation | CC BY 4.0 by default. Keep it, or change it. If you change it, also replace the text in `LICENSE.md` with the full text of your new licence |
+
+: {tbl-colwidths="[25,30,45]"}
+
+For example, this is `data/course.yml` filled in for Introduction to R. The explanations starting with # are left out, so the whole file fits on one screen:
+
+![](images/ipdatafiles-09-courseymlfilledout.png){width=80% fig-alt="Screenshot: all values filled in for the mock course introduction to r in course.yml."}
+
+After saving the file, the preview shows the information on the landing page: 
+
+![](images/ipdatafiles-10-courseymloverview.png){width=80% fig-alt="Screenshot: all values filled in for the mock course introduction to r in course.yml."}
+
+and on the syllabus page: 
+
+![](images/ipdatafiles-11-courseymlsyllabus.png){width=80% fig-alt="Screenshot: all values filled in for the mock course introduction to r in course.yml."}
+
+The other fields under `reuse` can stay as they are for now. The box
+below explains what they are for.
+
 ::: {.callout-note collapse="true"}
-## Self-paced training
+## About the other reuse fields
+
+- `doi`, `version_doi`, `release_date` and `zenodo_communities` belong
+  to publishing your training on Zenodo, and are explained in
+  [FAIRification](fairification.qmd).
+- `licence_id`, `version`, `website_url` and `preferred_citation` can
+  stay empty for most trainings. The template works out the version and
+  the address of your website from the branch name, and creates the
+  citation from your team, title and DOI.
+
+Did you create this training instance from an earlier one of your own?
+Then `version_doi` and `release_date` may be filled in: empty them,
+because they belong to the earlier training instance. Keep `doi`: it
+stays the same for all your training instances.
+:::
+
+Is your training self-paced or in cohorts? Here are some tips for filling out `data/course.yml`. 
+
+::: {.callout-note collapse="true"}
+## Tips for self-paced training
 
 - Leave out `start_date` and `end_date`.
 - Use `duration` for the expected workload, for example
@@ -194,7 +253,7 @@ training.
 :::
 
 ::: {.callout-note collapse="true"}
-## Training in cohorts
+## Tips for training in cohorts
 
 It depends on how you set up your training instances (see
 [Training instances](training-instances.qmd)):
@@ -206,22 +265,6 @@ It depends on how you set up your training instances (see
   Announcements or Practicalities page instead.
 :::
 
-**Reuse and citation**. The `reuse` part at the bottom of `data/course.yml` describes how others
-may reuse and cite your training. **Right now, the only thing to fill in
-is the licence:**
-
-- `licence` and `licence_url`: CC BY 4.0 by default. Keep it, or change
-  it. If you change it, also replace the text in `LICENSE.md` with the
-  full text of your new licence.
-
-Leave the other fields empty for now. They behave the same as in [landing page](landing-page.qmd) and will be explained in [FAIRification](fairification.qmd).
-
-::: {.callout-important}
-Creating a training instance from one of your own earlier training
-instances? Then `version_doi` and `release_date` are probably filled in:
-empty them, because they belong to the earlier training instance. Keep
-`doi`: it stays the same for all your training instances.
-:::
 
 ### The team: team.yml {.unnumbered}
 
