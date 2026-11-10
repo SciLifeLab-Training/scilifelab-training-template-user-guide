@@ -2,83 +2,168 @@
 title: "Instance pages - Data files"
 ---
 
-Now that you have made your new training instance, it is time to fill it with the content of your training. In this chapter, you will add all the content that describved your training, in data files, like for the landing page. 
-How to add your training materials and instructor notes follows in the next chapter,
-[Instance pages - Content](instance-pages-content.qmd).
-
-The figure below shows the parts of a training instance website, and
-the names this guide uses for them.
-
-FIG fig-alt="Annotated example of a training instance website: the navigation bar with logos, the welcome section, the registration banner, the Next up section, the quick links, announcements, the team preview and the footer."
+Now that you have created your training instance, it's time to fill it
+with the information about your training. As on the
+[landing page](landing-page.qmd), you do this in data files. For training instances, some of these files are required, and others are optional. Which optional files you include is up to you and depends on the type of training you give.
 
 In this chapter, you will learn how to:
 
 - [Switch off template mode](#switch-off-template-mode): replace the
   README and remove the template banner.
-- [Fill in the required information](#required-information): the
-  training, the team and the overview page.
-- [Add the optional pages](#optional-pages): the schedule,
+- [Fill in the required data files](#required-information): the
+  overview page, the training and the team.
+- [Fill in the optional data files](#optional-pages): the schedule,
   announcements, practicalities, preparation, FAQ and resources.
 
+How to add your training materials and instructor notes to your training instance follows in the next chapter, [Instance pages - Content](instance-pages-content.qmd).
 
 ### Before you start {.unnumbered}
 
-Work on the branch of your training instance, for example
-**release-2705**, as described in [Regular workflow](workflow.qmd).
+Everything in this chapter happens on the **branch of your training instance** (for example
+**release-2706**), and almost all of it in the data files in the `data` folder. 
 
-Everything in this chapter happens in the data files in the `data`
-folder. Each data file explains how it works, in the lines starting with `#`:
-which fields are required, what they do, and the rules they must follow.
-Read these explanations carefully before you fill in a file.
+Not sure how a data file works? See [Data files](repository-structure.qmd#data-files).
+
+Work as described in [Regular workflow](workflow.qmd). 
+
+The [cheat sheet](#cheat-sheet) at the end of this chapter sums up which
+file to open, and what to change, for each part of the training instance
+website.
 
 ## Switch off template mode {#switch-off-template-mode}
 
-Do this once, on the branch of your **first** training instance: the
-one you created from **release-0000** (see
+Just like the [landing page](landing-page.qmd#switch-off-template-mode),
+your training instance branch still presents itself as the template, in
+two places: the README and the template banner. Replace the README, and
+then switch off template mode, so your training instance presents your
+own training.
+
+::: {.callout-note}
+Do this once, on the branch of your **first** training instance: the one
+you created from **release-0000** (see
 [Create your first new training instance](training-instances.qmd#create-your-first-new-training-instance)).
-Later additional training instances start from the branch of your first training instance, so all changes you've made on that branch will be copied.
+Later training instances start from that branch, so these changes come
+along: template mode is already switched off there.
+:::
 
 ### Replace the README {.unnumbered}
 
-Just like for the [landing page](landing-page.qmd), your new training instance branch still has the README of the template. Replace it with
-the ready-made README for a training instance, which is already on your
-branch, in the `docs` folder:
+1. In the Explorer panel, open `docs/_template-README.md`, select all
+   text, and copy it.
 
-1. Open `docs/_template-README.md`, select all text, and copy it.
-2. Open `README.md`, at the top level of your training instance repository. Select all text, and paste, so the copied text
-   replaces it.
-3. Delete the explanation at the top of the file, between `<!--` and
-   `-->`, and the note starting with `> **Template:**`.
-4. Fill in the parts marked **Write this yourself**, and save the file.
+   ![](images/ipdatafiles-01-templatereadme.png){width=85% fig-alt="Screenshot: template-README.md file in docs/ folder"}
 
-The other parts of the README, between `<!-- generated:... -->` lines,
-fill in by themselves, from the data files of your training instance.
+2. Open `README.md` in the main folder of your instance branch, select all
+   text, and paste, so the copied text replaces it.
+3. Delete the note at the top of the file, between `<!--` and
+   `-->`, and the line starting with `> **Template:**`.
+
+   ![](images/ipdatafiles-02-readme.png){width=75% fig-alt="Screenshot: README.md file in repository root with template-README text copied and pasted into it"}
+
+4. Fill in the parts marked **Write this yourself**, as on the landing
+   page (see [the example](landing-page.qmd#readme-sections)). The other
+   parts, between `<!-- generated:... -->` lines, are filled in
+   automatically from your data files.
+5. Save the file.
 
 ::: {.callout-note collapse="true"}
 ## Optional: delete docs/_template-README.md
 
-You now no longer need `docs/_template-README.md`. In the
-Explorer panel, right-click the file and choose **Delete**.
+You no longer need `docs/_template-README.md`. In the Explorer panel,
+right-click the file and choose **Delete**. Keep the rest of the `docs`
+folder.
+
+   ![](images/ipdatafiles-03-deletetemplate.png){width=45% fig-alt="Screenshot: delete the template README in the docs folder"}
+
 :::
 
 ### Remove the template banner {.unnumbered}
-The training instance also has a template banner, and it is turned off in the same way as for the [landing page](landing-page.qmd). 
-
 1. Open `data/website.yml`.
 2. Change `template: true` to `template: false`.
+
+   ![](images/ipdatafiles-04-templatefalse.png){width=60% fig-alt="Screenshot: changed template:true to template:false in data/website.yml."}
+
 3. Save the file.
 4. The yellow [Want to use this template?]{.template-label} banner
-disappears from the overview page.
+disappears from the overview page, and all automatically generated files now describe your training instance's details. 
 
-## Required information {#required-information}
+   ![](images/ipdatafiles-05-templatebannergone.png){width=80% fig-alt="Screenshot: template banner gone on overview page."}
 
-Every training instance **requires** three data files to be filled in: `course.yml`,
-`team.yml` and `website.yml`.
 
-### The training: course.yml {.unnumbered}
+## Fill in the required data files {#required-information}
 
-`data/course.yml` describes your training instance. Most of it appears
-on the overview page and the **Syllabus** page.
+Now you can make the website of your training instance your own. Every
+training instance **requires** three data files to be filled in: `website.yml`,
+`course.yml` and `team.yml`. This section goes through them one by one.
+
+### `website.yml`: the overview page  {.unnumbered}
+
+`data/website.yml` mainly sets what appears on the **overview page**,
+the first page of your training instance website. The figure below shows
+the parts of the overview page, and their names:
+
+   ![](images/ipdatafiles-06-overviewpage.png){fig-alt="Screenshot: overview page with annotation of section."}
+
+In `data/website.yml`, you set the **logos, the welcome section, the
+registration banner and the texts of the quick links**. The other parts
+of the overview page come from other data files.
+
+Work through `data/website.yml` with the table below. The explanations
+in the file, in the lines starting with `#`, give the rules for each
+field: read them carefully. Many of the changes work the same as on the
+landing page: see [Customise the look](landing-page.qmd#customise-the-look).
+
+| Part of `website.yml` | What it sets | What to do |
+|---|---|---|
+| `navbar` → `logos` | The logos in the navigation bar | Copy the logo file into the `img` folder, and add its details below the existing logo in `logos` with `src`, `alt` and `height`.  |
+| `welcome` | The title, text and image of the welcome section | Change `title` and `text`. For your own image, put it in the `img` folder, change `src` to its path, and describe it in `alt` |
+| `registration` | The registration banner | Fill in `opening_date`, `closing_date`, the link under `url` and, if there is one, the fee under `cost`. Choose with `after_closing` whether the banner shows "closed" or disappears after registration closes. Without registration, set `enabled: false` |
+| `pages` | The title, description and icon of each quick link | Change `title`, and `description` and pick an `icon` from [Bootstrap Icons](https://icons.getbootstrap.com/) |
+
+: {tbl-colwidths="[20,30,50]"}
+
+For example, this is `data/website.yml` filled in for a made-up training,
+Introduction to R. The explanations starting with `#` are left out, so
+the whole file fits on one screen:  
+
+
+
+There are two additional fields in `data/website.yml`: `footer` and `content`. Leave them as they are for now. The boxes below explain what they are for.
+
+::: {.callout-note collapse="true"}
+## About the footer
+
+You don't need to change anything in the `footer` part of
+`data/website.yml`. The footer fills itself in:
+
+- **The organisation** ("By …") comes from `organizers` in
+  `data/course.yml`.
+- **The licence** ("Licensed under …") comes from `licence` and
+  `licence_url` under `reuse` in `data/course.yml`.
+- **The GitHub logo** links to your own repository, worked out
+  automatically.
+
+The `built_with` part credits the SciLifeLab Training Webpage Template,
+which your website is built with. Leave it as it is.
+:::
+
+::: {.callout-note collapse="true"}
+## About the content part
+
+The `content` part at the bottom of `data/website.yml` lists the modules
+of your training materials, and the order in which they appear in the
+navigation. Leave it as it is for now: you'll change it when you add
+your own materials, as described in
+[Instance pages - Content](instance-pages-content.qmd).
+:::
+
+### `course.yml`: the training {.unnumbered}
+
+`data/course.yml` describes your training instance, the same way as for the landing page on the main branch. The information you enter here appears on the overview page, the **Syllabus** page, 
+
+The information you enter in these files is also used in the README and
+the citation of your training, and helps people find it in Zenodo and
+training registries such as TeSS.
 
 Open `data/course.yml`, and work through it from the top down up to (not including) the
 `reuse` part. The comments at the top of the data file list which fields are
@@ -161,66 +246,6 @@ The overview page shows up to two people: training leads first, then
 instructors. Photos are optional: put them in the `img/photos` folder,
 and add their path under `image`.
 
-### The overview page: website.yml {.unnumbered}
-
-`data/website.yml` sets the parts of the overview page that don't come
-from other files. Open it, and work through the parts below. You can
-leave the rest of the file as it is: the `content` part follows in the
-next chapter, and the footer fills itself in.
-
-| Part of the file | What it sets |
-|---|---|
-| `navbar` → `logos` | The logos in the navigation bar. As on the landing page, the logo with `primary: true` (SciLifeLab) is always on the right, and you set the size of each logo with `height`. See [Logos](landing-page.qmd#customise-the-look) |
-| `welcome` | The title, text and image of the welcome section. Put the image in the `img` folder |
-| `registration` | The registration banner: when registration opens and closes, the link to the registration page or form, and the fee |
-| `pages` | The texts on the quick links. You can usually leave them as they are: see the note below |
-
-: {tbl-colwidths="[30,70]"}
-
-::: {.callout-note collapse="true"}
-## About the quick links
-
-The overview page shows up to four **quick links**: cards that lead to
-the most important pages. **Content** and **Syllabus** always get one.
-The other pages, in the order Schedule, Practicalities, Preparation,
-Resources and FAQ, get one only when their data file contains
-information, while there's room.
-
-In the `pages` part of `data/website.yml`, you can change the title,
-description and icon of each quick link. The icons come from
-[Bootstrap Icons](https://icons.getbootstrap.com/).
-
-To keep a page out of the quick links, delete its entry in
-`data/website.yml`. The page itself stays in the navigation bar, as long
-as its data file contains information.
-:::
-
-::: {.callout-note collapse="true"}
-## About the footer
-
-You don't need to change anything in the `footer` part of
-`data/website.yml`. The footer fills itself in:
-
-- **The organisation** ("By …") comes from `organizers` in
-  `data/course.yml`.
-- **The licence** ("Licensed under …") comes from `licence` and
-  `licence_url` under `reuse` in `data/course.yml`.
-- **The GitHub logo** links to your own repository, worked out
-  automatically.
-
-The `built_with` part credits the SciLifeLab Training Webpage Template,
-which your website is built with. Please leave it as it is.
-:::
-
-::: {.callout-note collapse="true"}
-## About the content part
-
-The `content` part at the bottom of `data/website.yml` lists the modules
-of your training materials, and the order in which they appear in the
-navigation. Leave it as it is for now: you'll change it when you add
-your own materials, as described in
-[Instance pages - Content](instance-pages-content.qmd).
-:::
 
 ## Optional pages {#optional-pages}
 

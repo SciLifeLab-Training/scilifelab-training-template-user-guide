@@ -3,8 +3,9 @@ title: "Training instances"
 ---
 
 Your landing page now introduces your training as a whole. The next step
-is to add the times your training is actually given: the training
-instances, which visitors reach from the landing page.
+is to add the times your training is actually given, each with its own
+website and training materials. These are the **training instances**,
+which learners reach from the landing page.
 
 In this chapter, you will learn how to:
 
@@ -24,7 +25,6 @@ In this chapter, you will learn how to:
 2. **Add it to the landing page**, in `data/instances.yml` on the
    **main** branch: this makes the website findable.
    
-This is the same for your first training instance and every one after it.
 :::
 
 How to switch off template mode and fill in the website of a training instance (its dates, schedule, team and materials) is explained in the next chapters,
@@ -131,8 +131,7 @@ cohort, two cohorts can't start in the same month.
 
 ### Switch branch {#switch-branch .unnumbered}
 
-A new branch is always created as a copy of an existing one, so you first have to switch to
-the branch you want to create a copy of. 
+Once you have chosen a name, you can begin creating your new training instance, on a new repository branch. A new branch is always created as a copy of an existing one, so you first have to switch to the branch you want to create a copy of. 
 
 For your **first** training instance: switch to **release-0000**, the example
 training instance that comes with the template.
@@ -204,7 +203,7 @@ To add your first training instance to the landing page:
 
    ![](images/instance-11-instanceonlandingpage.png){width=75% fig-alt="Screenshot: landing page showing the june 2027 training instance."}
 
-   Then commit and push your changes.
+   Commit and push your changes.
 
 If you break one of the rules described in the file, the preview shows
 an error that explains what to fix.

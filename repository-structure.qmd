@@ -56,7 +56,10 @@ as they were.
 
 A training instance branch is named **release-** followed by the year
 and month of the training, written as YYMM. For example,
-**release-2705** is the training instance held in May 2027.
+**release-2705** is the training instance given in May 2027. For
+self-paced training and training in cohorts, the year and month may mean
+something slightly different: see
+[Training instances](training-instances.qmd#choose-a-name).
 
 ### An example {.unnumbered}
 

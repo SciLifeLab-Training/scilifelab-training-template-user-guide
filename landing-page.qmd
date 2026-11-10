@@ -93,7 +93,7 @@ describes the template:
    from your data files.
 6. Save the file.
 
-   ![](images/landing-04-editreadme.png){width=70% fig-alt="Screenshot: show which sections of the README to edit"}
+   ![](images/landing-04-editreadme.png){#readme-sections width=70% fig-alt="Screenshot: the README, with the parts to write yourself marked."}
    
 ### Remove the template banner {.unnumbered}
 
@@ -407,6 +407,7 @@ The team is also used for the citation of your training. Open
 
 ![](images/landing-21-citationfile.png){fig-alt="Screenshot: citation.cff with all the  values for the mock course."}
 
+Note that 'Jonas Ek' had `citation_author:` set to `false` and is therefore not included in CITATION.cff. 
 
 ## Cheat sheet
 
