@@ -220,26 +220,11 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="#add-an-instance-to-the-landing-page">Add an instance to the landing page</a>: list it in the <strong>All training instances</strong> banner, and link it in the hero buttons.</li>
 <li><a href="#create-additional-training-instances">Create additional training instances</a>, the next time your training is given.</li>
 </ul>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Adding a training instance always takes two steps!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li><strong>Create a branch</strong> for the training instance: this creates its website.</li>
-<li><strong>Add it to the landing page</strong>, in <code>data/instances.yml</code> on the <strong>main</strong> branch: this makes the website findable.</li>
-</ol>
-</div>
-</div>
 <p>How to switch off template mode and fill in the website of a training instance (its dates, schedule, team and materials) is explained in the next chapters, <a href="./instance-pages-data-files.html">Instance pages - Data files</a> and <a href="./instance-pages-content.html">Instance pages - Content</a>.</p>
 <section id="before-you-start" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="before-you-start">Before you start</h3>
 <p>In this chapter, you work on two branches: the new <strong>release-</strong> branch, and <strong>main</strong> for the landing page.</p>
+<p>Work as described in <a href="./workflow.html">Regular workflow</a>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -263,7 +248,7 @@ Important
 </ul>
 <p>Is your training <strong>self-paced</strong>, or given to several <strong>cohorts</strong>? The template works for those too: open the matching box below.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -272,7 +257,7 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In self-paced training, participants start whenever they like, so there is no “time the training is given”. Instead, think of a training instance as a <strong>version</strong> of your materials:</p>
 <ul>
@@ -283,7 +268,7 @@ Important
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -292,7 +277,7 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If your training runs in <strong>cohorts</strong>, groups of participants who follow the same training at different times, how you set up your training instances depends on how your training is organised: does each cohort need its own website, or do the cohorts share one?</p>
 <p><strong>Option 1: one training instance per cohort</strong></p>
@@ -311,6 +296,22 @@ Important
 </section>
 <section id="create-your-first-new-training-instance" class="level2" data-number="6.2">
 <h2 data-number="6.2" data-anchor-id="create-your-first-new-training-instance"><span class="header-section-number">6.2</span> Create your first new training instance</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Adding a training instance always takes two steps!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Create a branch</strong> for the training instance: this creates its website.</li>
+<li><strong>Add it to the landing page</strong>, in <code>data/instances.yml</code> on the <strong>main</strong> branch: this makes the website findable.</li>
+</ol>
+</div>
+</div>
 <section id="choose-a-name" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="choose-a-name">Choose a name</h3>
 <p>Each training instance branch is named <strong>release-</strong> followed by the year and month in which the training instance is given, written as YYMM (see <a href="./repository-structure.html#branches">Branches</a>). For example:</p>
