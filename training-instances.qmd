@@ -17,16 +17,6 @@ In this chapter, you will learn how to:
 - [Create additional training instances](#create-additional-training-instances),
   the next time your training is given.
 
-::: {.callout-important}
-## Adding a training instance always takes two steps!
-
-1. **Create a branch** for the training instance: this creates its
-   website.
-2. **Add it to the landing page**, in `data/instances.yml` on the
-   **main** branch: this makes the website findable.
-   
-:::
-
 How to switch off template mode and fill in the website of a training instance (its dates, schedule, team and materials) is explained in the next chapters,
 [Instance pages - Data files](instance-pages-data-files.qmd) and [Instance pages - Content](instance-pages-content.qmd).
 
@@ -34,6 +24,8 @@ How to switch off template mode and fill in the website of a training instance (
 
 In this chapter, you work on two branches: the new **release-** branch,
 and **main** for the landing page.
+
+Work as described in [Regular workflow](workflow.qmd).
 
 ::: {.callout-important}
 Commit and push your changes **before** you switch to another branch.
@@ -97,6 +89,16 @@ need its own website, or do the cohorts share one?
 :::
 
 ## Create your first new training instance
+
+::: {.callout-important}
+## Adding a training instance always takes two steps!
+
+1. **Create a branch** for the training instance: this creates its
+   website.
+2. **Add it to the landing page**, in `data/instances.yml` on the
+   **main** branch: this makes the website findable.
+   
+:::
 
 ### Choose a name {.unnumbered}
 

@@ -4,15 +4,17 @@ title: "Instance pages - Data files"
 
 Now that you have created your training instance, it's time to fill it
 with the information about your training. As on the
-[landing page](landing-page.qmd), you do this in data files. For training instances, some of these files are required, and others are optional. Which optional files you include is up to you and depends on the type of training you give.
+[landing page](landing-page.qmd), you do this in several data files. For training instances, some of these data files are **required**: the website can't be built until
+they are filled in. Others are **optional**: which ones you use is up to
+you, and depends on the type of training you give.
 
 In this chapter, you will learn how to:
 
 - [Switch off template mode](#switch-off-template-mode): replace the
   README and remove the template banner.
-- [Fill in the required data files](#required-information): the
+- [Fill in the required data files](#fill-in-the-required-data-files): the
   overview page, the training and the team.
-- [Fill in the optional data files](#optional-pages): the schedule,
+- [Fill in the optional data files](#fill-in-the-optional-data-files): the schedule,
   announcements, practicalities, preparation, FAQ and resources.
 
 How to add your training materials and instructor notes to your training instance follows in the next chapter, [Instance pages - Content](instance-pages-content.qmd).
@@ -27,23 +29,22 @@ Not sure how a data file works? See [Data files](repository-structure.qmd#data-f
 Work as described in [Regular workflow](workflow.qmd). 
 
 The [cheat sheet](#cheat-sheet) at the end of this chapter sums up which
-file to open, and what to change, for each part of the training instance
+file to open, and what to change, for each part of your training instance
 website.
 
-## Switch off template mode {#switch-off-template-mode}
+## Switch off template mode
 
 Just like the [landing page](landing-page.qmd#switch-off-template-mode),
 your training instance branch still presents itself as the template, in
-two places: the README and the template banner. Replace the README, and
-then switch off template mode, so your training instance presents your
-own training.
+two places: the README and the template banner. You switch off template
+mode the same way as on the landing page: replace the README, and then
+remove the template banner.
 
 ::: {.callout-note}
 Do this once, on the branch of your **first** training instance: the one
 you created from **release-0000** (see
 [Create your first new training instance](training-instances.qmd#create-your-first-new-training-instance)).
-Later training instances start from that branch, so these changes come
-along: template mode is already switched off there.
+Later training instances start from your first training instance branch, so the changes you've made there come along: template mode is already switched off.
 :::
 
 ### Replace the README {.unnumbered}
@@ -90,11 +91,12 @@ disappears from the overview page, and all automatically generated files now des
    ![](images/ipdatafiles-05-templatebannergone.png){width=80% fig-alt="Screenshot: template banner gone on overview page."}
 
 
-## Fill in the required data files {#required-information}
+## Fill in the required data files
 
 Now you can make the website of your training instance your own. Every
-training instance **requires** three data files to be filled in: `website.yml`,
-`course.yml` and `team.yml`. This section goes through them one by one.
+training instance **requires** three data files to be filled in: the website doesn't built until the required information is present. If a required field is missing, the preview stops with an error that names the missing file and field. 
+
+The **required** data files are `website.yml`, `course.yml` and `team.yml`. This section goes through them one by one.
 
 ### `website.yml`: the overview page  {.unnumbered}
 
@@ -108,10 +110,11 @@ In `data/website.yml`, you set the **logos, the welcome section, the
 registration banner and the texts of the quick links**. The other parts
 of the overview page come from other data files.
 
-Work through `data/website.yml` with the table below. The explanations
-in the file, in the lines starting with `#`, give the rules for each
-field: read them carefully. Many of the changes work the same as on the
-landing page: see [Customise the look](landing-page.qmd#customise-the-look).
+The table below gives a general overview of what to change in
+`data/website.yml` to customize it for your training. **More detailed explanations are in the file itself:** the explanations in the lines starting with `#` give the rules for each
+field. **Read them carefully as you work through the file.**   
+Many of the changes work the same as on the landing page, so visit
+[Customise the look](landing-page.qmd#customise-the-look) for additional detailed info. 
 
 | Part of `website.yml` | What it sets | What to do |
 |---|---|---|
@@ -155,7 +158,7 @@ which your website is built with. Leave it as it is.
 ::: {.callout-note collapse="true"}
 ## About the content part
 
-The `content` part at the bottom of `data/website.yml` lists the modules
+The `content` part at the bottom of `data/website.yml` lists the sections
 of your training materials, and the order in which they appear in the
 navigation. Leave it as it is for now: you'll change it when you add
 your own materials, as described in
@@ -170,16 +173,11 @@ on the landing page. The information appears on the overview page, the
 helps people find your training on Zenodo and in training registries
 such as TeSS.
 
-Use the same title, description, learning outcomes and keywords as on
-the landing page, unless this training instance is different. The
-landing page and the training instances then describe the same training.
+To add information about your training to `data/course.yml`, work through the file according to the table below. Some fields in `data/course.yml` are
+**required** - like on the landing page -  and some are optional. Required fields are
+marked in the table below with **\***.
 
-As on the landing page, some fields in `data/course.yml` are
-**required**, and some are optional. The explanations in the file, in
-the lines starting with `#`, say which: read them carefully.
-
-Work through `data/course.yml` with the table below. Required fields are
-marked with **\***.
+**More detailed explanations are in the `data/course.yml`file itself:** the explanations in the lines starting with # give the rules for each field. **Read them carefully as you work through the file.**
 
 ::: {.callout-important}
 ## Leaving out optional fields 
@@ -211,7 +209,7 @@ For example, this is `data/course.yml` filled in for Introduction to R. The expl
 
 ![](images/ipdatafiles-09-courseymlfilledout.png){width=80% fig-alt="Screenshot: all values filled in for the mock course introduction to r in course.yml."}
 
-After saving the file, the preview shows the information on the landing page: 
+After saving the file, the preview shows the information on the overview page: 
 
 ![](images/ipdatafiles-10-courseymloverview.png){width=80% fig-alt="Screenshot: all values filled in for the mock course introduction to r in course.yml."}
 
@@ -268,75 +266,126 @@ It depends on how you set up your training instances (see
 
 ### The team: team.yml {.unnumbered}
 
-The people in `data/team.yml` appear on the **Team** page, on the
-Syllabus page, and in a team preview on the overview page. They are also
-credited in the citation of the training instance.
+`data/team.yml` describes the team behind this specific instance of your training: the people who lead it, teach it, or contributed to it. The
+team can change from one training instance to the next, so each
+training instance has its own `team.yml`.
 
-Open `data/team.yml` and fill in each person. To **add** a person, copy
-a whole entry, from `- given_names:` to the line before the next person,
-paste it below, and change the values. To **remove** a person, delete
-their whole entry.
+The people in `data/team.yml` appear on the **Team** page, in the team
+preview on the overview page, and with the training leads on the
+**Syllabus** page. If they are authors, they are also credited in the
+citation of the training instance.
+
+Open `data/team.yml` and fill in each person. The table below gives an overview of the fields for each person. **More detailed explanations are in the file itself:** the explanations in the lines starting with `#` give the rules for each field, and show
+examples. **Read them carefully as you work through the file.**
+
 
 ::: {.callout-important}
-- Every person needs `given_names`, `family_names`, `roles` and
-  `affiliation`. The roles are `Training lead`, `Instructor` and
-  `Contributor`.
-- At least one person needs `course_contact: true` and an `email`:
-  participants contact them with questions.
+## Adding and removing team members 
+To **add** a person, copy a whole entry, from `- given_names:` to the line before the next person, paste it below, and change the values.   
+To **remove** a person, delete their whole entry.
 :::
 
-The overview page shows up to two people: training leads first, then
-instructors. Photos are optional: put them in the `img/photos` folder,
-and add their path under `image`.
 
-
-## Optional pages {#optional-pages}
-
-The other data files are the flexible part of your training instance.
-Which ones you need depends on your training: a self-paced training has
-no schedule, an online training needs no practicalities about a venue,
-and a short workshop may not need announcements.
-
-| Page | Data file | Where it appears |
+| Field | Where it appears | What to fill in |
 |---|---|---|
-| **Schedule** | `data/schedule.yml` | Its own link in the navigation bar, and the **Next up** section on the overview page |
-| **Announcements** | `data/announcements.yml` | The **Information** menu, and the two latest announcements on the overview page |
-| **Practicalities** | `data/practicalities.yml` | The **Information** menu |
-| **Preparation** | `data/preparation.yml` | The **Information** menu |
-| **FAQ** | `data/faq.yml` | The **Information** menu |
-| **Resources** | `data/resources.yml` | The **Information** menu |
+| `given_names`**\***, `family_names`**\*** | Everywhere the person is shown | The person's name |
+| `roles`**\*** | The Team page, the overview page and the README | `Training lead`, `Instructor` or `Contributor` |
+| `affiliation`**\*** | The Team page, the overview page, the Syllabus page and the citation | The person's organisation |
+| `job_title`, `bio` | The Team page | Their job, and one or two sentences about them |
+| `email`, `course_contact` | The Team page and the Syllabus page | At least one person needs `course_contact: true` and an `email` |
+| `orcid`, `github`, `linkedin`, `website` | The Team page, as small icons; `orcid` also in the citation | Links to their profiles |
+| `image` | The Team page and the overview page | The path to their photo, in the `img/photos` folder |
+| `citation_author` | The citation | Set to `false` to leave the person out of the citation |
 
-: {tbl-colwidths="[20,30,50]"}
+: {tbl-colwidths="[28,32,40]"}
 
-A page only appears when its data file contains information. **Team**
-and **Syllabus** are always in the **Information** menu: they come from
-the required files `team.yml` and `course.yml`.
+For example, this is `data/team.yml` filled in for Introduction to R.
+The explanations starting with `#` are left out, so the whole file fits
+on one screen:
 
-Fill in the files you need, and leave out the others.
+![](images/ipdatafiles-12-teamymlfilledout.png){width=65% fig-alt="Screenshot: data/team.yml filled in for the made-up training Introduction to R."}
 
-### Fill in a page {.unnumbered}
+After saving the file, the preview shows the team on the Overview page:
 
-Each data file starts with an explanation of its page. Read it carefully
-before you fill in the file: it describes what each field does, which
-fields are required, and how the page behaves. It also has a part called
-**Leaving information out**, which explains how to leave out one item or
-a whole section without breaking the page.
+![](images/ipdatafiles-13-teamoverview.png){width=50% fig-alt="Screenshot: the team preview on the overview page, with the training lead and the first instructor."}
+
+the Syllabus page: 
+
+![](images/ipdatafiles-14-syllabuspage.png){width=60% fig-alt="Screenshot: the team preview on the syllabus page, with the training lead."}
+
+and the Team page:
+
+![](images/ipdatafiles-15-teampage.png){width=80% fig-alt="Screenshot: the Team page, with the training lead, the instructors and the contributor."}
+
+
+## Fill in the optional data files
+
+You have now added all required information your training instance needs to built its website. As you can see in your training instance branch,  the `data` folder holds six more data files: `data/schedule.yml`, `data/announcements.yml`, `data/practicalities.yml`, `data/preparation.yml`, `data/faq.yml`, `data/resources.yml`. In these files, you can add more, non-required information about your training that might be useful for you and your training's participants. The table below shows which information goes in which file, and where it appears on the website:
+
+| Data file | What it contains | Where it appears |
+|---|---|---|
+| `data/schedule.yml` | The schedule of your training: its sessions, breaks and other events | The **Schedule** page, with its own link in the navigation bar, and the **Next up** section on the overview page |
+| `data/announcements.yml` | News and updates for participants | The **Announcements** page in the **Information** menu, and the two latest announcements on the overview page |
+| `data/practicalities.yml` | The venue, travel, accommodation and food | The **Practicalities** page in the **Information** menu |
+| `data/preparation.yml` | What participants need to do before the training, such as creating accounts or installing software | The **Preparation** page in the **Information** menu |
+| `data/faq.yml` | Frequently asked questions, and their answers | The **FAQ** page in the **Information** menu |
+| `data/resources.yml` | Further reading, useful links and tools for after the training | The **Resources** page in the **Information** menu |
+
+: {tbl-colwidths="[22,33,45]"}
+
+These data files are the flexible part of your training instance: you choose which
+ones you need, depending on what type of training you're organizing. For example, a self-paced training has no schedule, an online training needs no practicalities
+about a venue, and a short workshop may not need announcements.
+
+### Fill in optional pages {.unnumbered}
+
+To fill in the optional pages, first choose which files you need for your specific training instance using the table above.
+
+**For each file you need:**   
+Open it, and work through the values.
+**Read the explanations in the lines starting with `#` carefully.** They
+describe what each field does, how the page behaves, and how to leave
+out one item or a whole section without breaking the page.
 
 ::: {.callout-important collapse="true"}
 ## Using a schedule? Read this first
 
-The schedule needs a bit more care than the other pages, because the
-website uses its dates and times:
+The schedule needs a bit more care than the other optional pages. The website
+doesn't just show your dates and times: it uses them to put the events
+in order, to show the date of each day, and to work out which event is
+next, for the **Next up** section and its countdown on the overview
+page. A mistake in a date or time can put events in the wrong order, or
+stop the website from building.
 
 - Each event, such as a lecture, an exercise or a break, is one entry,
   from `- title:` to `content:`. Every event needs a `title`, `type`,
   `group`, `start` and `end`.
+
+  ![](images/ipdatafiles-16-schedulerequired.png){width=45% fig-alt="Screenshot: required fields for each event in data/schedule.yml."}
+
 - Write dates and times exactly as explained in the file, for example
-  `2027-05-12T09:00`, and use one of the event types listed there.
-- Events with the same `group`, for example `"Day 1"`, are shown
-  together, in order of their start time.
+  `2027-05-12T09:00`
+- Use one of the event types that are supported by the template: lecture, workshop, practical, discussion, break, welcome, lunch, presentation, assessment, group-work, exercise, consultation, quiz, feedback, seminar
+- Events with the same `group` are shown together, on their own tab of
+  the Schedule page, in order of their start time. You can choose how you want to group events, for example: 
+  - **By day**, for a training over a few days in a row: `"Day 1"`,
+  `"Day 2"`, `"Day 3"`. The tab adds the date, for example *Day 1 –
+  Monday, May 17*.
+  - **By week**, for a training with one session a week: `"Week 1"`,
+  `"Week 2"`.
+  - **By topic**, when each topic is taught on its own day: for example
+  `"Getting started"`, `"Data wrangling"`, `"Plotting"`.
+
+    For example, events grouped under day 1: 
+
+      ![](images/ipdatafiles-17-scheduleday1group.png){width=45% fig-alt="Screenshot: all events with group: day 1 in data/schedule.yml."}
+    
+    Are shown as follows on the schedule page: 
+
+      ![](images/ipdatafiles-18-scheduleday1.png){width=70% fig-alt="Screenshot: all events with group: day 1 on schedule page."}
+
 - To link an event to a page of your materials, fill in `content` with
-  the path to that page, for example
+  the path to that page in your instance branch, for example
   `"content/module-1/introduction.qmd"`.
 
 The **Next up** section on the overview page then always shows the next
@@ -344,29 +393,72 @@ event, with a countdown, without you having to change anything during
 the training.
 :::
 
-### Leave a page out {.unnumbered}
+**For each file you don't need:**   
+delete the file, or delete everything in it. 
 
-Delete its data file, or delete everything in it. The page and its link
-in the navigation bar disappear by themselves.
+::: {.callout-note}
+While you are filling out or deleting the optional data files, the navigation bar and the quick links update by themselves. A page appears when its data file contains information. If the file is empty, or doesn't exist, the page is left out of the navigation bar and the
+quick links.
+
+**Team** and **Syllabus** are always in the **Information** menu: they
+come from the required files `team.yml` and `course.yml`.
+:::
 
 ::: {.callout-tip}
-Changed your mind later? Every data file is still in the template, on
+Deleted a file, and changed your mind later? Every data file is still in the template, on
 the **release-0000** branch. Copy it from there, or from one of your
 earlier training instances.
 :::
 
+### Example: Introduction to R {.unnumbered}
+
+Introduction to R uses a schedule, practicalities and announcements, but
+no FAQ, preparation or resources. Its `data` folder only holds the files
+it needs:
+ 
+![](images/ipdatafiles-19-folderstructure.png){width=30% fig-alt="Screenshot: the data folder of Introduction to R in the VS Code Explorer, with announcements.yml, course.yml, practicalities.yml, schedule.yml, team.yml and website.yml."}
+
+These are the filled-in `schedule.yml`, and `practicalities.yml` and
+`announcements.yml`:
+
+![](images/ipdatafiles-20-scheduleyml.png){width=85% fig-alt="Screenshot: data/schedule.yml for Introduction to R, with events grouped by topic: Getting started, Data wrangling and Plotting."}
+
+![](images/ipdatafiles-21-practicalitiesannouncementsyml.png){fig-alt="Screenshot: data/practicalities.yml and data/announcements.yml for Introduction to R, side by side."}
+
+On the website, the schedule appears in two places. The **Next up**
+section on the overview page shows the first event, with a countdown:
+
+![](images/ipdatafiles-22-nextup.png){width=90% fig-alt="Screenshot: the Next up section on the overview page, showing the first event, Welcome and introductions, with a countdown."}
+
+The **Schedule** page shows all events, with a tab for each topic:
+
+![](images/ipdatafiles-23-schedulepage.png){width=70% fig-alt="Screenshot: the Schedule page, with tabs for Getting started, Data wrangling and Plotting, and the events of the first topic."}
+
+
+The **Practicalities** page shows the venue, transport, accommodation,
+food and other information:
+
+![](images/ipdatafiles-24-practicalitiespage.png){width=70% fig-alt="Screenshot: the Practicalities page, with the venue address and map link, transport, accommodation, food, and what to bring."}
+
+The announcements appear in two places as well. The overview page shows
+the two newest:
+
+![](images/ipdatafiles-25-announcementsoverview.png){width=50% fig-alt="Screenshot: the Announcements section on the overview page, with the two newest announcements."}
+
+And the **Announcements** page shows all of them, newest first:
+
+![](images/ipdatafiles-26-announcementspage.png){width=70% fig-alt="Screenshot: the Announcements page, with all three announcements, newest first."}
+
+
 ## Cheat sheet {#cheat-sheet}
-
-All on the branch of your training instance.
-
 
 | To... | Where | What to do |
 |---|---|---|
 | Switch off template mode (first instance only) | `data/website.yml` and `README.md` | Set `template: false`, and replace the README with `docs/_template-README.md` |
+| Set up the overview page | `data/website.yml` | `logos` under `navbar`, `welcome`, `registration` and `pages` |
 | Describe the training instance | `data/course.yml` | Fill in the required fields listed at the top of the file, and check the licence under `reuse` |
 | Add the team | `data/team.yml` | One entry per person. At least one person with `course_contact: true` and an `email` |
-| Set up the overview page | `data/website.yml` | `logos` under `navbar`, `welcome`, `registration` and `pages` |
-| Fill in an optional page | `data/schedule.yml`, `announcements.yml`, `practicalities.yml`, `preparation.yml`, `faq.yml` or `resources.yml` | Read the explanation at the top of the file first |
+| Fill in an optional page | `data/schedule.yml`, `announcements.yml`, `practicalities.yml`, `preparation.yml`, `faq.yml` or `resources.yml` | Fill in the fields in the file. Read the explanations in the file carefully |
 | Leave out an optional page | The page's data file | Delete the file, or everything in it |
 
 : {tbl-colwidths="[28,30,42]"}

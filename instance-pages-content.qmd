@@ -2,26 +2,33 @@
 title: "Instance pages - Content"
 ---
 
-The training materials are the heart of your training instance website:
-the pages participants work through. Unlike the rest of the website,
-these pages aren't built from data files: you write them yourself, in
-Markdown, in `.qmd` files in the `content` folder. Your instructor notes,
-in the `instructors` folder, are also written in Markdown.
+Your training instance website now has its overview page, syllabus,
+team and other information pages, all built from data files. What's
+still missing are the training materials: the pages participants work
+through. They are the heart of your training instance website.
+
+**The training materials work differently from the rest of the
+website.** They aren't built from data files: you write them yourself,
+as pages in **Markdown**, a simple way of formatting text. Each page with training material is a `.qmd` file in the `content` folder. 
+
+Next to your training materials, you can also write **instructor notes**, in
+the `instructors` folder. Where the training materials tell participants
+*what* to learn, the instructor notes tell instructors *how to teach
+it*. These are written in Markdown too.
 
 In this chapter, you will learn how to:
 
-- [Organise your training sections and pages](#organise-your-training-sections-and-pages).
+- [Organise your training sections and pages](#organise-your-training-sections-and-pages): define sections, organize them, add them on the website.
 - [Add content to your pages](#add-content-to-your-pages).
 - [Write instructor notes](#write-instructor-notes) for everyone who
   teaches or reuses your training.
 
 ### Before you start {.unnumbered}
 
-Everything in this chapter happens on the branch of your training
-instance, for example **release-2705**. Check the bottom-left corner of
-VS Code before you start: see
-[Switch branch](training-instances.qmd#switch-branch).
+Everything in this chapter happens on the **branch of your training instance** (for example
+**release-2706**). 
 
+Work as described in [Regular workflow](workflow.qmd). 
 
 ## Organise your training sections and pages 
 
