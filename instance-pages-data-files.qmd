@@ -305,15 +305,15 @@ on one screen:
 
 ![](images/ipdatafiles-12-teamymlfilledout.png){width=65% fig-alt="Screenshot: data/team.yml filled in for the made-up training Introduction to R."}
 
-After saving the file, the preview shows the team on the Overview page:
+After saving the file, the preview shows two members of the team on the Overview page:
 
 ![](images/ipdatafiles-13-teamoverview.png){width=50% fig-alt="Screenshot: the team preview on the overview page, with the training lead and the first instructor."}
 
-the Syllabus page: 
+the team lead(s) on the Syllabus page: 
 
 ![](images/ipdatafiles-14-syllabuspage.png){width=60% fig-alt="Screenshot: the team preview on the syllabus page, with the training lead."}
 
-and the Team page:
+and the whole team on the Team page:
 
 ![](images/ipdatafiles-15-teampage.png){width=80% fig-alt="Screenshot: the Team page, with the training lead, the instructors and the contributor."}
 
