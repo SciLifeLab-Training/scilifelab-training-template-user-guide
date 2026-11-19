@@ -4,38 +4,37 @@ title: "FAIRification"
 
 Your training website is set up, and your first training instance is
 ready. As a final step, the SciLifeLab Training Hub encourages you to
-make your training materials **FAIR**: Findable, Accessible,
-Interoperable and Reusable. FAIR training materials are easy to find,
-can be opened by anyone, are described in a standard way, and can be
-reused and cited by others.
+make your training **FAIR: Findable, Accessible, Interoperable and
+Reusable**. This means that others can easily find your training, open
+its materials, read its description in a standard format that computers
+understand, and reuse and cite it.
 
-The template does most of this for you. All you need to do is fill in a
-few more fields in your data files. If you want, you can also publish
-your training on Zenodo.
+Most of the FAIRification is automated in this template. All you need to do is fill in a
+few more fields in your data files. For full FAIRification, it is also recommended to publish your training on Zenodo.
 
 In this chapter, you will learn:
 
 - [What FAIR training is, and how the template makes your training FAIR](#fair-training-what-and-how).
-- [How to fill in the FAIR information](#fill-in-the-fair-information).
-- [How to publish a training instance on Zenodo](#publish-on-zenodo), if
-  you choose to.
-- [How to keep the DOIs right for new training instances](#new-training-instances).
+- [Which FAIR information you fill in yourself, and where](#fill-in-the-fair-information).
+- [How to publish a training instance on Zenodo](#publish-on-zenodo),
+  if you choose to.
+- [How to keep the DOIs up to date when you add a new training instance](#new-training-instances).
 
 ### Before you start {.unnumbered}
 
 You fill in the FAIR information on the branch of your training
 instance, for example **release-2705**, and on **main**. Publishing on
 Zenodo starts from the branch of your training instance. Each step says
-which branch to use: see [Switch branch](training-instances.qmd#switch-branch).
+which branch to use: see
+[Switch branch](training-instances.qmd#switch-branch).
 
+## What is FAIR and why should I care? 
 
-## FAIR training: what and how? 
-
-The FAIR principles were first written for research data, but they
-apply just as well to training materials. You put a lot of work into
-your training. FAIR makes sure that work can be found, used and
-credited, also by people outside your own team, and long after the
-training has been given.
+The FAIR principles were first written for research data, [but they
+apply just as well to training materials](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007854).
+You put a lot of work into your training. FAIR makes sure that work can
+be found, used and credited, also by people outside your own team, and
+long after the training has been given.
 
 In practice, FAIR training materials are:
 
@@ -43,55 +42,50 @@ In practice, FAIR training materials are:
   yours, for example in a search engine or a training registry.
 - **Accessible:** anyone can open the materials, without having to ask
   you for them.
-- **Interoperable:** the information about your training, such as its
-  title, authors and licence, is written in standard formats. Other
-  websites and tools can then read it automatically.
+- **Interoperable:**  Your materials are in open formats, such as Markdown and HTML, that anyone can open without special software.
 - **Reusable:** others know what they're allowed to do with your
   materials, how to credit you, and how to teach the training
   themselves.
 
-### How the template makes your training FAIR {.unnumbered}
+## How the template automatically makes your training FAIR
 
-Most of this is already taken care of: the template uses the information
-in your data files for FAIRification. The table shows what the template does for each
-part of FAIR, and what's left for you to do:
+The template does most FAIRification for you, using the information in your
+data files. The table shows, for each part of FAIR, what the template
+does and what's left for you to do:
 
-| FAIR | How the template does it | What you do |
+| FAIR | What the template does | What you do |
 |---|---|---|
-| **Findable** | Keywords, and Bioschemas markup that registries such as ELIXIR TeSS can read | Fill in `keywords` |
-| **Accessible** | A public website and repository | Nothing |
-| **Interoperable** | Standard formats: `CITATION.cff`, `.zenodo.json` and Bioschemas | Nothing: the template creates them from your data files |
-| **Reusable** | A licence, a citation with the authors and their ORCIDs, and instructor notes | Check the licence, add ORCIDs, and write instructor notes |
+| **Findable** | Adds Bioschemas markup to your website, so search engines and training registries such as ELIXIR TeSS can find your training. | Fill in `keywords` in `data/course.yml`. Optionally, publish on Zenodo to get a DOI. |
+| **Accessible** | Publishes your website and repository openly on GitHub. | Nothing. |
+| **Interoperable** | Publishes your materials in open formats (Markdown and HTML). | Write your materials as `.qmd` files in `content/`. |
+| **Reusable** | Shows the licence on every page, creates `CITATION.cff` and `.zenodo.json` with the authors and their ORCIDs, and includes instructor notes | Check the licence in `data/course.yml`, add ORCIDs in `data/team.yml`, and write instructor notes in `instructors/`. |
 
-: {tbl-colwidths="[20,45,35]"}
+: {tbl-colwidths="[16,46,38]"}
 
-### The files the template creates for you {.unnumbered}
-
-Websites and tools can't read your training pages the way people do.
-To find and cite your training, they need the information in a fixed,
-standard format. The template writes that information for you, in a
-few extra files. You don't need to open them, but it helps to know they
-exist.
-
-Every time the website is built, the template creates or updates these
-files from `data/course.yml`, `data/team.yml` and `data/website.yml`:
+::: {.callout-note collapse="true" title="More about the automatically generated files"}
+Every time the website is built, the template generates and updates
+`CITATION.cff`, `.zenodo.json`, parts of `README.md` and the Bioschemas
+markup from your data files. These give websites and tools, such as
+GitHub, Zenodo and training registries, the information about your
+training in a fixed, standard format. Each one plays a different role
+in FAIRification:
 
 | File | What it's for |
 |---|---|
-| `CITATION.cff` | How to cite your training. GitHub shows it as a **Cite this repository** button, and reference managers such as Zotero can read it |
-| `.zenodo.json` | The title, authors, licence, keywords and funding, for Zenodo |
-| The generated parts of `README.md` | The training information, contributors, citation and licence |
+| `CITATION.cff` | How to cite your training. GitHub shows it as a **Cite this repository** button, and reference managers such as Zotero can read it. |
+| `.zenodo.json` | The title, authors, licence, keywords and funding, for Zenodo. |
+| The generated parts of `README.md` | The training information, contributors, citation and licence. |
 | Bioschemas markup, hidden in the landing page and the overview page | Lets training registries such as ELIXIR TeSS find your training. |
 
 : {tbl-colwidths="[35,65]"}
 
-::: {.callout-important}
-Never edit these files by hand: your changes are overwritten the next
+**Don't edit these by hand:** your changes are overwritten the next
 time the website is built. Change the data files instead.
 :::
 
+## What you can do for further FAIRification
 
-## Fill in the FAIR information {#fill-in-the-fair-information}
+### Data files {.unnumbered}
 
 Most of this information is already part of your data files, so you
 probably filled it in already. Check these fields on the branch of your
@@ -107,11 +101,80 @@ training instance, and on **main**:
 
 : {tbl-colwidths="[20,35,45]"}
 
-Leave the other fields under `reuse` empty for now. You add the DOIs
-after publishing on Zenodo, and the rest is worked out automatically.
 
-::: {.callout-tip}
-Ask everyone in the team for their ORCID before you publish on Zenodo.
-Zenodo copies the authors when you publish, so a missing ORCID can only
-be added later, by hand.
+### Publish on Zenodo {.unnumbered}
+
+**Log in to Zenodo** 
+
+To publish on Zenodo, you need a Zenodo account that is linked to your
+GitHub account.
+
+1. Go to [zenodo.org](https://zenodo.org) and click **Log in**.
+2. Choose **Log in with GitHub**, and click **Authorize** when GitHub
+   asks whether Zenodo may access your account.
+3. The first time, Zenodo asks for your name and email address. If it
+   sends you an email, click the link in it to confirm your address.
+
+::: {.callout-note collapse="true" title="Already have a Zenodo account?"}
+Log in as you normally do, and link your GitHub account to it instead:
+click your name at the top right, then **Settings → Linked accounts →
+GitHub**. This way, you don't end up with a second Zenodo account.
+:::
+
+**Turn on Zenodo for your repository**
+
+Next, you tell Zenodo which repository to archive. From then on, Zenodo
+archives every new release of that repository, and gives it a DOI.
+
+::: {.callout-important collapse="true" title="Is your repository in an organisation?"}
+If your repository belongs to an organisation on GitHub, such as
+`SciLifeLab-Training` or `NBIS`, the organisation has to allow Zenodo
+first. Until it does, your repository doesn't show up on Zenodo, even
+if everything else is set up correctly.
+
+You can see this in the address of your repository: in
+`github.com/SciLifeLab-Training/introduction-to-r`, the organisation is
+`SciLifeLab-Training`. If the first part is your own GitHub username,
+the repository is yours, and you can skip this box.
+
+**What you do:**
+
+1. On GitHub, click your profile picture at the top right, then
+   **Settings → Applications → Authorized OAuth Apps → Zenodo**.
+2. Under **Organization access**, find your organisation:
+   - A green check means Zenodo already has access. You're done.
+   - **Request** means it doesn't yet. Click it, so that the owners of
+     the organisation get a request.
+
+**What an owner of the organisation does:**
+
+Only owners can approve the request. To find out who they are, go to
+the organisation's page on GitHub, click **People**, and look for
+**Owner** next to the names. Ask one of them to:
+
+1. Go to the organisation's **Settings → Third-party access → OAuth
+   app policy**.
+2. Find **Zenodo** in the list of requests, and click **Review**, then
+   **Grant access**.
+
+You only need to do this once per organisation. After that, every
+repository in the organisation can be connected to Zenodo.
+:::
+
+1. On Zenodo, click your name at the top right, then **GitHub**.
+2. Click **Sync now**, and then **reload the page**. Zenodo only shows
+   the repositories it knew about the last time it synced, and the list
+   doesn't update by itself.
+3. Find your repository in the list, and click its switch to turn it
+   **On**.
+
+::: {.callout-tip collapse="true" title="Your repository still doesn't show up, or the switch doesn't turn on?"}
+- **Is the repository public?** Zenodo can't archive private
+  repositories. You can check this on GitHub, under **Settings →
+  General**, at the very bottom.
+- **Do you have admin rights on the repository?** Zenodo needs admin
+  rights to connect to it. If the switch doesn't turn on, ask an owner
+  of the organisation to give you the admin role on the repository.
+- **Did you sync and reload?** Click **Sync now** again, wait a moment,
+  and reload the page.
 :::

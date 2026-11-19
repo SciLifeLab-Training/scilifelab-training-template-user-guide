@@ -25,13 +25,17 @@ How to switch off template mode and fill in the website of a training instance (
 In this chapter, you work on two branches: the new **release-** branch,
 and **main** for the landing page.
 
-Work as described in [Regular workflow](workflow.qmd).
-
 ::: {.callout-important}
 Commit and push your changes **before** you switch to another branch.
 Changes you haven't committed yet move along with you to the other
 branch, where you might commit them by mistake.
 :::
+
+Work as described in [Regular workflow](workflow.qmd).
+
+The [cheat sheet](#cheat-sheet) at the end of this chapter sums up which
+file to open and what to change when working with training instances.
+
 
 ## What is a training instance? 
 
