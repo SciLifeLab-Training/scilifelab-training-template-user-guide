@@ -402,6 +402,48 @@ main.content table tbody tr:last-child td {
 
 
 /* ==========================================================================
+   Introduction: the three cards below the example screenshot
+   ========================================================================== */
+
+.intro-cards {
+    margin: 1.5rem 0 1.25rem;
+}
+
+main.content .intro-card {
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    background: var(--guide-surface);
+}
+
+main.content .intro-card p {
+    margin: 0 0 0.35rem;
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+main.content .intro-card strong {
+    color: var(--guide-teal-dark);
+}
+
+/* The button to the first chapter, in the colours of the guide. */
+main.content .btn-primary {
+    border-color: var(--guide-teal);
+    background: var(--guide-teal);
+    font-weight: 700;
+}
+
+main.content .btn-primary:hover {
+    border-color: var(--guide-teal-dark);
+    background: var(--guide-teal-dark);
+}
+
+/* Start page: the title is narrower, so "User Guide" moves to a second
+   line. The sidebar still shows the full title on one line. */
+.intro-page .quarto-title h1.title {
+    max-width: 13.5em;
+}
+
+/* ==========================================================================
    Small screens
    ========================================================================== */
 
@@ -422,3 +464,4 @@ main.content td code {
     white-space: pre-wrap;
     overflow-wrap: anywhere;
 }
+

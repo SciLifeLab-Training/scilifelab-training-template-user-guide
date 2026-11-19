@@ -416,12 +416,12 @@ Introduction to R uses a schedule, practicalities and announcements, but
 no FAQ, preparation or resources. Its `data` folder only holds the files
 it needs:
  
-![](images/ipdatafiles-19-folderstructure.png){width=30% fig-alt="Screenshot: the data folder of Introduction to R in the VS Code Explorer, with announcements.yml, course.yml, practicalities.yml, schedule.yml, team.yml and website.yml."}
+![](images/ipdatafiles-19-folderstructure.png){width=40% fig-alt="Screenshot: the data folder of Introduction to R in the VS Code Explorer, with announcements.yml, course.yml, practicalities.yml, schedule.yml, team.yml and website.yml."}
 
 These are the filled-in `schedule.yml`, and `practicalities.yml` and
 `announcements.yml`:
 
-![](images/ipdatafiles-20-scheduleyml.png){width=85% fig-alt="Screenshot: data/schedule.yml for Introduction to R, with events grouped by topic: Getting started, Data wrangling and Plotting."}
+![](images/ipdatafiles-20-scheduleyml.png){fig-alt="Screenshot: data/schedule.yml for Introduction to R, with events grouped by topic: Getting started, Data wrangling and Plotting."}
 
 ![](images/ipdatafiles-21-practicalitiesannouncementsyml.png){fig-alt="Screenshot: data/practicalities.yml and data/announcements.yml for Introduction to R, side by side."}
 

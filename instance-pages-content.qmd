@@ -58,7 +58,7 @@ You write your training materials in the `content` folder of your training insta
 - One folder for each **section**, with one `.qmd` file for each page in
   that section.
 
-![](images/ipcontent-01-overview.png){width=100% fig-alt="Screenshot: the content folder in VS Code next to a content page in the browser, with each section folder linked to its menu in the navigation bar of the content pages."}
+![](images/ipcontent-01-overview.png){fig-alt="Screenshot: the content folder in VS Code next to a content page in the browser, with each section folder linked to its menu in the navigation bar of the content pages."}
 
 As you can see, your training materials are divided into **content
 sections**. The template's examples use modules: `module-1`, `module-2`
