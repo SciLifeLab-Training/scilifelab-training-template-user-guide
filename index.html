@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Training Webpage Template: User Guide</title>
+<title>Training Webpage Template - User Guide</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+<body class="nav-sidebar floating intro-page quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <img src="./images/logo-scilifelab-green.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Training Webpage Template: User Guide</a> 
+      <a href="./">Training Webpage Template - User Guide</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -184,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Training Webpage Template: User Guide</h1>
+<h1 class="title">Training Webpage Template - User Guide</h1>
 </div>
 
 
@@ -202,52 +202,31 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Welcome to the <strong>SciLifeLab Training Webpage Template User Guide</strong>!</p>
-<p>SciLifeLab offers a wide range of training, given by many different platforms, units and teams. The SciLifeLab Training Hub has developed this template to make training websites easy to set up, maintain, and follow the FAIR principles for citing and reusing training materials.</p>
-<p>This guide explains how to use the template, step by step.</p>
-<section id="what-is-the-template" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="what-is-the-template">What is the template?</h3>
-<p>The <strong><a href="https://scilifelab-training.github.io/scilifelab-training-template/">SciLifeLab Training Webpage Template</a></strong> is a ready-made, SciLifeLab-branded training website. You fill in your information in text files, and write your materials in Markdown. The website is then built and published for you. No programming is needed!</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>When you give a training, participants need one place to find the schedule, the materials and the practical information. And once the training is over, others should be able to find, cite and reuse it. The <strong><a href="https://scilifelab-training.github.io/scilifelab-training-template/">SciLifeLab Training Webpage Template</a></strong>, made by the SciLifeLab Training Hub, gives you a website that does both. This guide shows you how to make it your own, step by step.</p>
+<p><img src="images/index-01-examplewebsite.png" class="img-fluid" alt="Screenshot: the example training website made with the template, with its landing page and the overview page of a trining instance."></p>
+<p>The template works for most kinds of training: online or in person, recurring or one-off, self-paced, or in cohorts. Want to look around? Visit the <a href="https://scilifelab-training.github.io/scilifelab-training-template">example training website</a>.</p>
+<section id="what-you-get" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="what-you-get">What you get</h3>
+<div class="grid intro-cards">
+<div class="g-col-12 g-col-md-4 intro-card">
+<p><strong>Ready to use</strong></p>
+<p>A complete, SciLifeLab-branded website: overview, schedule, syllabus, team, information pages and room for your materials.</p>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>See it in action
+<div class="g-col-12 g-col-md-4 intro-card">
+<p><strong>No programming</strong></p>
+<p>You fill in your information in text files, and write your materials in Markdown. The website is built and published for you.</p>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <a href="https://scilifelab-training.github.io/scilifelab-training-template">example training website</a> shows what your website will look like.</p>
+<div class="g-col-12 g-col-md-4 intro-card">
+<p><strong>FAIR by default</strong></p>
+<p>Your training gets a citation, a licence and information that registries can read, from the same text files.</p>
 </div>
 </div>
 </section>
-<section id="how-is-a-training-website-organised" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="how-is-a-training-website-organised">How is a training website organised?</h3>
-<p>Your training website has two parts:</p>
-<ul>
-<li><strong>A landing page</strong> introduces the training as a whole, and links to every training instance.</li>
-<li><strong>A training instance</strong> is one time the training is given, or one version of its materials, with its own schedule, team and materials.</li>
-</ul>
-</section>
-<section id="which-trainings-is-it-for" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="which-trainings-is-it-for">Which trainings is it for?</h3>
-<p>Most kinds: online or in-person, recurring courses and workshops, one-off trainings, self-paced training, and training in cohorts.</p>
-</section>
-<section id="what-do-i-need" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="what-do-i-need">What do I need?</h3>
-<ul>
-<li>A computer.</li>
-<li>A free <a href="https://github.com">GitHub</a> account.</li>
-<li>No experience with Git, Python or Quarto: the guide explains every step.</li>
-</ul>
-</section>
-<section id="how-do-i-use-this-guide" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="how-do-i-use-this-guide">How do I use this guide?</h3>
-<p>The chapters follow the order in which you build your website: setting up your copy, the landing page, your training instances and materials, and making your training FAIR. Work through them in order the first time. Later, you can go straight to the chapter you need.</p>
-</section>
-<section id="where-do-i-start" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="where-do-i-start">Where do I start?</h3>
-<p>Start with <a href="./setup.html">Setup</a>: create your own copy of the template, and get it ready to work on.</p>
+<section id="before-you-start" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="before-you-start">Before you start</h3>
+<p>All you need is a computer and a free <a href="https://github.com">GitHub</a> account. You don’t need any experience with Git, Python or Quarto: the guide explains every step.</p>
+<p>The chapters follow the order in which you build your website: setting up your copy, the landing page, your training instances and materials, and finally making your training FAIR. Work through them in order the first time. Later, you can go straight to the chapter you need.</p>
+<p><a href="./setup.html" class="btn btn-primary">Start with: Set up your training →</a></p>
 </section>
 <section id="need-help" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="need-help">Need help?</h3>
