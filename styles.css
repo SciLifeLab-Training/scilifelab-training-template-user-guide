@@ -443,6 +443,24 @@ main.content .btn-primary:hover {
     max-width: 13.5em;
 }
 
+/* The button to the first chapter, in the colours of the guide.
+   "a." is needed to beat the teal colour of the other links. */
+main.content a.btn-primary {
+    border-color: var(--guide-teal);
+    background: var(--guide-teal);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+main.content a.btn-primary:hover,
+main.content a.btn-primary:focus-visible {
+    border-color: var(--guide-teal-dark);
+    background: var(--guide-teal-dark);
+    color: #fff;
+    text-decoration: none;
+}
+
 /* ==========================================================================
    Small screens
    ========================================================================== */

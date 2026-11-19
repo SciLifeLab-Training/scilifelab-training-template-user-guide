@@ -4,7 +4,7 @@ project:
 book:
   sidebar:
     logo: images/logo-scilifelab-green.png
-  title: "Training Webpage Template - User Guide"
+  title: "Training Webpage Template – User Guide"
   page-footer:
     center: |
       This User Guide is maintained by the SciLifeLab Training Hub.<br>
