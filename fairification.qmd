@@ -6,19 +6,17 @@ Your training website is set up, and your first training instance is
 ready. As a final step, the SciLifeLab Training Hub encourages you to
 make your training **FAIR: Findable, Accessible, Interoperable and
 Reusable**. This means that others can easily find your training, open
-its materials, read its description in a standard format that computers
-understand, and reuse and cite it.
+its materials in any software, and reuse and cite it.
 
-Most of the FAIRification is automated in this template. All you need to do is fill in a
-few more fields in your data files. For full FAIRification, it is also recommended to publish your training on Zenodo.
+The template does most of the FAIRification for you. To complete it,
+fill in a few more fields in your `.yml` data files. We also recommend
+publishing your training on Zenodo.
 
 In this chapter, you will learn:
 
-- [What FAIR training is, and how the template makes your training FAIR](#fair-training-what-and-how).
-- [Which FAIR information you fill in yourself, and where](#fill-in-the-fair-information).
-- [How to publish a training instance on Zenodo](#publish-on-zenodo),
-  if you choose to.
-- [How to keep the DOIs up to date when you add a new training instance](#new-training-instances).
+- [What FAIR training is, and how it can benefit you as a trainer](#what-is-fair-and-why-should-i-care).
+- [How the template automatically FAIRifies your training](#fairification-the-automated-part).
+- [What you can do to complete FAIRification](#fairification-your-part).
 
 ### Before you start {.unnumbered}
 
@@ -30,11 +28,12 @@ which branch to use: see
 
 ## What is FAIR and why should I care? 
 
-The FAIR principles were first written for research data, [but they
-apply just as well to training materials](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007854).
+The FAIR principles were first written for
+[research data](https://www.nature.com/articles/sdata201618), but they
+apply just as well to [training materials](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007854).
 You put a lot of work into your training. FAIR makes sure that work can
-be found, used and credited, also by people outside your own team, and
-long after the training has been given.
+be found, used and credited, including by people outside your own team,
+and long after the training has been given.
 
 In practice, FAIR training materials are:
 
@@ -42,40 +41,47 @@ In practice, FAIR training materials are:
   yours, for example in a search engine or a training registry.
 - **Accessible:** anyone can open the materials, without having to ask
   you for them.
-- **Interoperable:**  Your materials are in open formats, such as Markdown and HTML, that anyone can open without special software.
+- **Interoperable:** your materials are in open formats, such as
+  Markdown and HTML, that anyone can work with, without paying for
+  special software.
 - **Reusable:** others know what they're allowed to do with your
   materials, how to credit you, and how to teach the training
   themselves.
 
-## How the template automatically makes your training FAIR
+## FAIRification: the automated part 
 
-The template does most FAIRification for you, using the information in your
-data files. The table shows, for each part of FAIR, what the template
-does and what's left for you to do:
+The template is designed to do most of the FAIRification for you, so
+that you can focus on the content of your training. It uses the
+training information you entered in your data files to generate
+`CITATION.cff`, `.zenodo.json`, parts of `README.md` and the Bioschemas
+markup. The table shows, for each part of FAIR, what the template does
+and which information it uses. The collapsible box below the table
+tells you more about the generated files, and the role each one plays.
 
-| FAIR | What the template does | What you do |
+
+| FAIR | What the template does | Information comes from |
 |---|---|---|
-| **Findable** | Adds Bioschemas markup to your website, so search engines and training registries such as ELIXIR TeSS can find your training. | Fill in `keywords` in `data/course.yml`. Optionally, publish on Zenodo to get a DOI. |
-| **Accessible** | Publishes your website and repository openly on GitHub. | Nothing. |
-| **Interoperable** | Publishes your materials in open formats (Markdown and HTML). | Write your materials as `.qmd` files in `content/`. |
-| **Reusable** | Shows the licence on every page, creates `CITATION.cff` and `.zenodo.json` with the authors and their ORCIDs, and includes instructor notes | Check the licence in `data/course.yml`, add ORCIDs in `data/team.yml`, and write instructor notes in `instructors/`. |
+| **Findable** | Adds Bioschemas markup to your website, so search engines and training registries such as ELIXIR TeSS can find your training. | `data/course.yml`, such as the title, description and `keywords`. |
+| **Accessible** | Publishes your website and repository openly on GitHub. | No extra information needed. |
+| **Interoperable** | Publishes your materials in open formats (Markdown and HTML). | Your materials, as `.qmd` files in `content/`. |
+| **Reusable** | Shows the licence on every page, creates `CITATION.cff` and `.zenodo.json` with the authors and their ORCIDs, and includes instructor notes. | The licence in `data/course.yml`, the authors and ORCIDs in `data/team.yml`, and the instructor notes in `instructors/`. |
 
 : {tbl-colwidths="[16,46,38]"}
 
 ::: {.callout-note collapse="true" title="More about the automatically generated files"}
-Every time the website is built, the template generates and updates
-`CITATION.cff`, `.zenodo.json`, parts of `README.md` and the Bioschemas
-markup from your data files. These give websites and tools, such as
-GitHub, Zenodo and training registries, the information about your
-training in a fixed, standard format. Each one plays a different role
-in FAIRification:
+Every time the website is built, the template updates the generated files from
+your data files. They give websites and tools, such as GitHub, Zenodo
+and training registries, the information about your training in a
+fixed, standard format. Each one plays a different role in
+FAIRification:
+
 
 | File | What it's for |
 |---|---|
 | `CITATION.cff` | How to cite your training. GitHub shows it as a **Cite this repository** button, and reference managers such as Zotero can read it. |
 | `.zenodo.json` | The title, authors, licence, keywords and funding, for Zenodo. |
 | The generated parts of `README.md` | The training information, contributors, citation and licence. |
-| Bioschemas markup, hidden in the landing page and the overview page | Lets training registries such as ELIXIR TeSS find your training. |
+| Bioschemas markup, hidden in the landing page and the training instance overview page | Lets training registries such as ELIXIR TeSS find your training. |
 
 : {tbl-colwidths="[35,65]"}
 
@@ -83,13 +89,20 @@ in FAIRification:
 time the website is built. Change the data files instead.
 :::
 
-## What you can do for further FAIRification
+## FAIRification: your part
+
+There are a few steps you can take to make sure your training is fully
+FAIR: filling in your data files carefully and keeping them up to date,
+and publishing your training on Zenodo, so that it gets a persistent identifier (DOI), is easy to find and is
+archived for the long term.
 
 ### Data files {.unnumbered}
 
-Most of this information is already part of your data files, so you
-probably filled it in already. Check these fields on the branch of your
-training instance, and on **main**:
+The generated files take their information from your data files (see [FAIRification: the automated part](#fairification-the-automated-part)), so
+it's important to fill these in and keep them up to date. You probably
+filled in most of the FAIR information already, when you set up your
+training. To complete FAIRification, check these fields on the **branch
+of your training instance**, and on **main**:
 
 | Information | Where | Good to know |
 |---|---|---|
@@ -103,6 +116,8 @@ training instance, and on **main**:
 
 
 ### Publish on Zenodo {.unnumbered}
+
+
 
 **Log in to Zenodo** 
 
