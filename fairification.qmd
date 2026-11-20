@@ -96,7 +96,7 @@ FAIR: filling in your data files carefully and keeping them up to date,
 and publishing your training on Zenodo, so that it gets a persistent identifier (DOI), is easy to find and is
 archived for the long term.
 
-### Data files {.unnumbered}
+### Check the data files {.unnumbered}
 
 The generated files take their information from your data files (see [FAIRification: the automated part](#fairification-the-automated-part)), so
 it's important to fill these in and keep them up to date. You probably
@@ -164,34 +164,49 @@ account.
 
 **2. Turn on Zenodo for your repository**
 
-Next, you tell Zenodo which repository to archive. From then on, Zenodo
-archives every new release of that repository, and gives it a DOI.
+Next, you connect your GitHub training repository to Zenodo. From then on,
+Zenodo archives every new release of your repository, and gives it a
+DOI.
 
 ::: {.callout-important collapse="true" title="Is your repository in an organisation?"}
-If your repository belongs to an organisation on GitHub, such as
-`SciLifeLab-Training` or `NBIS`, the organisation has to allow Zenodo
-first. Until it does, your repository doesn't show up on Zenodo, even
-if everything else is set up correctly.
+If your repository doesn't belong to your personal GitHub account, but
+to an organisation, such as
+[SciLifeLab-Training](https://github.com/SciLifeLab-Training) or
+[NBISweden](https://github.com/NBISweden), the organisation first has
+to give Zenodo access to its repositories.
 
-You can see this in the address of your repository: in
-`github.com/SciLifeLab-Training/introduction-to-r`, the organisation is
-`SciLifeLab-Training`. If the first part is your own GitHub username,
-the repository is yours, and you can skip this box.
+You can see whether your repository belongs to an organisation in its
+URL: in `github.com/SciLifeLab-Training/introduction-to-r`, the
+organisation is `SciLifeLab-Training`. If the first part is your own
+GitHub username, the repository is yours, and you can skip this box.
 
 **What you do:**
 
-1. On GitHub, click your profile picture at the top right, then
-   **Settings → Applications → Authorized OAuth Apps → Zenodo**.
-2. Under **Organization access**, find your organisation:
+1. To check whether Zenodo has access to your organisation's
+   repositories, log in to GitHub. Click your profile picture at the
+   top right, then **Settings**.
+
+   ![](images/fair-04-githubsettings.png){width=40% fig-alt="The menu under your profile picture on GitHub, with Settings in it."}
+
+2. In the sidebar on the left, under **Integrations**, click
+   **Applications**, and then the tab **Authorized OAuth Apps**.
+
+   ![](images/fair-05-authorizedoauthapps.png){width=70% fig-alt="The Applications page in the GitHub settings, with the tab Authorized OAuth Apps and Zenodo in the list."}
+
+3. Click **Zenodo**. Under **Organization access**, find your
+   organisation:
    - A green check means Zenodo already has access. You're done.
-   - **Request** means it doesn't yet. Click it, so that the owners of
-     the organisation get a request.
+   - **Request** means it doesn't have access yet. Click it, so that
+     the owners of the organisation get an access request.
 
-**What an owner of the organisation does:**
+   ![](images/fair-06-organizationaccess.png){width=90% fig-alt="The Zenodo page in the GitHub settings. Under Organization access, each organisation has either a green check or a Request button."}
 
-Only owners can approve the request. To find out who they are, go to
-the organisation's page on GitHub, click **People**, and look for
-**Owner** next to the names. Ask one of them to:
+**What the owner of your organisation does:**
+
+The GitHub organisation owner(s) has to approve the request. To find out
+who the owners are, go to the organisation's page on GitHub, click
+**People**, and look for **Owner** next to the names. Ask one of them
+to:
 
 1. Go to the organisation's **Settings → Third-party access → OAuth
    app policy**.
@@ -203,11 +218,26 @@ repository in the organisation can be connected to Zenodo.
 :::
 
 1. On Zenodo, click your name at the top right, then **GitHub**.
+
+   ![](images/fair-07-zenodologin.png){width=80% fig-alt="The menu under your name on Zenodo, with GitHub in it."}
+
 2. Click **Sync now**, and then **reload the page**. Zenodo only shows
    the repositories it knew about the last time it synced, and the list
    doesn't update by itself.
+
+   ![](images/fair-08-syncnow.png){width=80% fig-alt="The GitHub page on Zenodo, with the Sync now button at the top right."}
+
 3. Find your repository in the list, and click its switch to turn it
    **On**.
+
+   ![](images/fair-09-flipswitch.png){width=80% fig-alt="The list of repositories on Zenodo, with the switch next to the repository turned on."}
+
+4. A green banner appears, saying **Repository synced successfully.
+   Please reload the page.** Reload the page. Your repository is now
+   listed under **Enabled Repositories**.
+
+   ![](images/fair-10-repositorysynced.png){fig-alt="The green banner on Zenodo saying that the repository was synced successfully."}
+
 
 ::: {.callout-tip collapse="true" title="Your repository still doesn't show up, or the switch doesn't turn on?"}
 - **Is the repository public?** Zenodo can't archive private
@@ -219,3 +249,66 @@ repository in the organisation can be connected to Zenodo.
 - **Did you sync and reload?** Click **Sync now** again, wait a moment,
   and reload the page.
 :::
+
+**3. Create a release on GitHub**
+
+A release is a snapshot of your GitHub training repository at a certain moment, with a
+name and a version number. As soon as you publish a release, Zenodo
+archives that snapshot and gives it a DOI.
+
+Before you start, make sure that:
+
+- Your data files are complete, especially the authors and their
+  ORCIDs. Zenodo copies this information when you publish, and you
+  can't change it automatically afterwards.
+- Your latest changes are pushed to the branch of your training
+  instance, and the website has finished building. On GitHub, you can
+  see this under **Actions**: the last run has a green check.
+
+
+1. Go to your repository on GitHub. In the sidebar on the right, under
+   **Releases**, click **Create a new release**.
+
+   ![](images/fair-11-createrelease.png){fig-alt="The sidebar of a GitHub repository, with the link Create a new release under Releases."}
+
+2. Choose the branch of your training instance. Click **Target**, and
+   choose the branch, for example **release-2706**. Zenodo archives
+   the repository as it is on this branch.
+
+   ![](images/fair-12-target.png){width=80% fig-alt="The Target menu on the new release page on GitHub, with the branch release-2705 selected."}
+
+3. Give the release a tag. Click **Choose a tag**, type a new tag, for
+   example `v2706.1`, and click **Create new tag**. The tag is the
+   version number of your release: Zenodo shows it as the version of
+   your training.
+
+    ![](images/fair-13-tag.png){width=45% fig-alt="The Choose a tag menu on the new release page on GitHub, with the new tag v2706.1 typed in and the option Create new tag."}
+
+   ::: {.callout-tip collapse="true" title="Which tag should I use?"}
+   Use a tag that shows which training instance the release belongs
+   to, and which version of that instance it is. For example, `v2706.1`
+   is the first release of the training instance of June 2027. If you
+   later fix something in the materials of that instance, the next
+   release is `v2706.2`. The first release of the next training
+   instance could then be `v2711.1`.
+
+   A tag can't have the same name as a branch, so don't use
+   `release-2706` as a tag.
+   :::
+4. Fill in a **Release title**, for example
+   `Introduction to R, June 2027`. In the description, you can write a
+   few sentences about this release, such as what's in it, or what's
+   new.
+
+   ![](images/fair-14-releaseinfo.png){width=85% fig-alt="The new release page on GitHub, with the release title Introduction to R, June 2027 and a description of the release filled in."}
+
+5. Click **Publish release**. GitHub now opens the page of your new
+   release. It shows your release notes and, under **Assets**, a zip
+   file of your repository as it is on the branch of your training
+   instance.
+
+   ![](images/fair-15-publishrelease.png){width=90% fig-alt="The page of the published release on GitHub, with the release notes and, under Assets, the source code as a zip file."}
+
+    On the main page of your repository, the release is now shown under **Releases**, in the sidebar on the right.
+
+    ![](images/fair-16-releasedone.png){width=50% fig-alt="The sidebar on the main page of the repository on GitHub. Under Releases, the new release is shown and marked as Latest."}
