@@ -312,3 +312,101 @@ Before you start, make sure that:
     On the main page of your repository, the release is now shown under **Releases**, in the sidebar on the right.
 
     ![](images/fair-16-releasedone.png){width=50% fig-alt="The sidebar on the main page of the repository on GitHub. Under Releases, the new release is shown and marked as Latest."}
+
+**4. Check your release on Zenodo**
+
+As soon as you publish a release on GitHub, Zenodo gets a message about
+it. Within a few minutes, Zenodo archives the release, creates a record
+for it, and gives it a DOI. You don't need to do anything for this, but
+it's good to check that everything went well, and that the information
+on Zenodo is right.
+
+1. On Zenodo, click your name at the top right, then **GitHub**. Your
+   repository, listed under **Enabled Repositories**, now has a blue
+   **DOI** badge next to it. If you don't see the badge yet, wait a few
+   minutes and reload the page.
+
+   ![](images/fair-17-doibadge.png){fig-alt="The list of enabled repositories on Zenodo. Next to each repository name is a blue badge with its DOI."}
+
+2. Click the name of your repository. You see a list of all its
+   releases, with the status of each one. **Published** means that
+   Zenodo archived the release, and that it has a DOI.
+
+   ![](images/fair-18-releasestatus.png){fig-alt="The page of one repository on Zenodo, with a list of its releases. Each release has the status Published."}
+
+3. Click the DOI of the release. This opens the full Zenodo record of
+   your release. On the left, you see the title, authors and
+   description of your training, and all the files in your repository.
+   On the right, you see how many people have viewed and downloaded
+   your record, the earlier versions, the licence and how to cite it.
+   Check that the title, authors, ORCIDs, licence and keywords are
+   right.
+
+   ![](images/fair-19-fullrecord.png){fig-alt="The full record of a training on Zenodo. On the left are the title, authors, description and files. On the right are the numbers of views and downloads, the versions, and the DOI."}
+
+::: {.callout-tip collapse="true" title="The status is not Published, or something is wrong in the record?"}
+- **The release doesn't show up at all.** Zenodo only archives releases
+  that you publish *after* turning Zenodo on for your repository. Check
+  that your repository is under **Enabled Repositories**, and publish a
+  new release.
+- **The status is Failed, or shows an error.** Click the release to
+  see the error message. Often, a field in `.zenodo.json` is missing
+  or not filled in correctly. Fix it in your data files, push your
+  changes, wait until the website has finished building, and publish a
+  new release.
+- **Something in the record is wrong**, such as a missing ORCID or a
+  typo in a name. On the record, click **Edit**, correct the
+  information, and click **Publish**. This changes the information
+  only: the archived files and the DOI stay the same. Also correct it
+  in your data files, so the next release is right too.
+:::
+
+**5. Add the DOIs to your data files**
+
+Finally, you add the DOIs that Zenodo has given your training to your data files. The template then puts
+them in the citation, the README and on your website, so that everyone
+who wants to cite your training uses the DOI.
+
+1. On the Zenodo record of your release, find the two DOIs of your
+   training:
+
+   - **The DOI of this version** is in the **Details** box on the
+     right. It belongs to this one release only.
+   - **The DOI of all versions** is in the **Versions** box on the
+     right, under **Cite all versions?**. It stays the same for every
+     release of your repository, and always leads to the latest
+     version.
+
+   ![](images/fair-20-versions.png){width=50% fig-alt="The Versions box on a Zenodo record. Below the list of versions, it says that you can cite all versions with one DOI, and shows that DOI."}
+
+2. On the branch of your training instance, open `data/course.yml`.
+   Under `reuse`, fill in the two DOIs. Write them as Zenodo shows
+   them, starting with `10.5281`:
+
+   ```yaml
+   reuse:
+     doi: "10.5281/zenodo.14643653"          # the DOI of all versions
+     version_doi: "10.5281/zenodo.16966231"  # the DOI of this version
+   ```
+
+   Leave the other fields under `reuse` as they are.
+
+3. Do the same on **main**, so that the landing page also shows the
+   DOI.
+4. Commit and push your changes on both branches, as described in
+   [Regular workflow](workflow.qmd). When the website has finished
+   building, the DOI shows up in `CITATION.cff`, in the README and on
+   your website.
+
+::: {.callout-note collapse="true" title="Why isn't the DOI in the release on Zenodo?"}
+Zenodo only creates the DOI after you publish the release. So the
+release that Zenodo archived can't contain its own DOI yet. That's
+normal, and nothing to worry about: the Zenodo record itself shows the
+DOI, and your repository and website show it from now on.
+:::
+
+::: {.done}
+**Done when:** on the main page of your repository on GitHub, **Cite
+this repository** shows the DOI of your training, and the DOI is on
+your website.
+:::
