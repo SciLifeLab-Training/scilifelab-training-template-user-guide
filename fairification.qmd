@@ -117,26 +117,52 @@ of your training instance**, and on **main**:
 
 ### Publish on Zenodo {.unnumbered}
 
+[Zenodo](https://zenodo.org) is a free, open repository for research
+outputs, such as papers, datasets, software and training materials. It
+is run by CERN, and it keeps what you upload available for the long
+term. Every upload gets a DOI: a permanent link that others can use to
+cite your training, and that keeps working even if your website or
+repository moves.
 
+Zenodo works together with GitHub. Once you connect your repository,
+Zenodo automatically archives every new release of it, and the template
+has already prepared the information Zenodo needs in `.zenodo.json`.
 
-**Log in to Zenodo** 
+Publishing your repository on Zenodo takes a few steps: you log in to Zenodo, turn it on for your
+GitHub repository, make a release on GitHub, and then add the DOI to your data
+files.
+
+**1. Log in to Zenodo** 
 
 To publish on Zenodo, you need a Zenodo account that is linked to your
 GitHub account.
 
+::: {.callout-note collapse="true" title="Already have a Zenodo account?"}
+Log in as you normally do, and link your GitHub account to your Zenodo
+account instead. This way, you don't end up with a second Zenodo
+account.
+
+1. Click your name at the top right.
+2. Click **Linked accounts**.
+
+   ![](images/fair-02-linkedaccounts.png){width=20% fig-alt="The menu under your name on Zenodo, with Linked accounts in it."}
+
+3. Click **Connect** next to **GitHub**.
+
+   ![](images/fair-03-githublinked.png){width=80% fig-alt="The Linked accounts page on Zenodo, with a Connect button next to GitHub."}
+:::
+
 1. Go to [zenodo.org](https://zenodo.org) and click **Log in**.
 2. Choose **Log in with GitHub**, and click **Authorize** when GitHub
    asks whether Zenodo may access your account.
+
+   ![](images/fair-01-zenodologin.png){width=30% fig-alt="The Zenodo login page, with the button Log in with GitHub."}
+
 3. The first time, Zenodo asks for your name and email address. If it
    sends you an email, click the link in it to confirm your address.
 
-::: {.callout-note collapse="true" title="Already have a Zenodo account?"}
-Log in as you normally do, and link your GitHub account to it instead:
-click your name at the top right, then **Settings → Linked accounts →
-GitHub**. This way, you don't end up with a second Zenodo account.
-:::
 
-**Turn on Zenodo for your repository**
+**2. Turn on Zenodo for your repository**
 
 Next, you tell Zenodo which repository to archive. From then on, Zenodo
 archives every new release of that repository, and gives it a DOI.
