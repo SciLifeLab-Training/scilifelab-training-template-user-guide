@@ -368,28 +368,22 @@ them in the citation, the README and on your website, so that everyone
 who wants to cite your training uses the DOI.
 
 1. On the Zenodo record of your release, find the two DOIs of your
-   training:
+   training in the **Versions** box on the right:
 
-   - **The DOI of this version** is in the **Details** box on the
-     right. It belongs to this one release only.
-   - **The DOI of all versions** is in the **Versions** box on the
-     right, under **Cite all versions?**. It stays the same for every
+   - **The DOI of this version** belongs to this one release only.
+   - **The DOI of all versions** is under **Cite all versions?**. It stays the same for every
      release of your repository, and always leads to the latest
      version.
 
    ![](images/fair-20-versions.png){width=50% fig-alt="The Versions box on a Zenodo record. Below the list of versions, it says that you can cite all versions with one DOI, and shows that DOI."}
 
 2. On the branch of your training instance, open `data/course.yml`.
-   Under `reuse`, fill in the two DOIs. Write them as Zenodo shows
-   them, starting with `10.5281`:
+   Under `reuse`, fill in the two DOIs and the date of the release.
+   Write the DOIs exactly as Zenodo shows them, and the date as YYYY-MM-DD:
 
-   ```yaml
-   reuse:
-     doi: "10.5281/zenodo.14643653"          # the DOI of all versions
-     version_doi: "10.5281/zenodo.16966231"  # the DOI of this version
-   ```
+   ![](images/fair-21-doitobranch.png){width=90% fig-alt=""}
 
-   Leave the other fields under `reuse` as they are.
+    Leave the other fields under `reuse`as they are. Save and commit your changes. 
 
 3. Do the same on **main**, so that the landing page also shows the
    DOI.
