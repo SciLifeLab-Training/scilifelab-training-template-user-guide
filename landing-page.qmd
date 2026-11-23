@@ -20,40 +20,40 @@ In this chapter, you will learn how to:
   subtitle, information cards, footer, and how others may
   reuse your training.
 
-How to create a training instance and add it to the landing page is
-explained in the next chapter, [Training instances](training-instances.qmd).
+::: {.before-you-start #before-you-start}
+[Before you start]{.bys-title}
 
-### Before you start {.unnumbered}
+::: {.bys-row}
+[Where]{.bys-label}
 
-Everything in this chapter happens on the **main** branch, and almost
-all of it in three data files in the `data` folder:
+::: {}
+On the **main** branch, in three data files: `data/course.yml`,
+`data/team.yml` and `data/website.yml`.
+:::
+:::
 
-| Data file | What it holds |
-|---|---|
-| `data/course.yml` | The title, description, learning outcomes, keywords and topics of your training, and the organisation and licence shown in the footer |
-| `data/team.yml` | The people behind the training |
-| `data/website.yml` | Template mode, logos, button texts and banner image |
+::: {.bys-row}
+[How]{.bys-label}
 
-: {tbl-colwidths="[30,70]"}  
+::: {}
+Start the preview, make your changes, and commit and push them, as
+described in [Regular workflow](workflow.qmd). You can commit several
+changes together.
 
-Not sure how a data file works? See [Data files](repository-structure.qmd#data-files).
+New to data files? See [Data files](repository-structure.qmd#data-files).
+:::
+:::
 
-Work as described in [Regular workflow](workflow.qmd):
+::: {.bys-row}
+[For experts]{.bys-label}
 
-1. In a new terminal, start the preview:
-
-```bash
-   python scripts/preview.py
-```
-
-2. Make your changes, save them, and check the result in your browser.
-3. [Commit and push](workflow.qmd#commit-and-push-your-changes) your
-   changes. You don't have to do this after every change: you can make
-   several changes, and then commit and push them together.
-
-The [cheat sheet](#cheat-sheet) at the end of this chapter sums up which
-file to open and what to change for each part of the landing page.
-
+::: {}
+Know your way around already? The [cheat sheet](#cheat-sheet) sums up
+which file to open and what to change for each part of the landing
+page.
+:::
+:::
+:::
 
 ## Switch off template mode
 
@@ -319,7 +319,9 @@ is built and the different types of data values.
 - Keep the quotation marks around values.
 
 If the preview shows an error after you save a data file, check these
-first. The error message usually names the file and the line.
+two things first. The error message usually says which file and which
+line the mistake is in, see [Regular workflow - Work with the preview on](workflow.qmd#work-with-the-preview-on). 
+
 
 :::
 

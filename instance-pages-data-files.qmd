@@ -17,20 +17,41 @@ In this chapter, you will learn how to:
 - [Fill in the optional data files](#fill-in-the-optional-data-files): the schedule,
   announcements, practicalities, preparation, FAQ and resources.
 
-How to add your training materials and instructor notes to your training instance follows in the next chapter, [Instance pages - Content](instance-pages-content.qmd).
+::: {.before-you-start #before-you-start}
+[Before you start]{.bys-title}
 
-### Before you start {.unnumbered}
+::: {.bys-row}
+[Where]{.bys-label}
 
-Everything in this chapter happens on the **branch of your training instance** (for example
-**release-2706**), and almost all of it in the data files in the `data` folder. 
+::: {}
+On the branch of your training instance, for example **release-2706**,
+in the data files in the `data` folder. Not on that branch yet? See
+[Switch branch](training-instances.qmd#switch-branch).
+:::
+:::
 
-Not sure how a data file works? See [Data files](repository-structure.qmd#data-files).
+::: {.bys-row}
+[How]{.bys-label}
 
-Work as described in [Regular workflow](workflow.qmd). 
+::: {}
+Start the preview, make your changes, and commit and push them, as
+described in [Regular workflow](workflow.qmd). You can commit several
+changes together.
 
-The [cheat sheet](#cheat-sheet) at the end of this chapter sums up which
-file to open, and what to change, for each part of your training instance
-website.
+New to data files? See [Data files](repository-structure.qmd#data-files).
+:::
+:::
+
+::: {.bys-row}
+[For experts]{.bys-label}
+
+::: {}
+Know your way around already? The [cheat sheet](#cheat-sheet) sums up
+which file to open, and what to change, for each part of your training
+instance website.
+:::
+:::
+:::
 
 ## Switch off template mode
 
@@ -106,7 +127,7 @@ the parts of the overview page, and their names:
 
    ![](images/ipdatafiles-06-overviewpage.png){fig-alt="Screenshot: overview page with annotation of section."}
 
-In `data/website.yml`, you set the **logos, the welcome section, the
+In `data/website.yml`, you set the **organisation logos, the welcome section, the welcome graphic, the
 registration banner and the texts of the quick links**. The other parts
 of the overview page come from other data files.
 
@@ -119,7 +140,7 @@ Many of the changes work the same as on the landing page, so visit
 | Part of `website.yml` | What it sets | What to do |
 |---|---|---|
 | `navbar` → `logos` | The logos in the navigation bar | Copy the logo file into the `img` folder, and add its details below the existing logo in `logos` with `src`, `alt` and `height`.  |
-| `welcome` | The title, text and image of the welcome section | Change `title` and `text`. For your own image, put it in the `img` folder, change `src` to its path, and describe it in `alt` |
+| `welcome` | The title, text and welcome graphic | Change `title` and `text`. For your own welcome graphic, put it in the `img` folder, change `src` to its path, and describe it in `alt` |
 | `registration` | The registration banner | Fill in `opening_date`, `closing_date`, the link under `url` and, if there is one, the fee under `cost`. Choose with `after_closing` whether the banner shows "closed" or disappears after registration closes. Without registration, set `enabled: false` |
 | `pages` | The title, description and icon of each quick link | Change `title`, and `description` and pick an `icon` from [Bootstrap Icons](https://icons.getbootstrap.com/) |
 
@@ -173,8 +194,7 @@ on the landing page. The information appears on the overview page, the
 helps people find your training on Zenodo and in training registries
 such as TeSS.
 
-To add information about your training to `data/course.yml`, work through the file according to the table below. Some fields in `data/course.yml` are
-**required** - like on the landing page -  and some are optional. Required fields are
+To add information about your training to `data/course.yml`, work through the file according to the table below. Some fields in `data/course.yml` are **required**  and some are optional. Required fields are
 marked in the table below with **\***.
 
 **More detailed explanations are in the `data/course.yml`file itself:** the explanations in the lines starting with # give the rules for each field. **Read them carefully as you work through the file.**
@@ -225,16 +245,11 @@ below explains what they are for.
 
 - `doi`, `version_doi`, `release_date` and `zenodo_communities` belong
   to publishing your training on Zenodo, and are explained in
-  [FAIRification](fairification.qmd).
+  [FAIRification: your part](fairification.qmd#fairification-your-part).
 - `licence_id`, `version`, `website_url` and `preferred_citation` can
   stay empty for most trainings. The template works out the version and
   the address of your website from the branch name, and creates the
   citation from your team, title and DOI.
-
-Did you create this training instance from an earlier one of your own?
-Then `version_doi` and `release_date` may be filled in: empty them,
-because they belong to the earlier training instance. Keep `doi`: it
-stays the same for all your training instances.
 :::
 
 Is your training self-paced or in cohorts? Here are some tips for filling out `data/course.yml`. 

@@ -17,25 +17,43 @@ In this chapter, you will learn how to:
 - [Create additional training instances](#create-additional-training-instances),
   the next time your training is given.
 
-How to switch off template mode and fill in the website of a training instance (its dates, schedule, team and materials) is explained in the next chapters,
-[Instance pages - Data files](instance-pages-data-files.qmd) and [Instance pages - Content](instance-pages-content.qmd).
+::: {.before-you-start #before-you-start}
+[Before you start]{.bys-title}
 
-### Before you start {.unnumbered}
+::: {.bys-row}
+[Where]{.bys-label}
 
-In this chapter, you work on two branches: the new **release-** branch,
-and **main** for the landing page.
+::: {}
+On two branches: the new branch of your training instance, for example
+**release-2706**, and **main**.
+:::
+:::
+
+::: {.bys-row}
+[How]{.bys-label}
+
+::: {}
+Start the preview, make your changes, and commit and push them, as
+described in [Regular workflow](workflow.qmd).
+:::
+:::
+
+::: {.bys-row}
+[For experts]{.bys-label}
+
+::: {}
+Know your way around already? The [cheat sheet](#cheat-sheet) sums up
+which file to open and what to change when you work with training
+instances.
+:::
+:::
+:::
 
 ::: {.callout-important}
 Commit and push your changes **before** you switch to another branch.
 Changes you haven't committed yet move along with you to the other
 branch, where you might commit them by mistake.
 :::
-
-Work as described in [Regular workflow](workflow.qmd).
-
-The [cheat sheet](#cheat-sheet) at the end of this chapter sums up which
-file to open and what to change when working with training instances.
-
 
 ## What is a training instance? 
 
@@ -211,9 +229,6 @@ To add your first training instance to the landing page:
 
    Commit and push your changes.
 
-If you break one of the rules described in the file, the preview shows
-an error that explains what to fix.
-
 ::: {.callout-tip collapse="true"}
 ## Optional: delete the release-0000 branch
 
@@ -255,30 +270,31 @@ were.
    [Create your first new training instance](#create-your-first-new-training-instance).
 2. Update the information of the new training instance, such as its
    dates, schedule and team: see [Instance pages - Data files](instance-pages-data-files.qmd).
-3. Switch to the **main** branch, and open `data/instances.yml`.
-4. Add the new training instance: copy the entry of the current one,
+
+   ::: {.callout-important}
+   If your previous training instance was published on Zenodo, empty
+   `version_doi` and `release_date` under `reuse` in `data/course.yml` of
+   the new branch: they belong to the previous training instance. See
+   [FAIRification: New training instances](fairification.qmd#new-training-instances).
+   :::
+
+3. Commit and push your changes.
+4. Switch to the **main** branch, and open `data/instances.yml`.
+5. Add the new training instance: copy the entry of the current one,
    paste it at the top of the list, and change `slug`, `label`,
    `instance_url` and `sort_key`. Add a registration URL if registration is open. 
-5. Make the new training instance the current one. In the entry of the
+6. Make the new training instance the current one. In the entry of the
    previous training instance, change `status: current` to
    `status: previous`, and `show_in_hero: true` to `show_in_hero: false`.
 
    ![](images/instance-15-nexttraininginstance.png){width=45% fig-alt="Screenshot: data/instances.yml on main branch with a new november 2027 training instance added."}
+
+   ::: {.callout-note}
+   The training instance with `status: current` is the one the 'take me to the current instance' hero button leads to. Every other instance in the list needs to have `status: previous`. For all instances that have `status: previous`, their websites automatically show a banner saying: *This is an older instance of this training*, with a link to the current one. 
+   :::
+
    
-6. Save the file, check the preview, and commit and push.
-
-
-
-::: {.callout-note}
-The training instance with `status: current` is the one the 'take me to the current instance' hero button leads to. Every other instance in the list needs to have `status: previous`. For all instances that have `status: previous`, their websites automatically show a banner saying: *This is an older instance of this training*, with a link to the current one. 
-:::
-
-::: {.callout-important}
-If your previous training instance was published on Zenodo, empty
-`version_doi` and `release_date` under `reuse` in `data/course.yml` of
-the new branch: they belong to the previous training instance. See
-[FAIRification](fairification.qmd).
-:::
+7. Save the file, check the preview, and commit and push.
 
 ## Cheat sheet
 

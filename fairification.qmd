@@ -18,13 +18,32 @@ In this chapter, you will learn:
 - [How the template automatically FAIRifies your training](#fairification-the-automated-part).
 - [What you can do to complete FAIRification](#fairification-your-part).
 
-### Before you start {.unnumbered}
+::: {.before-you-start #before-you-start}
+[Before you start]{.bys-title}
 
-You fill in the FAIR information on the branch of your training
-instance, for example **release-2705**, and on **main**. Publishing on
-Zenodo starts from the branch of your training instance. Each step says
-which branch to use: see
+::: {.bys-row}
+[Where]{.bys-label}
+
+::: {}
+On two branches: the branch of your training instance, for example
+**release-2706**, and **main**. Need to change branch? See
 [Switch branch](training-instances.qmd#switch-branch).
+
+Publishing on Zenodo starts from the branch of your training instance,
+and also takes place on GitHub and on [zenodo.org](https://zenodo.org).
+:::
+:::
+
+::: {.bys-row}
+[How]{.bys-label}
+
+::: {}
+Start the preview, make your changes, and commit and push them, as
+described in [Regular workflow](workflow.qmd). You can commit several
+changes together.
+:::
+:::
+:::
 
 ## What is FAIR and why should I care? 
 
@@ -32,7 +51,7 @@ The FAIR principles were first written for
 [research data](https://www.nature.com/articles/sdata201618), but they
 apply just as well to [training materials](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007854).
 You put a lot of work into your training. FAIR makes sure that work can
-be found, used and credited, including by people outside your own team,
+be **found, used and credited**, including by people outside your own team,
 and long after the training has been given.
 
 In practice, FAIR training materials are:
@@ -91,18 +110,22 @@ time the website is built. Change the data files instead.
 
 ## FAIRification: your part
 
-There are a few steps you can take to make sure your training is fully
-FAIR: filling in your data files carefully and keeping them up to date,
-and publishing your training on Zenodo, so that it gets a persistent identifier (DOI), is easy to find and is
+There are two main steps you can take to make sure your training is fully
+FAIR: 
+
+- filling in your data files carefully and keeping them up to date
+- publishing your training on Zenodo, so that it gets a persistent identifier (DOI), is easy to find and is
 archived for the long term.
 
-### Check the data files {.unnumbered}
+This chapter goes through these steps one by one. 
+
+### Fill in the data files carefully {.unnumbered}
 
 The generated files take their information from your data files (see [FAIRification: the automated part](#fairification-the-automated-part)), so
 it's important to fill these in and keep them up to date. You probably
 filled in most of the FAIR information already, when you set up your
-training. To complete FAIRification, check these fields on the **branch
-of your training instance**, and on **main**:
+training. To complete FAIRification, check these fields on **main**, and on the **branch
+of your training instance**:
 
 | Information | Where | Good to know |
 |---|---|---|
@@ -120,17 +143,39 @@ of your training instance**, and on **main**:
 [Zenodo](https://zenodo.org) is a free, open repository for research
 outputs, such as papers, datasets, software and training materials. It
 is run by CERN, and it keeps what you upload available for the long
-term. Every upload gets a DOI: a permanent link that others can use to
-cite your training, and that keeps working even if your website or
-repository moves.
+term.
 
-Zenodo works together with GitHub. Once you connect your repository,
-Zenodo automatically archives every new release of it, and the template
-has already prepared the information Zenodo needs in `.zenodo.json`.
+Publishing your training on Zenodo is worth the few extra steps:
 
-Publishing your repository on Zenodo takes a few steps: you log in to Zenodo, turn it on for your
-GitHub repository, make a release on GitHub, and then add the DOI to your data
-files.
+- **Your training becomes citable.** It gets a DOI: a permanent link
+  that others can use to cite your training, just like a research paper. The
+  link keeps working even if your website or repository moves.
+- **You get credit for your teaching.** A training with a DOI is a
+  research output you can list on your CV and add to your ORCID
+  profile. All authors are named, with their ORCIDs.
+- **You can show its impact.** Zenodo shows how often your training
+  has been viewed and downloaded, which is useful for reports and
+  funding applications.
+- **Every training instance is kept.** Each release becomes a new
+  version, so you build up a record of every time the training was
+  given, and what it contained.
+- **It stays available.** Even if you leave your job, or the
+  repository is deleted, the archived copy on Zenodo remains.
+
+You don't have to upload anything to Zenodo yourself: you can simply connect Zenodo to GitHub, so you publish your training from there. Each time
+a training instance is ready, with all its materials and information
+in place, you make a **release** on GitHub. A release is a snapshot of
+your repository at that moment. Zenodo then copies it automatically,
+and gives it a DOI. The template has already prepared the information
+Zenodo needs, such as the title and authors, from your data files.
+
+Publishing your training on Zenodo takes five steps:
+
+1. Log in to Zenodo.
+2. Turn Zenodo on for your GitHub repository. You only do this once.
+3. Create a release on GitHub.
+4. Check your release on Zenodo
+4. Add the DOIs to your data files.
 
 **1. Log in to Zenodo** 
 
@@ -256,14 +301,18 @@ A release is a snapshot of your GitHub training repository at a certain moment, 
 name and a version number. As soon as you publish a release, Zenodo
 archives that snapshot and gives it a DOI.
 
-Before you start, make sure that:
-
+::: {.callout-important title="Before you make a release, check that:"}
 - Your data files are complete, especially the authors and their
   ORCIDs. Zenodo copies this information when you publish, and you
   can't change it automatically afterwards.
+- Two fields under `reuse` in `data/course.yml` on the branch of
+  your training instance are empty: `version_doi: ""` and
+  `release_date: ""`. Zenodo hasn't created the DOI for this release
+  yet, so any DOI there would belong to an earlier release, see [New training instances](fairification.qmd#new-training-instances). 
 - Your latest changes are pushed to the branch of your training
   instance, and the website has finished building. On GitHub, you can
   see this under **Actions**: the last run has a green check.
+:::
 
 
 1. Go to your repository on GitHub. In the sidebar on the right, under
@@ -413,25 +462,51 @@ DOI, and your repository and website show it from now on.
 
 When you give your training again, you create a new training instance,
 as described in [Training instances](training-instances.qmd). Each
-training instance gets its own release on Zenodo, with its own DOI.
-All releases together share one DOI: the DOI of all versions.
+training instance that you release through GitHub becomes a new
+version of your training on Zenodo, with its own DOI.
 
-Because you make a new training instance by copying the branch of an
-earlier one, the new branch also gets the DOI of the earlier instance.
-Before you publish the new training instance, you remove that DOI, so
-it isn't credited with the wrong release.
+Your training then has two kinds of DOI:
 
-### Before the release {.unnumbered}
+- **The DOI of all versions** stays the same for every training
+  instance. It always leads to the latest one.
+- **The DOI of this version** is different for each training instance.
+
+For example, Introduction to R is given in June and again in November:
+
+| In `data/course.yml`, under `reuse` | June: **release-2706** | November: **release-2711** |
+|---|---|---|
+| `doi`: the DOI of all versions | `10.5281/zenodo.1111111` | `10.5281/zenodo.1111111`, the same |
+| `version_doi`: the DOI of this version | `10.5281/zenodo.2222222` | First empty, then `10.5281/zenodo.3333333` |
+| `release_date` | `2027-06-01` | First empty, then `2027-11-15` |
+
+: {tbl-colwidths="[34,30,36]"}
+
+Making a new training instance is like making a new document by
+copying last year's and updating it: everything from the old one
+comes along, including its DOIs. So for the November training
+instance:
+
+1. You copy the June branch to make **release-2711**. The new branch
+   now has June's DOI of this version and release date.
+2. You [empty](#empty-the-old-dois) `version_doi` and `release_date`,
+   because they belong to June. Keep `doi`.
+3. You [publish](#publish-the-new-instance) the November training
+   instance on Zenodo, which gives it its own DOI.
+4. You fill in that new DOI and the release date.
+
+### Empty the DOIs of the earlier instance {#empty-the-old-dois .unnumbered}
+
+Once you've made the branch of your new training instance, as described
+in [Training instances](training-instances.qmd), it still has the DOIs
+of the instance you copied. Empty them before you make a release of your new instance:
 
 1. [Switch](training-instances.qmd#switch-branch) to the branch of
    your new training instance, for example **release-2711**.
 2. In `data/course.yml`, under `reuse`:
 
-   - **Keep** `doi`, the DOI of all versions. It stays the same for
-     every training instance.
+   - **Keep** `doi`, the DOI of all versions.
    - **Empty** `version_doi` and `release_date`, so they look like
-     this: `version_doi: ""` and `release_date: ""`. These belonged to
-     the earlier training instance.
+     this: `version_doi: ""` and `release_date: ""`.
    - **Empty** `version` too, if you filled it in for the earlier
      instance. The template then uses the year and month from the
      branch name, for example `2711`.
@@ -440,8 +515,8 @@ it isn't credited with the wrong release.
 
 3. Check the rest of the FAIR information for this training instance,
    as described in [FAIRification: your part](#fairification-your-part).
-   The team often changes between training instances, so check
-   especially the authors and their ORCIDs in `data/team.yml`.
+   The team often changes between training instances, so check the
+   authors and their ORCIDs in `data/team.yml` in particular.
 4. Save, commit and push your changes.
 
 ::: {.callout-important}
@@ -450,29 +525,24 @@ instances. Their DOIs stay as they are, so the earlier releases can
 still be found and cited.
 :::
 
-### Publish the new training instance on Zenodo {.unnumbered}
+### Publish the new training instance {#publish-the-new-instance .unnumbered}
 
-Zenodo is already turned on for your repository, so you can skip the
-first two steps of [Publish on Zenodo](#publish-on-zenodo).
+Your new training instance is now ready to publish. Zenodo is already
+connected to your repository, so you can skip the first two steps of
+[Publish on Zenodo](#publish-on-zenodo).
 
 1. Create a release on GitHub, as described in step 3 of
    [Publish on Zenodo](#publish-on-zenodo). Choose the branch of your
    new training instance as the target, and give the release a new
    tag, for example `v2711`.
 2. Check the release on Zenodo, as described in step 4. Zenodo adds
-   it as a new version of your training: in the **Versions** box, it's
-   at the top of the list.
+   it as a new version of your training, at the top of the list in the
+   **Versions** box.
+
+   ![](images/fair-24-zenodonewinstance.png){fig-alt="The Versions box on the Zenodo record of Introduction to R, with two versions: 2711 at the top, and 2706 below it. Under Cite all versions, the DOI of all versions is the same as before."}
+
 3. Add the DOI of this version and the release date to `data/course.yml`
-   on the branch of your new training instance, as described in step
-   5. The DOI of all versions stays the same.
+   on the branch of your new training instance, as described in step 5.
+   Keep the DOI of all versions as it is.
 
-::: {.callout-tip collapse="true" title="Overview: which DOI goes where?"}
-| Field in `data/course.yml` | Earlier training instance | New training instance | main |
-|---|---|---|---|
-| `doi` | The DOI of all versions | The DOI of all versions | The DOI of all versions |
-| `version_doi` | Its own DOI: leave it | Empty, then the DOI of the new release | Not used |
-| `release_date` | Its own date: leave it | Empty, then the date of the new release | The date of the latest release |
-| `version` | Leave it | Empty, unless you make a second release of this instance | Not used |
-
-: {tbl-colwidths="[22,26,26,26]"}
-:::
+   ![](images/fair-25-adddois.png){fig-alt="The reuse part of data/course.yml on the branch release-2711, with doi unchanged, and version_doi and release_date filled in for the new release."}

@@ -10,10 +10,8 @@ FAIR-*by-design* website for your training with the
 **[SciLifeLab Training Webpage Template](https://scilifelab-training.github.io/scilifelab-training-template/)**,
 made by the [SciLifeLab Training Hub](https://www.scilifelab.se/training/).
 
-During the training, the website gives participants one place to find
-the schedule, the materials and the practical information. After the
-training, it lets others find, cite and reuse what you made. The
-template works for most kinds of training: online or in person,
+The website gives your training participants one place to find
+the training materials, schedule and other relevant information. It also lets other educators find, cite and reuse what you made. The template works for most kinds of training: online or in person,
 recurring or one-off, self-paced or in cohorts.
 
 This is what a training website made with the template looks like:

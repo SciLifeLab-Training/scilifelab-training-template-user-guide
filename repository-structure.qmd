@@ -91,7 +91,7 @@ In this repository, you would work on these branches:
 ::: {.callout-note}
 You work on one branch at a time. To learn how to switch to another
 branch in VS Code, see
-[Switch branch](workflow.qmd#switch-branch).
+[Switch branch](training-instances.qmd#switch-branch).
 :::
 
 
@@ -143,7 +143,7 @@ The table below explains what each one is for, and whether you edit it
 | `index.qmd`, `_sections/` | The building blocks that put the landing page together | 🔒 |
 | `styles.css` | The look of the website: colours, fonts and layout | 🔒 |
 | `_template/` | Information about the template itself, used only while template mode is on. You can delete it once you've switched template mode off | 🔒 |
-| `scripts/`, `tests/` | The scripts that build the website, and the checks that test them | 🔒 |
+| `scripts/`, `tests/` | The scripts that build the website, and the tests that check them | 🔒 |
 | `.github/` | The automatic processes that publish your website on GitHub | 🔒 |
 | `.vscode/` | Settings for VS Code, such as the extensions it recommends when you open the repository | 🔒 |
 | `.gitignore` | The list of files that stay on your computer and are never uploaded to GitHub, such as your preview and environment | 🔒 |
@@ -281,7 +281,8 @@ keywords:
 - Keep the quotation marks around values.
 
 If the preview shows an error after you save a data file, check these
-first. The error message usually names the file and the line.
+two things first. The error message usually says which file and which
+line the mistake is in, see [Regular workflow - Work with the preview on](workflow.qmd#work-with-the-preview-on). 
 
 :::
 

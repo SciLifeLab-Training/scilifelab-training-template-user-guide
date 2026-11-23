@@ -30,6 +30,8 @@ sure you have the latest version.
    computer.   
    ![](images/workflow-03-synchronizechanges.png){width=40% fig-alt="Screenshot: VS Code status bar with the branch name and the Synchronize Changes arrows."}
 
+   Before you start editing, **always** sync changes so you are working on the lastest version of your repository. 
+
 ### Which part of your website are you working on? {#switch-branch .unnumbered}
 
 Apart from having the latest version, you also need to make sure you're
@@ -39,30 +41,31 @@ parts, and your repository keeps each one on its own **branch**:
 - **main branch**: the landing page of your training.
 - **release-xxxx branch**: one training instance. Your copy of the template comes with one example training instance: **release-0000**.
 
-The bottom-left corner of VS Code shows the branch you're working on. Clicking it will open a list of all branches that your repository contains. 
+Branches are explained in more detail in [Repository structure](repository-structure.qmd#branches).
+
+The bottom-left corner of VS Code shows the branch you're working on. Clicking the current branch will open a list of all branches that your repository contains at the top. 
 
 
    ![](images/workflow-04-branches.png){width=60% fig-alt="Screenshot: VS Code status bar showing the branch name main."}
- 
-Branches are explained in more detail in
-[Repository structure](repository-structure.qmd#branches).
 
 Before you start editing, **always** check that you're on the branch you
 want to change. To move to another branch, see
 [Switch branch](training-instances.qmd#switch-branch). 
 
-For your first change below, stay on **main**.
+For your first change below, stay on the **main** branch.
+
 
 ## Preview your website
 
-You're now ready to start editing. Before you change anything, start a
-**preview**: it shows your website in your web browser while you work,
+You're now ready to start editing. The best way to make changes to your repository - and thereby your training website - is to start a **preview** first. A preview shows your website in your web browser while you work,
 and updates every time you save a file. That way, you see straight away
 what each change does.
 
 The preview runs on your own computer, so only you can see it. Nothing
 is published until you decide to, so you can check every change before
-your collaborators or participants see it.
+your collaborators or training participants see it.
+
+### Start the preview {.unnumbered}
 
 To start the preview, open a terminal (**Terminal → New Terminal**, see [Open a terminal](setup.qmd#open-a-terminal)) and run:
 
@@ -81,11 +84,33 @@ If it doesn't open by itself, copy the address shown in the
 terminal, for example `http://localhost:4123/`, and paste it into your
 browser.
 
+### Work with the preview on {.unnumbered}
+
 Keep the preview running while you work. To see a change, save the file
 you edited: press **Cmd+S** (macOS) or **Ctrl+S** (Windows and Linux).
 The preview in your browser then updates by itself.
 
-To **stop the preview** when you are done editing, click in the terminal and press **Ctrl+C** (macOS, Windows and Linux).
+::: {.callout-tip collapse="true" title="The preview doesn't update, or shows an error?"}
+Sometimes the website can't be built from your files after you save a
+change. This is usually because of a small typing mistake in a data
+file. It doesn't break anything: the preview simply keeps showing the
+last version that worked, until you fix the mistake.
+
+1. Look at the terminal where the preview runs. The error message
+   starts with **Error in the data files**. It says which file and
+   which line the mistake is in, and shows that line and the line
+   above it.
+
+   ![](images/workflow-19-terminalerrormessage.png){width=75% fig-alt="An error message in the terminal. It says that the layout of data/course.yml is not right on a certain line, shows the title line with a missing closing quotation mark, and lists what to check."}
+
+2. Open that file, fix the mistake, and save it (see [Make a change](workflow.qmd#make-a-change)). The preview updates
+   by itself.
+
+Most mistakes are a missing space at the start of a line, or a missing
+quotation mark. [Repository structure - Data files](repository-structure.qmd#data-files)
+explains how data files are laid out.
+:::
+
 
 ::: {.callout-note collapse="true"}
 ## Want to run another command while the preview is running?
@@ -95,19 +120,10 @@ commands in it. Open a second terminal with **Terminal → New Terminal**,
 and run your command there.
 :::
 
-::: {.callout-tip collapse="true"}
-## Another way to start the preview: the Preview button
+### Stop the preview {.unnumbered}
 
-When a page file (ending in `.qmd`) is open in VS Code, you can also
-click the **Preview** button in the top-right corner of the editor. 
+To **stop the preview** when you are done editing, in VS Code, click in the terminal that runs the preview and press **Ctrl+C** (macOS, Windows and Linux).
 
-![](images/workflow-07-previewbutton.png){width=85% fig-alt="Screenshot: VS Code showing the Preview button."}
-
-The website then opens inside VS Code. To see it in your browser instead, click **Open in Browser**.
-
-![](images/workflow-08-openinbrowser.png){width=75% fig-alt="Screenshot: VS Code showing the open in browser button."}
-
-:::
 
 ## Make a change
 
