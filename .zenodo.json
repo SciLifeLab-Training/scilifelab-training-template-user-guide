@@ -1,0 +1,39 @@
+{
+  "title": "SciLifeLab Training Webpage Template User Guide",
+  "upload_type": "publication",
+  "publication_type": "softwaredocumentation",
+  "description": "<p>A step-by-step guide to the SciLifeLab Training Webpage Template, for trainers with no experience of Git, Python or Quarto. It explains how to set up, publish and maintain a FAIR website for a training: the landing page, training instances, data files, training materials, instructor notes, and publishing the training on Zenodo.</p>\n<p>Read the guide: <a href=\"https://scilifelab-training.github.io/scilifelab-training-template-user-guide/\">https://scilifelab-training.github.io/scilifelab-training-template-user-guide/</a></p>",
+  "creators": [
+    {
+      "name": "Luijten, Ineke",
+      "affiliation": "SciLifeLab Training Hub",
+      "orcid": "0000-0001-5768-275X"
+    }
+  ],
+  "keywords": [
+    "training",
+    "training materials",
+    "user guide",
+    "documentation",
+    "Quarto",
+    "GitHub Pages",
+    "FAIR",
+    "open educational resources"
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "version": "1.0.0-alpha",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://scilifelab-training.github.io/scilifelab-training-template-user-guide/",
+      "relation": "isSupplementedBy",
+      "resource_type": "other"
+    },
+    {
+      "identifier": "https://github.com/SciLifeLab-Training/scilifelab-training-template",
+      "relation": "documents",
+      "resource_type": "software"
+    }
+  ]
+}

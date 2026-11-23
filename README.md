@@ -32,8 +32,7 @@ The template itself is maintained in a separate repository:
 
 **[SciLifeLab Training Webpage Template](https://github.com/SciLifeLab-Training/scilifelab-training-template)**
 
-If you want to use the template, start with the published User Guide
-rather than the files in this repository.
+If you want to use the template, start with the published User Guide.
 
 ## Working on the User Guide locally
 
@@ -71,11 +70,22 @@ The published website is kept on the `gh-pages` branch. Don't edit the
 
 ## Contributing
 
-To improve the User Guide, edit the relevant `.qmd` files in this
-repository.
+Found a problem, or have an idea for an improvement? Open an issue in
+the repository it's about:
 
-Before you commit, preview the guide on your computer, and check that
-pages, links, images and formatting look as expected.
+- **The User Guide**, for example a step that is unclear, a screenshot
+  that is out of date, or a broken link:
+  [issues of the User Guide](https://github.com/SciLifeLab-Training/scilifelab-training-template-user-guide/issues).
+- **The template itself**, for example a page that doesn't build, or a
+  feature you'd like:
+  [issues of the template](https://github.com/SciLifeLab-Training/scilifelab-training-template/issues).
+
+Not sure which one? Either is fine, or email us at
+[training@scilifelab.se](mailto:training@scilifelab.se).
+
+To make a change yourself, see [CONTRIBUTING.md](CONTRIBUTING.md). It also
+describes how the User Guide is written, so that new text fits in with the
+rest.
 
 ## Citation
 
@@ -85,9 +95,11 @@ cite it as:
 > Luijten, I. (2026). *SciLifeLab Training Webpage Template User Guide*
 > (v1.0.0-alpha). Zenodo. https://doi.org/XX.XXXX/zenodo.XXXXX
 
+The citation information is also in [CITATION.cff](CITATION.cff). `CITATION.cff` and `.zenodo.json` are edited by hand.
+
 ## Licence
 
 Unless otherwise stated, the SciLifeLab Training Webpage Template User
 Guide is licensed under the
 [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
-licence.
+licence. See [LICENSE.md](LICENSE.md).

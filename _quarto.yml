@@ -8,9 +8,11 @@ book:
   page-footer:
     center: |
       This User Guide is maintained by the SciLifeLab Training Hub.<br>
-      Questions, problems or ideas for improving the guide or the template?
-      [Open an issue](https://github.com/SciLifeLab-Training/scilifelab-training-template/issues)
-      or email us at [training@scilifelab.se](mailto:training@scilifelab.se).
+      Questions, problems or ideas for improving the guide?
+      [Open an issue for the guide](https://github.com/SciLifeLab-Training/scilifelab-training-template-user-guide/issues).
+      Questions, problems or ideas for improving the template?
+      [Open an issue for the template](https://github.com/SciLifeLab-Training/scilifelab-training-template/issues).
+      Or email us at [training@scilifelab.se](mailto:training@scilifelab.se).
   chapters:
     - index.qmd
     - setup.qmd

@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: If you use this user guide, please cite it as below.
+title: SciLifeLab Training Webpage Template User Guide
+abstract: >-
+  A step-by-step guide to the SciLifeLab Training Webpage Template, for
+  trainers with no experience of Git, Python or Quarto. It explains how
+  to set up, publish and maintain a FAIR website for a training: the
+  landing page, training instances, data files, training materials,
+  instructor notes, and publishing the training on Zenodo.
+authors:
+  - family-names: Luijten
+    given-names: Ineke
+    affiliation: SciLifeLab Training Hub
+    orcid: https://orcid.org/0000-0001-5768-275X
+keywords:
+  - training
+  - training materials
+  - user guide
+  - documentation
+  - Quarto
+  - GitHub Pages
+  - FAIR
+  - open educational resources
+license: CC-BY-4.0
+url: https://scilifelab-training.github.io/scilifelab-training-template-user-guide/
+repository-code: https://github.com/SciLifeLab-Training/scilifelab-training-template-user-guide
+version: 1.0.0-alpha
+references:
+  - type: software
+    title: SciLifeLab Training Webpage Template
+    authors:
+      - name: SciLifeLab Training Hub
+    url: https://scilifelab-training.github.io/scilifelab-training-template/
+    repository-code: https://github.com/SciLifeLab-Training/scilifelab-training-template
