@@ -82,7 +82,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-74f1cd2879d0548f26a62f8efbf5c81d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8141c31b12be1f67465bed69e2110aa9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -255,48 +255,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#customise-the-look">Customise the look</a>: the organisation logos, the button texts, and banner image.</li>
 <li><a href="#describe-your-training">Describe your training</a>: the title, subtitle, information cards, footer, and how others may reuse your training.</li>
 </ul>
-<p>How to create a training instance and add it to the landing page is explained in the next chapter, <a href="./training-instances.html">Training instances</a>.</p>
-<section id="before-you-start" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="before-you-start">Before you start</h3>
-<p>Everything in this chapter happens on the <strong>main</strong> branch, and almost all of it in three data files in the <code>data</code> folder:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 30%">
-<col style="width: 70%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Data file</th>
-<th>What it holds</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>data/course.yml</code></td>
-<td>The title, description, learning outcomes, keywords and topics of your training, and the organisation and licence shown in the footer</td>
-</tr>
-<tr class="even">
-<td><code>data/team.yml</code></td>
-<td>The people behind the training</td>
-</tr>
-<tr class="odd">
-<td><code>data/website.yml</code></td>
-<td>Template mode, logos, button texts and banner image</td>
-</tr>
-</tbody>
-</table>
-<p>Not sure how a data file works? See <a href="./repository-structure.html#data-files">Data files</a>.</p>
-<p>Work as described in <a href="./workflow.html">Regular workflow</a>:</p>
-<ol type="1">
-<li>In a new terminal, start the preview:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">python</span> scripts/preview.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="2" type="1">
-<li>Make your changes, save them, and check the result in your browser.</li>
-<li><a href="./workflow.html#commit-and-push-your-changes">Commit and push</a> your changes. You don’t have to do this after every change: you can make several changes, and then commit and push them together.</li>
-</ol>
-<p>The <a href="#cheat-sheet">cheat sheet</a> at the end of this chapter sums up which file to open and what to change for each part of the landing page.</p>
-</section>
+<div id="before-you-start" class="before-you-start">
+<p><span class="bys-title">Before you start</span></p>
+<div class="bys-row">
+<p><span class="bys-label">Where</span></p>
+<div>
+<p>On the <strong>main</strong> branch, in three data files: <code>data/course.yml</code>, <code>data/team.yml</code> and <code>data/website.yml</code>.</p>
+</div>
+</div>
+<div class="bys-row">
+<p><span class="bys-label">How</span></p>
+<div>
+<p>Start the preview, make your changes, and commit and push them, as described in <a href="./workflow.html">Regular workflow</a>. You can commit several changes together.</p>
+<p>New to data files? See <a href="./repository-structure.html#data-files">Data files</a>.</p>
+</div>
+</div>
+<div class="bys-row">
+<p><span class="bys-label">For experts</span></p>
+<div>
+<p>Know your way around already? The <a href="#cheat-sheet">cheat sheet</a> sums up which file to open and what to change for each part of the landing page.</p>
+</div>
+</div>
+</div>
 <section id="switch-off-template-mode" class="level2" data-number="5.1">
 <h2 data-number="5.1" data-anchor-id="switch-off-template-mode"><span class="header-section-number">5.1</span> Switch off template mode</h2>
 <p>Your repository starts as a copy of the template, so it still presents itself as the template, in two places:</p>
@@ -325,9 +305,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><p>Open <code>data/website.yml</code>.</p></li>
 <li><p>Find the line:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Change it to:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">template</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="images/landing-05-templatefalse.png" class="img-fluid" style="width:80.0%" alt="Screenshot: changed template:true to template:false in data/website.yml."></p></li>
 <li><p>Save the file with <strong>Cmd+S</strong> (macOS) or <strong>Ctrl+S</strong> (Windows and Linux).</p></li>
 </ol>
@@ -401,12 +381,12 @@ Tip
 <li><p>Copy the logo file into the <code>img/logos</code> folder: drag it from your computer onto the folder in the Explorer panel in VS Code.</p>
 <p><img src="images/landing-07-addlogoimage.png" class="img-fluid" alt="Screenshot: add logo image from computer into img/logos folder."></p></li>
 <li><p>In <code>data/website.yml</code>, find the <code>hero</code> part:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hero</span><span class="kw">:</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">   </span><span class="fu">logos</span><span class="kw">:</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">src</span><span class="kw">:</span><span class="at"> </span><span class="st">"img/logos/scilifelab-neg.png"</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">alt</span><span class="kw">:</span><span class="at"> </span><span class="st">"SciLifeLab"</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">height</span><span class="kw">:</span><span class="at"> </span><span class="dv">56</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hero</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">   </span><span class="fu">logos</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">src</span><span class="kw">:</span><span class="at"> </span><span class="st">"img/logos/scilifelab-neg.png"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">alt</span><span class="kw">:</span><span class="at"> </span><span class="st">"SciLifeLab"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">height</span><span class="kw">:</span><span class="at"> </span><span class="dv">56</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Add your logo below the existing one, with these lines:</p>
 <ul>
 <li><code>src</code>: where the file is: <code>img/logos/</code> followed by the file name;</li>
@@ -432,10 +412,10 @@ Tip
 <p>You can change the text on the two hero buttons, and the heading of the <strong>All training instances</strong> banner:</p>
 <ol type="1">
 <li><p>In <code>data/website.yml</code>, find the <code>labels</code> part:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">labels</span><span class="kw">:</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">hero_view_current_label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Take me to the current instance"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">hero_registration_open_label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Register now"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">instances_band_title</span><span class="kw">:</span><span class="at"> </span><span class="st">"All training instances"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">labels</span><span class="kw">:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">hero_view_current_label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Take me to the current instance"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">hero_registration_open_label</span><span class="kw">:</span><span class="at"> </span><span class="st">"Register now"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">instances_band_title</span><span class="kw">:</span><span class="at"> </span><span class="st">"All training instances"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Change the text between the quotation marks. For example:</p>
 <p><img src="images/landing-11-changebuttontext.png" class="img-fluid" style="width:80.0%" alt="Screenshot: new text in the labels part of data/website.yml."></p></li>
 <li><p>Save the file, check the preview.</p>
@@ -463,8 +443,8 @@ Tip
 </div>
 </div></li>
 <li><p>In <code>data/website.yml</code>, find:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">instances_band</span><span class="kw">:</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"img/images/navet-band.png"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">instances_band</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"img/images/navet-band.png"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Replace <code>navet-band.png</code> with the file name of your image, for example:</p>
 <p><img src="images/landing-14-addimgfile.png" class="img-fluid" style="width:80.0%" alt="Screenshot: add a new banner path in website.yml."></p></li>
 <li><p>Save the file, and check the preview at different widths of your browser window.</p>
@@ -487,7 +467,7 @@ Tip
 <ol type="1">
 <li><p>Open <code>styles.css</code> and search for <code>.instances-band__image</code> (<strong>Cmd+F</strong> or <strong>Ctrl+F</strong>).</p></li>
 <li><p>In that block, find:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>object-position<span class="in">:</span> center;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>object-position<span class="in">:</span> center;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="images/landing-16-imagecentering.png" class="img-fluid" alt="Screenshot: css file with .instances-band__image properties."></p></li>
 <li><p>Change <code>center</code> to the part you want to keep. For example, <code>center top</code> keeps the top of the image, and <code>30% center</code> moves the visible part to the left.</p></li>
 </ol>
@@ -518,7 +498,7 @@ Important
 <li>Keep the number of spaces (indentation) at the start of each line exactly as they are. They show which information belongs together.</li>
 <li>Keep the quotation marks around values.</li>
 </ul>
-<p>If the preview shows an error after you save a data file, check these first. The error message usually names the file and the line.</p>
+<p>If the preview shows an error after you save a data file, check these two things first. The error message usually says which file and which line the mistake is in, see <a href="./workflow.html#work-with-the-preview-on">Regular workflow - Work with the preview on</a>.</p>
 </div>
 </div>
 <table class="caption-top table">

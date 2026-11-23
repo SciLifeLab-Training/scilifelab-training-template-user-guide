@@ -462,6 +462,55 @@ main.content a.btn-primary:focus-visible {
 }
 
 /* ==========================================================================
+   "Before you start" box at the top of each chapter about editing files
+   ========================================================================== */
+
+.before-you-start {
+    max-width: var(--guide-text-width);
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem 0.5rem;
+    border: 1px solid var(--guide-border);
+    border-radius: 10px;
+    background: var(--guide-surface);
+}
+
+.before-you-start .bys-title {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--guide-teal);
+}
+
+/* Each row: a label on the left, the text on the right. */
+.before-you-start .bys-row {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-top: 1px solid var(--guide-border);
+}
+
+.before-you-start .bys-label {
+    font-weight: 700;
+    color: var(--guide-teal-dark);
+}
+
+main.content .before-you-start p {
+    margin: 0 0 0.4rem;
+}
+
+/* On small screens, the label goes above the text. */
+@media (max-width: 575px) {
+    .before-you-start .bys-row {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+    }
+}
+
+/* ==========================================================================
    Small screens
    ========================================================================== */
 

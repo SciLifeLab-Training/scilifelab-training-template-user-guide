@@ -82,7 +82,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-74f1cd2879d0548f26a62f8efbf5c81d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8141c31b12be1f67465bed69e2110aa9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -260,7 +260,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open Folder…</strong> and select your repository folder.<br>
 <img src="images/workflow-02-openrepository.png" class="img-fluid" style="width:80.0%" alt="Screenshot: Opening the repository from file."></p></li>
 <li><p><strong>Get the latest version.</strong> If you work together with others, they may have uploaded changes since you last worked. In the bottom-left corner of VS Code, click the circular arrows next to the branch name (<strong>Synchronize Changes</strong>). This downloads their changes to your computer.<br>
-<img src="images/workflow-03-synchronizechanges.png" class="img-fluid" style="width:40.0%" alt="Screenshot: VS Code status bar with the branch name and the Synchronize Changes arrows."></p></li>
+<img src="images/workflow-03-synchronizechanges.png" class="img-fluid" style="width:40.0%" alt="Screenshot: VS Code status bar with the branch name and the Synchronize Changes arrows."></p>
+<p>Before you start editing, <strong>always</strong> sync changes so you are working on the lastest version of your repository.</p></li>
 </ol>
 <section id="switch-branch" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="switch-branch">Which part of your website are you working on?</h3>
@@ -269,27 +270,53 @@ If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open F
 <li><strong>main branch</strong>: the landing page of your training.</li>
 <li><strong>release-xxxx branch</strong>: one training instance. Your copy of the template comes with one example training instance: <strong>release-0000</strong>.</li>
 </ul>
-<p>The bottom-left corner of VS Code shows the branch you’re working on. Clicking it will open a list of all branches that your repository contains.</p>
-<p><img src="images/workflow-04-branches.png" class="img-fluid" style="width:60.0%" alt="Screenshot: VS Code status bar showing the branch name main."></p>
 <p>Branches are explained in more detail in <a href="./repository-structure.html#branches">Repository structure</a>.</p>
+<p>The bottom-left corner of VS Code shows the branch you’re working on. Clicking the current branch will open a list of all branches that your repository contains at the top.</p>
+<p><img src="images/workflow-04-branches.png" class="img-fluid" style="width:60.0%" alt="Screenshot: VS Code status bar showing the branch name main."></p>
 <p>Before you start editing, <strong>always</strong> check that you’re on the branch you want to change. To move to another branch, see <a href="./training-instances.html#switch-branch">Switch branch</a>.</p>
-<p>For your first change below, stay on <strong>main</strong>.</p>
+<p>For your first change below, stay on the <strong>main</strong> branch.</p>
 </section>
 </section>
 <section id="preview-your-website" class="level2" data-number="3.2">
 <h2 data-number="3.2" data-anchor-id="preview-your-website"><span class="header-section-number">3.2</span> Preview your website</h2>
-<p>You’re now ready to start editing. Before you change anything, start a <strong>preview</strong>: it shows your website in your web browser while you work, and updates every time you save a file. That way, you see straight away what each change does.</p>
-<p>The preview runs on your own computer, so only you can see it. Nothing is published until you decide to, so you can check every change before your collaborators or participants see it.</p>
+<p>You’re now ready to start editing. The best way to make changes to your repository - and thereby your training website - is to start a <strong>preview</strong> first. A preview shows your website in your web browser while you work, and updates every time you save a file. That way, you see straight away what each change does.</p>
+<p>The preview runs on your own computer, so only you can see it. Nothing is published until you decide to, so you can check every change before your collaborators or training participants see it.</p>
+<section id="start-the-preview" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="start-the-preview">Start the preview</h3>
 <p>To start the preview, open a terminal (<strong>Terminal → New Terminal</strong>, see <a href="./setup.html#open-a-terminal">Open a terminal</a>) and run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/preview.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="images/workflow-05-quartopreview.png" class="img-fluid" alt="Terminal displaying command 'quarto preview'"></p>
 <p>Quarto now builds your website. After a few seconds, it automatically opens in your web browser.</p>
 <p><img src="images/workflow-06-previewinbrowser.png" class="img-fluid" style="width:75.0%" alt="Landing page displayed locally in a web browser using Quarto preview."></p>
 <p>If it doesn’t open by itself, copy the address shown in the terminal, for example <code>http://localhost:4123/</code>, and paste it into your browser.</p>
+</section>
+<section id="work-with-the-preview-on" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="work-with-the-preview-on">Work with the preview on</h3>
 <p>Keep the preview running while you work. To see a change, save the file you edited: press <strong>Cmd+S</strong> (macOS) or <strong>Ctrl+S</strong> (Windows and Linux). The preview in your browser then updates by itself.</p>
-<p>To <strong>stop the preview</strong> when you are done editing, click in the terminal and press <strong>Ctrl+C</strong> (macOS, Windows and Linux).</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The preview doesn’t update, or shows an error?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sometimes the website can’t be built from your files after you save a change. This is usually because of a small typing mistake in a data file. It doesn’t break anything: the preview simply keeps showing the last version that worked, until you fix the mistake.</p>
+<ol type="1">
+<li><p>Look at the terminal where the preview runs. The error message starts with <strong>Error in the data files</strong>. It says which file and which line the mistake is in, and shows that line and the line above it.</p>
+<p><img src="images/workflow-19-terminalerrormessage.png" class="img-fluid" style="width:75.0%" alt="An error message in the terminal. It says that the layout of data/course.yml is not right on a certain line, shows the title line with a missing closing quotation mark, and lists what to check."></p></li>
+<li><p>Open that file, fix the mistake, and save it (see <a href="./workflow.html#make-a-change">Make a change</a>). The preview updates by itself.</p></li>
+</ol>
+<p>Most mistakes are a missing space at the start of a line, or a missing quotation mark. <a href="./repository-structure.html#data-files">Repository structure - Data files</a> explains how data files are laid out.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -298,31 +325,17 @@ If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open F
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The terminal running the preview is busy, so you can’t type other commands in it. Open a second terminal with <strong>Terminal → New Terminal</strong>, and run your command there.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Another way to start the preview: the Preview button
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>When a page file (ending in <code>.qmd</code>) is open in VS Code, you can also click the <strong>Preview</strong> button in the top-right corner of the editor.</p>
-<p><img src="images/workflow-07-previewbutton.png" class="img-fluid" style="width:85.0%" alt="Screenshot: VS Code showing the Preview button."></p>
-<p>The website then opens inside VS Code. To see it in your browser instead, click <strong>Open in Browser</strong>.</p>
-<p><img src="images/workflow-08-openinbrowser.png" class="img-fluid" style="width:75.0%" alt="Screenshot: VS Code showing the open in browser button."></p>
-</div>
-</div>
-</div>
+</section>
+<section id="stop-the-preview" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="stop-the-preview">Stop the preview</h3>
+<p>To <strong>stop the preview</strong> when you are done editing, in VS Code, click in the terminal that runs the preview and press <strong>Ctrl+C</strong> (macOS, Windows and Linux).</p>
+</section>
 </section>
 <section id="make-a-change" class="level2" data-number="3.3">
 <h2 data-number="3.3" data-anchor-id="make-a-change"><span class="header-section-number">3.3</span> Make a change</h2>

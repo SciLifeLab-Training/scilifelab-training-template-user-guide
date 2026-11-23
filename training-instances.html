@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-74f1cd2879d0548f26a62f8efbf5c81d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8141c31b12be1f67465bed69e2110aa9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -220,10 +220,27 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="#add-an-instance-to-the-landing-page">Add an instance to the landing page</a>: list it in the <strong>All training instances</strong> banner, and link it in the hero buttons.</li>
 <li><a href="#create-additional-training-instances">Create additional training instances</a>, the next time your training is given.</li>
 </ul>
-<p>How to switch off template mode and fill in the website of a training instance (its dates, schedule, team and materials) is explained in the next chapters, <a href="./instance-pages-data-files.html">Instance pages - Data files</a> and <a href="./instance-pages-content.html">Instance pages - Content</a>.</p>
-<section id="before-you-start" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="before-you-start">Before you start</h3>
-<p>In this chapter, you work on two branches: the new <strong>release-</strong> branch, and <strong>main</strong> for the landing page.</p>
+<div id="before-you-start" class="before-you-start">
+<p><span class="bys-title">Before you start</span></p>
+<div class="bys-row">
+<p><span class="bys-label">Where</span></p>
+<div>
+<p>On two branches: the new branch of your training instance, for example <strong>release-2706</strong>, and <strong>main</strong>.</p>
+</div>
+</div>
+<div class="bys-row">
+<p><span class="bys-label">How</span></p>
+<div>
+<p>Start the preview, make your changes, and commit and push them, as described in <a href="./workflow.html">Regular workflow</a>.</p>
+</div>
+</div>
+<div class="bys-row">
+<p><span class="bys-label">For experts</span></p>
+<div>
+<p>Know your way around already? The <a href="#cheat-sheet">cheat sheet</a> sums up which file to open and what to change when you work with training instances.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -237,9 +254,6 @@ Important
 <p>Commit and push your changes <strong>before</strong> you switch to another branch. Changes you haven’t committed yet move along with you to the other branch, where you might commit them by mistake.</p>
 </div>
 </div>
-<p>Work as described in <a href="./workflow.html">Regular workflow</a>.</p>
-<p>The <a href="#cheat-sheet">cheat sheet</a> at the end of this chapter sums up which file to open and what to change when working with training instances.</p>
-</section>
 <section id="what-is-a-training-instance" class="level2" data-number="6.1">
 <h2 data-number="6.1" data-anchor-id="what-is-a-training-instance"><span class="header-section-number">6.1</span> What is a training instance?</h2>
 <p>A <strong>training instance</strong> is one time your training is given, for example in May 2027. Each training instance has its own branch in your repository, and its own website, with its own dates, schedule, team and materials. The landing page links to them in two places:</p>
@@ -420,7 +434,6 @@ Important
 <p><img src="images/instance-11-instanceonlandingpage.png" class="img-fluid" style="width:75.0%" alt="Screenshot: landing page showing the june 2027 training instance."></p>
 <p>Commit and push your changes.</p></li>
 </ol>
-<p>If you break one of the rules described in the file, the preview shows an error that explains what to fix.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -452,13 +465,25 @@ Important
 <p>The next time your training is given, start from your previous training instance rather than from <strong>release-0000</strong>. That way, everything you prepared last time comes along: your materials, instructor notes, team and settings. The previous training instance keeps its own branch and website, so participants can always go back to the materials as they were.</p>
 <ol type="1">
 <li><p>Switch to your previous training instance branch, for example <strong>release-2706</strong>, and create a new branch from it, for example <code>release-2711</code>, as described in <a href="#create-your-first-new-training-instance">Create your first new training instance</a>.</p></li>
-<li><p>Update the information of the new training instance, such as its dates, schedule and team: see <a href="./instance-pages-data-files.html">Instance pages - Data files</a>.</p></li>
+<li><p>Update the information of the new training instance, such as its dates, schedule and team: see <a href="./instance-pages-data-files.html">Instance pages - Data files</a>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If your previous training instance was published on Zenodo, empty <code>version_doi</code> and <code>release_date</code> under <code>reuse</code> in <code>data/course.yml</code> of the new branch: they belong to the previous training instance. See <a href="./fairification.html#new-training-instances">FAIRification: New training instances</a>.</p>
+</div>
+</div></li>
+<li><p>Commit and push your changes.</p></li>
 <li><p>Switch to the <strong>main</strong> branch, and open <code>data/instances.yml</code>.</p></li>
 <li><p>Add the new training instance: copy the entry of the current one, paste it at the top of the list, and change <code>slug</code>, <code>label</code>, <code>instance_url</code> and <code>sort_key</code>. Add a registration URL if registration is open.</p></li>
 <li><p>Make the new training instance the current one. In the entry of the previous training instance, change <code>status: current</code> to <code>status: previous</code>, and <code>show_in_hero: true</code> to <code>show_in_hero: false</code>.</p>
-<p><img src="images/instance-15-nexttraininginstance.png" class="img-fluid" style="width:45.0%" alt="Screenshot: data/instances.yml on main branch with a new november 2027 training instance added."></p></li>
-<li><p>Save the file, check the preview, and commit and push.</p></li>
-</ol>
+<p><img src="images/instance-15-nexttraininginstance.png" class="img-fluid" style="width:45.0%" alt="Screenshot: data/instances.yml on main branch with a new november 2027 training instance added."></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -471,20 +496,9 @@ Note
 <div class="callout-body-container callout-body">
 <p>The training instance with <code>status: current</code> is the one the ‘take me to the current instance’ hero button leads to. Every other instance in the list needs to have <code>status: previous</code>. For all instances that have <code>status: previous</code>, their websites automatically show a banner saying: <em>This is an older instance of this training</em>, with a link to the current one.</p>
 </div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If your previous training instance was published on Zenodo, empty <code>version_doi</code> and <code>release_date</code> under <code>reuse</code> in <code>data/course.yml</code> of the new branch: they belong to the previous training instance. See <a href="./fairification.html">FAIRification</a>.</p>
-</div>
-</div>
+</div></li>
+<li><p>Save the file, check the preview, and commit and push.</p></li>
+</ol>
 </section>
 <section id="cheat-sheet" class="level2" data-number="6.5">
 <h2 data-number="6.5" data-anchor-id="cheat-sheet"><span class="header-section-number">6.5</span> Cheat sheet</h2>

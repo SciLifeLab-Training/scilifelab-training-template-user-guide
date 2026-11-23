@@ -82,7 +82,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-74f1cd2879d0548f26a62f8efbf5c81d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8141c31b12be1f67465bed69e2110aa9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -255,12 +255,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#add-content-to-your-pages">Add content to your pages</a>: Write your training materials in Markdown, with text, images, presentations and links.</li>
 <li><a href="#write-instructor-notes">Write instructor notes</a>: describe how to teach your training, for everyone who teaches or reuses it.</li>
 </ul>
-<section id="before-you-start" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="before-you-start">Before you start</h3>
-<p>Everything in this chapter happens on the <strong>branch of your training instance</strong> (for example <strong>release-2706</strong>).</p>
-<p>Work as described in <a href="./workflow.html">Regular workflow</a>.</p>
-<p>The <a href="#cheat-sheet">cheat sheet</a> at the end of this chapter sums up which file to open, and what to change, for each part of your training instance website.</p>
-</section>
+<div id="before-you-start" class="before-you-start">
+<p><span class="bys-title">Before you start</span></p>
+<div class="bys-row">
+<p><span class="bys-label">Where</span></p>
+<div>
+<p>On the branch of your training instance, for example <strong>release-2706</strong>. Your materials go in the <code>content</code> folder, and the notes for other instructors in the <code>instructors</code> folder. Not on that branch yet? See <a href="./training-instances.html#switch-branch">Switch branch</a>.</p>
+</div>
+</div>
+<div class="bys-row">
+<p><span class="bys-label">How</span></p>
+<div>
+<p>Start the preview, make your changes, and commit and push them, as described in <a href="./workflow.html">Regular workflow</a>. You can commit several changes together.</p>
+</div>
+</div>
+<div class="bys-row">
+<p><span class="bys-label">For experts</span></p>
+<div>
+<p>Know your way around already? The <a href="#cheat-sheet">cheat sheet</a> sums up which file to open, and what to change, for each part of your training materials.</p>
+</div>
+</div>
+</div>
 <section id="organise-your-training-sections-and-pages" class="level2" data-number="8.1">
 <h2 data-number="8.1" data-anchor-id="organise-your-training-sections-and-pages"><span class="header-section-number">8.1</span> Organise your training sections and pages</h2>
 <p>Before you write your training materials, you first have to decide how to organise them. Most of your training materials are in the <code>content</code> folder of your training instance branch: the content pages of your website are built from there. In this section, you will learn how the <code>content</code> folder is organised, how to divide your materials into sections, how to add and remove sections, and how to make them appear on your training instance website.</p>
@@ -503,7 +518,45 @@ With the example content pages and the tips above, start with the Content introd
 </section>
 <section id="whats-in-the-instructors-folder" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="whats-in-the-instructors-folder">What’s in the instructors folder</h3>
-<p>The <code>instructors</code> folder mirrors your <code>content</code> folder: one file for each section of your materials, plus a <code>README.md</code> for the training as a whole. All files are written in plain Markdown.</p>
+<p>The <code>instructors</code> folder mirrors your <code>content</code> folder: one file for each section of your materials, plus a <code>README.md</code> for the training as a whole.</p>
+<p>Unlike your materials, instructor notes are <code>.md</code> files, not <code>.qmd</code> files. That small difference decides where they show up:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 39%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Materials in <code>content</code></th>
+<th>Instructor notes in <code>instructors</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>File type</td>
+<td><code>.qmd</code> (Quarto Markdown)</td>
+<td><code>.md</code> (plain Markdown)</td>
+</tr>
+<tr class="even">
+<td>Shown on your website</td>
+<td>Yes: Quarto turns them into web pages</td>
+<td>No: Quarto leaves them out</td>
+</tr>
+<tr class="odd">
+<td>Where to read them</td>
+<td>On your website, and in the preview</td>
+<td>On GitHub, which shows <code>.md</code> files as formatted pages</td>
+</tr>
+<tr class="even">
+<td>Meant for</td>
+<td>Participants</td>
+<td>Instructors</td>
+</tr>
+</tbody>
+</table>
+<p>You write the content of both in the same way, with the same Markdown format. The only difference is the file extension.</p>
 <p>For example, for Introduction to R:</p>
 <p><img src="images/ipcontent-17-instructorsfolder.png" class="img-fluid" style="width:50.0%" alt="Screenshot: the content and instructors folders of Introduction to R in the VS Code Explorer, with the folders day-1 to day-3 in content, and README.md and day-1.md to day-3.md in instructors."></p>
 <table class="caption-top table">
@@ -531,7 +584,7 @@ With the example content pages and the tips above, start with the Content introd
 </section>
 <section id="fill-in-the-instructor-notes" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="fill-in-the-instructor-notes">Fill in the instructor notes</h3>
-<p>You are now ready to fill in the instuctor notes. For this, you don’t have to start from scratch. the template’s <code>instructors</code> folder comes with a skeleton to fill in, a <code>README.md</code> for the training as a whole, and <code>module-1.md</code> and <code>module-2.md</code> for its example sections. Use these files as a starting point: rename them, copy them, and fill them in. You’re also welcome to change the headings in the file, or to write your notes in your own way: the skeleton is a suggestion, not a rule.</p>
+<p>You are now ready to fill in the instructor notes. You don’t have to start from scratch: the template’s <code>instructors</code> folder comes with a skeleton to fill in. It has a <code>README.md</code> for the training as a whole, and <code>module-1.md</code> and <code>module-2.md</code> for its example sections. Use these files as a starting point: rename them, copy them, and fill them in. You’re also welcome to change the headings, or to write your notes in your own way: the skeleton is a suggestion, not a rule.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -542,13 +595,13 @@ With the example content pages and the tips above, start with the Content introd
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Anyone can read your instructor notes on GitHub, and they are archived on Zenodo together with your materials.</p>
+<p>Anyone can read your instructor notes on GitHub, and if you choose to publish your repository on Zenodo, they are archived together with your materials.</p>
 <p>Never write anything that must stay secret, such as passwords, access codes, or answers to exams and graded assignments. Once pushed, deleting it doesn’t remove it: it stays in the history of your repository.</p>
 </div>
 </div>
 <ol type="1">
 <li>Open <code>instructors/README.md</code>, and replace the example text with your own.</li>
-<li>Rename <code>module-1.md</code> after your first section: right-click it in the Explorer panel, choose <strong>Rename…</strong>, type the new name, for example <code>day-1.md</code>, and press <strong>Enter</strong>. Then fill in the file.</li>
+<li>Rename <code>module-1.md</code> after your first section: right-click it in the Explorer panel, choose <strong>Rename…</strong>, type the new name, for example <code>day-1.md</code>, and press <strong>Enter</strong>. Keep the <code>.md</code> at the end, not <code>.qmd</code>. Then fill in the file.</li>
 <li>For each other section, add an instructor file with the same name as the section’s folder. The easiest way is to copy a file:
 <ul>
 <li>In the Explorer panel, right-click an existing section file, for example <code>day-1.md</code>, and choose <strong>Copy</strong>.</li>
@@ -557,7 +610,7 @@ With the example content pages and the tips above, start with the Content introd
 </ul></li>
 <li>Delete the template files you don’t use, such as <code>module-2.md</code>.</li>
 <li>In the timing table in <code>instructors/README.md</code>, add a row for each section, with a link to its file.</li>
-<li>Save your files, and commit and push them. Instructor notes don’t appear in the preview: to see how they look, open them on GitHub.</li>
+<li>Save your files, and commit and push them. As instructor notes are <code>.md</code> files, they don’t appear in the preview or on your website. To see how they look, open them in your repository on GitHub.</li>
 </ol>
 <p>For example, this is <code>instructors/README.md</code> for Introduction to R:</p>
 <p><img src="images/ipcontent-18-readmeexample.png" class="img-fluid" alt="Screenshot: instructors/README.md of Introduction to R, with who can teach the training, a timing table for the three days, and the instructor preparation checklists."></p>
@@ -567,7 +620,6 @@ With the example content pages and the tips above, start with the Content introd
 </section>
 <section id="cheat-sheet" class="level2" data-number="8.4">
 <h2 data-number="8.4" data-anchor-id="cheat-sheet"><span class="header-section-number">8.4</span> Cheat sheet</h2>
-<p>All on the branch of your training instance.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">

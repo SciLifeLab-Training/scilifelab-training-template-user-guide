@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-74f1cd2879d0548f26a62f8efbf5c81d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8141c31b12be1f67465bed69e2110aa9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -218,13 +218,25 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="#fairification-the-automated-part">How the template automatically FAIRifies your training</a>.</li>
 <li><a href="#fairification-your-part">What you can do to complete FAIRification</a>.</li>
 </ul>
-<section id="before-you-start" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="before-you-start">Before you start</h3>
-<p>You fill in the FAIR information on the branch of your training instance, for example <strong>release-2705</strong>, and on <strong>main</strong>. Publishing on Zenodo starts from the branch of your training instance. Each step says which branch to use: see <a href="./training-instances.html#switch-branch">Switch branch</a>.</p>
-</section>
+<div id="before-you-start" class="before-you-start">
+<p><span class="bys-title">Before you start</span></p>
+<div class="bys-row">
+<p><span class="bys-label">Where</span></p>
+<div>
+<p>On two branches: the branch of your training instance, for example <strong>release-2706</strong>, and <strong>main</strong>. Need to change branch? See <a href="./training-instances.html#switch-branch">Switch branch</a>.</p>
+<p>Publishing on Zenodo starts from the branch of your training instance, and also takes place on GitHub and on <a href="https://zenodo.org">zenodo.org</a>.</p>
+</div>
+</div>
+<div class="bys-row">
+<p><span class="bys-label">How</span></p>
+<div>
+<p>Start the preview, make your changes, and commit and push them, as described in <a href="./workflow.html">Regular workflow</a>. You can commit several changes together.</p>
+</div>
+</div>
+</div>
 <section id="what-is-fair-and-why-should-i-care" class="level2" data-number="9.1">
 <h2 data-number="9.1" data-anchor-id="what-is-fair-and-why-should-i-care"><span class="header-section-number">9.1</span> What is FAIR and why should I care?</h2>
-<p>The FAIR principles were first written for <a href="https://www.nature.com/articles/sdata201618">research data</a>, but they apply just as well to <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007854">training materials</a>. You put a lot of work into your training. FAIR makes sure that work can be found, used and credited, including by people outside your own team, and long after the training has been given.</p>
+<p>The FAIR principles were first written for <a href="https://www.nature.com/articles/sdata201618">research data</a>, but they apply just as well to <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007854">training materials</a>. You put a lot of work into your training. FAIR makes sure that work can be <strong>found, used and credited</strong>, including by people outside your own team, and long after the training has been given.</p>
 <p>In practice, FAIR training materials are:</p>
 <ul>
 <li><strong>Findable:</strong> people looking for a training on your topic can find yours, for example in a search engine or a training registry.</li>
@@ -322,10 +334,15 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="fairification-your-part" class="level2" data-number="9.3">
 <h2 data-number="9.3" data-anchor-id="fairification-your-part"><span class="header-section-number">9.3</span> FAIRification: your part</h2>
-<p>There are a few steps you can take to make sure your training is fully FAIR: filling in your data files carefully and keeping them up to date, and publishing your training on Zenodo, so that it gets a persistent identifier (DOI), is easy to find and is archived for the long term.</p>
-<section id="check-the-data-files" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="check-the-data-files">Check the data files</h3>
-<p>The generated files take their information from your data files (see <a href="#fairification-the-automated-part">FAIRification: the automated part</a>), so it’s important to fill these in and keep them up to date. You probably filled in most of the FAIR information already, when you set up your training. To complete FAIRification, check these fields on the <strong>branch of your training instance</strong>, and on <strong>main</strong>:</p>
+<p>There are two main steps you can take to make sure your training is fully FAIR:</p>
+<ul>
+<li>filling in your data files carefully and keeping them up to date</li>
+<li>publishing your training on Zenodo, so that it gets a persistent identifier (DOI), is easy to find and is archived for the long term.</li>
+</ul>
+<p>This chapter goes through these steps one by one.</p>
+<section id="fill-in-the-data-files-carefully" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="fill-in-the-data-files-carefully">Fill in the data files carefully</h3>
+<p>The generated files take their information from your data files (see <a href="#fairification-the-automated-part">FAIRification: the automated part</a>), so it’s important to fill these in and keep them up to date. You probably filled in most of the FAIR information already, when you set up your training. To complete FAIRification, check these fields on <strong>main</strong>, and on the <strong>branch of your training instance</strong>:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -370,9 +387,24 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="publish-on-zenodo" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="publish-on-zenodo">Publish on Zenodo</h3>
-<p><a href="https://zenodo.org">Zenodo</a> is a free, open repository for research outputs, such as papers, datasets, software and training materials. It is run by CERN, and it keeps what you upload available for the long term. Every upload gets a DOI: a permanent link that others can use to cite your training, and that keeps working even if your website or repository moves.</p>
-<p>Zenodo works together with GitHub. Once you connect your repository, Zenodo automatically archives every new release of it, and the template has already prepared the information Zenodo needs in <code>.zenodo.json</code>.</p>
-<p>Publishing your repository on Zenodo takes a few steps: you log in to Zenodo, turn it on for your GitHub repository, make a release on GitHub, and then add the DOI to your data files.</p>
+<p><a href="https://zenodo.org">Zenodo</a> is a free, open repository for research outputs, such as papers, datasets, software and training materials. It is run by CERN, and it keeps what you upload available for the long term.</p>
+<p>Publishing your training on Zenodo is worth the few extra steps:</p>
+<ul>
+<li><strong>Your training becomes citable.</strong> It gets a DOI: a permanent link that others can use to cite your training, just like a research paper. The link keeps working even if your website or repository moves.</li>
+<li><strong>You get credit for your teaching.</strong> A training with a DOI is a research output you can list on your CV and add to your ORCID profile. All authors are named, with their ORCIDs.</li>
+<li><strong>You can show its impact.</strong> Zenodo shows how often your training has been viewed and downloaded, which is useful for reports and funding applications.</li>
+<li><strong>Every training instance is kept.</strong> Each release becomes a new version, so you build up a record of every time the training was given, and what it contained.</li>
+<li><strong>It stays available.</strong> Even if you leave your job, or the repository is deleted, the archived copy on Zenodo remains.</li>
+</ul>
+<p>You don’t have to upload anything to Zenodo yourself: you can simply connect Zenodo to GitHub, so you publish your training from there. Each time a training instance is ready, with all its materials and information in place, you make a <strong>release</strong> on GitHub. A release is a snapshot of your repository at that moment. Zenodo then copies it automatically, and gives it a DOI. The template has already prepared the information Zenodo needs, such as the title and authors, from your data files.</p>
+<p>Publishing your training on Zenodo takes five steps:</p>
+<ol type="1">
+<li>Log in to Zenodo.</li>
+<li>Turn Zenodo on for your GitHub repository. You only do this once.</li>
+<li>Create a release on GitHub.</li>
+<li>Check your release on Zenodo</li>
+<li>Add the DOIs to your data files.</li>
+</ol>
 <p><strong>1. Log in to Zenodo</strong></p>
 <p>To publish on Zenodo, you need a Zenodo account that is linked to your GitHub account.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -475,11 +507,23 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p><strong>3. Create a release on GitHub</strong></p>
 <p>A release is a snapshot of your GitHub training repository at a certain moment, with a name and a version number. As soon as you publish a release, Zenodo archives that snapshot and gives it a DOI.</p>
-<p>Before you start, make sure that:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Before you make a release, check that:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>Your data files are complete, especially the authors and their ORCIDs. Zenodo copies this information when you publish, and you can’t change it automatically afterwards.</li>
+<li>Two fields under <code>reuse</code> in <code>data/course.yml</code> on the branch of your training instance are empty: <code>version_doi: ""</code> and <code>release_date: ""</code>. Zenodo hasn’t created the DOI for this release yet, so any DOI there would belong to an earlier release, see <a href="./fairification.html#new-training-instances">New training instances</a>.</li>
 <li>Your latest changes are pushed to the branch of your training instance, and the website has finished building. On GitHub, you can see this under <strong>Actions</strong>: the last run has a green check.</li>
 </ul>
+</div>
+</div>
 <ol type="1">
 <li><p>Go to your repository on GitHub. In the sidebar on the right, under <strong>Releases</strong>, click <strong>Create a new release</strong>.</p>
 <p><img src="images/fair-11-createrelease.png" class="img-fluid" alt="The sidebar of a GitHub repository, with the link Create a new release under Releases."></p></li>
@@ -488,7 +532,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Give the release a tag. Click <strong>Choose a tag</strong>, type a new tag, for example <code>v2706.1</code>, and click <strong>Create new tag</strong>. The tag is the version number of your release: Zenodo shows it as the version of your training.</p>
 <p><img src="images/fair-13-tag.png" class="img-fluid" style="width:45.0%" alt="The Choose a tag menu on the new release page on GitHub, with the new tag v2706.1 typed in and the option Create new tag."></p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -497,7 +541,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Use a tag that shows which training instance the release belongs to, and which version of that instance it is. For example, <code>v2706.1</code> is the first release of the training instance of June 2027. If you later fix something in the materials of that instance, the next release is <code>v2706.2</code>. The first release of the next training instance could then be <code>v2711.1</code>.</p>
 <p>A tag can’t have the same name as a branch, so don’t use <code>release-2706</code> as a tag.</p>
@@ -522,7 +566,7 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/fair-19-fullrecord.png" class="img-fluid" alt="The full record of a training on Zenodo. On the left are the title, authors, description and files. On the right are the numbers of views and downloads, the versions, and the DOI."></p></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -531,7 +575,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><strong>The release doesn’t show up at all.</strong> Zenodo only archives releases that you publish <em>after</em> turning Zenodo on for your repository. Check that your repository is under <strong>Enabled Repositories</strong>, and publish a new release.</li>
@@ -558,7 +602,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Push your changes on both branches. When the website has finished building, the DOI shows up in <code>CITATION.cff</code>, in the README and on your website.</p></li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -567,7 +611,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Zenodo only creates the DOI after you publish the release. So the release that Zenodo archived can’t contain its own DOI yet. That’s normal, and nothing to worry about: the Zenodo record itself shows the DOI, and your repository and website show it from now on.</p>
 </div>
@@ -577,20 +621,64 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="new-training-instances" class="level2" data-number="9.4">
 <h2 data-number="9.4" data-anchor-id="new-training-instances"><span class="header-section-number">9.4</span> New training instances</h2>
-<p>When you give your training again, you create a new training instance, as described in <a href="./training-instances.html">Training instances</a>. Each training instance gets its own release on Zenodo, with its own DOI. All releases together share one DOI: the DOI of all versions.</p>
-<p>Because you make a new training instance by copying the branch of an earlier one, the new branch also gets the DOI of the earlier instance. Before you publish the new training instance, you remove that DOI, so it isn’t credited with the wrong release.</p>
-<section id="before-the-release" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="before-the-release">Before the release</h3>
+<p>When you give your training again, you create a new training instance, as described in <a href="./training-instances.html">Training instances</a>. Each training instance that you release through GitHub becomes a new version of your training on Zenodo, with its own DOI.</p>
+<p>Your training then has two kinds of DOI:</p>
+<ul>
+<li><strong>The DOI of all versions</strong> stays the same for every training instance. It always leads to the latest one.</li>
+<li><strong>The DOI of this version</strong> is different for each training instance.</li>
+</ul>
+<p>For example, Introduction to R is given in June and again in November:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 30%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>In <code>data/course.yml</code>, under <code>reuse</code></th>
+<th>June: <strong>release-2706</strong></th>
+<th>November: <strong>release-2711</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>doi</code>: the DOI of all versions</td>
+<td><code>10.5281/zenodo.1111111</code></td>
+<td><code>10.5281/zenodo.1111111</code>, the same</td>
+</tr>
+<tr class="even">
+<td><code>version_doi</code>: the DOI of this version</td>
+<td><code>10.5281/zenodo.2222222</code></td>
+<td>First empty, then <code>10.5281/zenodo.3333333</code></td>
+</tr>
+<tr class="odd">
+<td><code>release_date</code></td>
+<td><code>2027-06-01</code></td>
+<td>First empty, then <code>2027-11-15</code></td>
+</tr>
+</tbody>
+</table>
+<p>Making a new training instance is like making a new document by copying last year’s and updating it: everything from the old one comes along, including its DOIs. So for the November training instance:</p>
+<ol type="1">
+<li>You copy the June branch to make <strong>release-2711</strong>. The new branch now has June’s DOI of this version and release date.</li>
+<li>You <a href="#empty-the-old-dois">empty</a> <code>version_doi</code> and <code>release_date</code>, because they belong to June. Keep <code>doi</code>.</li>
+<li>You <a href="#publish-the-new-instance">publish</a> the November training instance on Zenodo, which gives it its own DOI.</li>
+<li>You fill in that new DOI and the release date.</li>
+</ol>
+<section id="empty-the-old-dois" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="empty-the-old-dois">Empty the DOIs of the earlier instance</h3>
+<p>Once you’ve made the branch of your new training instance, as described in <a href="./training-instances.html">Training instances</a>, it still has the DOIs of the instance you copied. Empty them before you make a release of your new instance:</p>
 <ol type="1">
 <li><p><a href="./training-instances.html#switch-branch">Switch</a> to the branch of your new training instance, for example <strong>release-2711</strong>.</p></li>
 <li><p>In <code>data/course.yml</code>, under <code>reuse</code>:</p>
 <ul>
-<li><strong>Keep</strong> <code>doi</code>, the DOI of all versions. It stays the same for every training instance.</li>
-<li><strong>Empty</strong> <code>version_doi</code> and <code>release_date</code>, so they look like this: <code>version_doi: ""</code> and <code>release_date: ""</code>. These belonged to the earlier training instance.</li>
+<li><strong>Keep</strong> <code>doi</code>, the DOI of all versions.</li>
+<li><strong>Empty</strong> <code>version_doi</code> and <code>release_date</code>, so they look like this: <code>version_doi: ""</code> and <code>release_date: ""</code>.</li>
 <li><strong>Empty</strong> <code>version</code> too, if you filled it in for the earlier instance. The template then uses the year and month from the branch name, for example <code>2711</code>.</li>
 </ul>
 <p><img src="images/fair-23-emptydois.png" class="img-fluid" style="width:90.0%" alt="The reuse part of data/course.yml on the branch of a new training instance, with doi filled in, and version_doi and release_date empty."></p></li>
-<li><p>Check the rest of the FAIR information for this training instance, as described in <a href="#fairification-your-part">FAIRification: your part</a>. The team often changes between training instances, so check especially the authors and their ORCIDs in <code>data/team.yml</code>.</p></li>
+<li><p>Check the rest of the FAIR information for this training instance, as described in <a href="#fairification-your-part">FAIRification: your part</a>. The team often changes between training instances, so check the authors and their ORCIDs in <code>data/team.yml</code> in particular.</p></li>
 <li><p>Save, commit and push your changes.</p></li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -607,74 +695,16 @@ Important
 </div>
 </div>
 </section>
-<section id="publish-the-new-training-instance-on-zenodo" class="level3 unnumbered">
-<h3 class="unnumbered" data-anchor-id="publish-the-new-training-instance-on-zenodo">Publish the new training instance on Zenodo</h3>
-<p>Zenodo is already turned on for your repository, so you can skip the first two steps of <a href="#publish-on-zenodo">Publish on Zenodo</a>.</p>
+<section id="publish-the-new-instance" class="level3 unnumbered">
+<h3 class="unnumbered" data-anchor-id="publish-the-new-instance">Publish the new training instance</h3>
+<p>Your new training instance is now ready to publish. Zenodo is already connected to your repository, so you can skip the first two steps of <a href="#publish-on-zenodo">Publish on Zenodo</a>.</p>
 <ol type="1">
-<li>Create a release on GitHub, as described in step 3 of <a href="#publish-on-zenodo">Publish on Zenodo</a>. Choose the branch of your new training instance as the target, and give the release a new tag, for example <code>v2711</code>.</li>
-<li>Check the release on Zenodo, as described in step 4. Zenodo adds it as a new version of your training: in the <strong>Versions</strong> box, it’s at the top of the list.</li>
-<li>Add the DOI of this version and the release date to <code>data/course.yml</code> on the branch of your new training instance, as described in step
-<ol start="5" type="1">
-<li>The DOI of all versions stays the same.</li>
-</ol></li>
+<li><p>Create a release on GitHub, as described in step 3 of <a href="#publish-on-zenodo">Publish on Zenodo</a>. Choose the branch of your new training instance as the target, and give the release a new tag, for example <code>v2711</code>.</p></li>
+<li><p>Check the release on Zenodo, as described in step 4. Zenodo adds it as a new version of your training, at the top of the list in the <strong>Versions</strong> box.</p>
+<p><img src="images/fair-24-zenodonewinstance.png" class="img-fluid" alt="The Versions box on the Zenodo record of Introduction to R, with two versions: 2711 at the top, and 2706 below it. Under Cite all versions, the DOI of all versions is the same as before."></p></li>
+<li><p>Add the DOI of this version and the release date to <code>data/course.yml</code> on the branch of your new training instance, as described in step 5. Keep the DOI of all versions as it is.</p>
+<p><img src="images/fair-25-adddois.png" class="img-fluid" alt="The reuse part of data/course.yml on the branch release-2711, with doi unchanged, and version_doi and release_date filled in for the new release."></p></li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Overview: which DOI goes where?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 22%">
-<col style="width: 26%">
-<col style="width: 26%">
-<col style="width: 26%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field in <code>data/course.yml</code></th>
-<th>Earlier training instance</th>
-<th>New training instance</th>
-<th>main</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>doi</code></td>
-<td>The DOI of all versions</td>
-<td>The DOI of all versions</td>
-<td>The DOI of all versions</td>
-</tr>
-<tr class="even">
-<td><code>version_doi</code></td>
-<td>Its own DOI: leave it</td>
-<td>Empty, then the DOI of the new release</td>
-<td>Not used</td>
-</tr>
-<tr class="odd">
-<td><code>release_date</code></td>
-<td>Its own date: leave it</td>
-<td>Empty, then the date of the new release</td>
-<td>The date of the latest release</td>
-</tr>
-<tr class="even">
-<td><code>version</code></td>
-<td>Leave it</td>
-<td>Empty, unless you make a second release of this instance</td>
-<td>Not used</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
 
 
 </section>
