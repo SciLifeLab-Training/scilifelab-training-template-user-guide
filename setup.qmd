@@ -76,6 +76,26 @@ page: it should be the name you just chose, not the template's name.
 
 ![](images/setup-03-opennewrepository.png){width=70% fig-alt="GitHub page showing a newly created repository based on the template."}
 
+**Receive updates to the template (recommended)**
+
+The template is improved from time to time, for example with fixes and
+new features. Your repository is a copy, so it doesn't change when the
+template does. To get an email when a new version of the template comes
+out:
+
+1. Re-open the [SciLifeLab Training Webpage Template](https://github.com/SciLifeLab-Training/scilifelab-training-template)
+   on GitHub.
+2. At the top right, click **Watch**, and then **Custom**.
+
+   ![](images/setup-20-watchreleases.png){width=80% fig-alt="The Watch menu of the template repository on GitHub"}
+
+3. Tick **Releases**, and click **Apply**.
+
+   ![](images/setup-21-watchreleasesettings.png){width=55% fig-alt="The Watch menu of the template repository on GitHub, with Custom selected and Releases ticked."}
+
+You then get an email for each new release of the template. The release
+says what has changed, and how to bring the changes into your own
+training repository.
 
 ::: {.callout-tip collapse="true"}
 ## Working with others? Add collaborators (optional)
@@ -83,7 +103,7 @@ page: it should be the name you just chose, not the template's name.
 If other people will help develop or maintain the training, give them
 access to the repository. You can also come back to this later.
 
-1. In your repository, click **Settings**.
+1. In your newly created training repository, click **Settings**.
 
    ![](images/setup-04-settings.png){fig-alt="The top of a GitHub repository page, with the Settings tab."}
 
