@@ -83,6 +83,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-8141c31b12be1f67465bed69e2110aa9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -249,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>To turn the SciLifeLab Training Webpage Template into a website for your own training, you first need your own copy of the template. This chapter takes you through everything you need to do <strong>once</strong>, at the start: you will create your own copy, publish it as a website, and set it up on your computer so you can edit it.</p>
 <p>The figure below shows the steps you will follow:</p>
-<p><img src="images/setup-overview-image.png" class="img-fluid" alt="Workflow showing the one-time setup steps."></p>
+<p><a href="images/setup-overview-image.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/setup-overview-image.png" class="img-fluid" alt="Workflow showing the one-time setup steps."></a></p>
 <p>Once you are done, the next chapter, <a href="./workflow.html">Regular workflow</a>, shows the steps you repeat every time you want to update your training website.</p>
 <section id="install-the-software" class="level2" data-number="2.1">
 <h2 data-number="2.1" data-anchor-id="install-the-software"><span class="header-section-number">2.1</span> Install the software</h2>
@@ -321,23 +324,21 @@ Note
 <h2 data-number="2.2" data-anchor-id="create-your-repository"><span class="header-section-number">2.2</span> Create your repository</h2>
 <p>A <strong>repository</strong> is the folder on GitHub that holds everything for your training: the information about it, the materials, and the website. Follow these steps to create your own repository as a copy of the template:</p>
 <ol type="1">
-<li>Open the <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template">SciLifeLab Training Webpage Template</a> on GitHub.</li>
-<li>In the top-right corner of the page, click the green <strong>Use this template</strong> button and select <strong>Create a new repository</strong>.</li>
-</ol>
-<p><img src="images/setup-01-usethistemplate.png" class="img-fluid" alt="GitHub repository page showing the Use this template button."></p>
-<ol start="3" type="1">
-<li>Fill in the form:
+<li><p>Open the <a href="https://github.com/SciLifeLab-Training/scilifelab-training-template">SciLifeLab Training Webpage Template</a> on GitHub.</p></li>
+<li><p>In the top-right corner of the page, click the green <strong>Use this template</strong> button and select <strong>Create a new repository</strong>.</p>
+<p><a href="images/setup-01-usethistemplate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/setup-01-usethistemplate.png" class="img-fluid" alt="GitHub repository page showing the Use this template button."></a></p></li>
+<li><p>Fill in the form:</p>
 <ul>
 <li>Turn <strong>Include all branches</strong> <strong>on</strong>. This is required!</li>
 <li>Under <strong>Owner</strong>, select the GitHub organisation or account where the repository should live, for example SciLifeLab-Training, NBISweden, or your personal account.</li>
 <li>Under <strong>Repository name</strong>, enter a short name in lowercase, with hyphens instead of spaces, for example <code>introduction-to-r</code>. The name becomes part of your website URL, so choose it carefully.</li>
 <li>Under <strong>Visibility</strong>, choose <strong>Public</strong>, so participants can see the website and materials.</li>
 </ul></li>
-<li>Click <strong>Create repository</strong>.</li>
+<li><p>Click <strong>Create repository</strong>.</p>
+<p><a href="images/setup-02-createnewrepository.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/setup-02-createnewrepository.png" class="img-fluid" style="width:70.0%" alt="GitHub form for creating a repository from a template, including the owner, repository name, visibility and Include all branches options."></a></p></li>
 </ol>
-<p><img src="images/setup-02-createnewrepository.png" class="img-fluid" style="width:70.0%" alt="GitHub form for creating a repository from a template, including the owner, repository name, visibility and Include all branches options."></p>
 <p>GitHub now opens your new repository. Check the name at the top of the page: it should be the name you just chose, not the template’s name.</p>
-<p><img src="images/setup-03-opennewrepository.png" class="img-fluid" style="width:70.0%" alt="GitHub page showing a newly created repository based on the template."></p>
+<p><a href="images/setup-03-opennewrepository.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/setup-03-opennewrepository.png" class="img-fluid" style="width:70.0%" alt="GitHub page showing a newly created repository based on the template."></a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -352,10 +353,13 @@ Note
 <div class="callout-body-container callout-body">
 <p>If other people will help develop or maintain the training, give them access to the repository. You can also come back to this later.</p>
 <ol type="1">
-<li>In your repository, click <strong>Settings</strong>. <img src="images/setup-04-settings.png" class="img-fluid" alt="GitHub page showing the link to setup."></li>
-<li>Under <strong>Access</strong> in the menu on the left, click <strong>Collaborators and teams</strong>. <img src="images/setup-05-teams.png" class="img-fluid" alt="GitHub settings page showing the links to collaborators and teams."></li>
-<li>Click <strong>Add people</strong> or <strong>Add teams</strong>.</li>
-<li>Search for the person or team, choose a role, and click <strong>Add</strong>. <img src="images/setup-06-addpeople.png" class="img-fluid" alt="Collaborators and teams page showing how to add add people or teams."></li>
+<li><p>In your repository, click <strong>Settings</strong>.</p>
+<p><a href="images/setup-04-settings.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/setup-04-settings.png" class="img-fluid" alt="The top of a GitHub repository page, with the Settings tab."></a></p></li>
+<li><p>Under <strong>Access</strong> in the menu on the left, click <strong>Collaborators and teams</strong>.</p>
+<p><a href="images/setup-05-teams.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/setup-05-teams.png" class="img-fluid" alt="The settings of a GitHub repository, with Collaborators and teams under Access in the menu on the left."></a></p></li>
+<li><p>Click <strong>Add people</strong> or <strong>Add teams</strong>.</p></li>
+<li><p>Search for the person or team, choose a role, and click <strong>Add</strong>.</p>
+<p><a href="images/setup-06-addpeople.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/setup-06-addpeople.png" class="img-fluid" alt="The Collaborators and teams page on GitHub, with the buttons Add people and Add teams."></a></p></li>
 </ol>
 <p>The options you see depend on whether the repository belongs to you or to an organisation, and on your permissions in that organisation.</p>
 </div>
@@ -369,8 +373,10 @@ Note
 <section id="check-that-your-website-is-online" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="check-that-your-website-is-online">Check that your website is online</h3>
 <ol type="1">
-<li>In your repository, click <strong>Settings</strong>, then <strong>Pages</strong> in the menu on the left. <img src="images/setup-04-settings.png" class="img-fluid" alt="GitHub page showing the link to setup."></li>
-<li>At the top of the page, look for <strong>Your site is live at</strong>, followed by your website address. It looks like <code>https://ORGANISATION.github.io/REPOSITORY-NAME/</code>, with your organisation (or user name) and repository name filled in. <img src="images/setup-07-websitelive.png" class="img-fluid" alt="GitHub settings page showing 'your site is live' message."></li>
+<li><p>In your repository, click <strong>Settings</strong>, then <strong>Pages</strong> in the menu on the left.</p>
+<p><a href="images/setup-04-settings.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/setup-04-settings.png" class="img-fluid" alt="The top of a GitHub repository page, with the Settings tab."></a></p></li>
+<li><p>At the top of the page, look for <strong>Your site is live at</strong>, followed by your website address. It looks like <code>https://ORGANISATION.github.io/REPOSITORY-NAME/</code>, with your organisation (or user name) and repository name filled in.</p>
+<p><a href="images/setup-07-websitelive.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/setup-07-websitelive.png" class="img-fluid" alt="The Pages settings of a GitHub repository, with the message Your site is live at, followed by the website address."></a></p></li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -386,9 +392,10 @@ Note
 <div class="callout-body-container callout-body">
 <p>Sometimes GitHub doesn’t switch on publishing by itself. You can do it yourself:</p>
 <ol type="1">
-<li>On the same page, under <strong>Source</strong>, choose <strong>Deploy from a branch</strong>.</li>
-<li>Under <strong>Branch</strong>, choose <strong>gh-pages</strong> and <strong>/ (root)</strong>, and click <strong>Save</strong>. <img src="images/setup-08-deploy.png" class="img-fluid" alt="GitHub settings page showing build and deployment box setting."></li>
-<li>Wait a minute or two and refresh the page. <strong>Your site is live at</strong> now appears at the top.</li>
+<li><p>On the same page, under <strong>Source</strong>, choose <strong>Deploy from a branch</strong>.</p></li>
+<li><p>Under <strong>Branch</strong>, choose <strong>gh-pages</strong> and <strong>/ (root)</strong>, and click <strong>Save</strong>.</p>
+<p><a href="images/setup-08-deploy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/setup-08-deploy.png" class="img-fluid" alt="The Build and deployment settings on the Pages settings of GitHub, with Deploy from a branch as the source, and the branch gh-pages and the folder / (root) selected."></a></p></li>
+<li><p>Wait a minute or two and refresh the page. <strong>Your site is live at</strong> now appears at the top.</p></li>
 </ol>
 </div>
 </div>
@@ -398,8 +405,9 @@ Note
 <h3 class="unnumbered" data-anchor-id="check-that-your-website-can-be-updated">Check that your website can be updated</h3>
 <p>Every time you send a change to GitHub, GitHub runs a small automatic process that rebuilds your website. This process needs permission to update the website.</p>
 <ol type="1">
-<li>Click <strong>Settings</strong>, then <strong>Actions → General</strong> in the menu on the left.</li>
-<li>Scroll down to <strong>Workflow permissions</strong>, and check that <strong>Read and write permissions</strong> is selected. <img src="images/setup-09-workflowpermissions.png" class="img-fluid" alt="GitHub settings page showing workflow permission settings"></li>
+<li><p>Click <strong>Settings</strong>, then <strong>Actions → General</strong> in the menu on the left.</p></li>
+<li><p>Scroll down to <strong>Workflow permissions</strong>, and check that <strong>Read and write permissions</strong> is selected.</p>
+<p><a href="images/setup-09-workflowpermissions.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/setup-09-workflowpermissions.png" class="img-fluid" alt="GitHub settings page showing workflow permission settings"></a></p></li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -423,9 +431,11 @@ Note
 <h3 class="unnumbered" data-anchor-id="about-link">Add the website link to your repository</h3>
 <p>Show the website address on your repository’s main page, so you can always find your website quickly:</p>
 <ol type="1">
-<li>Click the <strong>Code</strong> tab to go back to the repository’s main page. <img src="images/setup-10-codetab.png" class="img-fluid" alt="GitHub page showing the link to the code tab."></li>
-<li>On the right-hand side, next to <strong>About</strong>, click the gear icon <span aria-hidden="true">⚙️</span>.</li>
-<li>Tick <strong>Use your GitHub Pages website</strong> and click <strong>Save changes</strong>. <img src="images/setup-11-aboutsettings.png" class="img-fluid" alt="Edit repository details dialog with the GitHub Pages option selected."></li>
+<li><p>Click the <strong>Code</strong> tab to go back to the repository’s main page.</p>
+<p><a href="images/setup-10-codetab.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="images/setup-10-codetab.png" class="img-fluid" alt="GitHub page showing the link to the code tab."></a></p></li>
+<li><p>On the right-hand side, next to <strong>About</strong>, click the gear icon <span aria-hidden="true">⚙️</span>.</p></li>
+<li><p>Tick <strong>Use your GitHub Pages website</strong> and click <strong>Save changes</strong>.</p>
+<p><a href="images/setup-11-aboutsettings.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="images/setup-11-aboutsettings.png" class="img-fluid" alt="Edit repository details dialog with the GitHub Pages option selected."></a></p></li>
 </ol>
 </section>
 </section>
@@ -435,18 +445,18 @@ Note
 <p>You work on your copy in <strong>Visual Studio Code</strong>, or <strong>VS Code</strong> for short: a free program for editing text files. You will use it for most of your work: to open and edit your files, to see a preview of your website, and to send your changes to GitHub.</p>
 <p>To clone your repository and open it in VS Code:</p>
 <ol type="1">
-<li><p>On your repository’s main page on GitHub, click the green <strong>Code</strong> button, make sure <strong>HTTPS</strong> is selected, and copy the address.<br>
-<img src="images/setup-12-httpslink.png" class="img-fluid" style="width:40.0%" alt="Screenshot: Code menu with the HTTPS address."></p></li>
-<li><p>Open Visual Studio Code (VS Code) and click <strong>Clone Git Repository</strong> on the start screen. If you don’t see it, open <strong>View → Command Palette</strong>, type <code>Git: Clone</code> and press <strong>Enter</strong>.<br>
-<img src="images/setup-13-VScodeclone.png" class="img-fluid" style="width:50.0%" alt="Screenshot: VScode showing 'clone git repository'."></p></li>
+<li><p>On your repository’s main page on GitHub, click the green <strong>Code</strong> button, make sure <strong>HTTPS</strong> is selected, and copy the address.</p>
+<p><a href="images/setup-12-httpslink.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="images/setup-12-httpslink.png" class="img-fluid" style="width:40.0%" alt="Screenshot: Code menu with the HTTPS address."></a></p></li>
+<li><p>Open Visual Studio Code (VS Code) and click <strong>Clone Git Repository</strong> on the start screen. If you don’t see it, open <strong>View → Command Palette</strong>, type <code>Git: Clone</code> and press <strong>Enter</strong>.</p>
+<p><a href="images/setup-13-VScodeclone.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="images/setup-13-VScodeclone.png" class="img-fluid" style="width:50.0%" alt="Screenshot: VScode showing 'clone git repository'."></a></p></li>
 <li><p>Paste the HTTPS address you copied and press <strong>Enter</strong>.</p></li>
-<li><p>Choose where to save the repository on your computer, for example a folder called <code>GitHub</code> inside <code>Documents</code>, and click <strong>Select as Repository Destination</strong>.<br>
-<img src="images/setup-14-repositorydestination.png" class="img-fluid" style="width:80.0%" alt="Screenshot: folders and repository destination button."></p></li>
+<li><p>Choose where to save the repository on your computer, for example a folder called <code>GitHub</code> inside <code>Documents</code>, and click <strong>Select as Repository Destination</strong>.</p>
+<p><a href="images/setup-14-repositorydestination.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="images/setup-14-repositorydestination.png" class="img-fluid" style="width:80.0%" alt="Screenshot: folders and repository destination button."></a></p></li>
 <li><p>When VS Code asks whether to open the repository, click <strong>Open</strong>.</p></li>
 </ol>
 <p>The files and folders of your repository now appear in the <strong>Explorer</strong> panel on the left side of VS Code. Throughout this guide, you open files by clicking them there.</p>
 <p>If VS Code suggests installing <strong>recommended extensions</strong>, click <strong>Install</strong>. They help VS Code understand the files used in the template.</p>
-<p><img src="images/setup-15-VScodeexplorerpanel.png" class="img-fluid" alt="Screenshot: VS Code Explorer with the repository open."></p>
+<p><a href="images/setup-15-VScodeexplorerpanel.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="images/setup-15-VScodeexplorerpanel.png" class="img-fluid" alt="Screenshot: VS Code Explorer with the repository open."></a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -473,10 +483,10 @@ Note
 <section id="open-a-terminal" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="open-a-terminal">Open a terminal</h3>
 <p>A <strong>terminal</strong> is a window where you type commands. In VS Code, choose <strong>Terminal → New Terminal</strong>.</p>
-<p><img src="images/setup-16-newterminal.png" class="img-fluid" style="width:70.0%" alt="Screenshot: Terminal, new terminal tab."></p>
+<p><a href="images/setup-16-newterminal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="images/setup-16-newterminal.png" class="img-fluid" style="width:70.0%" alt="Screenshot: Terminal, new terminal tab."></a></p>
 <p>The terminal opens at the bottom of the window, already inside your repository folder.</p>
 <p>To run a command from this guide, copy it, paste it into the terminal, and press <strong>Enter</strong>.</p>
-<p><img src="images/setup-17-VScodeterminal.png" class="img-fluid" alt="Screenshot: VS Code showing Terminal → New Terminal."></p>
+<p><a href="images/setup-17-VScodeterminal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="images/setup-17-VScodeterminal.png" class="img-fluid" alt="Screenshot: VS Code showing Terminal → New Terminal."></a></p>
 </section>
 <section id="check-the-software" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="check-the-software">Check the software</h3>
@@ -518,17 +528,17 @@ Note
 </div>
 <p>The first command creates the environment, the second switches it on, and the third installs what the scripts need. When the environment is switched on, the terminal line starts with <code>(.venv)</code>:</p>
 <pre class="text"><code>(.venv) username@computer introduction-to-r %</code></pre>
-<p><img src="images/setup-18-virtualenvironment.png" class="img-fluid" alt="Screenshot: Terminal showing (.venv) at the beginning of the line."></p>
+<p><a href="images/setup-18-virtualenvironment.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="images/setup-18-virtualenvironment.png" class="img-fluid" alt="Screenshot: Terminal showing (.venv) at the beginning of the line."></a></p>
 </section>
 <section id="let-vs-code-switch-on-the-environment" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="let-vs-code-switch-on-the-environment">Let VS Code switch on the environment</h3>
 <p>The environment has to be switched on each time you open a new terminal. You can let VS Code do that for you:</p>
 <ol type="1">
-<li>Press <strong>Cmd+Shift+P</strong> (macOS) or <strong>Ctrl+Shift+P</strong> (Windows and Linux).</li>
-<li>Type <code>Python: Select Interpreter</code> and press <strong>Enter</strong>.</li>
-<li>Choose the option that shows <code>.venv</code>.</li>
+<li><p>Press <strong>Cmd+Shift+P</strong> (macOS) or <strong>Ctrl+Shift+P</strong> (Windows and Linux).</p></li>
+<li><p>Type <code>Python: Select Interpreter</code> and press <strong>Enter</strong>.</p></li>
+<li><p>Choose the option that shows <code>.venv</code>.</p>
+<p><a href="images/setup-19-interpreterlist.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="images/setup-19-interpreterlist.png" class="img-fluid" style="width:70.0%" alt="Screenshot: Select Interpreter list with the .venv option."></a></p></li>
 </ol>
-<p><img src="images/setup-19-interpreterlist.png" class="img-fluid" style="width:70.0%" alt="Screenshot: Select Interpreter list with the .venv option."></p>
 <p>From now on, every new terminal you open in this repository starts with the environment switched on.</p>
 </section>
 </section>
@@ -1055,6 +1065,38 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

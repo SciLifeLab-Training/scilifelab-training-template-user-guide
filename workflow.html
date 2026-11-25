@@ -83,6 +83,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-8141c31b12be1f67465bed69e2110aa9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,17 +253,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>Your training now has its own repository and website, and a copy on your computer that you can edit. This chapter shows you how to make edits in your repository. These are the steps you repeat <strong>every time</strong> you work on your training website: open your training repository in VS Code, preview it, make your changes, and publish them.</p>
 <p>The figure below shows the steps you will follow:</p>
-<p><img src="images/workflow-overview-image.png" class="img-fluid" alt="Workflow showing the regular editing and publishing steps."></p>
+<p><a href="images/workflow-overview-image.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/workflow-overview-image.png" class="img-fluid" alt="Workflow showing the regular editing and publishing steps."></a></p>
 <p>The <a href="#cheat-sheet">cheat sheet</a> at the end of this chapter lists them all in one table.</p>
 <section id="open-your-training" class="level2" data-number="3.1">
 <h2 data-number="3.1" data-anchor-id="open-your-training"><span class="header-section-number">3.1</span> Open your training</h2>
 <p>Each time you start working, open your repository in VS Code and make sure you have the latest version.</p>
 <ol type="1">
-<li><p>Open VS Code. It usually reopens the repository you worked on last. <img src="images/workflow-01-openrecent.png" class="img-fluid" style="width:80.0%" alt="Screenshot: Opening the repository from recent."><br>
-If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open Folder…</strong> and select your repository folder.<br>
-<img src="images/workflow-02-openrepository.png" class="img-fluid" style="width:80.0%" alt="Screenshot: Opening the repository from file."></p></li>
-<li><p><strong>Get the latest version.</strong> If you work together with others, they may have uploaded changes since you last worked. In the bottom-left corner of VS Code, click the circular arrows next to the branch name (<strong>Synchronize Changes</strong>). This downloads their changes to your computer.<br>
-<img src="images/workflow-03-synchronizechanges.png" class="img-fluid" style="width:40.0%" alt="Screenshot: VS Code status bar with the branch name and the Synchronize Changes arrows."></p>
+<li><p>Open VS Code. It usually reopens the repository you worked on last.</p>
+<p><a href="images/workflow-01-openrecent.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/workflow-01-openrecent.png" class="img-fluid" style="width:80.0%" alt="Screenshot: Opening the repository from recent."></a></p>
+<p>If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open Folder…</strong> and select your repository folder.</p>
+<p><a href="images/workflow-02-openrepository.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/workflow-02-openrepository.png" class="img-fluid" style="width:80.0%" alt="Screenshot: Opening the repository from file."></a></p></li>
+<li><p><strong>Get the latest version.</strong> If you work together with others, they may have uploaded changes since you last worked. In the bottom-left corner of VS Code, click the circular arrows next to the branch name (<strong>Synchronize Changes</strong>). This downloads their changes to your computer.</p>
+<p><a href="images/workflow-03-synchronizechanges.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/workflow-03-synchronizechanges.png" class="img-fluid" style="width:40.0%" alt="Screenshot: VS Code status bar with the branch name and the Synchronize Changes arrows."></a></p>
 <p>Before you start editing, <strong>always</strong> sync changes so you are working on the lastest version of your repository.</p></li>
 </ol>
 <section id="switch-branch" class="level3 unnumbered">
@@ -272,7 +276,7 @@ If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open F
 </ul>
 <p>Branches are explained in more detail in <a href="./repository-structure.html#branches">Repository structure</a>.</p>
 <p>The bottom-left corner of VS Code shows the branch you’re working on. Clicking the current branch will open a list of all branches that your repository contains at the top.</p>
-<p><img src="images/workflow-04-branches.png" class="img-fluid" style="width:60.0%" alt="Screenshot: VS Code status bar showing the branch name main."></p>
+<p><a href="images/workflow-04-branches.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/workflow-04-branches.png" class="img-fluid" style="width:60.0%" alt="Screenshot: VS Code status bar showing the branch name main."></a></p>
 <p>Before you start editing, <strong>always</strong> check that you’re on the branch you want to change. To move to another branch, see <a href="./training-instances.html#switch-branch">Switch branch</a>.</p>
 <p>For your first change below, stay on the <strong>main</strong> branch.</p>
 </section>
@@ -285,9 +289,9 @@ If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open F
 <h3 class="unnumbered" data-anchor-id="start-the-preview">Start the preview</h3>
 <p>To start the preview, open a terminal (<strong>Terminal → New Terminal</strong>, see <a href="./setup.html#open-a-terminal">Open a terminal</a>) and run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/preview.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><img src="images/workflow-05-quartopreview.png" class="img-fluid" alt="Terminal displaying command 'quarto preview'"></p>
+<p><a href="images/workflow-05-quartopreview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/workflow-05-quartopreview.png" class="img-fluid" alt="Terminal displaying command 'quarto preview'"></a></p>
 <p>Quarto now builds your website. After a few seconds, it automatically opens in your web browser.</p>
-<p><img src="images/workflow-06-previewinbrowser.png" class="img-fluid" style="width:75.0%" alt="Landing page displayed locally in a web browser using Quarto preview."></p>
+<p><a href="images/workflow-06-previewinbrowser.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/workflow-06-previewinbrowser.png" class="img-fluid" style="width:75.0%" alt="Landing page displayed locally in a web browser using Quarto preview."></a></p>
 <p>If it doesn’t open by itself, copy the address shown in the terminal, for example <code>http://localhost:4123/</code>, and paste it into your browser.</p>
 </section>
 <section id="work-with-the-preview-on" class="level3 unnumbered">
@@ -308,7 +312,7 @@ If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open F
 <p>Sometimes the website can’t be built from your files after you save a change. This is usually because of a small typing mistake in a data file. It doesn’t break anything: the preview simply keeps showing the last version that worked, until you fix the mistake.</p>
 <ol type="1">
 <li><p>Look at the terminal where the preview runs. The error message starts with <strong>Error in the data files</strong>. It says which file and which line the mistake is in, and shows that line and the line above it.</p>
-<p><img src="images/workflow-19-terminalerrormessage.png" class="img-fluid" style="width:75.0%" alt="An error message in the terminal. It says that the layout of data/course.yml is not right on a certain line, shows the title line with a missing closing quotation mark, and lists what to check."></p></li>
+<p><a href="images/workflow-19-terminalerrormessage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/workflow-19-terminalerrormessage.png" class="img-fluid" style="width:75.0%" alt="An error message in the terminal. It says that the layout of data/course.yml is not right on a certain line, shows the title line with a missing closing quotation mark, and lists what to check."></a></p></li>
 <li><p>Open that file, fix the mistake, and save it (see <a href="./workflow.html#make-a-change">Make a change</a>). The preview updates by itself.</p></li>
 </ol>
 <p>Most mistakes are a missing space at the start of a line, or a missing quotation mark. <a href="./repository-structure.html#data-files">Repository structure - Data files</a> explains how data files are laid out.</p>
@@ -344,16 +348,16 @@ If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open F
 <p>To change the title of your training:</p>
 <ol type="1">
 <li><p>In the Explorer panel, open the <code>data</code> folder and click <code>course.yml</code>.</p>
-<p><img src="images/workflow-09-datafolder.png" class="img-fluid" style="width:30.0%" alt="Screenshot: VS Code showing the explorer panel with data folder"></p></li>
+<p><a href="images/workflow-09-datafolder.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/workflow-09-datafolder.png" class="img-fluid" style="width:30.0%" alt="Screenshot: VS Code showing the explorer panel with data folder"></a></p></li>
 <li><p>Scroll down a bit and find the line:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Training title"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Change the text between the quotation marks to your training’s title, for example:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Introduction to R"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><img src="images/workflow-10-changetrainingname.png" class="img-fluid" style="width:80.0%" alt="Screenshot: VS Code showing course.yml and training title change."></p></li>
+<p><a href="images/workflow-10-changetrainingname.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/workflow-10-changetrainingname.png" class="img-fluid" style="width:80.0%" alt="Screenshot: VS Code showing course.yml and training title change."></a></p></li>
 <li><p>Save the file with <strong>Cmd+S</strong> (macOS) or <strong>Ctrl+S</strong> (Windows and Linux).</p></li>
 </ol>
-<p>The new title now appears at the top of the website preview in your browser.</p>
-<p><img src="images/workflow-11-changedtrainingtitle.png" class="img-fluid" style="width:80.0%" alt="Screenshot: Updated title in the preview."></p>
+<p>The new title now appears as the training title in the website preview, as well as in the browser tab.</p>
+<p><a href="images/workflow-11-changedtrainingtitle.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/workflow-11-changedtrainingtitle.png" class="img-fluid" style="width:80.0%" alt="Screenshot: Updated title in the preview."></a></p>
 </section>
 <section id="commit-and-push-your-changes" class="level2" data-number="3.4">
 <h2 data-number="3.4" data-anchor-id="commit-and-push-your-changes"><span class="header-section-number">3.4</span> Commit and push your changes</h2>
@@ -365,7 +369,7 @@ If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open F
 <p>To commit and push your change:</p>
 <ol type="1">
 <li><p>Click the <strong>Source Control</strong> icon on the left side of VS Code. Your changed files are listed under <strong>Changes</strong>.</p>
-<p><img src="images/workflow-12-sourcecontrol.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Source Control panel showing the changed files."></p>
+<p><a href="images/workflow-12-sourcecontrol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="images/workflow-12-sourcecontrol.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Source Control panel showing the changed files."></a></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -380,13 +384,13 @@ If not, choose <strong>File → Open Recent</strong>, or <strong>File → Open F
 <p>Always commit <strong>all</strong> changed files together.</p>
 </div>
 </div></li>
-<li><p>Hover over the word <strong>Changes</strong> and click the <strong>+</strong> next to it (<strong>Stage All Changes</strong>). This tells VS Code to include all changed files in your commit. They move to <strong>Staged Changes</strong>.<br>
-<img src="images/workflow-13-stagedchanges.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Source Control panel showing staged changes."></p></li>
-<li><p>In the <strong>Message</strong> box at the top, describe your change, for example <code>Change the training title</code>.<br>
-<img src="images/workflow-14-commitmessage.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Source Control panel showing staged changes with commit message."></p></li>
+<li><p>Hover over the word <strong>Changes</strong> and click the <strong>+</strong> next to it (<strong>Stage All Changes</strong>). This tells VS Code to include all changed files in your commit. They move to <strong>Staged Changes</strong>.</p>
+<p><a href="images/workflow-13-stagedchanges.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="images/workflow-13-stagedchanges.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Source Control panel showing staged changes."></a></p></li>
+<li><p>In the <strong>Message</strong> box at the top, describe your change, for example <code>Change the training title</code>.</p>
+<p><a href="images/workflow-14-commitmessage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="images/workflow-14-commitmessage.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Source Control panel showing staged changes with commit message."></a></p></li>
 <li><p>Click <strong>Commit</strong>.</p></li>
-<li><p>Click <strong>Sync Changes</strong> to push your commit to GitHub.<br>
-<img src="images/workflow-15-syncchanges.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Sync Changes button."></p></li>
+<li><p>Click <strong>Sync Changes</strong> to push your commit to GitHub.</p>
+<p><a href="images/workflow-15-syncchanges.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="images/workflow-15-syncchanges.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Sync Changes button."></a></p></li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -413,8 +417,8 @@ Note
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>Before</strong> you commit, you can undo all changes to a file: in the Source Control panel, hover over the file and click the curved arrow (<strong>Discard Changes</strong>). The file goes back to how it was at your last commit.<br>
-<img src="images/workflow-16-discardchanges.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Discard Changes button."></p>
+<p><strong>Before</strong> you commit, you can undo all changes to a file: in the Source Control panel, hover over the file and click the curved arrow (<strong>Discard Changes</strong>). The file goes back to how it was at your last commit.</p>
+<p><a href="images/workflow-16-discardchanges.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="images/workflow-16-discardchanges.png" class="img-fluid" style="width:35.0%" alt="Screenshot: Discard Changes button."></a></p>
 <p>You only need to do this for the files you changed yourself, such as <code>data/course.yml</code>. The files the template updates automatically, for example in the <code>_generated</code> folder, go back by themselves: as soon as you discard your own change, the preview rebuilds them, and they disappear from the list after a few seconds.</p>
 <p>This only works while the preview is running. If they are still listed, start the preview (<code>python scripts/preview.py</code>) and wait a few seconds.</p>
 </div>
@@ -426,14 +430,14 @@ Note
 <p>After you push your local changes to GitHub to be published, GitHub rebuilds your training website by itself. This usually takes one or two minutes.</p>
 <p>To follow it on GitHub:</p>
 <ol type="1">
-<li><p>Open your repository on GitHub and click the <strong>Actions</strong> tab.<br>
-<img src="images/workflow-17-githubactionstab.png" class="img-fluid" style="width:75.0%" alt="Screenshot: Github actions tab."></p></li>
+<li><p>Open your repository on GitHub and click the <strong>Actions</strong> tab.</p>
+<p><a href="images/workflow-17-githubactionstab.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="images/workflow-17-githubactionstab.png" class="img-fluid" style="width:75.0%" alt="Screenshot: Github actions tab."></a></p></li>
 <li><p>Wait until both of these show a green checkmark:</p>
 <ul>
 <li><strong>deploy-landing</strong> (or <strong>deploy-instance</strong>, when you changed a training instance): builds your website;</li>
 <li><strong>pages build and deployment</strong>: publishes it.</li>
 </ul>
-<p><img src="images/workflow-18-pagesbuilddeployment.png" class="img-fluid" style="width:75.0%" alt="Screenshot: Actions tab with deploy-landing and pages build and deployment both green."></p>
+<p><a href="images/workflow-18-pagesbuilddeployment.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="images/workflow-18-pagesbuilddeployment.png" class="img-fluid" style="width:75.0%" alt="Screenshot: Actions tab with deploy-landing and pages build and deployment both green."></a></p>
 <p>A yellow dot means it is still running.</p></li>
 <li><p>Open your website with the link under <strong>About</strong> on your repository’s main page, see <a href="./setup.html#about-link">Add the website link to your repository</a>. Still seeing the old version? Wait a minute and refresh the page. Browsers sometimes show an older copy for a short while.</p></li>
 </ol>
@@ -1026,6 +1030,38 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

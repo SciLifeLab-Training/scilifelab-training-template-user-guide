@@ -83,6 +83,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-8141c31b12be1f67465bed69e2110aa9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -287,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>_metadata.yml</code>: the settings for all pages in the <code>content</code> folder, such as the table of contents on the right. You don’t need to change this file.</li>
 <li>One folder for each <strong>section</strong>, with one <code>.qmd</code> file for each page in that section.</li>
 </ul>
-<p><img src="images/ipcontent-01-overview.png" class="img-fluid" alt="Screenshot: the content folder in VS Code next to a content page in the browser, with each section folder linked to its menu in the navigation bar of the content pages."></p>
+<p><a href="images/ipcontent-01-overview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/ipcontent-01-overview.png" class="img-fluid" alt="Screenshot: the content folder in VS Code next to a content page in the browser, with each section folder linked to its menu in the navigation bar of the content pages."></a></p>
 <p>As you can see, your training materials are divided into <strong>content sections</strong>. The template’s examples use modules: <code>module-1</code>, <code>module-2</code> and <code>module-3</code>. But sections don’t have to be modules: you decide yourself how to organise your training materials. For example, a section can be a module, a day, a topic or a week. Choose what fits your training,</p>
 <p>On the website, each section gets its own dropdown menu in the navigation bar of the content pages, listing the pages in that section: see the purple boxes and text in the image above.</p>
 <p>For example, Introduction to R is a training of three days, with a few topics each day. Its <code>content</code> folder could look like this, with one section per day:</p>
@@ -328,23 +331,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Step 1: Create the folder and its pages</strong></p>
 <ol type="1">
 <li><p>In the Explorer panel in VS Code, right-click the <code>content</code> folder, and choose <strong>New Folder…</strong>.</p>
-<p><img src="images/ipcontent-02-newcontentfolder.png" class="img-fluid" style="width:30.0%" alt="Screenshot: the menu that opens when you right-click the content folder in VS Code, with New Folder selected."></p></li>
+<p><a href="images/ipcontent-02-newcontentfolder.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/ipcontent-02-newcontentfolder.png" class="img-fluid" style="width:30.0%" alt="Screenshot: the menu that opens when you right-click the content folder in VS Code, with New Folder selected."></a></p></li>
 <li><p>Type the name of the folder, and press <strong>Enter</strong>. Use only lowercase letters, numbers and hyphens: no capital letters, and no spaces. For example: <code>day-1</code>, <code>data-wrangling</code> or <code>module-4</code>.</p>
-<p><img src="images/ipcontent-03-foldername.png" class="img-fluid" style="width:40.0%" alt="Screenshot: the name of a new section folder typed in the Explorer panel, inside the content folder."></p></li>
+<p><a href="images/ipcontent-03-foldername.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/ipcontent-03-foldername.png" class="img-fluid" style="width:40.0%" alt="Screenshot: the name of a new section folder typed in the Explorer panel, inside the content folder."></a></p></li>
 <li><p>Right-click your new folder, and choose <strong>New File…</strong>.</p>
-<p><img src="images/ipcontent-04-newcontentfile.png" class="img-fluid" style="width:40.0%" alt="Screenshot: the menu that opens when you right-click the new section folder, with New File selected."></p></li>
+<p><a href="images/ipcontent-04-newcontentfile.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/ipcontent-04-newcontentfile.png" class="img-fluid" style="width:40.0%" alt="Screenshot: the menu that opens when you right-click the new section folder, with New File selected."></a></p></li>
 <li><p>Type the name of the page, ending in <code>.qmd</code>, and press <strong>Enter</strong>. For example: <code>introduction.qmd</code>. Use lowercase letters, numbers and hyphens here too.</p></li>
 <li><p>The new file opens. Type this header at the very top, with your own title, and save the file:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Introduction"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">order:</span><span class="co"> 1</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><img src="images/ipcontent-05-newfile.png" class="img-fluid" style="width:65.0%" alt="Screenshot: a new page file open in VS Code, with the header holding its title and order number."></p></li>
+<p><a href="images/ipcontent-05-newfile.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/ipcontent-05-newfile.png" class="img-fluid" style="width:65.0%" alt="Screenshot: a new page file open in VS Code, with the header holding its title and order number."></a></p></li>
 <li><p>Add more pages to the folder in the same way, with <code>order: 2</code>, <code>order: 3</code>, and so on.</p></li>
 </ol>
 <p>The pages appear in the section’s menu in the navigation bar, in the order of their <code>order</code> numbers. To change the order, change the numbers.</p>
 <p>For example, these are the section folders and pages of Introduction to R:</p>
-<p><img src="images/ipcontent-06-examplefilestructure.png" class="img-fluid" style="width:100.0%" alt="Screenshot: the content folder of Introduction to R in the Explorer panel, with the folders day-1, day-2 and day-3, each with its pages."></p>
+<p><a href="images/ipcontent-06-examplefilestructure.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/ipcontent-06-examplefilestructure.png" class="img-fluid" style="width:100.0%" alt="Screenshot: the content folder of Introduction to R in the Explorer panel, with the folders day-1, day-2 and day-3, each with its pages."></a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -362,9 +365,9 @@ Tip
 <p>Your new sections and pages are now in your repository, but they don’t appear on your website yet. To make them appear, list each section in <code>data/website.yml</code>:</p>
 <ol type="1">
 <li><p>Open <code>data/website.yml</code>, and scroll to the <code>content</code> part at the bottom. Each section has an entry of three lines, like this one from the template:</p>
-<p><img src="images/ipcontent-07-websiteymlcontent.png" class="img-fluid" style="width:75.0%" alt="Screenshot: the content part at the bottom of data/website.yml, with an entry of three lines for each of the template's sections."></p></li>
+<p><a href="images/ipcontent-07-websiteymlcontent.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/ipcontent-07-websiteymlcontent.png" class="img-fluid" style="width:75.0%" alt="Screenshot: the content part at the bottom of data/website.yml, with an entry of three lines for each of the template's sections."></a></p></li>
 <li><p>Copy a whole entry, from <code>- id:</code> to <code>title:</code>, and paste it below the last entry. <strong>Keep the spaces at the start of each line exactly as in the other entries.</strong></p>
-<p><img src="images/ipcontent-08-copyentry.png" class="img-fluid" style="width:35.0%" alt="Screenshot: a copied section entry pasted below the last entry in data/website.yml."></p></li>
+<p><a href="images/ipcontent-08-copyentry.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/ipcontent-08-copyentry.png" class="img-fluid" style="width:35.0%" alt="Screenshot: a copied section entry pasted below the last entry in data/website.yml."></a></p></li>
 <li><p>Change the three values to your new section</p>
 <ul>
 <li><code>id</code>: the name of your folder, <strong>exactly as you typed it in step 1</strong>, for example <code>day-1</code> for introduction to r.</li>
@@ -372,9 +375,9 @@ Tip
 <li><code>title</code>: the text visitors see when they hover over the section in the navigation bar, for example <code>"Getting started"</code>.</li>
 </ul></li>
 <li><p><strong>The first time only:</strong> delete the entries of the template’s sections, <code>module-1</code> to <code>module-3</code>, each from <code>- id:</code> to <code>title:</code>. This only removes them from your website. Their folders stay in the <code>content</code> folder, so you can still look at the example pages.</p>
-<p><img src="images/ipcontent-09-templateremoved.png" class="img-fluid" style="width:35.0%" alt="Screenshot: the content part of data/website.yml with the template's module entries deleted, and only your own section left."></p></li>
+<p><a href="images/ipcontent-09-templateremoved.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/ipcontent-09-templateremoved.png" class="img-fluid" style="width:35.0%" alt="Screenshot: the content part of data/website.yml with the template's module entries deleted, and only your own section left."></a></p></li>
 <li><p>Save the file, and check the preview: your section appears in the navigation bar of the content pages.</p>
-<p><img src="images/ipcontent-10-sectionrendered.png" class="img-fluid" style="width:50.0%" alt="Screenshot: the navigation bar of the content pages in the preview, with the new section and its menu of pages."></p></li>
+<p><a href="images/ipcontent-10-sectionrendered.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/ipcontent-10-sectionrendered.png" class="img-fluid" style="width:50.0%" alt="Screenshot: the navigation bar of the content pages in the preview, with the new section and its menu of pages."></a></p></li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -390,9 +393,9 @@ Important
 </div>
 </div>
 <p>For example, this is the <code>content</code> part of <code>data/website.yml</code> for Introduction to R:</p>
-<p><img src="images/ipcontent-11-examplewebsiteyml.png" class="img-fluid" style="width:40.0%" alt="Screenshot: the content part of data/website.yml for Introduction to R, with entries for day-1, day-2 and day-3."></p>
+<p><a href="images/ipcontent-11-examplewebsiteyml.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/ipcontent-11-examplewebsiteyml.png" class="img-fluid" style="width:40.0%" alt="Screenshot: the content part of data/website.yml for Introduction to R, with entries for day-1, day-2 and day-3."></a></p>
 <p>And this is how the sections appear on its website:</p>
-<p><img src="images/ipcontent-12-examplewebsite.png" class="img-fluid" style="width:60.0%" alt="Screenshot: the content pages of Introduction to R, with Day 1, Day 2 and Day 3 in the navigation bar, and the menu of one day opened."></p>
+<p><a href="images/ipcontent-12-examplewebsite.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="images/ipcontent-12-examplewebsite.png" class="img-fluid" style="width:60.0%" alt="Screenshot: the content pages of Introduction to R, with Day 1, Day 2 and Day 3 in the navigation bar, and the menu of one day opened."></a></p>
 </section>
 <section id="remove-a-content-section" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="remove-a-content-section">Remove a content section</h3>
@@ -425,14 +428,14 @@ Important
 <section id="add-content-to-your-pages" class="level2" data-number="8.2">
 <h2 data-number="8.2" data-anchor-id="add-content-to-your-pages"><span class="header-section-number">8.2</span> Add content to your pages</h2>
 <p>With your sections and pages set up, it’s time to fill the content pages with your training materials. In this section, you work through the parts of a content page: the content part, where you write your materials, and the <strong>On this page</strong> list and <strong>Previous</strong> and <strong>Next</strong> links, which are made automatically. The image below shows the parts of a content page:</p>
-<p><img src="images/ipcontent-13-overview.png" class="img-fluid" style="width:100.0%" alt="Annotated screenshot of a content page: the navigation bar with the section menus, the page title, the text of the page, the On this page list on the right, and the Previous and Next links at the bottom."></p>
+<p><a href="images/ipcontent-13-overview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="images/ipcontent-13-overview.png" class="img-fluid" style="width:100.0%" alt="Annotated screenshot of a content page: the navigation bar with the section menus, the page title, the text of the page, the On this page list on the right, and the Previous and Next links at the bottom."></a></p>
 <section id="the-content-part" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="the-content-part">The content part</h3>
 <p>In the content part, you add the text, images, presentations, exercises and everything else of your training. You write it directly in the page’s <code>.qmd</code> file, below the header, in <strong>Markdown</strong>: a simple way of formatting text.</p>
 <p>For help with Markdown, the template comes with its own guide: the <a href="https://scilifelab-training.github.io/scilifelab-training-template/0000/content/index.html">example content pages</a>. They show how to write headings, lists, tables, callout boxes, images, videos and links, each with the Markdown ready to copy and paste into your own pages.</p>
 <p><strong>Tips for adding images, PDFs and other files</strong></p>
 <p>To use images, PDFs, slides or data files on your pages, first put the files in the <strong><code>docs</code> folder</strong> of your training instance branch:</p>
-<p><img src="images/ipcontent-14-docsfolder.png" class="img-fluid" style="width:40.0%" alt="Screenshot: the docs folder in the VS Code Explorer, with images, a PDF and a data file used on the content pages."></p>
+<p><a href="images/ipcontent-14-docsfolder.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="images/ipcontent-14-docsfolder.png" class="img-fluid" style="width:40.0%" alt="Screenshot: the docs folder in the VS Code Explorer, with images, a PDF and a data file used on the content pages."></a></p>
 <p>Then link to them from your pages: the example page <a href="https://scilifelab-training.github.io/scilifelab-training-template/0000/content/module-3/images-presentations-videos.html">Images, presentations and videos</a> shows how.</p>
 <ul>
 <li>Only the files you link to from a page are published on your website. Files in <code>docs</code> that no page links to stay in your repository only.</li>
@@ -469,9 +472,9 @@ Important
 </table>
 <p><strong>Example: a page of Introduction to R</strong></p>
 <p>This example content page of Introduction to R has headings, an image, a link to a file in the <code>docs</code> folder, an exercise with a hidden solution, and some R code:</p>
-<p><img src="images/ipcontent-15-examplepageqmd.png" class="img-fluid" style="width:100.0%" alt="Screenshot: a page of Introduction to R open in VS Code, with its header, headings, an image, a link, an exercise with a collapsible solution, and a code block."></p>
+<p><a href="images/ipcontent-15-examplepageqmd.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="images/ipcontent-15-examplepageqmd.png" class="img-fluid" style="width:100.0%" alt="Screenshot: a page of Introduction to R open in VS Code, with its header, headings, an image, a link, an exercise with a collapsible solution, and a code block."></a></p>
 <p>And this is how it looks on the website:</p>
-<p><img src="images/ipcontent-16-examplepagerendered.png" class="img-fluid" style="width:90.0%" alt="Screenshot: the same page in the browser, with the image, the link, the exercise with its solution hidden, and the code block with a copy button."></p>
+<p><a href="images/ipcontent-16-examplepagerendered.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="images/ipcontent-16-examplepagerendered.png" class="img-fluid" style="width:90.0%" alt="Screenshot: the same page in the browser, with the image, the link, the exercise with its solution hidden, and the code block with a copy button."></a></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -558,7 +561,7 @@ With the example content pages and the tips above, start with the Content introd
 </table>
 <p>You write the content of both in the same way, with the same Markdown format. The only difference is the file extension.</p>
 <p>For example, for Introduction to R:</p>
-<p><img src="images/ipcontent-17-instructorsfolder.png" class="img-fluid" style="width:50.0%" alt="Screenshot: the content and instructors folders of Introduction to R in the VS Code Explorer, with the folders day-1 to day-3 in content, and README.md and day-1.md to day-3.md in instructors."></p>
+<p><a href="images/ipcontent-17-instructorsfolder.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="images/ipcontent-17-instructorsfolder.png" class="img-fluid" style="width:50.0%" alt="Screenshot: the content and instructors folders of Introduction to R in the VS Code Explorer, with the folders day-1 to day-3 in content, and README.md and day-1.md to day-3.md in instructors."></a></p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 35%">
@@ -613,9 +616,9 @@ With the example content pages and the tips above, start with the Content introd
 <li>Save your files, and commit and push them. As instructor notes are <code>.md</code> files, they don’t appear in the preview or on your website. To see how they look, open them in your repository on GitHub.</li>
 </ol>
 <p>For example, this is <code>instructors/README.md</code> for Introduction to R:</p>
-<p><img src="images/ipcontent-18-readmeexample.png" class="img-fluid" alt="Screenshot: instructors/README.md of Introduction to R, with who can teach the training, a timing table for the three days, and the instructor preparation checklists."></p>
+<p><a href="images/ipcontent-18-readmeexample.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="images/ipcontent-18-readmeexample.png" class="img-fluid" alt="Screenshot: instructors/README.md of Introduction to R, with who can teach the training, a timing table for the three days, and the instructor preparation checklists."></a></p>
 <p>And these are the instructor notes for its first day, <code>day-1.md</code>:</p>
-<p><img src="images/ipcontent-19-day1example.png" class="img-fluid" alt="Screenshot: instructors/day-1.md of Introduction to R, with the key points of the day, the teaching flow from 9:00 to 15:00, the materials, the exercise, and common problems."></p>
+<p><a href="images/ipcontent-19-day1example.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="images/ipcontent-19-day1example.png" class="img-fluid" alt="Screenshot: instructors/day-1.md of Introduction to R, with the key points of the day, the teaching flow from 9:00 to 15:00, the materials, the exercise, and common problems."></a></p>
 </section>
 </section>
 <section id="cheat-sheet" class="level2" data-number="8.4">
@@ -1200,6 +1203,38 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

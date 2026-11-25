@@ -48,6 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-8141c31b12be1f67465bed69e2110aa9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -260,10 +263,10 @@ Note
 <h3 class="unnumbered" data-anchor-id="replace-the-readme">Replace the README</h3>
 <ol type="1">
 <li><p>In the Explorer panel, open <code>docs/_template-README.md</code>, select all text, and copy it.</p>
-<p><img src="images/ipdatafiles-01-templatereadme.png" class="img-fluid" style="width:85.0%" alt="Screenshot: template-README.md file in docs/ folder"></p></li>
+<p><a href="images/ipdatafiles-01-templatereadme.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/ipdatafiles-01-templatereadme.png" class="img-fluid" style="width:85.0%" alt="Screenshot: template-README.md file in docs/ folder"></a></p></li>
 <li><p>Open <code>README.md</code> in the main folder of your instance branch, select all text, and paste, so the copied text replaces it.</p></li>
 <li><p>Delete the note at the top of the file, between <code>&lt;!--</code> and <code>--&gt;</code>, and the line starting with <code>&gt; **Template:**</code>.</p>
-<p><img src="images/ipdatafiles-02-readme.png" class="img-fluid" style="width:75.0%" alt="Screenshot: README.md file in repository root with template-README text copied and pasted into it"></p></li>
+<p><a href="images/ipdatafiles-02-readme.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/ipdatafiles-02-readme.png" class="img-fluid" style="width:75.0%" alt="Screenshot: README.md file in repository root with template-README text copied and pasted into it"></a></p></li>
 <li><p>Fill in the parts marked <strong>Write this yourself</strong>, as on the landing page (see <a href="./landing-page.html#readme-sections">the example</a>). The other parts, between <code>&lt;!-- generated:... --&gt;</code> lines, are filled in automatically from your data files.</p></li>
 <li><p>Save the file.</p></li>
 </ol>
@@ -280,7 +283,7 @@ Note
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You no longer need <code>docs/_template-README.md</code>. In the Explorer panel, right-click the file and choose <strong>Delete</strong>. Keep the rest of the <code>docs</code> folder.</p>
-<p><img src="images/ipdatafiles-03-deletetemplate.png" class="img-fluid" style="width:45.0%" alt="Screenshot: delete the template README in the docs folder"></p>
+<p><a href="images/ipdatafiles-03-deletetemplate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/ipdatafiles-03-deletetemplate.png" class="img-fluid" style="width:45.0%" alt="Screenshot: delete the template README in the docs folder"></a></p>
 </div>
 </div>
 </div>
@@ -290,10 +293,10 @@ Note
 <ol type="1">
 <li><p>Open <code>data/website.yml</code>.</p></li>
 <li><p>Change <code>template: true</code> to <code>template: false</code>.</p>
-<p><img src="images/ipdatafiles-04-templatefalse.png" class="img-fluid" style="width:60.0%" alt="Screenshot: changed template:true to template:false in data/website.yml."></p></li>
+<p><a href="images/ipdatafiles-04-templatefalse.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/ipdatafiles-04-templatefalse.png" class="img-fluid" style="width:60.0%" alt="Screenshot: changed template:true to template:false in data/website.yml."></a></p></li>
 <li><p>Save the file.</p></li>
 <li><p>The yellow <span class="template-label">Want to use this template?</span> banner disappears from the overview page, and all automatically generated files now describe your training instance’s details.</p>
-<p><img src="images/ipdatafiles-05-templatebannergone.png" class="img-fluid" style="width:80.0%" alt="Screenshot: template banner gone on overview page."></p></li>
+<p><a href="images/ipdatafiles-05-templatebannergone.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/ipdatafiles-05-templatebannergone.png" class="img-fluid" style="width:80.0%" alt="Screenshot: template banner gone on overview page."></a></p></li>
 </ol>
 </section>
 </section>
@@ -304,7 +307,7 @@ Note
 <section id="website.yml-the-overview-page" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="website.yml-the-overview-page"><code>website.yml</code>: the overview page</h3>
 <p><code>data/website.yml</code> mainly sets what appears on the <strong>overview page</strong>, the first page of your training instance website. The figure below shows the parts of the overview page, and their names:</p>
-<p><img src="images/ipdatafiles-06-overviewpage.png" class="img-fluid" alt="Screenshot: overview page with annotation of section."></p>
+<p><a href="images/ipdatafiles-06-overviewpage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/ipdatafiles-06-overviewpage.png" class="img-fluid" alt="Screenshot: overview page with annotation of section."></a></p>
 <p>In <code>data/website.yml</code>, you set the <strong>organisation logos, the welcome section, the welcome graphic, the registration banner and the texts of the quick links</strong>. The other parts of the overview page come from other data files.</p>
 <p>The table below gives a general overview of what to change in <code>data/website.yml</code> to customize it for your training. <strong>More detailed explanations are in the file itself:</strong> the explanations in the lines starting with <code>#</code> give the rules for each field. <strong>Read them carefully as you work through the file.</strong><br>
 Many of the changes work the same as on the landing page, so visit <a href="./landing-page.html#customise-the-look">Customise the look</a> for additional detailed info.</p>
@@ -345,9 +348,9 @@ Many of the changes work the same as on the landing page, so visit <a href="./la
 </tbody>
 </table>
 <p>For example, this is <code>data/website.yml</code> filled in for a made-up training, Introduction to R. The explanations starting with <code>#</code> are left out, so the whole file fits on one screen:</p>
-<p><img src="images/ipdatafiles-07-websiteymlfilledout.png" class="img-fluid" style="width:50.0%" alt="Screenshot: all values filled in for the mock course introduction to r in website.yml."></p>
+<p><a href="images/ipdatafiles-07-websiteymlfilledout.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/ipdatafiles-07-websiteymlfilledout.png" class="img-fluid" style="width:50.0%" alt="Screenshot: all values filled in for the mock course introduction to r in website.yml."></a></p>
 <p>After saving the file, the preview shows the overview page with this information.</p>
-<p><img src="images/ipdatafiles-08-websiteymloverviewpage.png" class="img-fluid" style="width:80.0%" alt="Screenshot: overview page with all the values for the mock course."></p>
+<p><a href="images/ipdatafiles-08-websiteymloverviewpage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/ipdatafiles-08-websiteymloverviewpage.png" class="img-fluid" style="width:80.0%" alt="Screenshot: overview page with all the values for the mock course."></a></p>
 <p>There are two additional fields in <code>data/website.yml</code>: <code>footer</code> and <code>content</code>. Leave them as they are for now. The boxes below explain what they are for.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -482,11 +485,11 @@ Many of the changes work the same as on the landing page, so visit <a href="./la
 </tbody>
 </table>
 <p>For example, this is <code>data/course.yml</code> filled in for Introduction to R. The explanations starting with # are left out, so the whole file fits on one screen:</p>
-<p><img src="images/ipdatafiles-09-courseymlfilledout.png" class="img-fluid" style="width:80.0%" alt="Screenshot: all values filled in for the mock course introduction to r in course.yml."></p>
+<p><a href="images/ipdatafiles-09-courseymlfilledout.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/ipdatafiles-09-courseymlfilledout.png" class="img-fluid" style="width:80.0%" alt="Screenshot: all values filled in for the mock course introduction to r in course.yml."></a></p>
 <p>After saving the file, the preview shows the information on the overview page:</p>
-<p><img src="images/ipdatafiles-10-courseymloverview.png" class="img-fluid" style="width:80.0%" alt="Screenshot: all values filled in for the mock course introduction to r in course.yml."></p>
+<p><a href="images/ipdatafiles-10-courseymloverview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/ipdatafiles-10-courseymloverview.png" class="img-fluid" style="width:80.0%" alt="Screenshot: all values filled in for the mock course introduction to r in course.yml."></a></p>
 <p>and on the syllabus page:</p>
-<p><img src="images/ipdatafiles-11-courseymlsyllabus.png" class="img-fluid" style="width:80.0%" alt="Screenshot: all values filled in for the mock course introduction to r in course.yml."></p>
+<p><a href="images/ipdatafiles-11-courseymlsyllabus.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/ipdatafiles-11-courseymlsyllabus.png" class="img-fluid" style="width:80.0%" alt="Screenshot: all values filled in for the mock course introduction to r in course.yml."></a></p>
 <p>The other fields under <code>reuse</code> can stay as they are for now. The box below explains what they are for.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
@@ -626,13 +629,13 @@ To <strong>remove</strong> a person, delete their whole entry.</p>
 </tbody>
 </table>
 <p>For example, this is <code>data/team.yml</code> filled in for Introduction to R. The explanations starting with <code>#</code> are left out, so the whole file fits on one screen:</p>
-<p><img src="images/ipdatafiles-12-teamymlfilledout.png" class="img-fluid" style="width:65.0%" alt="Screenshot: data/team.yml filled in for the made-up training Introduction to R."></p>
+<p><a href="images/ipdatafiles-12-teamymlfilledout.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="images/ipdatafiles-12-teamymlfilledout.png" class="img-fluid" style="width:65.0%" alt="Screenshot: data/team.yml filled in for the made-up training Introduction to R."></a></p>
 <p>After saving the file, the preview shows two members of the team on the Overview page:</p>
-<p><img src="images/ipdatafiles-13-teamoverview.png" class="img-fluid" style="width:50.0%" alt="Screenshot: the team preview on the overview page, with the training lead and the first instructor."></p>
+<p><a href="images/ipdatafiles-13-teamoverview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="images/ipdatafiles-13-teamoverview.png" class="img-fluid" style="width:50.0%" alt="Screenshot: the team preview on the overview page, with the training lead and the first instructor."></a></p>
 <p>the team lead(s) on the Syllabus page:</p>
-<p><img src="images/ipdatafiles-14-syllabuspage.png" class="img-fluid" style="width:60.0%" alt="Screenshot: the team preview on the syllabus page, with the training lead."></p>
+<p><a href="images/ipdatafiles-14-syllabuspage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="images/ipdatafiles-14-syllabuspage.png" class="img-fluid" style="width:60.0%" alt="Screenshot: the team preview on the syllabus page, with the training lead."></a></p>
 <p>and the whole team on the Team page:</p>
-<p><img src="images/ipdatafiles-15-teampage.png" class="img-fluid" style="width:80.0%" alt="Screenshot: the Team page, with the training lead, the instructors and the contributor."></p>
+<p><a href="images/ipdatafiles-15-teampage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="images/ipdatafiles-15-teampage.png" class="img-fluid" style="width:80.0%" alt="Screenshot: the Team page, with the training lead, the instructors and the contributor."></a></p>
 </section>
 </section>
 <section id="fill-in-the-optional-data-files" class="level2" data-number="7.3">
@@ -705,7 +708,7 @@ Open it, and work through the values. <strong>Read the explanations in the lines
 <p>The schedule needs a bit more care than the other optional pages. The website doesn’t just show your dates and times: it uses them to put the events in order, to show the date of each day, and to work out which event is next, for the <strong>Next up</strong> section and its countdown on the overview page. A mistake in a date or time can put events in the wrong order, or stop the website from building.</p>
 <ul>
 <li><p>Each event, such as a lecture, an exercise or a break, is one entry, from <code>- title:</code> to <code>content:</code>. Every event needs a <code>title</code>, <code>type</code>, <code>group</code>, <code>start</code> and <code>end</code>.</p>
-<p><img src="images/ipdatafiles-16-schedulerequired.png" class="img-fluid" style="width:45.0%" alt="Screenshot: required fields for each event in data/schedule.yml."></p></li>
+<p><a href="images/ipdatafiles-16-schedulerequired.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="images/ipdatafiles-16-schedulerequired.png" class="img-fluid" style="width:45.0%" alt="Screenshot: required fields for each event in data/schedule.yml."></a></p></li>
 <li><p>Write dates and times exactly as explained in the file, for example <code>2027-05-12T09:00</code></p></li>
 <li><p>Use one of the event types that are supported by the template: lecture, workshop, practical, discussion, break, welcome, lunch, presentation, assessment, group-work, exercise, consultation, quiz, feedback, seminar</p></li>
 <li><p>Events with the same <code>group</code> are shown together, on their own tab of the Schedule page, in order of their start time. You can choose how you want to group events, for example:</p>
@@ -714,9 +717,9 @@ Open it, and work through the values. <strong>Read the explanations in the lines
 <li><p><strong>By week</strong>, for a training with one session a week: <code>"Week 1"</code>, <code>"Week 2"</code>.</p></li>
 <li><p><strong>By topic</strong>, when each topic is taught on its own day: for example <code>"Getting started"</code>, <code>"Data wrangling"</code>, <code>"Plotting"</code>.</p>
 <p>For example, events grouped under day 1:</p>
-<p><img src="images/ipdatafiles-17-scheduleday1group.png" class="img-fluid" style="width:45.0%" alt="Screenshot: all events with group: day 1 in data/schedule.yml."></p>
+<p><a href="images/ipdatafiles-17-scheduleday1group.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="images/ipdatafiles-17-scheduleday1group.png" class="img-fluid" style="width:45.0%" alt="Screenshot: all events with group: day 1 in data/schedule.yml."></a></p>
 <p>Are shown as follows on the schedule page:</p>
-<p><img src="images/ipdatafiles-18-scheduleday1.png" class="img-fluid" style="width:70.0%" alt="Screenshot: all events with group: day 1 on schedule page."></p></li>
+<p><a href="images/ipdatafiles-18-scheduleday1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="images/ipdatafiles-18-scheduleday1.png" class="img-fluid" style="width:70.0%" alt="Screenshot: all events with group: day 1 on schedule page."></a></p></li>
 </ul></li>
 <li><p>To link an event to a page of your materials, fill in <code>content</code> with the path to that page in your instance branch, for example <code>"content/module-1/introduction.qmd"</code>.</p></li>
 </ul>
@@ -757,20 +760,20 @@ Tip
 <section id="example-introduction-to-r" class="level3 unnumbered">
 <h3 class="unnumbered" data-anchor-id="example-introduction-to-r">Example: Introduction to R</h3>
 <p>Introduction to R uses a schedule, practicalities and announcements, but no FAQ, preparation or resources. Its <code>data</code> folder only holds the files it needs:</p>
-<p><img src="images/ipdatafiles-19-folderstructure.png" class="img-fluid" style="width:40.0%" alt="Screenshot: the data folder of Introduction to R in the VS Code Explorer, with announcements.yml, course.yml, practicalities.yml, schedule.yml, team.yml and website.yml."></p>
+<p><a href="images/ipdatafiles-19-folderstructure.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="images/ipdatafiles-19-folderstructure.png" class="img-fluid" style="width:40.0%" alt="Screenshot: the data folder of Introduction to R in the VS Code Explorer, with announcements.yml, course.yml, practicalities.yml, schedule.yml, team.yml and website.yml."></a></p>
 <p>These are the filled-in <code>schedule.yml</code>, and <code>practicalities.yml</code> and <code>announcements.yml</code>:</p>
-<p><img src="images/ipdatafiles-20-scheduleyml.png" class="img-fluid" alt="Screenshot: data/schedule.yml for Introduction to R, with events grouped by topic: Getting started, Data wrangling and Plotting."></p>
-<p><img src="images/ipdatafiles-21-practicalitiesannouncementsyml.png" class="img-fluid" alt="Screenshot: data/practicalities.yml and data/announcements.yml for Introduction to R, side by side."></p>
+<p><a href="images/ipdatafiles-20-scheduleyml.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="images/ipdatafiles-20-scheduleyml.png" class="img-fluid" alt="Screenshot: data/schedule.yml for Introduction to R, with events grouped by topic: Getting started, Data wrangling and Plotting."></a></p>
+<p><a href="images/ipdatafiles-21-practicalitiesannouncementsyml.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="images/ipdatafiles-21-practicalitiesannouncementsyml.png" class="img-fluid" alt="Screenshot: data/practicalities.yml and data/announcements.yml for Introduction to R, side by side."></a></p>
 <p>On the website, the schedule appears in two places. The <strong>Next up</strong> section on the overview page shows the first event, with a countdown:</p>
-<p><img src="images/ipdatafiles-22-nextup.png" class="img-fluid" style="width:90.0%" alt="Screenshot: the Next up section on the overview page, showing the first event, Welcome and introductions, with a countdown."></p>
+<p><a href="images/ipdatafiles-22-nextup.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22"><img src="images/ipdatafiles-22-nextup.png" class="img-fluid" style="width:90.0%" alt="Screenshot: the Next up section on the overview page, showing the first event, Welcome and introductions, with a countdown."></a></p>
 <p>The <strong>Schedule</strong> page shows all events, with a tab for each topic:</p>
-<p><img src="images/ipdatafiles-23-schedulepage.png" class="img-fluid" style="width:70.0%" alt="Screenshot: the Schedule page, with tabs for Getting started, Data wrangling and Plotting, and the events of the first topic."></p>
+<p><a href="images/ipdatafiles-23-schedulepage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img src="images/ipdatafiles-23-schedulepage.png" class="img-fluid" style="width:70.0%" alt="Screenshot: the Schedule page, with tabs for Getting started, Data wrangling and Plotting, and the events of the first topic."></a></p>
 <p>The <strong>Practicalities</strong> page shows the venue, transport, accommodation, food and other information:</p>
-<p><img src="images/ipdatafiles-24-practicalitiespage.png" class="img-fluid" style="width:70.0%" alt="Screenshot: the Practicalities page, with the venue address and map link, transport, accommodation, food, and what to bring."></p>
+<p><a href="images/ipdatafiles-24-practicalitiespage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img src="images/ipdatafiles-24-practicalitiespage.png" class="img-fluid" style="width:70.0%" alt="Screenshot: the Practicalities page, with the venue address and map link, transport, accommodation, food, and what to bring."></a></p>
 <p>The announcements appear in two places as well. The overview page shows the two newest:</p>
-<p><img src="images/ipdatafiles-25-announcementsoverview.png" class="img-fluid" style="width:50.0%" alt="Screenshot: the Announcements section on the overview page, with the two newest announcements."></p>
+<p><a href="images/ipdatafiles-25-announcementsoverview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img src="images/ipdatafiles-25-announcementsoverview.png" class="img-fluid" style="width:50.0%" alt="Screenshot: the Announcements section on the overview page, with the two newest announcements."></a></p>
 <p>And the <strong>Announcements</strong> page shows all of them, newest first:</p>
-<p><img src="images/ipdatafiles-26-announcementspage.png" class="img-fluid" style="width:70.0%" alt="Screenshot: the Announcements page, with all three announcements, newest first."></p>
+<p><a href="images/ipdatafiles-26-announcementspage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img src="images/ipdatafiles-26-announcementspage.png" class="img-fluid" style="width:70.0%" alt="Screenshot: the Announcements page, with all three announcements, newest first."></a></p>
 </section>
 </section>
 <section id="cheat-sheet" class="level2" data-number="7.4">
@@ -1340,6 +1343,38 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
