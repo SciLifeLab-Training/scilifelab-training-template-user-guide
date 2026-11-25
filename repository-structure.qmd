@@ -134,18 +134,19 @@ The table below explains what each one is for, and whether you edit it
 | `data/website.yml` | The logos, button texts and footer of the landing page | ✏️ |
 | `data/instances.yml` | The list of training instances, with links to their websites | ✏️ |
 | `img/` | The images and logos used on the landing page | ✏️ |
-| `docs/` | The README for your training (`_template-README.md`)(which you copy over `README.md` when you start), and documentation for developers of the template | ✏️ |
+| `docs/` | The README for your training (`_template-README.md`, which you copy over `README.md` when you start), and documentation for developers of the template | ✏️ |
 | `README.md` | The description shown on your repository's main page on GitHub. The parts between `<!-- generated:... -->` lines are updated automatically; you can edit the rest | ✏️ 🔄 |
 | `_generated/` | The sections of the landing page, built from your data files | 🔄 |
 | `CITATION.cff` | How to cite your training, built from your data files | 🔄 |
 | `.zenodo.json` | The information Zenodo uses when you publish your training, built from your data files | 🔄 |
-| `LICENSE.md` | The full text of the licence of your training: CC BY 4.0, unless you choose another licence in `data/course.yml`. Only replace it if you do | ✏️🔒 |
-| `CONTRIBUTING.md` | How others can report problems and suggest improvements to your training. Ready to use, but you can adapt it if you like | ✏️🔒 |
+| `LICENSE.md` | The full text of the licence of your training: CC BY 4.0, unless you choose another licence in `data/course.yml`. Only replace it if you do | ✏️ 🔒 |
+| `CONTRIBUTING.md` | How others can report problems and suggest improvements to your training. Ready to use, but you can adapt it if you like | ✏️ 🔒 |
 | `index.qmd`, `_sections/` | The building blocks that put the landing page together | 🔒 |
 | `styles.css` | The look of the website: colours, fonts and layout | 🔒 |
 | `_template/` | Information about the template itself, used only while template mode is on. You can delete it once you've switched template mode off | 🔒 |
 | `scripts/`, `tests/` | The scripts that build the website, and the tests that check them | 🔒 |
-| `.github/` | The automatic processes that publish your website on GitHub | 🔒 |
+| `.github/` | The automatic processes that publish your website on GitHub, and that check once a week whether there is a new version of the template | 🔒 |
+| `.template-version` | The version of the template your training is based on. If a newer version comes out, an issue appears in your repository to tell you, with a link to what has changed and how to update your repository. | 🔒 |
 | `.vscode/` | Settings for VS Code, such as the extensions it recommends when you open the repository | 🔒 |
 | `.gitignore` | The list of files that stay on your computer and are never uploaded to GitHub, such as your preview and environment | 🔒 |
 | `_quarto.yml`, `requirements.txt`, `requirements-dev.txt` | Settings for Quarto, and the Python packages the scripts need | 🔒 |
