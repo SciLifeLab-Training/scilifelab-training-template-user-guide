@@ -63,8 +63,11 @@ repository, and its own website, with its own dates, schedule, team and
 materials. The landing page links to them in two places:
 
 - the **current** training instance, in the hero;
+
    ![](images/instance-01-herobutton.png){fig-alt="Screenshot: current instance button in landing page hero."}
+
 - **all** training instances, in the **All training instances** banner.
+
    ![](images/instance-02-instancebanner.png){fig-alt="Screenshot: instance banner on landing page."}
 
 Is your training **self-paced**, or given to several **cohorts**? The template works for those too: open the matching box below.
@@ -181,14 +184,19 @@ the bottom-left corner shows its name.
 ### Create the branch {.unnumbered}
 
 1. Check that the bottom-left corner shows the branch you want to copy.
-2. Click the branch name (**release-0000**), and choose **Create new branch...** in the list that opens at the top.   
-![](images/instance-06-createnewbranch.png){width=80% fig-alt="Screenshot: dropdown menu with create new branch selected."}
+2. Click the branch name (**release-0000**), and choose **Create new branch...** in the list that opens at the top.  
+
+   ![](images/instance-06-createnewbranch.png){width=80% fig-alt="Screenshot: dropdown menu with create new branch selected."}
+
 3. Type the name of the new branch, for example `release-2706`, and
    press **Enter**.  
-![](images/instance-07-branchname.png){width=80% fig-alt="Screenshot: new branch name typed."} 
+
+   ![](images/instance-07-branchname.png){width=80% fig-alt="Screenshot: new branch name typed."} 
+
 4. Open the **Source Control** panel and click **Publish Branch**. This
    puts the new branch on GitHub.  
-![](images/instance-08-publishbranch.png){width=45% fig-alt="Screenshot: source control panel with publish branch button."} 
+
+   ![](images/instance-08-publishbranch.png){width=45% fig-alt="Screenshot: source control panel with publish branch button."} 
 
 ## Add an instance to the landing page
 
@@ -206,6 +214,7 @@ To add your first training instance to the landing page:
    landing page links to: one entry per training instance, from
    `- slug:` to `sort_key:`. The comments at the top of the file explain
    each field.  
+   
    ![](images/instance-09-instancesoverview.png){width=80% fig-alt="Screenshot: all instances listed in instances.yml on the main branch."}
    
 3. The list contains example training instances. Change the first one,

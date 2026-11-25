@@ -33,3 +33,7 @@ format:
     toc-title: "On this page"
     toc-depth: 2
     anchor-sections: false
+    lightbox:
+      match: auto
+      effect: zoom
+      desc-position: bottom

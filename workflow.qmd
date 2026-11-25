@@ -18,16 +18,20 @@ Each time you start working, open your repository in VS Code and make
 sure you have the latest version.
 
 1. Open VS Code. It usually reopens the repository you worked on last.
-![](images/workflow-01-openrecent.png){width=80% fig-alt="Screenshot: Opening the repository from recent."}  
+
+   ![](images/workflow-01-openrecent.png){width=80% fig-alt="Screenshot: Opening the repository from recent."}  
+
    If not, choose **File → Open Recent**, or **File → Open Folder...**
    and select your repository folder.   
-![](images/workflow-02-openrepository.png){width=80% fig-alt="Screenshot: Opening the repository from file."}
+
+   ![](images/workflow-02-openrepository.png){width=80% fig-alt="Screenshot: Opening the repository from file."}
 
 2. **Get the latest version.** If you work together with others, they
    may have uploaded changes since you last worked. In the bottom-left
    corner of VS Code, click the circular arrows next to the branch name
    (**Synchronize Changes**). This downloads their changes to your
    computer.   
+
    ![](images/workflow-03-synchronizechanges.png){width=40% fig-alt="Screenshot: VS Code status bar with the branch name and the Synchronize Changes arrows."}
 
    Before you start editing, **always** sync changes so you are working on the lastest version of your repository. 
@@ -44,7 +48,6 @@ parts, and your repository keeps each one on its own **branch**:
 Branches are explained in more detail in [Repository structure](repository-structure.qmd#branches).
 
 The bottom-left corner of VS Code shows the branch you're working on. Clicking the current branch will open a list of all branches that your repository contains at the top. 
-
 
    ![](images/workflow-04-branches.png){width=60% fig-alt="Screenshot: VS Code status bar showing the branch name main."}
 
@@ -156,7 +159,7 @@ To change the title of your training:
 4. Save the file with **Cmd+S** (macOS) or **Ctrl+S** (Windows and
    Linux).
 
-The new title now appears at the top of the website preview in your browser.
+The new title now appears as the training title in the website preview, as well as in the browser tab. 
 
 ![](images/workflow-11-changedtrainingtitle.png){width=80% fig-alt="Screenshot: Updated title in the preview."}
 
@@ -195,16 +198,19 @@ To commit and push your change:
 2. Hover over the word **Changes** and click the **+** next to it
    (**Stage All Changes**). This tells VS Code to include all changed
    files in your commit. They move to **Staged Changes**.  
-  ![](images/workflow-13-stagedchanges.png){width=35% fig-alt="Screenshot: Source Control panel showing staged changes."}
+
+   ![](images/workflow-13-stagedchanges.png){width=35% fig-alt="Screenshot: Source Control panel showing staged changes."}
 
 3. In the **Message** box at the top, describe your change, for example
    `Change the training title`.  
-  ![](images/workflow-14-commitmessage.png){width=35% fig-alt="Screenshot: Source Control panel showing staged changes with commit message."}
+
+   ![](images/workflow-14-commitmessage.png){width=35% fig-alt="Screenshot: Source Control panel showing staged changes with commit message."}
 
 4. Click **Commit**.
 
 5. Click **Sync Changes** to push your commit to GitHub.   
-  ![](images/workflow-15-syncchanges.png){width=35% fig-alt="Screenshot: Sync Changes button."}
+
+   ![](images/workflow-15-syncchanges.png){width=35% fig-alt="Screenshot: Sync Changes button."}
 
 ::: {.callout-note}
 The first time you push, VS Code may ask you to sign in to GitHub. Follow
@@ -218,7 +224,8 @@ the instructions in your browser, then return to VS Code.
 Control panel, hover over the file and click the curved arrow
 (**Discard Changes**). The file goes back to how it was at your last
 commit.  
- ![](images/workflow-16-discardchanges.png){width=35% fig-alt="Screenshot: Discard Changes button."}
+
+![](images/workflow-16-discardchanges.png){width=35% fig-alt="Screenshot: Discard Changes button."}
 
 You only need to do this for the files you changed yourself, such as
 `data/course.yml`. The files the template updates automatically, for
@@ -237,7 +244,8 @@ After you push your local changes to GitHub to be published, GitHub rebuilds you
 To follow it on GitHub:
 
 1. Open your repository on GitHub and click the **Actions** tab.  
- ![](images/workflow-17-githubactionstab.png){width=75% fig-alt="Screenshot: Github actions tab."}
+
+   ![](images/workflow-17-githubactionstab.png){width=75% fig-alt="Screenshot: Github actions tab."}
 
 2. Wait until both of these show a green checkmark:
    - **deploy-landing** (or **deploy-instance**, when you changed a

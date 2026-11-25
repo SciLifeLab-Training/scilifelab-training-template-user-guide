@@ -18,8 +18,8 @@ This is what a training website made with the template looks like:
 
 ![](images/index-01-examplewebsite.png){fig-alt="The example training website made with the template. On the left is the landing page, which describes the training as a whole. An arrow goes from its list of all training instances to the overview page of one training instance on the right."}
 
-Want to look around more? Visit the
-[example training website](https://scilifelab-training.github.io/scilifelab-training-template).
+Click any image in this guide to see it larger. 
+Want to look around more? Visit the [example training website](https://scilifelab-training.github.io/scilifelab-training-template).
 
 
 ### What you get {.unnumbered}

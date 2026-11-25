@@ -28,7 +28,7 @@ Each of these branches holds the files for one part of your website:
   your training, with its description, learning outcomes and team, and
   links to every training instance. 
 
-     ![](images/structure-02-landingpage.png){width=60% fig-alt="Screenshot: landing page."}
+  ![](images/structure-02-landingpage.png){width=60% fig-alt="Screenshot: landing page."}
 
 - The **gh-pages** branch holds the **published website**: the finished
   pages that visitors see. GitHub builds them from your other branches
@@ -45,7 +45,8 @@ Each of these branches holds the files for one part of your website:
   practical information, team and training materials. You use it as the
   starting point for each new training instance, which gets a branch of
   its own.   
-     ![](images/structure-03-instancepage.png){width=60% fig-alt="Screenshot: training instance page."}
+  
+  ![](images/structure-03-instancepage.png){width=60% fig-alt="Screenshot: training instance page."}
 
 Because each training instance has its own branch, you can prepare the
 next training without changing the website of an earlier one.

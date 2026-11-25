@@ -225,6 +225,16 @@ main.content img:not(.sidebar-logo) {
     border-radius: 8px;
 }
 
+/* Screenshots open enlarged when you click them (the lightbox, set in
+   _quarto.yml). The magnifying-glass cursor shows that you can. */
+main.content a.lightbox img {
+    cursor: zoom-in;
+}
+
+main.content a.lightbox:focus-visible img {
+    outline: 3px solid var(--guide-teal);
+    outline-offset: 3px;
+}
 
 /* ==========================================================================
    Callouts

@@ -187,6 +187,7 @@ The logos in the hero show the organisations behind your training.
      leave it out.
 
    For example:  
+
    ![](images/landing-08-newlogodatafile.png){width=60% fig-alt="Screenshot: add a new logo path in website.yml."}
 
 5. Save the file, and check the preview. If the logos look like
@@ -203,7 +204,7 @@ Your other logos appear to its left, in the same order as in the list.
 1. In `data/website.yml`, delete all lines of the logo you want to
    remove, from `- src:` to its last line.
 
-      ![](images/landing-10-logodeleted.png){width=60% fig-alt="Screenshot: the lines for the new logo in website.yml are deleted."}
+   ![](images/landing-10-logodeleted.png){width=60% fig-alt="Screenshot: the lines for the new logo in website.yml are deleted."}
       
 2. Save the file and check the preview, the logo should be gone from the landing page. 
 3. Optional: if you no longer need the logo file, delete it from the
@@ -288,6 +289,8 @@ the website, so make it carefully:
 3. Change `center` to the part you want to keep. For example,
    `center top` keeps the top of the image, and `30% center` moves the
    visible part to the left.
+
+4. Save your change and check the result in the preview. 
 :::
 
 ## Describe your training
@@ -321,7 +324,6 @@ is built and the different types of data values.
 If the preview shows an error after you save a data file, check these
 two things first. The error message usually says which file and which
 line the mistake is in, see [Regular workflow - Work with the preview on](workflow.qmd#work-with-the-preview-on). 
-
 
 :::
 
