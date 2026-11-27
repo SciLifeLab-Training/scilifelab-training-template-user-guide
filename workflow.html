@@ -536,6 +536,22 @@ document.addEventListener("DOMContentLoaded", function () {
   document.body.classList.add("has-guide-page-footer");
 });
 </script>
+
+
+<script>
+// Clearer browser tab titles: "User Guide: <chapter>" on the chapter
+// pages, and the full name of the guide on the start page.
+document.addEventListener("DOMContentLoaded", function () {
+  var chapter = document.querySelector("h1.title .chapter-title");
+  var isStartPage = document.body.classList.contains("intro-page");
+
+  if (chapter && !isStartPage) {
+    document.title = "User Guide: " + chapter.textContent.trim();
+  } else {
+    document.title = "Training Webpage Template – User Guide";
+  }
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const isCodeAnnotation = (el) => {
